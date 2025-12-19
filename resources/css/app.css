@@ -1,11 +1,42 @@
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@font-face {
+    font-family: "Eurostile Extd";
+    src: url("../fonts/EurostileExt-Bla.woff2") format("woff2"),
+        url("../fonts/EurostileExt-Bla.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Eurostile Extd";
+    src: url("../fonts/EurostileExt-Med.woff2") format("woff2"),
+        url("../fonts/EurostileExt-Med.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-azul: #1e22aa;
+    --color-light-grey: #f4f4f4;
+    --color-laranja: #ff671d;
+    --color-preto-impuro: #1d1d1d;
+    --color-grey-text: #cfcfcf;
+
+    --font-roboto: "Roboto";
+    --font-courier: "Courier Prime";
+    --font-eurostile: "Eurostile Extd";
+    --default-font-family: "Roboto";
+}
+
+.margin-website {
+    @apply xl:px-[137px];
 }
