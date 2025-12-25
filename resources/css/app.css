@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -31,14 +31,18 @@
     --color-preto-impuro: #1d1d1d;
     --color-grey-text: #cfcfcf;
 
-    --font-roboto: "Roboto";
+    --font-arimo: "Arimo";
     --font-courier: "Courier Prime";
     --font-eurostile: "Eurostile Extd";
-    --default-font-family: "Roboto";
+    --default-font-family: "Arimo";
 }
 
 .margin-website {
     @apply xl:px-[137px];
+}
+
+.text-base {
+    @apply xl:text-[17px] xl:leading-[26px] tracking-[0.03em];
 }
 
 .gradient-black-blue {
@@ -157,6 +161,30 @@
 );
 }
 
+.gradient-blue-white {
+    background: #23274b;
+    background: -webkit-linear-gradient(
+        90deg,
+        rrgba(10, 10, 10, 0.6) 38%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background: -moz-linear-gradient(
+        90deg,
+        rgba(10, 10, 10, 0.6) 38%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background: linear-gradient(
+        90deg,
+        rgba(10, 10, 10, 0.6) 38%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    width: 50%;
+    filter: progid:DXImageTransform.Microsoft.gradient(
+  startColorstr="#23274B",
+  endColorstr="#FFFFFF00",
+  GradientType=1
+);
+}
 /*** slider **/
 
 .swiper {

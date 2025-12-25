@@ -44,11 +44,14 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-end items-end flex-col">
-                        <button className="text-laranja border-3 border-laranja uppercase xl:px-4 rounded-[40px] xl:py-1 xl:max-w-[160px] w-full cursor-pointer">
+                    <div className="flex justify-end items-end flex-col xl:gap-4">
+                        <button className="text-laranja border-3 border-laranja uppercase xl:px-4 rounded-[40px] xl:py-1 px-4 cursor-pointer font-bold">
                             join our team
                         </button>
-                        <div className="flex xl:gap-1 xl:pt-18">
+                        <button className="text-laranja border-3 border-laranja uppercase xl:px-4 rounded-[40px] xl:py-1 cursor-pointer font-bold px-4">
+                            Linkedin
+                        </button>
+                        <div className="flex xl:gap-1">
                             <img src={certification3}></img>
                             <img src={certification1}></img>
                             <img src={certification2}></img>

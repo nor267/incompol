@@ -4,9 +4,11 @@ import Title from "../Layout/Title";
 import empresa from "../../../images/fake/aboutus/empresa.jpg";
 import empresa2 from "../../../images/fake/aboutus/empresa2.jpg";
 import Overview from "./Overview";
-import HumanResources from "./HumanResources";
 import ShapeFuture from "./ShapeFuture";
 import History from "./History";
+import Certifications from "./Certifications";
+import Footer from "../Layout/Footer";
+import Portefolio from "./Portefolio";
 
 export default function AboutUs() {
     return (
@@ -38,9 +40,11 @@ Our commitment goes beyond manufacturing. We invest in technology, people, and s
                 </div>
             </div>
             <Overview />
-            <HumanResources />
             <ShapeFuture />
             <History />
+            <Certifications />
+            <Portefolio />
+            <Footer />
         </>
     );
 }

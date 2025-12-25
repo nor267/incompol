@@ -23,20 +23,7 @@ export default function Overview() {
             </h1>
             <div className="bg-light-grey xl:max-h-[295px] w-full flex justify-between items-start xl:mt-28 xl:px-80 xl:py-16">
                 <Icon icon={house} title="1987" text="Foundation" />
-                <Icon
-                    icon={graph}
-                    title="€ 15.4 M"
-                    text="Sales 2024"
-                    subtitle="(outlook 2025: €23M)"
-                />
-                <Icon
-                    icon={industrial}
-                    title="2 sites <br> 17000 M2"
-                    text="Facilities"
-                />
-                <Icon icon={settings} title="17 M" text="Parts supplied 2024" />
-            </div>
-            <div className="bg-white xl:max-h-[295px] w-full flex justify-center items-start xl:gap-110 xl:py-16">
+
                 <Icon
                     icon={map}
                     title="Porto alto,"
@@ -44,23 +31,38 @@ export default function Overview() {
                     subtitle="Portugal"
                 />
                 <Icon
-                    icon={roller}
-                    title="6000 TON"
-                    text="Transformed raw<br> material 2024"
+                    icon={industrial}
+                    title="2 sites <br> 17000 M2"
+                    text="Facilities"
                 />
-            </div>
-            <div className="bg-light-grey xl:max-h-[295px] w-full flex justify-between items-start xl:px-80 xl:py-16">
                 <Icon icon={heart} title="120" text="Employees" />
+            </div>
+            <div className="bg-white xl:max-h-[295px] w-full flex justify-center items-start xl:gap-110 xl:py-16">
+                <Icon
+                    icon={graph}
+                    title="€ 15.4 M"
+                    text="Sales 2024"
+                    subtitle="(outlook 2025: €23M)"
+                />
                 <Icon
                     icon={world}
                     title="4 markets"
                     text="Automotive, Home <br>appliance, Aerospace"
                 />
+            </div>
+            <div className="bg-light-grey xl:max-h-[295px] w-full flex justify-between items-start xl:px-80 xl:py-16">
                 <Icon
                     icon={goals}
                     title="Core business"
                     text="High-precision metallic<br> parts for high volume<br> industries"
                 />
+                <Icon icon={settings} title="17 M" text="Parts supplied 2024" />
+                <Icon
+                    icon={roller}
+                    title="6000 TON"
+                    text="Transformed raw<br> material 2024"
+                />
+
                 <Icon
                     icon={wired}
                     title="Technologies"
