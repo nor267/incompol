@@ -37,12 +37,37 @@
     --default-font-family: "Arimo";
 }
 
+:root {
+    --vh: 100%;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
 .margin-website {
-    @apply xl:px-[137px];
+    @apply px-8 xl:px-[137px];
 }
 
 .text-base {
     @apply xl:text-[17px] xl:leading-[26px] tracking-[0.03em];
+}
+
+.area-componets {
+    @apply flex z-20 w-full justify-center items-center xl:gap-9;
+}
+
+.link-menu {
+    @apply font-eurostile xl:text-[58px] xl:leading-[59px] font-medium text-[18px] leading-[20px] text-white uppercase;
+}
+
+.link-number {
+    @apply text-laranja font-medium xl:text-[17px] text-[10px] leading-[0px] pl-3;
+}
+
+.button-laranja {
+    @apply duration-300 transition-all hover:text-white hover:border-white text-laranja border-3 border-laranja uppercase rounded-[40px] xl:py-1 cursor-pointer font-bold px-4;
 }
 
 .gradient-black-blue {
@@ -185,8 +210,31 @@
   GradientType=1
 );
 }
-/*** slider **/
 
+.gradient-map {
+    background: #1a2050;
+    background: -webkit-linear-gradient(
+        180deg,
+        rgba(26, 32, 80, 1) 0%,
+        rgba(30, 34, 170, 1) 70%
+    );
+    background: -moz-linear-gradient(
+        180deg,
+        rgba(26, 32, 80, 1) 0%,
+        rgba(30, 34, 170, 1) 70%
+    );
+    background: linear-gradient(
+        180deg,
+        rgba(26, 32, 80, 1) 0%,
+        rgba(30, 34, 170, 1) 70%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+  startColorstr="#1A2050",
+  endColorstr="#1E22AA",
+  GradientType=0
+);
+}
+/*** slider **/
 .swiper {
     width: 100%;
     height: 450px;
@@ -197,4 +245,21 @@
     background: #444;
     height: 450px;
     width: 729px;
+}
+
+@media only screen and (max-width: 600px) {
+    .swiper {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+    }
+    .swiper-slide {
+        background: #444;
+        height: 220px;
+        width: 100px;
+    }
+}
+
+.shadow-partner {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }

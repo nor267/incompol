@@ -15,11 +15,11 @@ export default function Home() {
                 <Navbar />
             </div>
             <Expertise />
+            <News />
             <Manucfacture />
             <Sectors />
-            <News />
             <Crafting />
-            <Footer />
+            <Footer work={true} />
         </>
     );
 }

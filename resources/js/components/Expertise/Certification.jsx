@@ -24,11 +24,11 @@ export default function Certification() {
                     ></img>
                     <div className="bg-laranja xl:w-[287px] xl:h-[287px] rounded-full absolute -right-36 -bottom-20 ">
                         <div className="flex justify-center items-center w-full h-full">
-                            <div class="xl:w-[282px] xl:h-[282px] rounded-full overflow-hidden ">
+                            <div className="xl:w-[282px] xl:h-[282px] rounded-full overflow-hidden ">
                                 <img
                                     src={quality2}
                                     alt=""
-                                    class="w-full h-full object-cover"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
                         </div>

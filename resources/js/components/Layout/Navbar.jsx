@@ -1,28 +1,35 @@
 import logo from "../../../images/logo/logo.svg";
+import hamburguer from "../../../images/icons/hamburg.svg";
+import { useState } from "react";
+import Menu from "./Menu";
 
 export default function Navbar() {
+    const [menu, setMenu] = useState(false);
+
+    function handleMenu() {
+        setMenu((prev) => !prev);
+    }
+
     return (
         <>
-            <div className="flex justify-between w-full absolute top-0 margin-website xl:pt-[40px]">
-                <img src={logo}></img>
-                <div className="flex">
-                    <div className="uppercase xl:text-[15px] xl:leading-[25px] tracking-[0.03em] text-white xl:pr-[270px] font-medium">
-                        <a href="/about-us" className="cursor-pointer">
-                            <p>About us</p>
-                        </a>
-
-                        <p>Expertise</p>
-                        <p>Portfolio</p>
-                        <p>People</p>
-                        <p>Clients</p>
-                        <p>Contacts</p>
-                    </div>
-                    <p className="text-white font-eurostile font-medium text-[22px]">
+            <Menu
+                handleMenu={handleMenu}
+                className={menu ? "block" : "hidden"}
+            />
+            <div className="flex justify-between w-full absolute top-0 margin-website pt-4 xl:pt-[40px]">
+                <img src={logo} className="h-4 xl:h-auto"></img>
+                <div className="flex items-center justify-center xl:gap-4 gap-2">
+                    <p className="text-white font-eurostile font-medium text-[12px] xl:text-[14px] xl:text-[22px] xl:leading-[22px] pt-1 xl:pt-2 cursor-pointer">
                         PT
                     </p>
+                    <img
+                        src={hamburguer}
+                        className="cursor-pointer h-3 xl:h-[18px]"
+                        onClick={handleMenu}
+                    ></img>
                 </div>
             </div>
-            <div className="absolute bottom-[140px] text-white margin-website">
+            <div className="absolute bottom-[140px] text-white margin-website hidden">
                 <div className="relative w-full xl:mac-w-[720px]">
                     <h1 className="font-eurostile xl:text-[86px] xl:leading-[87px] uppercase">
                         We<br></br> create<br></br> solutions.

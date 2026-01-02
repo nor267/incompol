@@ -29,11 +29,11 @@ Our commitment goes beyond manufacturing. We invest in technology, people, and s
                 ></img>
                 <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full absolute right-69 -bottom-20 ">
                     <div className="flex justify-center items-center w-full h-full">
-                        <div class="xl:w-[294px] xl:h-[294px] rounded-full overflow-hidden ">
+                        <div className="xl:w-[294px] xl:h-[294px] rounded-full overflow-hidden ">
                             <img
                                 src={empresa2}
                                 alt=""
-                                class="w-full h-full object-cover"
+                                className="w-full h-full object-cover"
                             />
                         </div>
                     </div>

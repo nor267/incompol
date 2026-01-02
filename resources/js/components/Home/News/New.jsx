@@ -1,6 +1,6 @@
 export default function New({ image, title, date }) {
     return (
-        <div className="relative w-full xl:h-[450px] overflow-hidden">
+        <div className="relative w-full h-[220px] xl:h-[450px] overflow-hidden">
             <img className="w-full object-cover h-full z-0" src={image}></img>
             <div className="w-full h-full  z-20 absolute top-0 gradient-black-white-news">
                 <div className="w-full h-full  z-30 relative gradient-black-white-news2">

@@ -19,11 +19,11 @@ export default function Commitment() {
                     <img src={eolica1}></img>
                     <div className="bg-laranja xl:w-[399px] xl:h-[399px] rounded-full absolute -left-40 -top-40 ">
                         <div className="flex justify-center items-center w-full h-full">
-                            <div class="xl:w-[395px] xl:h-[395px] rounded-full overflow-hidden ">
+                            <div className="xl:w-[395px] xl:h-[395px] rounded-full overflow-hidden ">
                                 <img
                                     src={eolica2}
                                     alt=""
-                                    class="w-full h-full object-cover"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
                         </div>
