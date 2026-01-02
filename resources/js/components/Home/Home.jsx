@@ -10,8 +10,11 @@ import Sectors from "./Sectors";
 export default function Home() {
     return (
         <>
-            <div className="relative">
-                <img src={banner} className="object-cover w-full"></img>
+            <div className="relative h-screen">
+                <img
+                    src={banner}
+                    className="object-cover w-full h-screen overflow-hidden"
+                ></img>
                 <Navbar />
             </div>
             <Expertise />

@@ -44,7 +44,7 @@ Our commitment goes beyond manufacturing. We invest in technology, people, and s
             <History />
             <Certifications />
             <Portefolio />
-            <Footer />
+            <Footer work={true} />
         </>
     );
 }

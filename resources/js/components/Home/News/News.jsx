@@ -17,7 +17,7 @@ import new3 from "../../../../images/fake/news/news3.png";
 
 export default function News() {
     const [activeIndex, setActiveIndex] = useState(0);
-    console.log(activeIndex);
+
     return (
         <div className="bg-light-grey xl:pl-[137px] xl:pb-26 relative">
             <section className="text-azul pt-5 xl:pt-18 pl-5">

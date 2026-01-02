@@ -16,9 +16,11 @@ export default function ShapeFuture({ shapeFuture }) {
                     <p className=" xl:maw-w-[324px] xl:text-[17px] xl:leading-[24px] tracking-[0.03em] xl:pt-16 xl:max-w-[280px]">
                         Be part of precision, innovation, and progress.
                     </p>
-                    <button className="button-laranja mt-2 xl:mt-11">
-                        work with us
-                    </button>
+                    <div className="mt-2 xl:mt-11">
+                        <a href="/people" className="button-laranja ">
+                            work with us
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

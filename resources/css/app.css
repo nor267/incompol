@@ -46,6 +46,10 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    overflow: hidden;
+}
+
 .margin-website {
     @apply px-8 xl:px-[137px];
 }
@@ -68,6 +72,10 @@ body {
 
 .button-laranja {
     @apply duration-300 transition-all hover:text-white hover:border-white text-laranja border-3 border-laranja uppercase rounded-[40px] xl:py-1 cursor-pointer font-bold px-4;
+}
+
+.button-laranja-blue {
+    @apply duration-300 transition-all hover:text-azul hover:border-azul text-laranja border-3 border-laranja uppercase rounded-[40px] xl:py-1 cursor-pointer font-bold px-4;
 }
 
 .gradient-black-blue {
@@ -165,19 +173,19 @@ body {
 .gradient-blue {
     background: #1e22aa;
     background: -webkit-linear-gradient(
-        0deg,
-        rgba(30, 34, 170, 1) 5%,
-        rgba(20, 29, 104, 1) 100%
+        180deg,
+        rgba(30, 34, 170, 1) 0%,
+        rgba(20, 29, 104, 1) 88%
     );
     background: -moz-linear-gradient(
-        0deg,
-        rgba(30, 34, 170, 1) 5%,
-        rgba(20, 29, 104, 1) 100%
+        180deg,
+        rgba(30, 34, 170, 1) 0%,
+        rgba(20, 29, 104, 1) 88%
     );
     background: linear-gradient(
-        0deg,
-        rgba(30, 34, 170, 1) 5%,
-        rgba(20, 29, 104, 1) 100%
+        180deg,
+        rgba(30, 34, 170, 1) 0%,
+        rgba(20, 29, 104, 1) 88%
     );
     filter: progid:DXImageTransform.Microsoft.gradient(
   startColorstr="#1E22AA",
@@ -262,4 +270,15 @@ body {
 
 .shadow-partner {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.custom-file {
+    display: inline-block;
+    background: #ff671d;
+    padding: 6px 20px;
+    border-radius: 40px;
+    color: #fff;
+    cursor: pointer;
+    font-family: sans-serif;
+    width: 100px;
 }

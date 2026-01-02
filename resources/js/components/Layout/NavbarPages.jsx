@@ -22,9 +22,9 @@ export default function NavbarPages() {
                     <img src={logo} className="xl:h-[33px]"></img>
                 </a>
                 <div className="flex items-center justify-center xl:gap-4">
-                    <button className="border-3 border-laranja rounded-[40px] uppercase text-laranja px-3 font-bold cursor-pointer">
-                        work with us
-                    </button>
+                    <a>
+                        <button className="button-laranja">work with us</button>
+                    </a>
                     <p className="text-white font-eurostile font-medium xl:text-[22px] xl:leading-[22px] pt-2 cursor-pointer">
                         PT
                     </p>

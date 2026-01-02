@@ -15,9 +15,11 @@ export default function Portefolio() {
                     <p className="xl:text-[20px] xl:leading-[26px] tracking-[0.03em] text-azul xl:max-w-[345px]">
                         Explore our portfolio<br></br> and see how we deliver.
                     </p>
-                    <button className="border-3 border-laranja rounded-[40px] uppercase text-laranja px-3 font-bold xl:mt-8">
-                        discover more
-                    </button>
+                    <a href="/portfolio">
+                        <button className="button-laranja-blue xl:mt-8">
+                            discover more
+                        </button>
+                    </a>
                 </div>
                 <ShapeFuture shapeFuture={shapeFuture} />
             </div>

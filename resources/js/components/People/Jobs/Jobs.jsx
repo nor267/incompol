@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,6 +17,7 @@ import new3 from "../../../../images/fake/news/news3.png";
 import Job from "./job";
 
 export default function Jobs() {
+    const [activeIndex, setActiveIndex] = useState(0);
     return (
         <div className="bg-light-grey xl:pl-[137px] xl:pb-26 relative">
             <section className="text-azul xl:pt-18 ">
@@ -37,7 +39,7 @@ export default function Jobs() {
                     >
                         <path
                             d="M4.3869e-05 10.1734L17.5676 20.3125V0L4.3869e-05 10.1734Z"
-                            fill="#CFCFCF"
+                            fill={activeIndex > 0 ? "#1E22AA" : "#CFCFCF"}
                         />
                     </svg>
                 </button>
@@ -52,20 +54,35 @@ export default function Jobs() {
                     >
                         <path
                             d="M17.5676 10.1391L0 -1.71661e-05L0 20.3125L17.5676 10.1391Z"
-                            fill="#1E22AA"
+                            fill={activeIndex == 1 ? "#CFCFCF" : "#1E22AA"}
                         />
                     </svg>
                 </button>
             </div>
             <Swiper
                 slidesPerView={2.5}
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1,
+                    },
+                    640: {
+                        slidesPerView: 1.5,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 2.5,
+                    },
+                }}
                 spaceBetween={72}
                 modules={[Pagination, Navigation]}
                 navigation={{
                     prevEl: ".swiper-button-prev-custom",
                     nextEl: ".swiper-button-next-custom",
                 }}
-                className="mySwiper xl:mt-20"
+                className="mySwiper mt-5 xl:mt-20"
+                onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             >
                 <SwiperSlide>
                     <Job image={new1} title="CNC Operator" date="17/01/23" />

@@ -84,7 +84,7 @@ export default function Contactus() {
                 </div>
             </div>
             <Form />
-            <Footer />
+            <Footer work={true} />
         </>
     );
 }

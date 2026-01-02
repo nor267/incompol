@@ -8,7 +8,7 @@ import expertise3 from "../../../images/fake/home/expertise3.jpg";
 
 export default function Expertise() {
     return (
-        <div className="  pt-5 xl:pt-[80px] bg-white text-white">
+        <div className="  pt-5 xl:mt-[80px] bg-white text-white">
             <div className="xl:h-[1220px] gradient-black-blue relative margin-website pb-5 xl:pb-0">
                 <img
                     src={triangleWhite}
