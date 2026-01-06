@@ -17,20 +17,20 @@ export default function NavbarPages() {
                 handleMenu={handleMenu}
                 className={menu ? "block" : "hidden"}
             />
-            <div className="flex justify-between w-full margin-website items-center xl:h-[80px] bg-azul fixed top-0 z-50">
+            <div className="flex justify-between w-full margin-website items-center h-[40px]  xl:h-[80px] bg-azul fixed top-0 z-50">
                 <a href="/" className="cursor-pointer">
-                    <img src={logo} className="xl:h-[33px]"></img>
+                    <img src={logo} className="h-3 xl:h-[33px]"></img>
                 </a>
-                <div className="flex items-center justify-center xl:gap-4">
-                    <a>
-                        <button className="button-laranja">work with us</button>
+                <div className="flex items-center justify-center gap-2 xl:gap-4">
+                    <a href="/people">
+                        <button className="button-laranja mr-1 xl:mr-0">
+                            work with us
+                        </button>
                     </a>
-                    <p className="text-white font-eurostile font-medium xl:text-[22px] xl:leading-[22px] pt-2 cursor-pointer">
-                        PT
-                    </p>
+                    <p className="change-language">PT</p>
                     <img
                         src={hamburguer}
-                        className="cursor-pointer"
+                        className="hamburguer-menu"
                         onClick={handleMenu}
                     ></img>
                 </div>

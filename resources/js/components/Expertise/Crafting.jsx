@@ -13,17 +13,17 @@ export default function Crafting() {
             <SecondTitle
                 slogan="Crafting Reliability"
                 title="Tooling Design, Manufacturing <br>& Maintenance"
-                className="xl:pt-20 text-azul"
+                className="pt-15 xl:pt-20 text-azul"
             />
-            <div className="flex flex-row-reverse margin-website xl:pt-36 xl:pb-22 xl:gap-68 justify-center items-center xl:pb-[920px] relative">
-                <div className="relative">
+            <div className="flex flex-col-reverse xl:flex-row-reverse margin-website xl:pt-36 pb-70 xl:pb-22 xl:gap-68 justify-center items-center xl:pb-[920px] relative">
+                <div className="relative pt-5 xl:pt-0">
                     <img
                         src={crafting1}
                         className="xl:w-[570px] xl:h-[375px] object-cover"
                     ></img>
-                    <div className="bg-laranja xl:w-[287px] xl:h-[287px] rounded-full absolute -left-36 -bottom-20 ">
+                    <div className="bg-laranja w-[150px] h-[150px] xl:w-[287px] xl:h-[287px] rounded-full absolute -left-10 xl:-left-36 -bottom-10 xl:-bottom-20 ">
                         <div className="flex justify-center items-center w-full h-full">
-                            <div className="xl:w-[282px] xl:h-[282px] rounded-full overflow-hidden ">
+                            <div className=" w-[148px] h-[148px] xl:w-[282px] xl:h-[282px] rounded-full overflow-hidden ">
                                 <img
                                     src={crafting2}
                                     alt=""
@@ -33,7 +33,7 @@ export default function Crafting() {
                         </div>
                     </div>
                 </div>
-                <div className="text-base text-azul xl:max-w-[465px]">
+                <div className="text-base text-azul xl:max-w-[465px] pt-5">
                     <p>
                         Our engineering team works with clients from concept to
                         production, providing{" "}

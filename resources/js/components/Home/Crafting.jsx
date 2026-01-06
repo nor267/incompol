@@ -15,8 +15,8 @@ import shapeFuture from "../../../images/fake/home/work-with-us.jpg";
 import ShapeFuture from "../Layout/ShapeFuture";
 export default function Crafting() {
     const { scrollY } = useScroll();
-    const y = useTransform(scrollY, (v) => v * -0.2);
 
+    const y = useTransform(scrollY, (v) => v * -0.2);
     const y2 = useTransform(scrollY, (v) => v * 0.2);
 
     return (
@@ -46,26 +46,26 @@ export default function Crafting() {
                     src={component}
                     alt=""
                     style={{ y }}
-                    className="absolute right-20 -bottom-[1600px] z-30 h-[560px] w-fit object-contain will-change-transform"
+                    className="absolute -bottom-[750px] right-0 xl:right-20 xl:-bottom-[1600px] z-30 h-[100px] xl:h-[560px] w-fit object-contain will-change-transform"
                 />
                 <motion.img
                     src={component2}
                     alt=""
                     style={{ y2 }}
-                    className="absolute right-10 bottom-[400px] z-30 h-[240px] w-fit object-contain will-change-transform"
+                    className="hidden xl:absolute xl:block right-10 bottom-[400px] z-30 h-[240px] w-fit object-contain will-change-transform"
                 />
 
                 <motion.img
                     src={component3}
                     alt=""
                     style={{ y }}
-                    className="absolute right-280 -bottom-[900px] z-10 h-[240px] w-fit object-contain will-change-transform"
+                    className="absolute  -bottom-[550px] right-80 xl:right-280 xl:-bottom-[900px] z-10 h-[50px] xl:h-[240px] w-fit object-contain will-change-transform"
                 />
                 <motion.img
                     src={component4}
                     alt=""
                     style={{ y }}
-                    className="absolute -left-[1680px] -bottom-[0px] z-10 h-[640px] w-fit object-contain will-change-transform rotate-90"
+                    className="absolute -left-[700px] xl:-left-[1680px] -bottom-[50px] xl:bottom-[0px] z-10 h-[100px] xl:h-[640px] w-fit object-contain will-change-transform rotate-90"
                 />
             </div>
 

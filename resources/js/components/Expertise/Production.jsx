@@ -8,9 +8,9 @@ export default function Production() {
             <SecondTitle
                 slogan="From concept to production"
                 title="Engineering Expertise"
-                className="xl:pt-20 text-azul"
+                className="pt-15 xl:pt-20 text-azul"
             />
-            <div className="xl:mt-36 flex xl:gap-32 items-center xl:mb-64">
+            <div className="mt-5 xl:mt-36 flex flex-col xl:flex-row xl:gap-32 items-center xl:mb-64 px-8 xl:px-0">
                 <div>
                     <p className="text-base xl:max-w-[440px]">
                         Our engineering team works with clients from concept to
@@ -22,7 +22,7 @@ export default function Production() {
                         the most demanding industry standards.
                     </p>
                 </div>
-                <div>
+                <div className="pt-5 xl:pt-0 pb-15 xl:pb-0">
                     <img src={market}></img>
                 </div>
             </div>

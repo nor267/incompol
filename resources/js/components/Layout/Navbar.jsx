@@ -19,12 +19,10 @@ export default function Navbar() {
             <div className="flex justify-between w-full absolute top-0 margin-website pt-4 xl:pt-[40px] ">
                 <img src={logo} className="h-4 xl:h-auto"></img>
                 <div className="flex items-center justify-center xl:gap-4 gap-2">
-                    <p className="text-white font-eurostile font-medium text-[12px] xl:text-[14px] xl:text-[22px] xl:leading-[22px] pt-1 xl:pt-2 cursor-pointer">
-                        PT
-                    </p>
+                    <p className="change-language">PT</p>
                     <img
                         src={hamburguer}
-                        className="cursor-pointer h-3 xl:h-[18px]"
+                        className="hamburguer-menu"
                         onClick={handleMenu}
                     ></img>
                 </div>

@@ -6,23 +6,23 @@ export default function Form() {
             <SecondTitle
                 slogan="Let us know what you need."
                 title="Contact us"
-                className="xl:pt-20 text-white"
+                className="pt-15 xl:pt-20 text-white"
             />
-            <div className="xl:px-[377px] flex justify-between  xl:pt-36">
-                <div>
-                    <div>
-                        <h1 className="xl:text-[28px] xl:leading-[32px uppercase text-white font-medium">
+            <div className="xl:px-[377px] flex flex-col-reverse w-full xl:flex-row justify-between xl:pt-36 px-8">
+                <div className="flex items-start justify-between xl:justify-start xl:flex-col pt-15 xl:pt-0 pb-15">
+                    <div className="">
+                        <h1 className="text-[18px] xl:text-[28px] xl:leading-[32px uppercase text-white font-medium">
                             Contacts
                         </h1>
-                        <p className="text-base text-white xl:pt-8">
+                        <p className="text-base text-white pt-3 xl:pt-8">
                             incompol@incompol.pt<br></br>comercial@incompol.pt
                         </p>
-                        <p className="text-base text-white xl:pt-8">
+                        <p className="text-base text-white pt-3 xl:pt-8">
                             Tel.:+ 351 263 650 160<br></br>Fax: + 351 263 655
                             425
                         </p>
                     </div>
-                    <div className="xl:pt-11">
+                    <div className=" xl:pt-11">
                         <h1 className="xl:text-[28px] xl:leading-[32px uppercase text-white font-medium">
                             SOCIALS
                         </h1>
@@ -33,48 +33,40 @@ export default function Form() {
                         </p>
                     </div>
                 </div>
-                <div className="w-1/2">
-                    <form className="w-full">
-                        <div>
-                            <label
-                                id="name"
-                                className="xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold text-white"
-                            >
+                <div className="w-full xl:w-1/2">
+                    <form className="w-full form-container">
+                        <div className="xl:pt-0!">
+                            <label id="name" className="form-title text-white">
                                 Full name
                             </label>
-                            <input className="w-full bg-light-grey rounded-[40px] xl:mt-3 xl:py-1 xl:px-4 text-azul outline-none  text-[15px] h-9"></input>
+                            <input type="text" name="name" required></input>
                         </div>
-                        <div className="xl:pt-8">
-                            <label
-                                id="email"
-                                className="xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold text-white"
-                            >
+                        <div>
+                            <label id="email" className="form-title text-white">
                                 Email
                             </label>
-                            <input className="w-full bg-light-grey rounded-[40px] xl:mt-3 xl:py-1 xl:px-4 text-azul outline-none text-[15px] h-9"></input>
+                            <input type="email" name="email" required></input>
                         </div>
-                        <div className="xl:pt-8">
-                            <label
-                                id="phone"
-                                className="xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold text-white"
-                            >
+                        <div>
+                            <label id="phone" className="form-title text-white">
                                 Phone
                             </label>
-                            <input className="w-full bg-light-grey rounded-[40px] xl:mt-3 xl:py-1 xl:px-4 text-azul outline-none text-[15px] h-9"></input>
+                            <input type="text" name="number" required></input>
                         </div>
-                        <div className="xl:pt-8">
+                        <div>
                             <label
                                 id="message"
-                                className="xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold text-white"
+                                className="form-title text-white"
                             >
                                 Message
                             </label>
                             <textarea
                                 rows="6"
-                                className="w-full bg-light-grey rounded-[20px] xl:mt-3 xl:py-3 xl:px-4 text-azul outline-none text-[15px]"
+                                className="w-full bg-light-grey rounded-[20px] mt-2 xl:mt-3 py-3 px-4 text-azul outline-none text-[15px]"
+                                name="message"
                             ></textarea>
                         </div>
-                        <p className="xl:text-[15px] xl:leading-[19px] tracking-[0.03em] text-white xl:mt-5">
+                        <p className="text-[13px] leading-[16px]  xl:text-[15px] tracking-[0.03em] xl:leading-[19px] text-white mt-3 xl:mt-5">
                             I accept the{" "}
                             <strong>
                                 <a className="underline hover:text-laranja cursor-pointer">
@@ -83,7 +75,7 @@ export default function Form() {
                             </strong>{" "}
                             and consent to the processing of my personal data.
                         </p>
-                        <button className="mt-5 text-laranja uppercase border-2 border-laranja font-bold rounded-[40px] py-1 px-8 xl:text-[20px] hover:text-white duration-300 transition-all hover:border-white cursor-pointer">
+                        <button className="hover:border-white hover:text-white">
                             send
                         </button>
                     </form>

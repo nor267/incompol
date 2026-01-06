@@ -12,27 +12,27 @@ export default function Capacity() {
             <SecondTitle
                 slogan="Our production capabilities in action"
                 title="Industrial Capacity <br> & Equipment"
-                className="xl:mt-32 text-azul"
+                className="mt-20 xl:mt-32 text-azul"
             />
 
-            <div className="text-azul flex justify-between xl:px-[230px] xl:pt-[140px] xl:pb-18">
+            <div className="text-azul flex flex-col xl:flex-row justify-between pt-8 xl:px-[230px] xl:pt-[140px] pb-15 xl:pb-18">
                 <div>
-                    <p className="xl:text-[17px] xl:leading-[26px] tracking-[0.03em] xl:max-w-[465px] font-light">
+                    <p className="text-base xl:max-w-[465px] font-light px-8 xl:px-0">
                         Our production facilities integrate a wide range of
                         advanced equipment and processes, enabling us to handle
                         both high-volume manufacturing and precision components
                         with the same level of excellence.
                     </p>
-                    <div className="relative xl:mt-36">
+                    <div className="relative mt-15 xl:mt-36">
                         <div className="xl:ml-10">
                             <img
                                 src={capacity1}
-                                className="xl:w-[740px] xl:h-[370px]"
+                                className="h-[200px] w-full object-cover xl:w-[740px] xl:h-[370px]"
                             ></img>
                         </div>
-                        <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full absolute -right-40 bottom-70 ">
+                        <div className="bg-laranja w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-full absolute -right-15 bottom-30 xl:-right-40 xl:bottom-70 ">
                             <div className="flex justify-center items-center w-full h-full">
-                                <div className="xl:w-[295px] xl:h-[295px] rounded-full overflow-hidden ">
+                                <div className="w-[148px] h-[148px] xl:w-[295px] xl:h-[295px] rounded-full overflow-hidden ">
                                     <img
                                         src={capacity2}
                                         alt=""
@@ -43,8 +43,8 @@ export default function Capacity() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col xl:gap-3">
-                    <h1 className="font-eurostile xl:text-[18px] xl:leading-[26px] tracking-[0.14em] uppercase font-bold xl:mb-13">
+                <div className="flex flex-col gap-1 xl:gap-3 px-8 xl:px-0 pt-10 xl:pt-0">
+                    <h1 className="text-center font-eurostile text-[16px] xl:text-[18px] xl:leading-[26px] tracking-[0.14em] uppercase font-bold mb-5 xl:mb-13">
                         equipments
                     </h1>
                     <Type text="Hydraulic Press double effect" />

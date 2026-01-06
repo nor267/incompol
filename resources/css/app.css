@@ -55,11 +55,11 @@ body {
 }
 
 .text-base {
-    @apply xl:text-[17px] xl:leading-[26px] tracking-[0.03em];
+    @apply text-[14px] leading-[18px] xl:text-[17px] xl:leading-[26px] tracking-[0.03em];
 }
 
 .area-componets {
-    @apply flex z-20 w-full justify-center items-center xl:gap-9;
+    @apply flex z-20 w-full justify-center items-center gap-8 xl:gap-9 flex-col xl:flex-row;
 }
 
 .link-menu {
@@ -71,13 +71,60 @@ body {
 }
 
 .button-laranja {
-    @apply duration-300 transition-all hover:text-white hover:border-white text-laranja border-3 border-laranja uppercase rounded-[40px] xl:py-1 cursor-pointer font-bold px-4;
+    @apply text-[12px] xl:text-[17px]  duration-300 transition-all hover:text-white hover:border-white text-laranja border-2 xl:border-3 border-laranja uppercase rounded-[40px] xl:py-1 cursor-pointer font-medium xl:font-bold px-1 xl:px-4;
 }
 
 .button-laranja-blue {
-    @apply duration-300 transition-all hover:text-azul hover:border-azul text-laranja border-3 border-laranja uppercase rounded-[40px] xl:py-1 cursor-pointer font-bold px-4;
+    @apply duration-300 transition-all hover:text-azul hover:border-azul text-laranja border-2 xl:border-3 border-laranja uppercase rounded-[40px] xl:py-1 cursor-pointer font-medium xl:font-bold px-1 xl:px-4;
 }
 
+.hamburguer-menu {
+    @apply cursor-pointer h-3 xl:h-[18px];
+}
+
+.change-language {
+    @apply text-white font-eurostile font-medium text-[12px] xl:text-[14px] xl:text-[22px] xl:leading-[22px] pt-1 xl:pt-2 cursor-pointer;
+}
+
+.company-overview {
+    @apply xl:max-h-[295px] w-full grid grid-cols-2 xl:flex justify-between items-start px-8 xl:px-80 py-5 xl:py-16;
+}
+
+.history-line {
+    @apply flex items-start xl:max-h-[176px] z-20 flex-col xl:flex-row;
+}
+
+.arrow-mobile {
+    @apply z-20 xl:hidden mt-2;
+}
+
+.certification-box {
+    @apply px-6 xl:px-26 xl:pt-4 relative flex flex-col justify-center items-center xl:items-center xl:justify-start;
+}
+
+.partner-mobile {
+    @apply flex gap-3 mt-5 justify-center;
+}
+
+.form-title {
+    @apply text-[15px] xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold;
+}
+
+.form-container > div {
+    @apply pt-4 xl:pt-8;
+}
+
+.form-container input {
+    @apply w-full bg-light-grey rounded-[40px] mt-2 xl:mt-3 xl:py-1 px-4 text-azul outline-none text-[15px] h-9;
+}
+
+.form-container button {
+    @apply w-full  xl:w-auto mt-5 text-laranja uppercase border-2 border-laranja font-bold rounded-[40px] py-1 px-8 text-[16px] xl:text-[20px] duration-300 transition-all  cursor-pointer;
+}
+
+.expertise-container {
+    @apply xl:max-h-[561px] flex flex-col xl:flex-row justify-between xl:gap-24 items-center mt-15 xl:mt-[190px];
+}
 .gradient-black-blue {
     background: #000;
     background: -webkit-linear-gradient(

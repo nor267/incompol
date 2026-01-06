@@ -13,8 +13,8 @@ export default function Area({ image, text, clicked, onClick }) {
 
     let classes = "xl:h-[20px] duration-300 transition-all w-full";
     let titleClasses =
-        "font-eurostile font-bold xl:text-[24px] xl:leading-[54px] tracking-[0.05em] uppercase duration-300 transition-all text-center w-full";
-    let imageClasses = "xl:w-[520px] xl:h-[520px] ";
+        "font-eurostile font-bold text-[16px] xl:text-[24px] xl:leading-[54px] tracking-[0.05em] uppercase duration-300 transition-all text-center w-full";
+    let imageClasses = "h-[200px] w-full xl:w-[520px] xl:h-[520px]";
 
     if (clicked) {
         imageClasses += " hidden";
@@ -28,7 +28,6 @@ export default function Area({ image, text, clicked, onClick }) {
         titleClasses += " text-azul";
     }
 
-    console.log(classes);
     return (
         <div className="relative w-full" onClick={onClick}>
             <button

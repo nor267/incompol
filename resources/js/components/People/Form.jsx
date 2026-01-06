@@ -13,55 +13,45 @@ export default function Form() {
     };
 
     return (
-        <div className="flex items-center xl:gap-40">
-            <div className="xl:mt-38  relative">
+        <div className="flex flex-col xl:flex-col items-center xl:gap-40">
+            <div className="xl:mt-38  relative flex-col-reverse flex mt-10 justify-center items-center w-full">
                 <img
                     src={image}
-                    className="xl:w-[972px] xl:h-[982px] object-cover"
+                    className="h-[240px] w-full xl:w-[972px] xl:h-[982px] object-cover"
                 ></img>
-                <div className="absolute left-[117px] bottom-[120px] z-20">
-                    <h1 className="uppercase text-white font-eurostile xl:text-[29px] xl:leading-[35px] font-medium">
-                        Excellence<br></br> starts with<br></br> people.
+                <div className="xl:absolute left-[117px] bottom-[120px] z-20 pb-2">
+                    <h1 className="uppercase  text-azul xl:text-white font-eurostile xl:text-[29px] xl:leading-[35px] font-medium text-center">
+                        Excellence<br className="hidden xl:block"></br> starts
+                        with
+                        <br></br> people.
                     </h1>
                 </div>
             </div>
-            <div className="w-1/2 xl:pr-[165px]">
-                <form className="w-full">
+            <div className="w-full xl:w-1/2 xl:pr-[165px] pt-5 px-8">
+                <form className="w-full form-container ">
                     <div>
-                        <label
-                            id="name"
-                            className="xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold text-azul"
-                        >
+                        <label id="name" className="form-title text-azul">
                             Full name
                         </label>
-                        <input className="w-full bg-light-grey rounded-[40px] xl:mt-3 xl:py-1 xl:px-4 text-azul outline-azul text-[15px] h-9"></input>
+                        <input name="name" type="text"></input>
                     </div>
-                    <div className="xl:pt-8">
-                        <label
-                            id="email"
-                            className="xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold text-azul"
-                        >
+                    <div>
+                        <label id="email" className="form-title text-azul">
                             Email
                         </label>
-                        <input className="w-full bg-light-grey rounded-[40px] xl:mt-3 xl:py-1 xl:px-4 text-azul outline-azul text-[15px] h-9"></input>
+                        <input name="email" type="email"></input>
                     </div>
-                    <div className="xl:pt-8">
-                        <label
-                            id="phone"
-                            className="xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold text-azul"
-                        >
+                    <div>
+                        <label id="phone" className="form-title text-azul">
                             Phone
                         </label>
-                        <input className="w-full bg-light-grey rounded-[40px] xl:mt-3 xl:py-1 xl:px-4 text-azul outline-azul text-[15px] h-9"></input>
+                        <input name="phone" type="text"></input>
                     </div>
-                    <div className="xl:pt-8 flex flex-col">
-                        <label
-                            id="cv"
-                            className="xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold text-azul"
-                        >
+                    <div className=" flex flex-col">
+                        <label id="cv" className="form-title text-azul">
                             Curriculum Vitae
                         </label>
-                        <div className="w-full flex xl:mt-3 bg-light-grey items-center h-9">
+                        <div className="w-full flex mt-1 xl:mt-3 bg-light-grey items-center h-9">
                             <label className="custom-file bg-light-grey">
                                 UPLOAD
                                 <input
@@ -77,19 +67,16 @@ export default function Form() {
                             </span>
                         </div>
                     </div>
-                    <div className="xl:pt-8">
-                        <label
-                            id="message"
-                            className="xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold text-azul"
-                        >
+                    <div>
+                        <label id="message" className="form-title text-azul">
                             Message
                         </label>
                         <textarea
                             rows="6"
-                            className="w-full bg-light-grey rounded-[20px] xl:mt-3 xl:py-3 xl:px-4 text-azul outline-azul text-[15px]"
+                            className="w-full bg-light-grey rounded-[20px] mt-1 xl:mt-3 xl:py-3 xl:px-4 text-azul outline-azul text-[15px]"
                         ></textarea>
                     </div>
-                    <p className="xl:text-[15px] xl:leading-[19px] tracking-[0.03em] text-azul xl:mt-5">
+                    <p className="mt-4 text-[14px] leading-[18px] xl:text-[15px] xl:leading-[19px] tracking-[0.03em] text-azul xl:mt-5">
                         I accept the{" "}
                         <strong>
                             <a className="underline hover:text-laranja cursor-pointer">
@@ -98,7 +85,7 @@ export default function Form() {
                         </strong>{" "}
                         and consent to the processing of my personal data.
                     </p>
-                    <button className="mt-5 text-laranja uppercase border-2 border-laranja font-bold rounded-[40px] py-1 px-8 xl:text-[20px] hover:text-azul duration-300 transition-all hover:border-azul cursor-pointer">
+                    <button className="hover:text-azul hover:border-azul">
                         send
                     </button>
                 </form>

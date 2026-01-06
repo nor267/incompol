@@ -1,4 +1,3 @@
-import triangleWhite from "../../../images/icons/triangle-white.svg";
 import shapeFuture from "../../../images/fake/aboutus/shapefuture.jpg";
 import ShapeFuture from "../Layout/ShapeFuture";
 

@@ -28,15 +28,9 @@ import SecondTitle from "../../Layout/SecondTitle";
 import Partner from "./Partner";
 
 export default function Partners() {
-    return (
-        <div className="bg-light-grey xl:pb-52">
-            <SecondTitle
-                slogan="Chosen by Industry Leaders Worldwide"
-                title="Partners Who<br> Trust Our Work"
-                className="text-azul xl:pt-36"
-            />
-
-            <div className="margin-website flex xl:mt-26 justify-center xl:gap-14">
+    const partnersDestkop = (
+        <>
+            <div className="margin-website flex mt-8 xl:mt-26 justify-center xl:gap-14">
                 <Partner image={client1} />
                 <Partner image={client2} />
                 <Partner image={client3} />
@@ -70,6 +64,62 @@ export default function Partners() {
                 <Partner image={client23} />
                 <Partner image={client24} />
             </div>
+        </>
+    );
+
+    const partnersMobile = (
+        <>
+            <div className="margin-website mt-8 xl:mt-26 partner-mobile">
+                <Partner image={client1} />
+                <Partner image={client2} />
+                <Partner image={client3} />
+            </div>
+            <div className="margin-website partner-mobile">
+                <Partner image={client4} />
+                <Partner image={client6} />
+                <Partner image={client7} />
+            </div>
+            <div className="margin-website partner-mobile">
+                <Partner image={client8} />
+                <Partner image={client9} />
+                <Partner image={client10} />
+            </div>
+            <div className="margin-website partner-mobile">
+                <Partner image={client11} />
+                <Partner image={client12} />
+                <Partner image={client13} />
+            </div>
+            <div className="margin-website partner-mobile">
+                <Partner image={client14} />
+                <Partner image={client15} />
+            </div>
+            <div className="margin-website partner-mobile">
+                <Partner image={client16} />
+                <Partner image={client17} />
+                <Partner image={client18} />
+            </div>
+            <div className="margin-website partner-mobile">
+                <Partner image={client19} />
+                <Partner image={client20} />
+                <Partner image={client21} />
+            </div>
+            <div className="margin-website partner-mobile">
+                <Partner image={client22} />
+                <Partner image={client23} />
+                <Partner image={client24} />
+            </div>
+        </>
+    );
+
+    return (
+        <div className="bg-light-grey pb-15 xl:pb-52">
+            <SecondTitle
+                slogan="Chosen by Industry Leaders Worldwide"
+                title="Partners Who<br> Trust Our Work"
+                className="text-azul pt-10 xl:pt-36"
+            />
+            <div className="hidden xl:block"> {partnersDestkop}</div>
+            <div className="block xl:hidden"> {partnersMobile}</div>
         </div>
     );
 }

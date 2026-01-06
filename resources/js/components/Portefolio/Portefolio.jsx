@@ -19,6 +19,25 @@ import Component from "./Component";
 export default function Portefolio() {
     const [click, setClick] = new useState(false);
 
+    const components = (
+        <div className="mt-0 xl:mt-[50px]">
+            <div className="area-componets">
+                <Component image={component} />
+                <Component image={component} />
+                <Component image={component} />
+            </div>
+            <div className="area-componets xl:mt-14">
+                <Component image={component} />
+                <Component image={component} />
+                <Component image={component} />
+            </div>
+            <div className="area-componets xl:mt-14">
+                <Component image={component} />
+                <Component image={component} />
+            </div>
+        </div>
+    );
+
     function handleClick() {
         setClick((prev) => !prev);
     }
@@ -36,15 +55,16 @@ With decades of experience and certified expertise, we supply tailored solutions
                 <SecondTitle
                     title="our Products"
                     slogan="Delivering quality on every scale."
-                    className="xl:pt-20 text-azul"
+                    className="pt-15 xl:pt-20 text-azul"
                 />
-                <div className="flex justify-between xl:mt-32 margin-website xl:gap-9">
+                <div className="flex flex-col xl:flex-row justify-between mt-5 xl:mt-32 margin-website gap-5 xl:gap-9">
                     <Area
                         image={area1}
                         text="automotive"
                         onClick={handleClick}
                         clicked={click}
                     />
+                    {click && <div className=" xl:hidden"> {components}</div>}
                     <Area
                         image={area2}
                         text="HOME & APPLIANCE"
@@ -58,28 +78,9 @@ With decades of experience and certified expertise, we supply tailored solutions
                         clicked={click}
                     />
                 </div>
-                {click && (
-                    <div>
-                        <div className="xl:mt-[50px]">
-                            <div className="area-componets">
-                                <Component image={component} />
-                                <Component image={component} />
-                                <Component image={component} />
-                            </div>
-                            <div className="area-componets xl:mt-14">
-                                <Component image={component} />
-                                <Component image={component} />
-                                <Component image={component} />
-                            </div>
-                            <div className="area-componets xl:mt-14">
-                                <Component image={component} />
-                                <Component image={component} />
-                            </div>
-                        </div>
-                    </div>
-                )}
+                {click && <div className="hidden xl:block"> {components}</div>}
             </div>
-            <div className="xl:mb-52">
+            <div className="mb-10 xl:mb-52">
                 <Title
                     title="Clients"
                     slogan="trusted by<br> experience"

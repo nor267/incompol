@@ -1,9 +1,9 @@
 export default function Partner({ image }) {
     return (
-        <div className="bg-white xl:w-[250px] xl:h-[90px] rounded-[200px] flex items-center justify-center shadow-partner">
+        <div className="bg-white w-[150px] h-[40px] xl:w-[250px] xl:h-[90px] rounded-[40px] xl:rounded-[200px] flex items-center justify-center shadow-partner overflow-hidden">
             <img
                 src={image}
-                className="  xl:max-h-[53px] xl:max-w-[180px]"
+                className="w-full max-w-[90px] max-h-[28px] xl:max-h-[53px] xl:max-w-[180px]"
             ></img>
         </div>
     );

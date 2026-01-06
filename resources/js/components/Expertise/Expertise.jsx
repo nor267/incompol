@@ -21,10 +21,10 @@ export default function Expertise() {
                 text="For over 30 years, INCOMPOL has combined technical know-how, innovation, and precision manufacturing to meet the demands of leading companies in the automotive, aerospace, and electrical sectors.<br><br>
 Our industrial capacity and engineering expertise make us a trusted partner worldwide."
             />
-            <div className="xl:mt-46">
+            <div className="mt-15 xl:mt-40">
                 <img
                     src={banner}
-                    className="w-full object-cover xlmax-h-[600px]"
+                    className="w-full object-cover h-[200px] xl:h-[600px]"
                 ></img>
             </div>
             <Technologies />
@@ -32,7 +32,7 @@ Our industrial capacity and engineering expertise make us a trusted partner worl
             <Certification />
             <Laboratory />
             <Crafting />
-            <Footer />
+            <Footer work={true} />
         </>
     );
 }

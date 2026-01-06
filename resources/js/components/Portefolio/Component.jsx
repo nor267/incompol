@@ -12,22 +12,22 @@ export default function Component({ image }) {
     }
     return (
         <>
-            <button onClick={handleInfo} className="cursor-pointer">
+            <div onClick={handleInfo} className="cursor-pointer">
                 <div className="bg-light-grey xl:w-[520px] xl:h-[421px] flex justify-center items-center">
                     <img
                         src={image}
                         className="object-cover w-full xl:max-h-[421px]"
                     ></img>
                 </div>
-                <div className="flex justify-between xl:mt-[38px]">
-                    <h1 className="font-eurostile font-black xl:text-[22px] xl:leading-[24px] tracking-[0.14em] uppercase text-azul text-left">
+                <div className="flex justify-between xl:mt-[38px] items-center xl:items-start">
+                    <h1 className="font-eurostile font-black text-[14px] leading-[18px] mt-4 xl:mt-0 xl:text-[22px] xl:leading-[24px] tracking-[0.14em] uppercase text-azul text-left">
                         Steering<br></br>Wheels
                     </h1>
-                    <button className="text-laranja uppercase border-laranja border-3 rounded-[40px] font-bold xl:px-4 xl:h-[33px]">
+                    <button className="button-laranja h-7 xl:h-[33px]">
                         saber mais
                     </button>
                 </div>
-            </button>
+            </div>
             {info && (
                 <ComponentInfo
                     image={image}

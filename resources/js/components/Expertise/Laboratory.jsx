@@ -12,13 +12,13 @@ export default function Laboratory() {
                 <SecondTitle
                     slogan="Precision assured at every step"
                     title="LABORATORY"
-                    className="text-white xl:pt-20"
+                    className="text-white pt-15 xl:pt-20"
                 />
-                <div className="flex margin-website xl:pt-36 xl:pb-22 xl:gap-68 justify-center items-center">
+                <div className="flex flex-col-reverse xl:flex-row pt-5 xl:pt-36 pb-0 xl:pb-40 xl:gap-68 justify-center items-center">
                     <div className="relative">
                         <img
                             src={laboratory1}
-                            className="xl:w-[570px] xl:h-[375px] object-cover"
+                            className="w-full xl:w-[570px] xl:h-[375px] object-cover pt-10 xl:pt-0"
                         ></img>
                         <div className="bg-laranja xl:w-[287px] xl:h-[287px] rounded-full absolute -right-36 -bottom-20 ">
                             <div className="flex justify-center items-center w-full h-full">
@@ -32,7 +32,7 @@ export default function Laboratory() {
                             </div>
                         </div>
                     </div>
-                    <div className="text-base text-white xl:max-w-[465px]">
+                    <div className="text-base text-white xl:max-w-[465px] px-8 xl:px-0">
                         <p>
                             Our fully equipped
                             <strong>quality laboratory</strong> ensures that

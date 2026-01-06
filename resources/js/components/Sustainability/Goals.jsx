@@ -10,13 +10,13 @@ import Recognition from "./Recognition";
 
 export default function Goals() {
     return (
-        <div>
+        <div className="pt-10 xl:pt-0">
             <SecondTitle
                 title="what we have<br> achieved"
                 slogan="Goals achieved"
                 className=" text-azul"
             />
-            <div className="flex justify-center items-center xl:mt-20 xl:gap-14">
+            <div className="flex flex-col xl:flex-row justify-center items-center mt-10 xl:mt-20 xl:gap-14">
                 <GoalIcon
                     icon={icon1}
                     title="New photovoltaic solar plant installed"

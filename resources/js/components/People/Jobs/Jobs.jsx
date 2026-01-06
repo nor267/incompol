@@ -19,8 +19,8 @@ import Job from "./job";
 export default function Jobs() {
     const [activeIndex, setActiveIndex] = useState(0);
     return (
-        <div className="bg-light-grey xl:pl-[137px] xl:pb-26 relative">
-            <section className="text-azul xl:pt-18 ">
+        <div className="bg-light-grey xl:pl-[137px] pb-15 xl:pb-26 relative">
+            <section className="text-azul px-8 xl:px-0 pt-10 xl:pt-18 ">
                 <p className="uppercase xl:text-[17px] xl:leading-[22px] tracking-[0.03em]">
                     Career Opportunities
                 </p>
@@ -28,7 +28,7 @@ export default function Jobs() {
                     We’re Hiring
                 </h1>
             </section>
-            <div className="flex justify-end xl:gap-4 xl:pr-[137px]">
+            <div className="flex justify-end gap-2 xl:gap-4 pr-8 xl:pr-[137px]">
                 <button className="swiper-button-prev-custom cursor-pointer">
                     <svg
                         width="18"
