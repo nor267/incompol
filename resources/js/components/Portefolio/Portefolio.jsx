@@ -55,7 +55,7 @@ With decades of experience and certified expertise, we supply tailored solutions
                 <SecondTitle
                     title="our Products"
                     slogan="Delivering quality on every scale."
-                    className="pt-15 xl:pt-20 text-azul"
+                    className="pt-15 xl:pt-20 4xl:pt-30 text-azul"
                 />
                 <div className="flex flex-col xl:flex-row justify-between mt-5 xl:mt-32 margin-website gap-5 xl:gap-9">
                     <Area

@@ -29,9 +29,10 @@ Our industrial capacity and engineering expertise make us a trusted partner worl
             </div>
             <Technologies />
             <Production />
+            <Crafting />
             <Certification />
             <Laboratory />
-            <Crafting />
+
             <Footer work={true} />
         </>
     );

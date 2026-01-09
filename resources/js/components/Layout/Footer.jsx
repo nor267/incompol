@@ -17,10 +17,12 @@ export default function Footer({ work }) {
             <div className="bg-azul w-full h-full margin-website text-white pb-5 xl:pb-0">
                 <div className={classes}>
                     <div>
-                        <img src={logo}></img>
+                        <img src={logo} className="h-5 xl:h-auto"></img>
                         <h1 className="uppercase font-eurostile xl:text-[28px] xl:leading-[28px] pt-5 xl:pt-25">
-                            we<br></br>create<br></br>solutions.
+                            we<br className="hidden xl:block"></br> create
+                            <br className="hidden xl:block"></br> solutions
                         </h1>
+
                         <div className="items-center xl:max-w-[313px] justify-between xl:pt-18 hidden xl:flex">
                             <p className="xl:text-[13px] xl:leading-[22px] font-light">
                                 2025 © INCOMPOL
@@ -35,7 +37,7 @@ export default function Footer({ work }) {
                         </div>
                     </div>
                     <div className="flex gap-5 xl:gap-56 pt-5 xl:pt-0">
-                        <div className="text-[14px] leading-[22px] xl:text-[15px] xl:leading-[25px] tracking-[0.03em] font-light flex-col flex">
+                        <div className="text-[14px] leading-[24px] xl:text-[15px] xl:leading-[25px] tracking-[0.03em] font-light flex-col flex">
                             <a
                                 href="/about-us"
                                 className="hover:text-laranja duration-300 transition-all"
@@ -73,7 +75,7 @@ export default function Footer({ work }) {
                                 Contacts
                             </a>
                         </div>
-                        <div className="text-[14px] leading-[22px] xl:text-[15px] xl:leading-[25px] tracking-[0.03em] font-light flex flex-col">
+                        <div className="text-[14px] leading-[24px] xl:text-[15px] xl:leading-[25px] tracking-[0.03em] font-light flex flex-col">
                             <a
                                 href="/terms"
                                 className="hover:text-laranja duration-300 transition-all"
@@ -123,7 +125,7 @@ export default function Footer({ work }) {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-center items-center flex-col xl:gap-4 gap-4 pt-5 xl:hidden">
+                <div className="flex justify-center items-center flex-col xl:gap-4 gap-4 pt-15 xl:hidden">
                     <button className="text-laranja border-3 border-laranja uppercase xl:px-4 rounded-[40px] xl:py-1 px-4 cursor-pointer font-bold">
                         join our team
                     </button>

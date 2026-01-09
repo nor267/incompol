@@ -8,7 +8,7 @@ export default function Form() {
                 title="Contact us"
                 className="pt-15 xl:pt-20 text-white"
             />
-            <div className="xl:px-[377px] flex flex-col-reverse w-full xl:flex-row justify-between xl:pt-36 px-8">
+            <div className="xl:px-[377px] flex flex-col-reverse w-full xl:flex-row justify-between xl:pt-36 px-8 4xl:px-[600px]">
                 <div className="flex items-start justify-between xl:justify-start xl:flex-col pt-15 xl:pt-0 pb-15">
                     <div className="">
                         <h1 className="text-[18px] xl:text-[28px] xl:leading-[32px uppercase text-white font-medium">

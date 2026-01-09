@@ -15,7 +15,7 @@ export default function Crafting() {
                 title="Tooling Design, Manufacturing <br>& Maintenance"
                 className="pt-15 xl:pt-20 text-azul"
             />
-            <div className="flex flex-col-reverse xl:flex-row-reverse margin-website xl:pt-36 pb-70 xl:pb-22 xl:gap-68 justify-center items-center xl:pb-[920px] relative">
+            <div className="flex flex-col-reverse xl:flex-row-reverse margin-website xl:pt-36 pb-20 xl:pb-30 xl:gap-68 justify-center items-center relative">
                 <div className="relative pt-5 xl:pt-0">
                     <img
                         src={crafting1}
@@ -48,7 +48,7 @@ export default function Crafting() {
                         the most demanding industry standards.
                     </p>
                 </div>
-                <ShapeFuture shapeFuture={shapeFuture} />
+                {/* <ShapeFuture shapeFuture={shapeFuture} /> */}
             </div>
         </>
     );

@@ -14,7 +14,8 @@ export default function Area({ image, text, clicked, onClick }) {
     let classes = "xl:h-[20px] duration-300 transition-all w-full";
     let titleClasses =
         "font-eurostile font-bold text-[16px] xl:text-[24px] xl:leading-[54px] tracking-[0.05em] uppercase duration-300 transition-all text-center w-full";
-    let imageClasses = "h-[200px] w-full xl:w-[520px] xl:h-[520px]";
+    let imageClasses =
+        "h-[200px] w-full xl:w-[520px] xl:h-[520px] 4xl:w-[670px] 4xl:h-[670px]";
 
     if (clicked) {
         imageClasses += " hidden";

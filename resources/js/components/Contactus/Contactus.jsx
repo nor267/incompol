@@ -16,7 +16,7 @@ export default function Contactus() {
         <>
             <NavbarPages />
             <Title
-                title="contacts"
+                title="contacts-us"
                 text="We’re always ready to connect. <br><br>
                     Whether you have a question about our products, need technical support, or want to explore a partnership opportunity, our team is here to help. Get in touch with us and we’ll respond as soon as possible."
                 slogan=""
@@ -31,7 +31,7 @@ export default function Contactus() {
                     className="h-5 xl:h-auto absolute top-0 left-1/2 -translate-x-1/2"
                 ></img>
             </div>
-            <div className="py-15 xl:py-38">
+            <div className="py-15 xl:py-38 4xl:px-[200px]">
                 <div className=" margin-website flex justify-between flex-col xl:flex-row">
                     <div className="">
                         <h1 className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold">

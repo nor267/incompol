@@ -25,7 +25,7 @@ Our commitment goes beyond manufacturing. We invest in technology, people, and s
             <div className="flex justify-center  items-center w-full mt-15 xl:mt-36 relative">
                 <img
                     src={empresa}
-                    className="object-cover w-full xl:max-w-[1259px] h-[200px] xl:h-[637px]"
+                    className="object-cover w-full xl:max-w-[1259px] h-[200px] xl:h-[637px] 4xl:max-w-[1700px] 4xl:h-[800px]"
                 ></img>
                 <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full hidden xl:block xl:absolute right-69 -bottom-20">
                     <div className="flex justify-center items-center w-full h-full">

@@ -3,7 +3,7 @@ import closeComponent from "../../../images/icons/close-component.svg";
 
 export default function ComponentInfo({ image, title, onClick }) {
     return (
-        <div className="h-screen bg-azul flex justify-center items-center absolute z-80 w-screen left-0 flex flex-col xl:px-[244px]">
+        <div className="h-screen bg-azul flex justify-center items-center fixed top-0 z-80 w-screen left-0 flex flex-col xl:px-[244px]">
             <img
                 src={closeComponent}
                 className="absolute top-10 right-10 w-5 xl:w-auto xl:top-15 xl:right-40 cursor-pointer"

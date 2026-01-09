@@ -7,10 +7,10 @@ import line from "../../../../images/icons/aboutus/line.svg";
 export default function HistoryDesktop() {
     return (
         <>
-            <div className="xl:px-[385px] relative flex justify-between">
+            <div className="xl:px-[385px] 4xl:px-[620px] relative flex justify-between">
                 <img
                     src={line}
-                    className="hidden xl:block xl:absolute xl:top-39 left-1/2 -translate-x-1/2 z-0"
+                    className="hidden xl:block xl:absolute xl:top-39 left-1/2 -translate-x-1/2 z-0 4xl:w-[2000px] 4xl:h-[390px] "
                 ></img>
                 <div className="history-line">
                     <img src={arrow} className="z-20 hidden xl:block"></img>
@@ -41,7 +41,7 @@ export default function HistoryDesktop() {
                     />
                 </div>
             </div>
-            <div className="xl:px-[550px] relative flex justify-between absolute -top-5">
+            <div className="xl:px-[550px] 4xl:px-[800px]  relative flex justify-between absolute -top-5">
                 <div className="flex items-center xl:max-h-[176px] z-20">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
@@ -64,7 +64,7 @@ export default function HistoryDesktop() {
                     />
                 </div>
             </div>
-            <div className="xl:px-[385px] relative flex justify-between absolute -bottom-4.5">
+            <div className="xl:px-[385px] 4xl:px-[620px] relative flex justify-between absolute -bottom-4.5">
                 <div className="flex items-center xl:max-h-[176px] z-20">
                     <img src={arrow} className="z-20"></img>
                     <HistoryIcon title="2025" slogan="New branding" />
@@ -91,7 +91,7 @@ export default function HistoryDesktop() {
                     />
                 </div>
             </div>
-            <div className="xl:px-[550px] relative flex justify-between absolute -top-1">
+            <div className="xl:px-[550px] 4xl:px-[800px] relative flex justify-between absolute -top-1">
                 <div className="flex items-center xl:max-h-[176px] z-20">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon

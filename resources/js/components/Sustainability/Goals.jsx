@@ -26,6 +26,7 @@ export default function Goals() {
                 />
                 <GoalIcon
                     icon={icon2}
+                    grey={true}
                     title="100% green electricity since November 2025"
                     className="bg-light-grey w-full h-full text-azul"
                     text="<strong>462 solar</strong> photovoltaic modules<br>
@@ -33,6 +34,7 @@ export default function Goals() {
                 />
                 <GoalIcon
                     icon={icon3}
+                    grey={true}
                     title="Shop floor: <br>new LED light bulbs installed"
                     className="bg-azul w-full h-full text-white"
                     text="63% reduction on electricity<br>consumption for shop floor lighting"

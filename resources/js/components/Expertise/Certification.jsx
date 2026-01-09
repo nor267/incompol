@@ -8,15 +8,18 @@ import certification3 from "../../../images/fake/aboutus/certification3.png";
 //components
 import SecondTitle from "../Layout/SecondTitle";
 
+//icons
+import doubleArrow from "../../../images/icons/expertise/double-arrow.svg";
+
 export default function Certification() {
     return (
-        <>
+        <div className="bg-azul">
             <SecondTitle
-                className="pt-15 xl:pt-20 text-azul"
+                className="pt-15 xl:pt-20 text-white"
                 slogan="Certified processes you can rely on"
                 title="Quality & Certifications"
             />
-            <div className="flex flex-col-reverse xl:flex-row  pt-8 xl:pt-36 xl:pb-22 xl:gap-68 justify-center items-center">
+            <div className=" flex flex-col-reverse xl:flex-row  pt-8 xl:pt-36 xl:pb-30 xl:gap-68 justify-center items-center">
                 <div className="relative">
                     <img
                         src={quality1}
@@ -34,8 +37,8 @@ export default function Certification() {
                         </div>
                     </div>
                 </div>
-                <div className="text-base text-azul xl:max-w-[465px] px-8 xl:px-0">
-                    <p>
+                <div className="text-base text-white xl:max-w-[465px] px-8 xl:px-0">
+                    <div>
                         At <strong>INCOMPOL</strong>, quality is built into
                         every stage of production. Our Quality Management System
                         has been continuously certified since 1997, evolving to
@@ -44,16 +47,23 @@ export default function Certification() {
                         <br></br>
                         <br></br>
                         We are currently certified under:<br></br>
-                        <br></br> IATF 16949 – International automotive quality
-                        management standard<br></br>
+                        <br></br>
+                        <div className="flex gap-3 xl:gap-5 items-start">
+                            <img src={doubleArrow} className="pt-1"></img>
+                            <p>
+                                <strong>IATF 16949</strong> – International
+                                automotive quality management standard
+                            </p>
+                        </div>
                         <br></br> In addition, <strong>INCOMPOL</strong> has
-                        been awarded the <strong>EcoVadis Bronze Medal,</strong>
+                        been awarded the{" "}
+                        <strong>EcoVadis Bronze Medal, </strong>
                         reflecting our commitment to responsible business
                         practices and corporate social responsibility.<br></br>
                         <br></br> This structured approach ensures precision,
                         reliability, and consistent performance for our
                         customers.
-                    </p>
+                    </div>
                     <div className="flex flex-col xl:flex-row xl:gap-4 items-center pt-5 xl:pt-8 pb-5 xl:pb-0">
                         <img
                             src={certification1}
@@ -70,6 +80,6 @@ export default function Certification() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

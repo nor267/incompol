@@ -1,12 +1,17 @@
+import { motion } from "framer-motion";
+
+//icons
+import triangleWhite from "../../../images/icons/triangle-white.svg";
+
+//fake images
 import sector1 from "../../../images/fake/home/sector1.jpg";
 import sector2 from "../../../images/fake/home/sector2.jpg";
 import sector3 from "../../../images/fake/home/sector3.jpg";
-import triangleWhite from "../../../images/icons/triangle-white.svg";
 
 export default function Sectors() {
     return (
         <div>
-            <div className="text-azul text-center pt-7 xl:pt-[204px]">
+            <div className="text-azul text-center pt-20 xl:pt-[204px]">
                 <p className="uppercase xl:text-[17px] xl:leading-[22px] tracking-[0.03em]">
                     product lines
                 </p>
@@ -14,83 +19,135 @@ export default function Sectors() {
                     main sectors
                 </h1>
             </div>
-            <div className="xl:max-h-[561px] flex flex-col xl:flex-row xl:gap-24 items-center mt-5 xl:mt-[190px]">
-                <div className="xl:w-[1228px]  relative h-full">
-                    <img src={sector1}></img>
-                    <img
-                        src={triangleWhite}
-                        className=" hidden xl:absolute right-0 top-1/2 -translate-y-1/2 rotate-90 xl:w-[58px] xl:h-[50px]"
-                    ></img>
-                </div>
-                <div className="flex items-center gap-5 pt-5 xl:pt-0 xl:gap-26">
-                    <h1 className="uppercase text-azul font-eurostile text-[20px] leading-[22px] xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center">
-                        automotive
-                    </h1>
-                    <div className="flex flex-col">
-                        <h4 className="text-[16px] leading-[18px] xl:text-[20px] font-semibold xl:leading-[24px] tracking-[0.03em] uppercase text-azul">
-                            Single parts and <br></br>sub-assemblies for:
-                        </h4>
-                        <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-[37px]">
-                            Body & trim<br></br>
-                            Exhaust systems<br></br>
-                            Seats Steering wheels<br></br>
-                            Engine & damper mount systemsa <br></br>
-                            Glasses – support and decorative parts<br></br>
-                            Airbag systems<br></br> Infotainment
-                        </p>
+            <div className="xl:max-h-[561px] flex flex-col xl:flex-row xl:gap-24 4xl:gap-80 items-center mt-8 xl:mt-[190px]">
+                <motion.div
+                    initial={{ x: -250, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                >
+                    <div className="xl:w-[1228px]  relative h-full">
+                        <img
+                            src={sector1}
+                            className="h-[200px] object-cover w-full xl:h-[570px]"
+                        ></img>
+                        <img
+                            src={triangleWhite}
+                            className="absolute right-1/2 translate-x-1/2 xl:translate-x-0 xl:-right-2 -top-1 xl:top-1/2 xl:-translate-y-1/2 xl:rotate-90 h-8 xl:w-[58px] xl:h-[50px]"
+                        ></img>
                     </div>
-                </div>
+                </motion.div>
+                <motion.div
+                    initial={{ x: 0, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                >
+                    <div className="flex items-center gap-5 pt-5 xl:pt-0 xl:gap-26">
+                        <h1 className="uppercase text-azul font-eurostile text-[20px] leading-[22px] xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center">
+                            automotive
+                        </h1>
+                        <div className="flex flex-col">
+                            <h4 className="text-[16px] leading-[18px] xl:text-[20px] font-semibold xl:leading-[24px] tracking-[0.03em] uppercase text-azul">
+                                Single parts and <br></br>sub-assemblies for:
+                            </h4>
+                            <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-[37px]">
+                                Body & trim<br></br>
+                                Exhaust systems<br></br>
+                                Seats Steering wheels<br></br>
+                                Engine & damper mount systemsa <br></br>
+                                Glasses – support and decorative parts<br></br>
+                                Airbag systems<br></br> Infotainment
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
-            <div className="xl:max-h-[561px] flex flex-col-reverse xl:flex-row xl:gap-24 items-start xl:items-center mt-10 xl:mt-[190px] justify-end">
-                <div className="flex flex-row-reverse xl:flex-row items-center gap-5 xl:gap-26">
-                    <div className="flex flex-col ">
-                        <h4 className="text-[20px] font-semibold leading-[24px] tracking-[0.03em] uppercase text-azul"></h4>
-                        <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-0 text-right">
-                            Heating Plates<br></br> Clamps<br></br> Rings
-                            <br></br> Gas manifolds<br></br>
-                            Exhaust Ducts<br></br> Boxes<br></br> Brackets
-                            <br></br> Assemblies<br></br> Aluminium Frames
-                            <br></br> Structural parts
-                        </p>
+            <div className="xl:max-h-[561px] flex flex-col-reverse xl:flex-row xl:gap-24 4xl:gap-80 items-start xl:items-center mt-10 xl:mt-[80px] justify-end">
+                <motion.div
+                    initial={{ x: 0, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                >
+                    <div className="flex flex-row-reverse xl:flex-row items-center gap-5 xl:gap-26">
+                        <div className="flex flex-col ">
+                            <h4 className="text-[20px] font-semibold leading-[24px] tracking-[0.03em] uppercase text-azul"></h4>
+                            <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-0 xl:text-right">
+                                Heating Plates<br></br> Clamps<br></br> Rings
+                                <br></br> Gas manifolds<br></br>
+                                Exhaust Ducts<br></br> Boxes<br></br> Brackets
+                                <br></br> Assemblies<br></br> Aluminium Frames
+                                <br></br> Structural parts
+                            </p>
+                        </div>
+                        <h1 className=" pr-10 xl:pr-0 uppercase text-azul font-eurostile text-[20px] leading-[22px]  xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center">
+                            HOME<br></br> APPLIANCE
+                        </h1>
                     </div>
-                    <h1 className=" pr-10 xl:pr-0 uppercase text-azul font-eurostile text-[20px] leading-[22px]  xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center">
-                        HOME<br></br> APPLIANCE
-                    </h1>
-                </div>
-                <div className="xl:w-[1228px]  relative h-full">
-                    <img src={sector2} className="w-full object-cover"></img>
-                    <img
-                        src={triangleWhite}
-                        className="xl:absolute -left-2 top-1/2 -translate-y-1/2 -rotate-90 xl:w-[58px] xl:h-[50px] hidden"
-                    ></img>
-                </div>
+                </motion.div>
+                <motion.div
+                    initial={{ x: 250, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                >
+                    <div className="xl:w-[1228px]  relative h-full">
+                        <img
+                            src={sector2}
+                            className="h-[200px] object-cover w-full xl:h-[570px]"
+                        ></img>
+                        <img
+                            src={triangleWhite}
+                            className="absolute -translate-x-1/2 left-1/2 xl:translate-x-0 xl:-left-2 -top-1 xl:top-1/2 xl:-translate-y-1/2 xl:-rotate-90 xl:w-[58px] xl:h-[50px] h-8"
+                        ></img>
+                    </div>
+                </motion.div>
             </div>
-            <div className="xl:max-h-[561px] flex flex-col xl:flex-row xl:gap-24 items-center mt-5 xl:mt-[190px] xl:mb-[190px]">
-                <div className="xl:w-[1228px]  relative h-full">
-                    <img src={sector3}></img>
-                    <img
-                        src={triangleWhite}
-                        className="hidden xl:absolute right-0 top-1/2 -translate-y-1/2 rotate-90 xl:w-[58px] xl:h-[50px]"
-                    ></img>
-                </div>
-                <div className="flex items-center gap-5 pt-5 pb-5 xl:pb-0 xl:pt-0 xl:gap-26">
-                    <h1 className="uppercase text-azul font-eurostile text-[20px] leading-[22px] xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center">
-                        AEROSPACE
-                    </h1>
-                    <div className="flex flex-col">
-                        <h4 className="text-[20px] font-semibold leading-[24px] tracking-[0.03em] uppercase text-azul"></h4>
-                        <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul xl:mt-0">
-                            Machined parts<br></br> Bearing, bushing and nut
-                            assembly<br></br>
-                            Painting & surface treatment<br></br> Assembly of
-                            aircraft
-                            <br></br>
-                            segments (Airbus C295 & Pilatus PC-12)<br></br> Tool
-                            design & manufacturing<br></br> Full assembly lines
-                            <br></br> Assembly jigs<br></br> Test rigs
-                        </p>
+            <div className="xl:max-h-[561px] flex flex-col xl:flex-row xl:gap-24 4xl:gap-80 items-center mt-5 xl:mt-[80px] xl:mb-[190px]">
+                <motion.div
+                    initial={{ x: -250, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                >
+                    <div className="xl:w-[1228px]  relative h-full">
+                        <img
+                            src={sector3}
+                            className="h-[200px] object-cover w-full xl:h-[570px]"
+                        ></img>
+                        <img
+                            src={triangleWhite}
+                            className="absolute right-1/2 translate-x-1/2 xl:translate-x-0 xl:-right-2 -top-1 xl:top-1/2 xl:-translate-y-1/2 xl:rotate-90 h-8 xl:w-[58px] xl:h-[50px]"
+                        ></img>
                     </div>
-                </div>
+                </motion.div>
+                <motion.div
+                    initial={{ x: 0, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                >
+                    <div className="flex items-center gap-5 pt-5 pb-5 xl:pb-0 xl:pt-0 xl:gap-26">
+                        <h1 className="uppercase text-azul font-eurostile text-[20px] leading-[22px] xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center">
+                            AEROSPACE
+                        </h1>
+                        <div className="flex flex-col">
+                            <h4 className="text-[20px] font-semibold leading-[24px] tracking-[0.03em] uppercase text-azul"></h4>
+                            <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul xl:mt-0">
+                                Machined parts<br></br> Bearing, bushing and nut
+                                assembly<br></br>
+                                Painting & surface treatment<br></br> Assembly
+                                of aircraft
+                                <br></br>
+                                segments (Airbus C295 & Pilatus PC-12)<br></br>{" "}
+                                Tool design & manufacturing<br></br> Full
+                                assembly lines
+                                <br></br> Assembly jigs<br></br> Test rigs
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </div>
     );

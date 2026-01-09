@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+
+//icons
 import triangleWhite from "../../../../images/icons/triangle-white.svg";
 
 export default function TechnologyRight({
@@ -29,13 +32,20 @@ export default function TechnologyRight({
                     {title}
                 </h1>
             </div>
-            <div className="xl:w-[1228px]  relative h-full">
-                <img src={image} className="w-full object-cover"></img>
-                <img
-                    src={triangleWhite}
-                    className="absolute left-1/2 xl:-left-2 top-0 translate-y-0 -translate-x-1/2 xl:translate-x-0 xl:top-1/2 xl:-translate-y-1/2 xl:-rotate-90 h-7 xl:w-[58px] xl:h-[50px]"
-                ></img>
-            </div>
+            <motion.div
+                initial={{ x: 250, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+                <div className="xl:w-[1228px]  relative h-full">
+                    <img src={image} className="w-full object-cover"></img>
+                    <img
+                        src={triangleWhite}
+                        className="absolute left-1/2 xl:-left-2 top-0 translate-y-0 -translate-x-1/2 xl:translate-x-0 xl:top-1/2 xl:-translate-y-1/2 xl:-rotate-90 h-7 xl:w-[58px] xl:h-[50px]"
+                    ></img>
+                </div>
+            </motion.div>
         </div>
     );
 }

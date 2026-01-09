@@ -13,11 +13,9 @@ export default function NavbarPages() {
     }
     return (
         <>
-            <Menu
-                handleMenu={handleMenu}
-                className={menu ? "block" : "hidden"}
-            />
-            <div className="flex justify-between w-full margin-website items-center h-[40px]  xl:h-[80px] bg-azul fixed top-0 z-50">
+            <Menu isOpen={menu} handleMenu={handleMenu} />
+
+            <div className="flex justify-between w-full margin-website items-center h-[50px]  xl:h-[80px] bg-azul fixed top-0 z-50">
                 <a href="/" className="cursor-pointer">
                     <img src={logo} className="h-3 xl:h-[33px]"></img>
                 </a>

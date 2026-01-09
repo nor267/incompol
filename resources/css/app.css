@@ -35,6 +35,9 @@
     --font-courier: "Courier Prime";
     --font-eurostile: "Eurostile Extd";
     --default-font-family: "Arimo";
+
+    --breakpoint-3xl: 122rem;
+    --breakpoint-4xl: 137.5rem; /* 2200px */
 }
 
 :root {
@@ -51,7 +54,7 @@ body {
 }
 
 .margin-website {
-    @apply px-8 xl:px-[137px];
+    @apply px-8 lg:px-[100px] xl:px-[137px]  4xl:px-[250px];
 }
 
 .text-base {
@@ -63,7 +66,7 @@ body {
 }
 
 .link-menu {
-    @apply font-eurostile xl:text-[58px] xl:leading-[59px] font-medium text-[18px] leading-[20px] text-white uppercase;
+    @apply font-eurostile lg:text-[40px] lg:leading-[59px] xl:text-[58px] xl:leading-[59px] font-medium text-[18px] leading-[20px] text-white uppercase;
 }
 
 .link-number {
@@ -71,7 +74,7 @@ body {
 }
 
 .button-laranja {
-    @apply text-[12px] xl:text-[17px]  duration-300 transition-all hover:text-white hover:border-white text-laranja border-2 xl:border-3 border-laranja uppercase rounded-[40px] xl:py-1 cursor-pointer font-medium xl:font-bold px-1 xl:px-4;
+    @apply text-[12px] xl:text-[17px]  duration-300 transition-all hover:text-white hover:border-white text-laranja border-2 xl:border-3 border-laranja uppercase rounded-[40px] py-1 xl:py-1 cursor-pointer font-bold px-2 xl:px-4;
 }
 
 .button-laranja-blue {
@@ -79,11 +82,11 @@ body {
 }
 
 .hamburguer-menu {
-    @apply cursor-pointer h-3 xl:h-[18px];
+    @apply cursor-pointer h-3 lg:h-4 xl:h-[18px];
 }
 
 .change-language {
-    @apply text-white font-eurostile font-medium text-[12px] xl:text-[14px] xl:text-[22px] xl:leading-[22px] pt-1 xl:pt-2 cursor-pointer;
+    @apply text-white font-eurostile font-medium text-[12px] lg:text-[14px] xl:text-[14px] xl:text-[22px] xl:leading-[22px] pt-1 xl:pt-2 cursor-pointer;
 }
 
 .company-overview {
@@ -290,25 +293,25 @@ body {
 );
 }
 /*** slider **/
-.swiper {
+.my-swiper {
     width: 100%;
     height: 450px;
     overflow: hidden;
 }
 
-.swiper-slide {
+.my-swiper-slide {
     background: #444;
     height: 450px;
     width: 729px;
 }
 
 @media only screen and (max-width: 600px) {
-    .swiper {
+    .my-swiper {
         width: 100%;
         height: 220px;
         overflow: hidden;
     }
-    .swiper-slide {
+    .my-swiper-slide {
         background: #444;
         height: 220px;
         width: 100px;

@@ -13,8 +13,8 @@ export default function Form() {
     };
 
     return (
-        <div className="flex flex-col xl:flex-col items-center xl:gap-40">
-            <div className="xl:mt-38  relative flex-col-reverse flex mt-10 justify-center items-center w-full">
+        <div className="flex flex-row xl:flex-row items-center xl:gap-40 4xl:gap-53">
+            <div className="xl:mt-38  relative flex-col-reverse flex mt-10 justify-center items-center xl:items-start w-full xl:w-auto">
                 <img
                     src={image}
                     className="h-[240px] w-full xl:w-[972px] xl:h-[982px] object-cover"
@@ -27,7 +27,7 @@ export default function Form() {
                     </h1>
                 </div>
             </div>
-            <div className="w-full xl:w-1/2 xl:pr-[165px] pt-5 px-8">
+            <div className="w-full xl:w-1/2 xl:pr-[165px] pt-5 pr-8 pl-8">
                 <form className="w-full form-container ">
                     <div>
                         <label id="name" className="form-title text-azul">

@@ -13,7 +13,7 @@ export default function Component({ image }) {
     return (
         <>
             <div onClick={handleInfo} className="cursor-pointer">
-                <div className="bg-light-grey xl:w-[520px] xl:h-[421px] flex justify-center items-center">
+                <div className="bg-light-grey xl:w-[520px] xl:h-[421px]  4xl:w-[655px] 4xl:h-[470px] flex justify-center items-center">
                     <img
                         src={image}
                         className="object-cover w-full xl:max-h-[421px]"

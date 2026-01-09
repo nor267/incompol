@@ -1,14 +1,15 @@
 //icons
 import triangleWhite from "../../../images/icons/triangle-white.svg";
+import triangleGrey from "../../../images/icons/triangle-grey.svg";
 
-export default function GoalIcon({ icon, title, text, ...props }) {
+export default function GoalIcon({ icon, title, text, grey, ...props }) {
     return (
         <div>
             <div className="relative h-[280px] xl:h-[430px] xl:w-[464px]">
                 <div {...props}>
                     <img
-                        src={triangleWhite}
-                        className="absolute top-0 left-1/2 -translate-x-1/2 h-5 xl:h-auto"
+                        src={grey ? triangleGrey : triangleWhite}
+                        className="absolute -top-0 left-1/2 -translate-x-1/2 h-8 xl:h-auto"
                     ></img>
 
                     <div className="flex justify-center items-center flex-col h-full px-8">

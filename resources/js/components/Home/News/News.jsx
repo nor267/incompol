@@ -14,13 +14,37 @@ import New from "./New";
 import new1 from "../../../../images/fake/news/news1.png";
 import new2 from "../../../../images/fake/news/news2.png";
 import new3 from "../../../../images/fake/news/news3.png";
+import NewInfo from "./NewInfo";
 
 export default function News() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
+
+    const news = [
+        {
+            image: new1,
+            title: "Título da noticia aqui",
+            date: "17/01/23",
+            content:
+                "Founded in 1987, INCOMPOL emerged to meet the call from major automotive manufacturers seeking innovative partners for components and integrated functions. <br>With decades of experience in metal transformation, we design and produce high-quality components that support some of the world’s leading industries — from automotive to advanced engineering.<br>Our commitment goes beyond manufacturing. We invest in technology, people, and sustainability to ensure efficiency, reliability, and continuous improvement in every project we undertake. <br><strong>Every part we create carries our signature of excellence — built on knowledge, driven by innovation, and forged in metal.</strong>Founded in 1987, INCOMPOL emerged to meet the call from major automotive manufacturers seeking innovative partners for components and integrated functions. <br>With decades of experience in metal transformation, we design and produce high-quality components that support some of the world’s leading industries — from automotive to advanced engineering.<br>Our commitment goes beyond manufacturing. We invest in technology, people, and sustainability to ensure efficiency, reliability, and continuous improvement in every project we undertake. <br><strong>Every part we create carries our signature of excellence — built on knowledge, driven by innovation, and forged in metal.</strong>",
+        },
+        {
+            image: new2,
+            title: "Título da noticia aqui",
+            date: "17/01/23",
+            content: "Full content 2",
+        },
+        {
+            image: new3,
+            title: "Título da noticia aqui",
+            date: "17/01/23",
+            content: "Full content 3",
+        },
+    ];
 
     return (
         <div className="bg-light-grey xl:pl-[137px] xl:pb-26 relative">
-            <section className="text-azul pt-5 xl:pt-18 pl-5">
+            <section className="text-azul pt-15 xl:pt-18 pl-5 4xl:pl-[120px]">
                 <p className="uppercase text-[14px]  xl:text-[17px] xl:leading-[22px] tracking-[0.03em]">
                     what is happening
                 </p>
@@ -84,28 +108,30 @@ export default function News() {
                 }}
                 className="mySwiper mt-5 xl:mt-20"
             >
-                <SwiperSlide>
-                    <New
-                        image={new1}
-                        title="Título da noticia aqui"
-                        date="17/01/23"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <New
-                        image={new2}
-                        title="Título da noticia aqui"
-                        date="17/01/23"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <New
-                        image={new3}
-                        title="Título da noticia aqui"
-                        date="17/01/23"
-                    />
-                </SwiperSlide>
+                {news.map((item, index) => (
+                    <SwiperSlide
+                        key={index}
+                        className="my-swiper my-swiper-slide "
+                    >
+                        <div
+                            onClick={() => {
+                                setActiveIndex(index);
+                                setIsModalOpen(true);
+                            }}
+                        >
+                            <New {...item} />
+                        </div>
+                    </SwiperSlide>
+                ))}
             </Swiper>
+
+            {isModalOpen && (
+                <NewInfo
+                    news={news}
+                    initialIndex={activeIndex}
+                    onClose={() => setIsModalOpen(false)}
+                />
+            )}
         </div>
     );
 }

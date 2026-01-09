@@ -11,7 +11,7 @@ import SecondTitle from "../Layout/SecondTitle";
 
 export default function Certifications() {
     return (
-        <div className="bg-light-grey pt-10 pb-30 xl:pt-38 xl:pb-52">
+        <div className="bg-light-grey pt-10 pb-80 xl:pt-38 xl:pb-52">
             <div className="text-center text-azul flex justify-center items-center flex-col">
                 <SecondTitle
                     slogan="Quality. Responsibility. Trust."

@@ -12,13 +12,10 @@ export default function Navbar() {
 
     return (
         <>
-            <Menu
-                handleMenu={handleMenu}
-                className={menu ? "block" : "hidden"}
-            />
-            <div className="flex justify-between w-full absolute top-0 margin-website pt-4 xl:pt-[40px] ">
-                <img src={logo} className="h-4 xl:h-auto"></img>
-                <div className="flex items-center justify-center xl:gap-4 gap-2">
+            <Menu isOpen={menu} handleMenu={handleMenu} />
+            <div className="flex justify-between w-full absolute top-0 margin-website pt-4 lg:pt-[35px] xl:pt-[40px] ">
+                <img src={logo} className="h-4 lg:h-7 xl:h-auto"></img>
+                <div className="flex items-center justify-center lg:gap-3 xl:gap-4 gap-2">
                     <p className="change-language">PT</p>
                     <img
                         src={hamburguer}

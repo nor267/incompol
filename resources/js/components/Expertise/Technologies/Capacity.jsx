@@ -44,7 +44,7 @@ export default function Capacity() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-1 xl:gap-3 px-8 xl:px-0 pt-10 xl:pt-0">
-                    <h1 className="text-center font-eurostile text-[16px] xl:text-[18px] xl:leading-[26px] tracking-[0.14em] uppercase font-bold mb-5 xl:mb-13">
+                    <h1 className="text-center xl:text-left font-eurostile text-[16px] xl:text-[18px] xl:leading-[26px] tracking-[0.14em] uppercase font-bold mb-5 xl:mb-10">
                         equipments
                     </h1>
                     <Type text="Hydraulic Press double effect" />

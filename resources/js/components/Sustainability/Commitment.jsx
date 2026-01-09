@@ -6,6 +6,9 @@ import certification from "../../../images/fake/aboutus/certification1.png";
 //components
 import SecondTitle from "../Layout/SecondTitle";
 
+//icons
+import doubleArrow from "../../../images/icons/sustainability/double-arrow.svg";
+
 export default function Commitment() {
     return (
         <>
@@ -47,25 +50,41 @@ export default function Commitment() {
                         <br></br>
                         Every day, we strive to:
                     </p>
-                    <p className="font-bold text-[14px] leading-[18px] xl:text-[19px] xl:leading-[26px] text-azul pt-3 xl:pt-6">
-                        Strictly comply with environmental laws and regulations;
-                    </p>
-                    <p className="font-bold text-[14px] leading-[18px] xl:text-[19px] xl:leading-[26px] text-azul pt-2 xl:pt-4">
-                        Protect the environment by preventing pollution and
-                        minimizing negative impacts;
-                    </p>
-                    <p className="font-bold text-[14px] leading-[18px] xl:text-[19px] xl:leading-[26px] text-azul pt-2 xl:pt-4">
-                        Invest in sustainable technologies and continuous
-                        improvement;
-                    </p>
-                    <p className="font-bold text-[14px] leading-[18px] xl:text-[19px] xl:leading-[26px] text-azul pt-2 xl:pt-4">
-                        Reduce energy consumption, CO₂ emissions, and waste;
-                    </p>
-                    <p className="font-bold text-[14px] leading-[18px] xl:text-[19px] xl:leading-[26px] text-azul pt-2 xl:pt-4">
-                        Encourage open communication and environmental awareness
-                        among employees and partners.
-                    </p>
-                    <h1 className="font-medium text-[15px] leading-[20px] xl:text-[24px] xl:leading-[28px] tracking-[0.03em] text-azul uppercase pt-2 xl:pt-14">
+                    <div className="flex gap-2 xl:gap-4 items-center">
+                        <img src={doubleArrow} className="h-6 xl:h-auto"></img>
+                        <p className="font-bold text-[14px] leading-[18px] xl:text-[19px] xl:leading-[26px] text-azul pt-3 xl:pt-6">
+                            Strictly comply with environmental laws and
+                            regulations;
+                        </p>
+                    </div>
+                    <div className="flex gap-2 xl:gap-4 items-center">
+                        <img src={doubleArrow} className="h-6 xl:h-auto"></img>
+                        <p className="font-bold text-[14px] leading-[18px] xl:text-[19px] xl:leading-[26px] text-azul pt-3 xl:pt-6">
+                            Protect the environment by preventing pollution and
+                            minimizing negative impacts;
+                        </p>
+                    </div>
+                    <div className="flex gap-2 xl:gap-4 items-center">
+                        <img src={doubleArrow} className="h-6 xl:h-auto"></img>
+                        <p className="font-bold text-[14px] leading-[18px] xl:text-[19px] xl:leading-[26px] text-azul pt-3 xl:pt-6">
+                            Invest in sustainable technologies and continuous
+                            improvement;
+                        </p>
+                    </div>
+                    <div className="flex gap-2 xl:gap-4 items-center">
+                        <img src={doubleArrow} className="h-6 xl:h-auto"></img>
+                        <p className="font-bold text-[14px] leading-[18px] xl:text-[19px] xl:leading-[26px] text-azul pt-3 xl:pt-6">
+                            Reduce energy consumption, CO₂ emissions, and waste;
+                        </p>
+                    </div>
+                    <div className="flex gap-2 xl:gap-4 items-center">
+                        <img src={doubleArrow} className="h-6 xl:h-auto"></img>
+                        <p className="font-bold text-[14px] leading-[18px] xl:text-[19px] xl:leading-[26px] text-azul pt-3 xl:pt-6">
+                            Encourage open communication and environmental
+                            awareness among employees and partners.
+                        </p>
+                    </div>
+                    <h1 className="font-medium text-[15px] leading-[20px] xl:text-[24px] xl:leading-[28px] tracking-[0.03em] text-azul uppercase pt-6 xl:pt-14">
                         “Sustainability means shaping progress — without
                         compromising the world we build for.”
                     </h1>

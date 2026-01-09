@@ -23,18 +23,18 @@ export default function People() {
                 text="We believe that excellence starts with talent, commitment, and teamwork. By investing in our people, we build strong teams capable of delivering quality, precision, and long-term value for our partners worldwide."
             />
             <div className="bg-azul xl:h-[579px] flex flex-col xl:flex-row text-white mt-15 xl:mt-40">
-                <div className="flex w-full">
+                <div className="flex w-full  xl:w-auto">
                     <img
                         src={market1}
-                        className="w-full max-w-[135px] xl:max-w-[340px] object-cover"
+                        className="w-full max-w-[135px] 4xl:max-w-[600px] xl:max-w-[340px] object-cover"
                     ></img>
                     <img
                         src={market2}
-                        className="w-full max-w-[135px] xl:max-w-[340px] object-cover"
+                        className="w-full max-w-[135px] 4xl:max-w-[600px] xl:max-w-[340px] object-cover"
                     ></img>
                     <img
                         src={market3}
-                        className="w-full max-w-[135px] xl:max-w-[340px] object-cover"
+                        className="w-full max-w-[135px] 4xl:max-w-[600px] xl:max-w-[340px] object-cover"
                     ></img>
                 </div>
                 <div className="pb-5 xl:pb-0 pt-5 pl-8 xl:pl-[130px] xl:pt-[150px]">
