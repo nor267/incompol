@@ -8,6 +8,7 @@ import Sustainability from "./Sustainability/Sustainability";
 import People from "./People/People";
 import Portefolio from "./Portefolio/Portefolio";
 import Expertise from "./Expertise/Expertise";
+import NotFound from "./Layout/Errors/NotFound";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                         path="/sustainability"
                         element={<Sustainability />}
                     />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </Router>
         </CookiesProvider>

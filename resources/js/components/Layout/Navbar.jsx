@@ -1,14 +1,25 @@
 import logo from "../../../images/logo/logo.svg";
 import hamburguer from "../../../images/icons/hamburg.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "./Menu";
+import NavbarPages from "./NavbarPages";
 
 export default function Navbar() {
     const [menu, setMenu] = useState(false);
+    const [showNavbar, setShowNavbar] = useState(false);
 
     function handleMenu() {
         setMenu((prev) => !prev);
     }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowNavbar(window.scrollY > 100);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <>
@@ -34,6 +45,7 @@ export default function Navbar() {
                     </p>
                 </div>
             </div>
+            {showNavbar && <NavbarPages />}
         </>
     );
 }
