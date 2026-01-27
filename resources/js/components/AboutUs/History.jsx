@@ -13,11 +13,11 @@ export default function History() {
                 />
             </main>
             {/* DESKTOP */}
-            <div className="hidden xl:block">
+            <div className="hidden lg:block">
                 <HistoryDesktop />
             </div>
             {/* MOBILE */}
-            <div className="xl:hidden">
+            <div className="lg:hidden">
                 <HistoryMobile />
             </div>
         </div>

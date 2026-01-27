@@ -10,7 +10,7 @@ export default function New({ image, title, date }) {
 
     return (
         <>
-            <div className="relative w-full h-[220px] xl:h-[450px] overflow-hidden cursor-pointer">
+            <div className="relative w-full h-[220px] lg:h-[320px] xl:h-[450px] overflow-hidden cursor-pointer hover:scale-105 duration-300">
                 <img
                     className="w-full object-cover h-full z-0"
                     src={image}

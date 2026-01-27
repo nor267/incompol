@@ -6,7 +6,7 @@ export default function ShapeFuture() {
             <div>
                 <img
                     src={banner}
-                    className="w-full object-cover h-[200px] xl:h-[720px]"
+                    className="w-full object-cover h-[200px] lg:h-[500px] xl:h-[720px]"
                 ></img>
             </div>
         </>

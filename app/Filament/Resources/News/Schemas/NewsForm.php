@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\News\Schemas;
 
+use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Group;
@@ -19,13 +21,20 @@ class NewsForm
             ->components([
                 Section::make('Notícia')
                     ->schema([
-                        TextInput::make('title')
-                            ->hint('Máximo 50 caracteres')
-                            ->label('Título da notícia')
-                            ->maxLength(50)
-                            ->required(true),
+                        TranslatableTabs::make('anyLabel')
+                            ->schema([
+                                TextInput::make('title')
+                                    ->hint('Máximo 50 caracteres')
+                                    ->label('Título da notícia')
+                                    ->maxLength(50)
+                                    ->required(true),
 
-                        FileUpload::make('file_path')
+                                RichEditor::make('description')
+                                    ->label('Descrição')
+                                    ->required(true),
+                            ]),
+
+                        FileUpload::make('banner_image')
                             ->label('Banner da notícia')
                             ->disk('public')
                             ->directory('uploads/images')
@@ -34,19 +43,12 @@ class NewsForm
                             ->image()
                             ->openable()
                             ->maxSize(1024) // 1 MB
-                            ->rules([
-                                ''
-                            ])
                             ->acceptedFileTypes(['image/jpeg', 'image/webp'])
                             ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
                             ->validationMessages([
                                 'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
                                 'max' => 'A imagem não pode exceder 1MB.',
                             ]),
-                        MarkdownEditor::make('description')
-                            ->label('Descrição')
-                            ->required(true),
-
                     ])->columnSpan(2),
 
 
@@ -55,11 +57,15 @@ class NewsForm
 
                         Section::make('Outros')
                             ->schema([
-                                DatePicker::make('wedding_date')
+                                DatePicker::make('date')
                                     ->label('Data da notícia')
                                     ->required(true),
                                 Toggle::make('visible')
                                     ->label('Visível')
+                                    ->onColor('success')
+                                    ->offColor('danger')
+                                    ->onIcon('heroicon-m-check')
+                                    ->offIcon('heroicon-m-x-mark')
                                     ->helperText('Notícia visível ou escondida')
                                     ->default(true),
                             ]),

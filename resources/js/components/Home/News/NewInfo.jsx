@@ -8,14 +8,14 @@ import { useState } from "react";
 //icons
 import closeMenu from "../../../../images/icons/close-component.svg";
 
-export default function NewInfo({ news, initialIndex, onClose }) {
+export default function NewInfo({ news, initialIndex, onClose, appUrl }) {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
         <div className="fixed inset-0 z-50">
             <div className="absolute inset-0 bg-[#2E2E2E]/70">
                 <button
-                    className="fixed top-10 right-10 z-50 cursor-pointer"
+                    className="fixed top-10 right-10 z-50 cursor-pointer opacity-80 hover:opacity-100 duration-300"
                     onClick={onClose}
                 >
                     <img src={closeMenu} />
@@ -41,28 +41,28 @@ export default function NewInfo({ news, initialIndex, onClose }) {
                             <div className="h-full overflow-y-auto flex justify-center">
                                 <div className="flex flex-col items-center xl:pt-40 ">
                                     <img
-                                        src={item.image}
-                                        alt={item.title}
+                                        src={appUrl + item.banner_image}
+                                        alt={item.title?.en}
                                         className="xl:w-[1200px] xl:h-[550px] object-cover"
                                     />
 
                                     <div className="bg-white xl:w-[1200px] py-20 px-8 xl:py-[150px] xl:pl-[124px] text-azul relative">
                                         <h2 className="font-eurostile text-[18px] xl:text-[24px] tracking-[0.14em] uppercase font-bold">
-                                            {item.title}
+                                            {item.title?.en}
                                         </h2>
 
                                         <p className="text-base font-bold text-azul absolute top-4 xl:top-13 right-8 xl:right-20">
                                             {item.date}
                                         </p>
 
-                                        <p
-                                            className="pt-5 xl:pt-20 text-base xl:max-w-[670px]"
+                                        <div
+                                            className="pt-5 xl:pt-10 text-base xl:max-w-[670px] info"
                                             dangerouslySetInnerHTML={{
-                                                __html: item.content,
+                                                __html: item.description?.en,
                                             }}
                                         />
                                         <div className="absolute bottom-8 right-8 xl:bottom-20 xl:right-20 flex gap-3">
-                                            <button className="swiper-button-prev-custom cursor-pointer">
+                                            <button className="swiper-button-prev-custom cursor-pointer opacity-80 hover:opacity-100 duration-300 ">
                                                 <svg
                                                     width="29"
                                                     height="25"
@@ -81,7 +81,7 @@ export default function NewInfo({ news, initialIndex, onClose }) {
                                                 </svg>
                                             </button>
 
-                                            <button className="swiper-button-next-custom cursor-pointer">
+                                            <button className="swiper-button-next-custom cursor-pointer opacity-80 hover:opacity-100 duration-300 ">
                                                 <svg
                                                     width="29"
                                                     height="25"

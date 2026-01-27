@@ -11,7 +11,7 @@ import SecondTitle from "../Layout/SecondTitle";
 
 export default function Certifications() {
     return (
-        <div className="bg-light-grey pt-10 pb-80 xl:pt-38 xl:pb-52">
+        <div className="bg-light-grey pt-10 pb-20 xl:pt-38 xl:pb-52">
             <div className="text-center text-azul flex justify-center items-center flex-col">
                 <SecondTitle
                     slogan="Quality. Responsibility. Trust."
@@ -19,12 +19,12 @@ export default function Certifications() {
                     className="text-azul"
                 />
             </div>
-            <div className="pt-10 xl:pt-38 flex flex-col xl:flex-row margin-website justify-center items-center">
-                <div className="bg-white text-azul xl:h-[720px] certification-box ">
-                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-5 xl:pt-24">
+            <div className="pt-10 lg:pt-20 xl:pt-38 flex flex-col xl:flex-row margin-website justify-center items-center">
+                <div className="bg-white text-azul lg:h-[250px] xl:h-[720px] certification-box ">
+                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-24">
                         ENVIRONMENT
                     </h1>
-                    <p className="text-base w-full xl:max-w-[424px] pt-5 xl:pt-10">
+                    <p className="text-base w-full lg:max-w-[750px] xl:max-w-[424px] pt-5 lg:pt-8 xl:pt-10">
                         ISO 14001 certified.<br></br>
                         <br></br>
                         We operate responsibly, protecting the environment
@@ -53,11 +53,11 @@ export default function Certifications() {
                         </div>
                     </div>
                 </div>
-                <div className="bg-azul text-white xl:h-[810px] certification-box ">
-                    <h1 className="font-eurostile text-white text-[18px] xl:text-[32px] text-center uppercase pt-5 xl:pt-20 ">
+                <div className="bg-azul text-white lg:h-[300px] xl:h-[810px] certification-box ">
+                    <h1 className="font-eurostile text-white text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-20 ">
                         Quality
                     </h1>
-                    <p className="text-base w-full xl:max-w-[424px] pt-5 xl:pt-10">
+                    <p className="text-base w-full lg:max-w-[750px]   xl:max-w-[424px] pt-5 xl:pt-10">
                         Certified under IATF 16949, we ensure consistent
                         precision and reliability for demanding industries.
                         <br></br>
@@ -84,14 +84,14 @@ export default function Certifications() {
                         </div>
                     </div>
                 </div>
-                <div className="bg-white text-azul xl:h-[720px] certification-box">
-                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-5 xl:pt-24 xl:leading-[32px]">
+                <div className="bg-white text-azul lg:h-[400px] xl:h-[720px] certification-box">
+                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-24 xl:leading-[32px]">
                         ESG
                     </h1>
                     <p className="text-[14px] xl:leading-[19px] tracking-[0.03em] text-center">
                         (Environmental, Social and Governance)
                     </p>
-                    <p className="text-base w-full xl:max-w-[424px] pt-5 xl:pt-10">
+                    <p className="text-base w-full lg:max-w-[750px]  xl:max-w-[424px] pt-5 xl:pt-10">
                         Commitment to ethics, people, and the planet has been
                         recognised with the
                         <strong>EcoVadis Bronze Medal</strong> for

@@ -1,8 +1,8 @@
 export default function Title({ title, slogan, text }) {
-    const sanitizedSlogan = slogan.replace(/<br\s*\/?>/gi, "");
+    const sanitizedSlogan = slogan?.replace(/<br\s*\/?>/gi, " ");
 
     return (
-        <section className="margin-website text-azul flex flex-col xl:flex-row justify-center items-center xl:items-start xl:gap-[175px] mt-25 xl:mt-56">
+        <section className="margin-website text-azul flex flex-col xl:flex-row justify-center items-center xl:items-start xl:gap-[175px] mt-25 lg:mt-30 xl:mt-56">
             <main className="relative">
                 <h1
                     className="text-center xl:hidden xl:text-left font-eurostile text-azul text-[25px] leading-[28px] xl:text-[86px] xl:leading-[92px] font-medium uppercase xl:max-w-[700px]"
@@ -10,9 +10,10 @@ export default function Title({ title, slogan, text }) {
                         fontSize: "clamp(24px, 6vw, 86px)",
                         lineHeight: "clamp(28px, 6.5vw, 92px)",
                     }}
-                >
-                    {title}
-                </h1>
+                    dangerouslySetInnerHTML={{
+                        __html: title,
+                    }}
+                ></h1>
                 <h1
                     className=" hidden xl:block
     text-center xl:text-left
@@ -20,12 +21,13 @@ export default function Title({ title, slogan, text }) {
     xl:max-w-[700px] w-full
   "
                     style={{
-                        fontSize: "clamp(70px, 1vw, 86px)",
+                        fontSize: "clamp(75px, 1vw, 86px)",
                         lineHeight: "clamp(28px, 6vw, 92px)",
                     }}
-                >
-                    {title}
-                </h1>
+                    dangerouslySetInnerHTML={{
+                        __html: title,
+                    }}
+                ></h1>
                 <p
                     className="uppercase xl:text-[15px] text-azul xl:leading-[19px] text-right w-full font-medium hidden xl:block xl:absolute -top-20 -right-20"
                     dangerouslySetInnerHTML={{
@@ -40,7 +42,7 @@ export default function Title({ title, slogan, text }) {
                 ></p>
             </main>
             <p
-                className="w-full xl:max-w-[465px] text-base mt-10 xl:mt-0"
+                className="w-full xl:max-w-[534px] text-base mt-10 xl:mt-0"
                 dangerouslySetInnerHTML={{
                     __html: text,
                 }}

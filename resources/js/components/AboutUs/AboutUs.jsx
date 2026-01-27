@@ -1,8 +1,10 @@
+import axios from "axios";
+import { use, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+//components
 import NavbarPages from "../Layout/NavbarPages";
 import Title from "../Layout/Title";
-
-import empresa from "../../../images/fake/aboutus/empresa.jpg";
-import empresa2 from "../../../images/fake/aboutus/empresa2.jpg";
 import Overview from "./Overview";
 import ShapeFuture from "./ShapeFuture";
 import History from "./History";
@@ -11,35 +13,70 @@ import Footer from "../Layout/Footer";
 import Portefolio from "./Portefolio";
 
 export default function AboutUs() {
+    const [data, setData] = new useState([]);
+
+    const appUrl = window.location.origin + "/storage/";
+
+    useEffect(() => {
+        const fetchPage = async () => {
+            try {
+                const response = await axios({
+                    method: "post",
+                    url: "https://incompolv2.nor267.com/api" + "/get-page",
+                    data: {
+                        slug: "about-us",
+                    },
+                });
+
+                setData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPage();
+    }, []);
+
     return (
         <>
             <NavbarPages />
             <Title
-                title="About us"
-                slogan="a little<br> about our<br> history"
-                text="Founded in 1987, <strong>INCOMPOL</strong> emerged to meet the call from major automotive manufacturers seeking innovative partners for components and integrated functions.<br><br>
-With decades of experience in metal transformation, we design and produce high-quality components that support some of the world’s leading industries — from automotive to advanced engineering.<br><br>
-Our commitment goes beyond manufacturing. We invest in technology, people, and sustainability to ensure efficiency, reliability, and continuous improvement in every project we undertake.<br><br>
-<strong>Every part we create carries our signature of excellence — built on knowledge, driven by innovation, and forged in metal.</strong>"
+                title={data.name?.en}
+                slogan={data.slogan?.en}
+                text={data.description?.en}
             />
             <div className="flex justify-center  items-center w-full mt-15 xl:mt-36 relative">
-                <img
-                    src={empresa}
-                    className="object-cover w-full xl:max-w-[1259px] h-[200px] xl:h-[637px] 4xl:max-w-[1700px] 4xl:h-[800px]"
-                ></img>
-                <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full hidden xl:block xl:absolute right-69 -bottom-20">
-                    <div className="flex justify-center items-center w-full h-full">
-                        <div className="xl:w-[294px] xl:h-[294px] rounded-full overflow-hidden ">
-                            <img
-                                src={empresa2}
-                                alt=""
-                                className="w-full h-full object-cover"
-                            />
+                {data?.banner_video && (
+                    <video
+                        className="object-cover w-full xl:max-w-[1259px] h-[200px] lg:h-[450px] xl:h-[637px] 4xl:max-w-[1700px] 4xl:h-[800px]"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                    >
+                        <source
+                            src={appUrl + data.banner_video}
+                            type="video/mp4"
+                        />
+                    </video>
+                )}
+                {data?.second_image && (
+                    <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full hidden xl:block xl:absolute right-69 -bottom-20">
+                        <div className="flex justify-center items-center w-full h-full">
+                            <div className="xl:w-[294px] xl:h-[294px] rounded-full overflow-hidden ">
+                                <img
+                                    src={appUrl + data?.second_image}
+                                    alt=""
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
-            <Overview />
+            <Overview
+                title={data?.section_1_title?.en}
+                slogan={data?.section_1_slogan?.en}
+            />
             <ShapeFuture />
             <History />
             <Certifications />

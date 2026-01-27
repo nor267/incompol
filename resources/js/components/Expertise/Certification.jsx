@@ -19,7 +19,7 @@ export default function Certification() {
                 slogan="Certified processes you can rely on"
                 title="Quality & Certifications"
             />
-            <div className=" flex flex-col-reverse xl:flex-row  pt-8 xl:pt-36 xl:pb-30 xl:gap-68 justify-center items-center">
+            <div className=" flex flex-col-reverse xl:flex-row  pt-8 xl:pt-36 lg:pb-30 xl:pb-30 xl:gap-68 justify-center items-center">
                 <div className="relative">
                     <img
                         src={quality1}
@@ -37,7 +37,7 @@ export default function Certification() {
                         </div>
                     </div>
                 </div>
-                <div className="text-base text-white xl:max-w-[465px] px-8 xl:px-0">
+                <div className="text-base text-white xl:max-w-[465px] px-8 lg:lg:px-[100px] xl:px-0">
                     <div>
                         At <strong>INCOMPOL</strong>, quality is built into
                         every stage of production. Our Quality Management System
@@ -64,7 +64,7 @@ export default function Certification() {
                         reliability, and consistent performance for our
                         customers.
                     </div>
-                    <div className="flex flex-col xl:flex-row xl:gap-4 items-center pt-5 xl:pt-8 pb-5 xl:pb-0">
+                    <div className="flex flex-col justify-center lg:flex-row xl:gap-4 items-center pt-5 xl:pt-8 pb-5 xl:pb-0">
                         <img
                             src={certification1}
                             className="max-w-40 xl:max-w-[134px] object-cover xl:max-h-[55px]"

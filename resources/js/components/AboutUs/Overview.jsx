@@ -14,15 +14,11 @@ import world from "../../../images/icons/aboutus/world.svg";
 import goals from "../../../images/icons/aboutus/goals.svg";
 import wired from "../../../images/icons/aboutus/wire.svg";
 
-export default function Overview() {
+export default function Overview({ title, slogan, webPageId }) {
     return (
         <div className="mt-15 mb-10 xl:mt-44 xl:mb-38 text-azul text-center">
-            <SecondTitle
-                slogan="Company overview"
-                title="incompol at a glance"
-                className="text-azul"
-            />
-            <div className=" xl:mt-28 bg-light-grey mt-5 company-overview ">
+            <SecondTitle slogan={slogan} title={title} className="text-azul" />
+            <div className="lg:mt-10 xl:mt-28 bg-light-grey mt-5 company-overview ">
                 <Icon icon={house} title="1987" text="Foundation" />
 
                 <Icon
@@ -35,30 +31,30 @@ export default function Overview() {
                     icon={industrial}
                     title="2 sites <br> 17000 M2"
                     text="Facilities"
-                    className="hidden xl:block"
+                    className="hidden lg:block"
                 />
                 <Icon
                     icon={heart}
                     title="120"
                     text="Employees"
-                    className="hidden xl:block"
+                    className="hidden lg:block"
                 />
             </div>
-            <div className="bg-white company-overview xl:hidden xl:py-0!">
+            <div className="bg-white company-overview lg:hidden lg:py-0!">
                 <Icon
                     icon={industrial}
                     title="2 sites <br> 17000 M2"
                     text="Facilities"
-                    className="block xl:hidden"
+                    className="block lg:hidden"
                 />
                 <Icon
                     icon={heart}
                     title="120"
                     text="Employees"
-                    className="block xl:hidden"
+                    className="block lg:hidden"
                 />
             </div>
-            <div className="bg-light-grey xl:bg-white xl:justify-center! xl:gap-110 company-overview">
+            <div className="bg-light-grey lg:bg-white lg:grid-cols-2! lg:px-70! xl:px-80! company-overview">
                 <Icon
                     icon={graph}
                     title="€ 15.4 M"
@@ -71,7 +67,7 @@ export default function Overview() {
                     text="Automotive, Home & Appliance,<br> Aerospace & Defence"
                 />
             </div>
-            <div className="bg-white xl:bg-light-grey company-overview">
+            <div className="bg-white lg:bg-light-grey company-overview">
                 <Icon
                     icon={goals}
                     title="Core business"
@@ -82,17 +78,17 @@ export default function Overview() {
                     icon={roller}
                     title="6000 TON"
                     text="Transformed raw<br> material 2024"
-                    className="hidden xl:block"
+                    className="hidden lg:block"
                 />
 
                 <Icon
                     icon={wired}
                     title="Technologies"
                     text="Stamping, Machining,<br> Turning, Welding<br> & Assembling"
-                    className="hidden xl:block"
+                    className="hidden lg:block"
                 />
             </div>
-            <div className="bg-light-grey company-overview xl:hidden! xl:py-0!">
+            <div className="bg-light-grey company-overview lg:hidden! lg:py-0!">
                 <Icon
                     icon={roller}
                     title="6000 TON"

@@ -18,7 +18,7 @@ export default function Production() {
             />
             <div className="mt-5 xl:mt-36 flex flex-col xl:flex-row xl:gap-32 items-center mb-5 xl:mb-64 px-8 xl:px-0">
                 <div>
-                    <p className="text-base xl:max-w-[440px]">
+                    <p className="text-base lg:px-[80px] xl:px-0 xl:max-w-[440px]">
                         Our engineering team works with clients from concept to
                         production, providing design, prototyping, and tooling
                         support to ensure optimal manufacturability and

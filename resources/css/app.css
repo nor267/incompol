@@ -8,7 +8,8 @@
 
 @font-face {
     font-family: "Eurostile Extd";
-    src: url("../fonts/EurostileExt-Bla.woff2") format("woff2"),
+    src:
+        url("../fonts/EurostileExt-Bla.woff2") format("woff2"),
         url("../fonts/EurostileExt-Bla.woff") format("woff");
     font-weight: 900;
     font-style: normal;
@@ -17,7 +18,8 @@
 
 @font-face {
     font-family: "Eurostile Extd";
-    src: url("../fonts/EurostileExt-Med.woff2") format("woff2"),
+    src:
+        url("../fonts/EurostileExt-Med.woff2") format("woff2"),
         url("../fonts/EurostileExt-Med.woff") format("woff");
     font-weight: 500;
     font-style: normal;
@@ -36,7 +38,7 @@
     --font-eurostile: "Eurostile Extd";
     --default-font-family: "Arimo";
 
-    --breakpoint-3xl: 122rem;
+    --breakpoint-3xl: 106.25rem;
     --breakpoint-4xl: 137.5rem; /* 2200px */
 }
 
@@ -58,7 +60,7 @@ body {
 }
 
 .text-base {
-    @apply text-[14px] leading-[18px] xl:text-[17px] xl:leading-[26px] tracking-[0.03em];
+    @apply text-[14px] leading-[18px] lg:text-[15px] lg:leading-[19px] xl:text-[17px] xl:leading-[26px] tracking-[0.03em];
 }
 
 .area-componets {
@@ -66,7 +68,7 @@ body {
 }
 
 .link-menu {
-    @apply font-eurostile lg:text-[40px] lg:leading-[59px] xl:text-[58px] xl:leading-[59px] font-medium text-[18px] leading-[20px] text-white uppercase;
+    @apply font-eurostile lg:text-[40px] lg:leading-[59px] xl:text-[58px] xl:leading-[59px] font-medium text-[18px] leading-[20px] text-white uppercase hover:text-laranja duration-300 transition-all;
 }
 
 .link-number {
@@ -86,15 +88,19 @@ body {
 }
 
 .change-language {
-    @apply text-white font-eurostile font-medium text-[12px] lg:text-[14px] xl:text-[14px] xl:text-[22px] xl:leading-[22px] pt-1 xl:pt-2 cursor-pointer;
+    @apply text-white font-eurostile font-medium text-[12px] lg:text-[14px] xl:text-[14px] xl:text-[22px] xl:leading-[22px] pt-1 xl:pt-2 cursor-pointer hover:text-laranja duration-300;
 }
 
 .company-overview {
-    @apply xl:max-h-[295px] w-full grid grid-cols-2 xl:flex justify-between items-start px-8 xl:px-80 py-5 xl:py-16;
+    @apply xl:max-h-[295px] w-full grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 px-8 xl:px-40 py-5 lg:py-10 xl:py-16;
 }
 
 .history-line {
-    @apply flex items-start xl:max-h-[176px] z-20 flex-col xl:flex-row;
+    @apply flex items-start lg:max-h-[150px] xl:max-h-[176px] z-20 flex-col lg:flex-row;
+}
+
+.history-line img {
+    @apply lg:h-[150px] xl:h-[176px];
 }
 
 .arrow-mobile {
@@ -102,7 +108,7 @@ body {
 }
 
 .certification-box {
-    @apply px-6 xl:px-26 xl:pt-4 relative flex flex-col justify-center items-center xl:items-center xl:justify-start;
+    @apply px-6 lg:px-15 xl:px-26 xl:pt-4 relative flex flex-col justify-center items-center xl:items-center xl:justify-start;
 }
 
 .partner-mobile {
@@ -127,6 +133,30 @@ body {
 
 .expertise-container {
     @apply xl:max-h-[561px] flex flex-col xl:flex-row justify-between xl:gap-24 items-center mt-15 xl:mt-[190px];
+}
+
+.info p {
+    @apply pb-2 xl:pb-4;
+}
+
+.gradiente-menu {
+    background: rgba(0, 0, 0, 0.2);
+    background: -webkit-linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(255, 255, 255, 0) 34%
+    );
+    background: -moz-linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(255, 255, 255, 0) 34%
+    );
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(255, 255, 255, 0) 34%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#FFFFFF", GradientType=0);
 }
 .gradient-black-blue {
     background: #000;
@@ -303,6 +333,19 @@ body {
     background: #444;
     height: 450px;
     width: 729px;
+}
+
+@media only screen and (max-width: 1300px) {
+    .my-swiper {
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+    }
+    .my-swiper-slide {
+        background: #444;
+        height: 320px;
+        width: 100px;
+    }
 }
 
 @media only screen and (max-width: 600px) {

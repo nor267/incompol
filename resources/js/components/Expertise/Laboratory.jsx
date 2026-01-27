@@ -16,7 +16,7 @@ export default function Laboratory() {
                     title="LABORATORY"
                     className="text-azul pt-15 xl:pt-20"
                 />
-                <div className="flex flex-col-reverse xl:flex-row pt-5 xl:pt-36 pb-130 xl:pb-[850px] xl:gap-68 justify-center items-center">
+                <div className="flex flex-col-reverse xl:flex-row pt-5 xl:pt-36 pb-15 xl:pb-[150px] xl:gap-68 justify-center items-center">
                     <div className="relative">
                         <img
                             src={laboratory1}
@@ -34,7 +34,7 @@ export default function Laboratory() {
                             </div>
                         </div>
                     </div>
-                    <div className="text-base text-azul xl:max-w-[465px] px-8 xl:px-0">
+                    <div className="text-base text-azul xl:max-w-[465px] px-8 lg:px-[100px] xl:px-0">
                         <p>
                             Our fully equipped
                             <strong> quality laboratory</strong> ensures that
@@ -47,7 +47,6 @@ export default function Laboratory() {
                         </p>
                     </div>
                 </div>
-                <ShapeFuture shapeFuture={shapeFuture} />
             </div>
         </>
     );

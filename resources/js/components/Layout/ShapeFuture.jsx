@@ -2,7 +2,7 @@ import triangleWhite from "../../../images/icons/triangle-white.svg";
 
 export default function ShapeFuture({ shapeFuture }) {
     return (
-        <div className="w-full xl:w-[1440px] 4xl:w-[1800px] h-[300px] xl:h-auto xl:g-[710px] absolute bottom-0 xl:-bottom-30 left-1/2 -translate-x-1/2">
+        <div className="w-full lg:w-[800px] xl:w-[1440px] 4xl:w-[1800px] h-[300px] lg:h-[400px] xl:h-auto xl:g-[710px] absolute bottom-0 lg:-bottom-10 xl:-bottom-30 left-1/2 -translate-x-1/2">
             <img src={shapeFuture} className="w-full object-cover h-full"></img>
             <div className="w-full h-full gradient-blue-white z-20 absolute top-0">
                 <img

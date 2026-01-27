@@ -15,8 +15,9 @@ class ContentWebPagesTable
     {
         return $table
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('name_backoffice')
                     ->label('Nome'),
+
                 IconColumn::make('visible')
                     ->label('Visibilidade')
                     ->boolean()

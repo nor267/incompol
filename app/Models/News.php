@@ -4,14 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Translatable\HasTranslations;
 
 class News extends Model
 {
-    public $timestamps = true;
-
     use SoftDeletes;
+    use HasTranslations;
 
     public $table = "news";
+
+    protected $casts = [
+        'title' => 'array',
+        'description' => 'array'
+    ];
 
     protected $fillable = [
         'title',
@@ -19,4 +24,6 @@ class News extends Model
         'date',
         'description'
     ];
+
+    public $timestamps = true;
 }

@@ -67,6 +67,45 @@ export default function Partners() {
         </>
     );
 
+    const partnersTablet = (
+        <>
+            <div className="margin-website flex mt-8 xl:mt-26 justify-center lg:gap-8">
+                <Partner image={client1} />
+                <Partner image={client2} />
+                <Partner image={client3} />
+                <Partner image={client4} />
+            </div>
+            <div className="margin-website flex lg:mt-5 lg:gap-8 justify-center">
+                <Partner image={client5} />
+                <Partner image={client6} />
+                <Partner image={client7} />
+                <Partner image={client8} />
+                <Partner image={client9} />
+                <Partner image={client10} />
+            </div>
+            <div className="margin-website flex lg:mt-5 lg:gap-8  justify-center">
+                <Partner image={client11} />
+                <Partner image={client12} />
+                <Partner image={client13} />
+                <Partner image={client14} />
+                <Partner image={client15} />
+            </div>
+            <div className="margin-website flex lg:mt-5 lg:gap-8  justify-center">
+                <Partner image={client16} />
+                <Partner image={client17} />
+                <Partner image={client18} />
+                <Partner image={client19} />
+                <Partner image={client20} />
+                <Partner image={client21} />
+            </div>
+            <div className="margin-website flex lg:mt-5 lg:gap-8  justify-center">
+                <Partner image={client22} />
+                <Partner image={client23} />
+                <Partner image={client24} />
+            </div>
+        </>
+    );
+
     const partnersMobile = (
         <>
             <div className="margin-website mt-8 xl:mt-26 partner-mobile">
@@ -119,7 +158,8 @@ export default function Partners() {
                 className="text-azul pt-10 xl:pt-36"
             />
             <div className="hidden xl:block"> {partnersDestkop}</div>
-            <div className="block xl:hidden"> {partnersMobile}</div>
+            <div className="hidden lg:block xl:hidden"> {partnersTablet}</div>
+            <div className="block lg:hidden"> {partnersMobile}</div>
         </div>
     );
 }

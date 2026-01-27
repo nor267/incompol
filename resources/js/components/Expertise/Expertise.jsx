@@ -24,7 +24,7 @@ Our industrial capacity and engineering expertise make us a trusted partner worl
             <div className="mt-15 xl:mt-40">
                 <img
                     src={banner}
-                    className="w-full object-cover h-[200px] xl:h-[600px]"
+                    className="w-full object-cover h-[200px] lg:h-[450px] xl:h-[600px]"
                 ></img>
             </div>
             <Technologies />
@@ -33,7 +33,7 @@ Our industrial capacity and engineering expertise make us a trusted partner worl
             <Certification />
             <Laboratory />
 
-            <Footer work={true} />
+            <Footer />
         </>
     );
 }

@@ -20,11 +20,11 @@ export default function Jobs() {
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <div className="bg-light-grey xl:pl-[137px] pb-15 xl:pb-26 relative">
-            <section className="text-azul px-8 xl:px-0 pt-10 xl:pt-18 ">
+            <section className="text-azul  px-8 lg:px-[100px] xl:px-0 pt-10 xl:pt-18 ">
                 <p className="uppercase xl:text-[17px] xl:leading-[22px] tracking-[0.03em]">
                     Career Opportunities
                 </p>
-                <h1 className="uppercase font-eurostile font-bold xl:text-[32px] xl:leading-[32px] tracking-[0.14em] xl:pt-5">
+                <h1 className="uppercase font-eurostile font-bold xl:text-[32px] xl:leading-[32px] tracking-[0.14em] lg:pt-2 xl:pt-5">
                     We’re Hiring
                 </h1>
             </section>

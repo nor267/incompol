@@ -7,7 +7,7 @@ import background from "../../../images/bg-grid.jpg";
 import component from "../../../images/icons/home/component-parallax.png";
 import component2 from "../../../images/icons/home/component-parallax2.png";
 import component3 from "../../../images/icons/home/component-parallax3.png";
-import component4 from "../../../images/icons/home/component-parallax4.png";
+// import component4 from "../../../images/icons/home/component-parallax4.png";
 
 //fake images
 import shapeFuture from "../../../images/fake/home/work-with-us.jpg";
@@ -24,7 +24,7 @@ export default function Crafting() {
 
     return (
         <div className="relative mt-15 xl:mt-0">
-            <div className="relative h-[200px] xl:h-[780px] ">
+            <div className="relative h-[200px] lg:h-[450px] xl:h-[800px] 3xl:h-[780px] ">
                 {/* CONTENT */}
                 <div className="relative flex h-full flex-col items-center justify-center gradient-blue uppercase text-white text-center">
                     <img
@@ -33,11 +33,11 @@ export default function Crafting() {
                         alt=""
                     />
 
-                    <h4 className="font-eurostile text-[18px] xl:text-[32px] xl:leading-[26px] z-20">
+                    <h4 className="font-eurostile text-[18px] lg:text-[28px] xl:text-[32px] xl:leading-[26px] z-20">
                         Crafting components.
                     </h4>
 
-                    <h1 className="font-eurostile text-[20px] xl:text-[74px] xl:leading-[79px] xl:pt-25 z-20">
+                    <h1 className="font-eurostile text-[20px] lg:text-[40px] xl:text-[74px] xl:leading-[79px] lg:pt-15 xl:pt-25 z-20">
                         DRIVING
                         <br />
                         INDUSTRIES.
@@ -49,31 +49,25 @@ export default function Crafting() {
                     src={component}
                     alt=""
                     style={{ y }}
-                    className="absolute -bottom-[450px] right-0 xl:right-20 xl:-bottom-[1600px] z-30 h-[100px] xl:h-[560px] w-fit object-contain will-change-transform"
+                    className="absolute -bottom-[450px] right-0 xl:right-0 lg:-bottom-[800px] xl:-bottom-[1600px] z-30 h-[100px] lg:h-[250px] xl:h-[560px] w-fit object-contain will-change-transform"
                 />
                 <motion.img
                     src={component2}
                     alt=""
                     style={{ y2 }}
-                    className="hidden xl:absolute xl:block right-10 bottom-[400px] z-30 h-[240px] w-fit object-contain will-change-transform"
+                    className="hidden lg:absolute lg:block right-0 lg:bottom-[200px] xl:bottom-[400px] z-30 lg:h-[200px]  xl:h-[240px] w-fit object-contain will-change-transform"
                 />
 
                 <motion.img
                     src={component3}
                     alt=""
                     style={{ y }}
-                    className="absolute  -bottom-[300px] right-80 xl:right-280 xl:-bottom-[900px] z-10 h-[50px] xl:h-[240px] w-fit object-contain will-change-transform"
-                />
-                <motion.img
-                    src={component4}
-                    alt=""
-                    style={{ y }}
-                    className="absolute -left-[450px] xl:-left-[1680px] -bottom-[50px] xl:bottom-[0px] z-10 h-[100px] xl:h-[640px] w-fit object-contain will-change-transform rotate-90"
+                    className="absolute  -bottom-[300px] right-80 lg:right-200 lg:-bottom-[500px] xl:right-280 xl:-bottom-[900px] z-10 h-[50px] lg:h-[200px] xl:h-[240px] w-fit object-contain will-change-transform"
                 />
             </div>
 
             {/* NEXT SECTION */}
-            <div className="h-[430px] xl:h-[1000px]">
+            <div className="h-[430px] lg:h-[500px] xl:h-[1000px]">
                 <img
                     className="h-full w-full object-cover"
                     src={background}

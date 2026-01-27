@@ -8,28 +8,34 @@ import sector1 from "../../../images/fake/home/sector1.jpg";
 import sector2 from "../../../images/fake/home/sector2.jpg";
 import sector3 from "../../../images/fake/home/sector3.jpg";
 
-export default function Sectors() {
+export default function Sectors({ title, slogan }) {
     return (
         <div>
             <div className="text-azul text-center pt-20 xl:pt-[204px]">
-                <p className="uppercase xl:text-[17px] xl:leading-[22px] tracking-[0.03em]">
-                    product lines
-                </p>
-                <h1 className="uppercase font-eurostile xl:text-[32px] xl:leading-[32px] tracking-[0.14em] font-semibold xl:pt-[28px] ">
-                    main sectors
-                </h1>
+                <p
+                    className="uppercase xl:text-[17px] xl:leading-[22px] tracking-[0.03em]"
+                    dangerouslySetInnerHTML={{
+                        __html: slogan,
+                    }}
+                ></p>
+                <h1
+                    className="uppercase font-eurostile xl:text-[32px] xl:leading-[32px] tracking-[0.14em] font-semibold xl:pt-[28px] "
+                    dangerouslySetInnerHTML={{
+                        __html: title,
+                    }}
+                ></h1>
             </div>
-            <div className="xl:max-h-[561px] flex flex-col xl:flex-row xl:gap-24 4xl:gap-80 items-center mt-8 xl:mt-[190px]">
+            <div className="xl:max-h-[561px] flex flex-col lg:flex-row lg:gap-30 xl:gap-24 4xl:gap-80 items-center mt-8 xl:mt-[190px]">
                 <motion.div
                     initial={{ x: -250, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
-                    <div className="xl:w-[1228px]  relative h-full">
+                    <div className="lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
                         <img
                             src={sector1}
-                            className="h-[200px] object-cover w-full xl:h-[570px]"
+                            className="lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
                         ></img>
                         <img
                             src={triangleWhite}
@@ -54,8 +60,8 @@ export default function Sectors() {
                             <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-[37px]">
                                 Body & trim<br></br>
                                 Exhaust systems<br></br>
-                                Seats Steering wheels<br></br>
-                                Engine & damper mount systemsa <br></br>
+                                Seats<br></br> Steering wheels<br></br>
+                                Engine & damper mount systems <br></br>
                                 Glasses – support and decorative parts<br></br>
                                 Airbag systems<br></br> Infotainment
                             </p>
@@ -63,14 +69,14 @@ export default function Sectors() {
                     </div>
                 </motion.div>
             </div>
-            <div className="xl:max-h-[561px] flex flex-col-reverse xl:flex-row xl:gap-24 4xl:gap-80 items-start xl:items-center mt-10 xl:mt-[80px] justify-end">
+            <div className="xl:max-h-[561px] flex flex-col-reverse lg:flex-row lg:gap-30 xl:gap-24 4xl:gap-80 items-start xl:items-center mt-10 xl:mt-[80px] justify-end">
                 <motion.div
                     initial={{ x: 0, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
-                    <div className="flex flex-row-reverse xl:flex-row items-center gap-5 xl:gap-26">
+                    <div className="flex flex-row-reverse lg:flex-row items-center gap-5 xl:gap-26">
                         <div className="flex flex-col ">
                             <h4 className="text-[20px] font-semibold leading-[24px] tracking-[0.03em] uppercase text-azul"></h4>
                             <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-0 xl:text-right">
@@ -92,10 +98,10 @@ export default function Sectors() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
-                    <div className="xl:w-[1228px]  relative h-full">
+                    <div className="lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
                         <img
                             src={sector2}
-                            className="h-[200px] object-cover w-full xl:h-[570px]"
+                            className="lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
                         ></img>
                         <img
                             src={triangleWhite}
@@ -104,17 +110,17 @@ export default function Sectors() {
                     </div>
                 </motion.div>
             </div>
-            <div className="xl:max-h-[561px] flex flex-col xl:flex-row xl:gap-24 4xl:gap-80 items-center mt-5 xl:mt-[80px] xl:mb-[190px]">
+            <div className="xl:max-h-[561px] flex flex-col lg:flex-row lg:gap-30 xl:gap-24 4xl:gap-80 items-center mt-5 xl:mt-[80px] xl:mb-[190px]">
                 <motion.div
                     initial={{ x: -250, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
-                    <div className="xl:w-[1228px]  relative h-full">
+                    <div className="lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
                         <img
                             src={sector3}
-                            className="h-[200px] object-cover w-full xl:h-[570px]"
+                            className="lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
                         ></img>
                         <img
                             src={triangleWhite}

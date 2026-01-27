@@ -24,15 +24,15 @@ export default function Contactus() {
             <div className="mt-15 xl:mt-40 relative">
                 <img
                     src={banner}
-                    className="h-[200px] xl:h-[760px] w-full object-cover"
+                    className="h-[200px] lg:h-[450px] xl:h-[760px] w-full object-cover"
                 ></img>
                 <img
                     src={triangleWhite}
                     className="h-5 xl:h-auto absolute top-0 left-1/2 -translate-x-1/2"
                 ></img>
             </div>
-            <div className="py-15 xl:py-38 4xl:px-[200px]">
-                <div className=" margin-website flex justify-between flex-col xl:flex-row">
+            <div className="py-15 lg:py-20 xl:py-38 4xl:px-[200px]">
+                <div className=" margin-website flex justify-between flex-col lg:flex-row">
                     <div className="">
                         <h1 className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold">
                             Instalações Porto Alto{" "}
@@ -56,10 +56,13 @@ export default function Contactus() {
                         </p>
                     </div>
                     <div className="pt-3 xl:pt-0">
-                        <img src={sede1}></img>
+                        <img
+                            src={sede1}
+                            className="lg:w-[700px] xl:w-auto"
+                        ></img>
                     </div>
                 </div>
-                <div className="pt-10 xl:pt-20 margin-website flex flex-col xl:flex-row-reverse  justify-between">
+                <div className="pt-10 xl:pt-20 margin-website flex flex-col lg:flex-row-reverse  justify-between">
                     <div className="">
                         <h1 className="uppercase text-[18px]  xl:text-[28px] xl:leading-[32px] text-azul font-bold">
                             Instalações Benavente
@@ -80,7 +83,10 @@ export default function Contactus() {
                         </p>
                     </div>
                     <div className="pt-3 xl:pt-0">
-                        <img src={sede1}></img>
+                        <img
+                            src={sede1}
+                            className="lg:w-[700px] xl:w-auto"
+                        ></img>
                     </div>
                 </div>
             </div>

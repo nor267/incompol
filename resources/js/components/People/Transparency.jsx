@@ -9,7 +9,7 @@ export default function Transparency() {
                 className="pt-20 xl:pt-20 text-azul"
             />
             <div className="pt-6 xl:pt-26 flex justify-center items-center flex-col pb-20 xl:pb-52">
-                <p className="text-base text-azul xl:max-w-[480px]">
+                <p className="text-base text-azul lg:max-w-[400px] xl:max-w-[480px]">
                     At <strong>INCOMPOL,</strong> we are committed to conducting
                     our business with honesty, transparency, and respect for
                     people and the environment.

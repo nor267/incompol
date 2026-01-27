@@ -8,8 +8,8 @@ export default function Form() {
                 title="Contact us"
                 className="pt-15 xl:pt-20 text-white"
             />
-            <div className="xl:px-[377px] flex flex-col-reverse w-full xl:flex-row justify-between xl:pt-36 px-8 4xl:px-[600px]">
-                <div className="flex items-start justify-between xl:justify-start xl:flex-col pt-15 xl:pt-0 pb-15">
+            <div className="lg:px-[100px] xl:px-[377px] flex flex-col-reverse w-full lg:flex-row justify-between xl:pt-36 px-8 4xl:px-[600px] ">
+                <div className="flex items-start justify-between lg:justify-start lg:flex-col pt-15 xl:pt-0 pb-15">
                     <div className="">
                         <h1 className="text-[18px] xl:text-[28px] xl:leading-[32px uppercase text-white font-medium">
                             Contacts
@@ -22,7 +22,7 @@ export default function Form() {
                             425
                         </p>
                     </div>
-                    <div className=" xl:pt-11">
+                    <div className=" lg:pt-11">
                         <h1 className="xl:text-[28px] xl:leading-[32px uppercase text-white font-medium">
                             SOCIALS
                         </h1>
@@ -33,7 +33,7 @@ export default function Form() {
                         </p>
                     </div>
                 </div>
-                <div className="w-full xl:w-1/2">
+                <div className="w-full lg:w-1/2">
                     <form className="w-full form-container">
                         <div className="xl:pt-0!">
                             <label id="name" className="form-title text-white">

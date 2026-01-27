@@ -9,7 +9,7 @@ export default function SecondTitle({ title, slogan, ...props }) {
                     }}
                 ></p>
                 <h1
-                    className="uppercase font-eurostile text-[16px] xl:text-[32px] xl:leading-[36px] tracking-[0.14em] pt-2 xl:pt-5 font-bold"
+                    className="uppercase font-eurostile text-[16px] lg:text-[25px] xl:text-[32px] xl:leading-[36px] tracking-[0.14em] pt-2 xl:pt-5 font-bold"
                     dangerouslySetInnerHTML={{
                         __html: title,
                     }}

@@ -19,42 +19,36 @@ export default function Menu({ isOpen, handleMenu, ...props }) {
                     <a href="/about-us" className="link-menu">
                         about us
                     </a>
-                    <p className="link-number"> [ 01 ]</p>
                 </div>
                 <div className="pb-6 xl:pb-16 flex">
                     <a href="/expertise" className="link-menu">
                         expertise
                     </a>
-                    <p className="link-number"> [ 02 ]</p>
                 </div>
                 <div className="pb-6 xl:pb-16 flex">
                     <a href="/portfolio" className="link-menu">
                         portfolio
                     </a>
-                    <p className="link-number"> [ 02 ]</p>
                 </div>
                 <div className="pb-6 xl:pb-16 flex">
                     <a href="/sustainability" className="link-menu">
                         sustainability
                     </a>
-                    <p className="link-number"> [ 02 ]</p>
                 </div>
                 <div className="pb-6 xl:pb-16 flex">
                     <a href="/people" className="link-menu">
                         people
                     </a>
-                    <p className="link-number"> [ 02 ]</p>
                 </div>
                 <div className="flex">
                     <a href="/contact-us" className="link-menu">
                         contacts
                     </a>
-                    <p className="link-number"> [ 02 ]</p>
                 </div>
 
                 <img
                     src={closeMenu}
-                    className="absolute 4xl:right-61 lg:right-24 xl:top-12 xl:right-34 top-10 right-10 h-5 lg:h-8 xl:h-auto cursor-pointer"
+                    className="absolute 4xl:right-61 lg:right-24 xl:top-12 xl:right-34 top-10 right-10 h-5 lg:h-8 xl:h-auto cursor-pointer opacity-80 hover:opacity-100 duration-300"
                     onClick={handleMenu}
                 ></img>
                 <img

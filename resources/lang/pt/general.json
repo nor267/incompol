@@ -1,0 +1,140 @@
+{
+    "home": {
+        "title": "Luxo discreto. Pronto para ser seu.",
+        "slogan": "Na VIOLET, a beleza deve ser simples. As nossas coleções são criadas para simplificar a experiência de design — pré-curadas, perfeitamente equilibradas e prontas para serem suas.",
+        "moreAboutUs": "Saber mais sobre nós",
+        "moreCollections": "Descubra mais das nossas coleções.",
+        "fullList": "Ver a lista completa",
+        "slider": {
+            "partner": "Interessado em <br> colaborar connosco?",
+            "connectSlogan": "Estamos sempre abertos a colaborações ponderadas que partilhem os nossos valores de design e requinte.",
+            "connectButton": "Vamos falar",
+
+            "website": "Design de Casamento<br>Intemporal, <br>Feito para Si.",
+            "websiteSlogan": "Explore as nossas coleções semi-personalizadas de monogramas,papelaria e websites de casamento.",
+            "collectionsButton": "Explorar Coleções"
+        }
+    },
+    "menu": {
+        "websites": "Websites",
+        "monograms": "Monogramas",
+        "collections": "Coleções",
+        "aboutUs": "Sobre nós"
+    },
+    "collection": "a nossa Coleção",
+    "buttons": "Descobrir mais",
+    "footerNor": {
+        "violetBrand": "2025 © Violet é uma marca andblue",
+        "madeby": "Feito por Nor267",
+        "privacy": "Política de Privacidade e Termos de Utilização"
+    },
+    "product": {
+        "included": "O QUE ESTÁ INCLUÍDO:",
+        "addCart": "adicionar ao carrinho",
+        "howWork": "Como funciona?",
+        "moodboard": "Ver moodboard",
+        "allProducts": "Ver todos os produtos"
+    },
+    "variations": {
+        "title": "MAIS VARIAÇÕES",
+        "slogan": "Veja como o design se transforma com diferentes iniciais, cada variação igualmente refinada."
+    },
+    "result": "Resultado:",
+    "collections": {
+        "descriptions": "Explore as nossas coleções semi-personalizadas: designs intemporais criados para tornar a beleza simples, intencional e profundamente pessoal.",
+        "slogan": "Beleza intemporal, criada com calma e propósito.",
+        "howWork": "Como funciona?",
+        "subTitle": "Do início ao fim",
+        "text": "As nossas Coleções Semi-Personalizadas oferecem uma forma refinada e simples de criar a sua papelaria, sem a complexidade de um design totalmente personalizado. Cada coleção tem o seu estilo, paleta de cores e composição — só precisa de torná-la sua.",
+        "result": "Um conjunto de papelaria coeso e intemporal, personalizado com a sua história e pronto a partilhar com os seus convidados.",
+        "steps": {
+            "title1": "Selecione a sua coleção",
+            "slogan1": "Explore a nossa gama de designs semi-personalizados e escolha aquele que melhor reflete o seu estilo e o ambiente do seu evento.",
+            "title2": "Forneça os seus detalhes",
+            "slogan2": "Partilhe os nomes, textos, datas e quaisquer fotografias ou mensagens pessoais. O design mantém-se como apresentado para preservar a harmonia visual.",
+            "title3": "Revise a prova",
+            "slogan3": "Criamos uma prova digital com as suas informações aplicadas ao design escolhido. Terá oportunidade de rever e confirmar todos os detalhes antes da impressão.",
+            "title4": "Produção & entrega",
+            "slogan4": "Após aprovação, o seu conjunto é impresso, montado e cuidadosamente embalado para entrega."
+        }
+    },
+    "aboutUs": {
+        "text1": "<b className=\"font-extrabold\">VIOLET</b> nasceu do desejo de simplificar a beleza, tornando o design natural e refinado. Criamos coleções semi-personalizadas para quem valoriza a elegância discreta e o detalhe ponderado. Cada peça é cuidadosamente desenhada para ser pessoal, intencional e intemporal.",
+        "text2": "Fundada por Inês Araujo Barros e Marta Garrido, a <b className=\"font-extrabold\">VIOLET</b> une um amor comum pela estética moderna e pelo design duradouro. Acreditamos que a beleza deve transmitir calma, equilíbrio e uma ligação profunda com a história que conta.",
+        "title": "Sobre nós",
+        "description": "Criado a partir do desejo de tornar a beleza natural. Cada design moldado com clareza, propósito e refinamento discreto.",
+        "whatShapeUs": "O QUE NOS DEFINE",
+        "ourMission": "A nossa missão",
+        "ouMissionDescription": "Criar coleções semi-personalizadas e refinadas que tornem a elegância simples. Cada design é um equilíbrio entre a clareza moderna e a graça intemporal, criado com cuidado e intenção.",
+        "ourVision": "A nossa visão",
+        "ourVisionDescription": "Redefinir a simplicidade, criando designs intemporais que inspirem calma, beleza e propósito em cada detalhe.",
+        "intention": "Intenção",
+        "intentionDescription": "Cada detalhe é deliberado.",
+        "simplicity": "Simplicidade",
+        "simplicityDescription": "Acreditamos que menos pode dizer mais.",
+        "refinement": "Requinte",
+        "refinementDescription": "Luxo discreto através de um design ponderado.",
+        "authenticity": "Autenticidade",
+        "authenticityDescription": "Design que se sente genuíno, pessoal e duradouro.",
+        "slogan": "Desenhamos não apenas para o momento, mas para o que permanece."
+    },
+    "monogram": {
+        "title": "monogramas",
+        "description": "Detalhe pessoal, tornado simples. <br /> Os nossos monogramas semi-personalizados combinam design moderno com subtileza e individualidade, criando algo verdadeiramente seu.",
+        "slogan": "Um símbolo escolhido para contar a sua história.",
+        "howWork": "Como funciona?",
+        "subTitle": "Do início ao fim",
+        "text": "Os nossos Monogramas Semi-Personalizados permitem-lhe escolher entre uma seleção de estilos pré-desenhados — refinados, equilibrados e prontos para serem seus através das suas iniciais.",
+        "result": "Um emblema intemporal que reflete a sua identidade através de um design cuidado.",
+        "steps": {
+            "title1": "Selecione o seu design",
+            "slogan1": "Veja a nossa coleção de monogramas e escolha o estilo que melhor se adequa à sua estética.",
+            "title2": "Forneça as suas iniciais",
+            "slogan2": "Partilhe as letras que irão figurar no design escolhido. A composição, cores e layout permanecem consistentes para garantir harmonia visual.",
+            "title3": "Revise a prova",
+            "slogan3": "Enviaremos uma prova digital com o seu monograma aplicado para aprovação final.",
+            "title4": "entrega",
+            "slogan4": "Após confirmação, receberá os ficheiros do seu monograma, prontos para utilizar na sua papelaria, website ou materiais impressos."
+        }
+    },
+    "website": {
+        "title": "Websites",
+        "description": "Uma base elegante para a sua presença online, onde design, propósito e narrativa se alinham sem esforço.",
+        "slogan": "Elegantes, funcionais e prontos a lançar",
+        "howWork": "Como funciona?",
+        "subTitle": "Do início ao fim",
+        "text": "Os nossos Websites Semi-Personalizados oferecem uma forma elegante e eficiente de lançar a sua presença online. Cada template é pré-desenhado com uma estrutura e estética definidas — só precisa de fornecer o conteúdo.",
+        "result": "Um website harmonioso e elegante, desenhado, personalizado e pronto a ser partilhado.",
+        "steps": {
+            "title1": "Selecione o seu template",
+            "slogan1": "Escolha o design de website que melhor se adapta ao seu evento ou marca.",
+            "title2": "Envie o seu conteúdo",
+            "slogan2": "Forneça os textos, fotografias e informações essenciais. O layout e o design mantêm-se como apresentados para garantir consistência.",
+            "title3": "Revise a pré-visualização",
+            "slogan3": "Personalizamos o site com o seu conteúdo e partilhamos uma pré-visualização para aprovação.",
+            "title4": "Lançamento",
+            "slogan4": "Após aprovação, o seu site será preparado e colocado online no domínio escolhido."
+        }
+    },
+    "reviews": {
+        "title": "Palavras gentis",
+        "slogan": "Vozes dos nossos clientes"
+    },
+    "contactUs": {
+        "text": "Se você tiver alguma dúvida ou pedido personalizado, estamos aqui para ajudar.",
+        "button": "fale conosco"
+    },
+    "contact": {
+        "title": "Procurando algo mais pessoal?",
+        "text": "Ficamos felizes em compartilhar sugestões que estejam alinhadas com o que você tem em mente."
+    },
+    "packages": {
+        "everything": "Tudo",
+        "monogram": "Monograma",
+        "website": "Website Template + Alojamento"
+    },
+    "cookies": {
+        "text": "Este website utiliza Cookies no seu funcionamento. Ao navegar está a consentir a sua utilização. Para saber mais consulte a nossa página de políticas de privacidade.",
+        "button": "Compreendi"
+    }
+}

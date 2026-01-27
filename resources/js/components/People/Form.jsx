@@ -13,15 +13,15 @@ export default function Form() {
     };
 
     return (
-        <div className="flex flex-row xl:flex-row items-center xl:gap-40 4xl:gap-53">
+        <div className="flex flex-col lg:flex-row items-center xl:gap-40 4xl:gap-53">
             <div className="xl:mt-38  relative flex-col-reverse flex mt-10 justify-center items-center xl:items-start w-full xl:w-auto">
                 <img
                     src={image}
-                    className="h-[240px] w-full xl:w-[972px] xl:h-[982px] object-cover"
+                    className="h-[240px] w-full xl:w-[972px] lg:h-[650px] xl:h-[982px] object-cover"
                 ></img>
-                <div className="xl:absolute left-[117px] bottom-[120px] z-20 pb-2">
-                    <h1 className="uppercase  text-azul xl:text-white font-eurostile xl:text-[29px] xl:leading-[35px] font-medium text-center">
-                        Excellence<br className="hidden xl:block"></br> starts
+                <div className="lg:absolute lg:left-30 xl:left-[100px] lg:bottom-[40px] xl:bottom-[120px] z-20 pb-2">
+                    <h1 className="uppercase  text-azul lg:text-white font-eurostile lg:text-[20px] xl:text-[29px] xl:leading-[35px] font-medium text-center">
+                        Excellence<br className="hidden lg:block"></br> starts
                         with
                         <br></br> people.
                     </h1>

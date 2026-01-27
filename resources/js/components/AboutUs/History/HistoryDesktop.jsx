@@ -3,60 +3,65 @@ import HistoryIcon from "./../HistoryIcon";
 //icons
 import arrow from "../../../../images/icons/aboutus/arrow.svg";
 import line from "../../../../images/icons/aboutus/line.svg";
+import lineTablet from "../../../../images/icons/aboutus/line-tablet.svg";
 
 export default function HistoryDesktop() {
     return (
         <>
-            <div className="xl:px-[385px] 4xl:px-[620px] relative flex justify-between">
+            <div className="lg:px-45 xl:px-[385px] 4xl:px-[620px] relative flex justify-between">
                 <img
                     src={line}
-                    className="hidden xl:block xl:absolute xl:top-39 left-1/2 -translate-x-1/2 z-0 4xl:w-[2000px] 4xl:h-[390px] "
+                    className="hidden xl:block absolute lg:-top-8 xl:top-39 left-1/2 -translate-x-1/2 z-0 lg:w-[1000px] lg:h-[600px] 3xl:w-[2000px] 3xl:h-[390px] "
+                ></img>
+                <img
+                    src={lineTablet}
+                    className="absolute xl:hidden lg:top-32 xl:top-39 left-1/2 -translate-x-1/2 z-0 lg:w-[1000px]  3xl:w-[2000px] 3xl:h-[390px] "
                 ></img>
                 <div className="history-line">
-                    <img src={arrow} className="z-20 hidden xl:block"></img>
+                    <img src={arrow} className="z-20"></img>
                     <HistoryIcon
                         title="1987"
                         slogan="Foundation<br> 3 employees"
                     />
                 </div>
                 <div className="history-line">
-                    <img src={arrow} className="z-20 hidden xl:block"></img>
+                    <img src={arrow} className="z-20"></img>
                     <HistoryIcon
                         title="1995"
                         slogan="Ford/VW<br> Autoeuropa project <br> Sales: € 5m"
                     />
                 </div>
                 <div className="history-line">
-                    <img src={arrow} className="z-20 hidden xl:block"></img>
+                    <img src={arrow} className="z-20"></img>
                     <HistoryIcon
                         title="2002"
                         slogan="Investment in new technologies<br>Tool Design & Manufacturing"
                     />
                 </div>
                 <div className="history-line">
-                    <img src={arrow} className="z-20 hidden xl:block"></img>
+                    <img src={arrow} className="z-20"></img>
                     <HistoryIcon
                         title="2004"
                         slogan="Environmental certification<br> ISO 14001<br>Aeronautic certification<br> IQF 710.01 (OGMA)"
                     />
                 </div>
             </div>
-            <div className="xl:px-[550px] 4xl:px-[800px]  relative flex justify-between absolute -top-5">
-                <div className="flex items-center xl:max-h-[176px] z-20">
+            <div className="lg:px-70 xl:px-[550px] 4xl:px-[800px]  relative flex justify-between absolute lg:-top-4.5 xl:-top-5">
+                <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
                         title="1990"
                         slogan="Supplier of the year<br>Inlan – General Motors"
                     />
                 </div>
-                <div className="flex items-center xl:max-h-[176px] z-20">
+                <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
                         title="1996"
                         slogan="Ford Q1 award<br>100 employees<br>Sales: € 10m"
                     />
                 </div>
-                <div className="flex items-center xl:max-h-[176px] z-20">
+                <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
                         title="2003"
@@ -64,7 +69,7 @@ export default function HistoryDesktop() {
                     />
                 </div>
             </div>
-            <div className="xl:px-[385px] 4xl:px-[620px] relative flex justify-between absolute -bottom-4.5">
+            <div className="lg:px-45 xl:px-[385px] 4xl:px-[620px] relative flex justify-between absolute lg:-bottom-18 xl:-bottom-4.5">
                 <div className="flex items-center xl:max-h-[176px] z-20">
                     <img src={arrow} className="z-20"></img>
                     <HistoryIcon title="2025" slogan="New branding" />
@@ -91,7 +96,7 @@ export default function HistoryDesktop() {
                     />
                 </div>
             </div>
-            <div className="xl:px-[550px] 4xl:px-[800px] relative flex justify-between absolute -top-1">
+            <div className="lg:px-70 xl:px-[550px] 4xl:px-[800px] relative flex justify-between absolute lg:top-13 xl:-top-1">
                 <div className="flex items-center xl:max-h-[176px] z-20">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon

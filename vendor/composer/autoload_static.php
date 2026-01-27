@@ -110,6 +110,7 @@ class ComposerStaticInitc514d8f7b9fc5970bdd94287905ef584
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Clock\\' => 24,
+            'Spatie\\Translatable\\' => 20,
             'Spatie\\ShikiPhp\\' => 16,
             'Spatie\\LaravelPackageTools\\' => 27,
             'Spatie\\Invade\\' => 14,
@@ -234,6 +235,7 @@ class ComposerStaticInitc514d8f7b9fc5970bdd94287905ef584
         array (
             'App\\' => 4,
             'AnourValar\\EloquentSerialize\\' => 29,
+            'AbdulmajeedJamaan\\FilamentTranslatableTabs\\' => 43,
         ),
     );
 
@@ -393,6 +395,10 @@ class ComposerStaticInitc514d8f7b9fc5970bdd94287905ef584
         'Symfony\\Component\\Clock\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/clock',
+        ),
+        'Spatie\\Translatable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-translatable/src',
         ),
         'Spatie\\ShikiPhp\\' => 
         array (
@@ -721,6 +727,10 @@ class ComposerStaticInitc514d8f7b9fc5970bdd94287905ef584
         array (
             0 => __DIR__ . '/..' . '/anourvalar/eloquent-serialize/src',
         ),
+        'AbdulmajeedJamaan\\FilamentTranslatableTabs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/abdulmajeed-jamaan/filament-translatable-tabs/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -738,13 +748,41 @@ class ComposerStaticInitc514d8f7b9fc5970bdd94287905ef584
     );
 
     public static $classMap = array (
+        'AbdulmajeedJamaan\\FilamentTranslatableTabs\\FilamentTranslatableTabsServiceProvider' => __DIR__ . '/..' . '/abdulmajeed-jamaan/filament-translatable-tabs/src/FilamentTranslatableTabsServiceProvider.php',
+        'AbdulmajeedJamaan\\FilamentTranslatableTabs\\HasExtraConfigs' => __DIR__ . '/..' . '/abdulmajeed-jamaan/filament-translatable-tabs/src/HasExtraConfigs.php',
+        'AbdulmajeedJamaan\\FilamentTranslatableTabs\\Testing\\TestsFilamentTranslatableTabs' => __DIR__ . '/..' . '/abdulmajeed-jamaan/filament-translatable-tabs/src/Testing/TestsFilamentTranslatableTabs.php',
+        'AbdulmajeedJamaan\\FilamentTranslatableTabs\\TranslatableTab' => __DIR__ . '/..' . '/abdulmajeed-jamaan/filament-translatable-tabs/src/TranslatableTab.php',
+        'AbdulmajeedJamaan\\FilamentTranslatableTabs\\TranslatableTabs' => __DIR__ . '/..' . '/abdulmajeed-jamaan/filament-translatable-tabs/src/TranslatableTabs.php',
         'AnourValar\\EloquentSerialize\\Facades\\EloquentSerializeFacade' => __DIR__ . '/..' . '/anourvalar/eloquent-serialize/src/Facades/EloquentSerializeFacade.php',
         'AnourValar\\EloquentSerialize\\Grammars\\EloquentBuilderGrammar' => __DIR__ . '/..' . '/anourvalar/eloquent-serialize/src/Grammars/EloquentBuilderGrammar.php',
         'AnourValar\\EloquentSerialize\\Grammars\\ModelGrammar' => __DIR__ . '/..' . '/anourvalar/eloquent-serialize/src/Grammars/ModelGrammar.php',
         'AnourValar\\EloquentSerialize\\Grammars\\QueryBuilderGrammar' => __DIR__ . '/..' . '/anourvalar/eloquent-serialize/src/Grammars/QueryBuilderGrammar.php',
         'AnourValar\\EloquentSerialize\\Package' => __DIR__ . '/..' . '/anourvalar/eloquent-serialize/src/Package.php',
         'AnourValar\\EloquentSerialize\\Service' => __DIR__ . '/..' . '/anourvalar/eloquent-serialize/src/Service.php',
+        'App\\Filament\\Resources\\ContentWebPages\\ContentWebPageResource' => __DIR__ . '/../..' . '/app/Filament/Resources/ContentWebPages/ContentWebPageResource.php',
+        'App\\Filament\\Resources\\ContentWebPages\\Pages\\CreateContentWebPage' => __DIR__ . '/../..' . '/app/Filament/Resources/ContentWebPages/Pages/CreateContentWebPage.php',
+        'App\\Filament\\Resources\\ContentWebPages\\Pages\\EditContentWebPage' => __DIR__ . '/../..' . '/app/Filament/Resources/ContentWebPages/Pages/EditContentWebPage.php',
+        'App\\Filament\\Resources\\ContentWebPages\\Pages\\ListContentWebPages' => __DIR__ . '/../..' . '/app/Filament/Resources/ContentWebPages/Pages/ListContentWebPages.php',
+        'App\\Filament\\Resources\\ContentWebPages\\Schemas\\ContentWebPageForm' => __DIR__ . '/../..' . '/app/Filament/Resources/ContentWebPages/Schemas/ContentWebPageForm.php',
+        'App\\Filament\\Resources\\ContentWebPages\\Tables\\ContentWebPagesTable' => __DIR__ . '/../..' . '/app/Filament/Resources/ContentWebPages/Tables/ContentWebPagesTable.php',
+        'App\\Filament\\Resources\\Menus\\MenuResource' => __DIR__ . '/../..' . '/app/Filament/Resources/Menus/MenuResource.php',
+        'App\\Filament\\Resources\\Menus\\Pages\\CreateMenu' => __DIR__ . '/../..' . '/app/Filament/Resources/Menus/Pages/CreateMenu.php',
+        'App\\Filament\\Resources\\Menus\\Pages\\EditMenu' => __DIR__ . '/../..' . '/app/Filament/Resources/Menus/Pages/EditMenu.php',
+        'App\\Filament\\Resources\\Menus\\Pages\\ListMenus' => __DIR__ . '/../..' . '/app/Filament/Resources/Menus/Pages/ListMenus.php',
+        'App\\Filament\\Resources\\Menus\\Schemas\\MenuForm' => __DIR__ . '/../..' . '/app/Filament/Resources/Menus/Schemas/MenuForm.php',
+        'App\\Filament\\Resources\\Menus\\Tables\\MenusTable' => __DIR__ . '/../..' . '/app/Filament/Resources/Menus/Tables/MenusTable.php',
+        'App\\Filament\\Resources\\News\\NewsResource' => __DIR__ . '/../..' . '/app/Filament/Resources/News/NewsResource.php',
+        'App\\Filament\\Resources\\News\\Pages\\CreateNews' => __DIR__ . '/../..' . '/app/Filament/Resources/News/Pages/CreateNews.php',
+        'App\\Filament\\Resources\\News\\Pages\\EditNews' => __DIR__ . '/../..' . '/app/Filament/Resources/News/Pages/EditNews.php',
+        'App\\Filament\\Resources\\News\\Pages\\ListNews' => __DIR__ . '/../..' . '/app/Filament/Resources/News/Pages/ListNews.php',
+        'App\\Filament\\Resources\\News\\Schemas\\NewsForm' => __DIR__ . '/../..' . '/app/Filament/Resources/News/Schemas/NewsForm.php',
+        'App\\Filament\\Resources\\News\\Tables\\NewsTable' => __DIR__ . '/../..' . '/app/Filament/Resources/News/Tables/NewsTable.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Models\\ContentWebPage' => __DIR__ . '/../..' . '/app/Models/ContentWebPage.php',
+        'App\\Models\\ContentWebPagesKeys' => __DIR__ . '/../..' . '/app/Models/ContentWebPagesKeys.php',
+        'App\\Models\\Language' => __DIR__ . '/../..' . '/app/Models/Language.php',
+        'App\\Models\\Menu' => __DIR__ . '/../..' . '/app/Models/Menu.php',
+        'App\\Models\\News' => __DIR__ . '/../..' . '/app/Models/News.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\Filament\\AdminPanelProvider' => __DIR__ . '/../..' . '/app/Providers/Filament/AdminPanelProvider.php',
@@ -7635,6 +7673,12 @@ class ComposerStaticInitc514d8f7b9fc5970bdd94287905ef584
         'Spatie\\LaravelPackageTools\\Package' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Package.php',
         'Spatie\\LaravelPackageTools\\PackageServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/PackageServiceProvider.php',
         'Spatie\\ShikiPhp\\Shiki' => __DIR__ . '/..' . '/spatie/shiki-php/src/Shiki.php',
+        'Spatie\\Translatable\\Events\\TranslationHasBeenSetEvent' => __DIR__ . '/..' . '/spatie/laravel-translatable/src/Events/TranslationHasBeenSetEvent.php',
+        'Spatie\\Translatable\\Exceptions\\AttributeIsNotTranslatable' => __DIR__ . '/..' . '/spatie/laravel-translatable/src/Exceptions/AttributeIsNotTranslatable.php',
+        'Spatie\\Translatable\\Facades\\Translatable' => __DIR__ . '/..' . '/spatie/laravel-translatable/src/Facades/Translatable.php',
+        'Spatie\\Translatable\\HasTranslations' => __DIR__ . '/..' . '/spatie/laravel-translatable/src/HasTranslations.php',
+        'Spatie\\Translatable\\Translatable' => __DIR__ . '/..' . '/spatie/laravel-translatable/src/Translatable.php',
+        'Spatie\\Translatable\\TranslatableServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-translatable/src/TranslatableServiceProvider.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Clock\\Clock' => __DIR__ . '/..' . '/symfony/clock/Clock.php',
         'Symfony\\Component\\Clock\\ClockAwareTrait' => __DIR__ . '/..' . '/symfony/clock/ClockAwareTrait.php',

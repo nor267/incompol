@@ -1,0 +1,140 @@
+{
+    "home": {
+        "title": "Quiet luxury. Ready to be yours.",
+        "slogan": "At VIOLET, beauty is meant to be effortless. Our collections are crafted to simplify the design  experience — pre-curated, perfectly balanced, and ready to be made yours.",
+        "moreAboutUs": "More about us",
+        "moreCollections": "Step further into our collections.",
+        "fullList": "See full list",
+        "slider": {
+            "partner": "Interested in <br> partnering with us?",
+            "connectSlogan": "We’re always open to thoughtful collaborations that share our values of design and refinement.",
+            "connectButton": "Let’s connect",
+
+            "website": "Timeless<br>Wedding Design, <br>Tailored for You.",
+            "websiteSlogan": "Explore our semi-custom collections of monograms, stationery & wedding websites.",
+            "collectionsButton": "Explore Collections"
+        }
+    },
+    "menu": {
+        "websites": "Websites",
+        "monograms": "Monograms",
+        "collections": "Collections",
+        "aboutUs": "About us"
+    },
+    "collection": "our Collection",
+    "buttons": "Discover more",
+    "footerNor": {
+        "violetBrand": "2025 © Violet is an andblue brand",
+        "madeby": "Made by Nor267",
+        "privacy": "Privacy Policy and Terms of Use"
+    },
+    "product": {
+        "included": "WHAT'S INCLUDED:",
+        "addCart": "add to cart",
+        "howWork": "How does it work?",
+        "moodboard": "See moodboard",
+        "allProducts": "See all the products"
+    },
+    "variations": {
+        "title": "MORE VARIATIONS",
+        "slogan": "See how the design transforms with different initials, each variation, equally refined."
+    },
+    "result": "The result:",
+    "collections": {
+        "descriptions": "Explore our semi-custom collections: timeless designs crafted to make beauty feel simple, intentional, and deeply personal.",
+        "slogan": "Timeless beauty, crafted with calm and purpose.",
+        "howWork": "How does it work?",
+        "subTitle": "From Start to Finish",
+        "text": "Our Semi-Custom Collections offer a refined and effortless way to create your stationery, without the complexity of a bespoke design. Each collection has its own distinctive style, colour palette, and layout — all you need to do is make it yours.",
+        "result": "A cohesive, timeless stationery suite, personalised with your story and ready to share with your guests.",
+        "steps": {
+            "title1": "Select your collection",
+            "slogan1": "Explore our range of semi-custom designs and choose the one that best reflects your style and the tone of your event.",
+            "title2": "Provide your details",
+            "slogan2": "Share your names, wording, dates, and any photos or personal text. The design remains as shown to preserve its visual harmony.",
+            "title3": "Review your proof",
+            "slogan3": "We’ll create a digital proof featuring your information within the chosen design. You’ll have the opportunity to review and confirm all details before printing.",
+            "title4": "Production & delivery",
+            "slogan4": "Once approved, your suite is printed, assembled, and carefully packaged for delivery."
+        }
+    },
+    "aboutUs": {
+        "text1": "<b className=\"font-extrabold\">VIOLET</b> was born from the desire to simplify beauty, to make design feel effortless yet refined. We create semi-custom collections for those who value quiet elegance and thoughtful detail. Each piece is carefully designed to feel personal, intentional, and timeless.",
+        "text2": "Founded by Inês Araujo Barros and Marta Garrido, <b className=\"font-extrabold\"> VIOLET </b> brings together a shared love for modern aesthetics and enduring design. We believe beauty should feel calm, balanced, and deeply connected to the story it tells.",
+        "title": "About us",
+        "description": "Created from a desire to make beauty feel effortless. Each design shaped with clarity, purpose, and quiet refinement.",
+        "whatShapeUs": "WHAT SHAPES US",
+        "ourMission": "Our Mission",
+        "ouMissionDescription": "To craft refined, semi-custom collections that make elegance effortless. Each design is a balance of modern clarity and timeless grace, created with care and intention.",
+        "ourVision": "Our vision",
+        "ourVisionDescription": "To redefine simplicity, creating timeless designs that inspire calm, beauty, and purpose in every detail.",
+        "intention": "intention",
+        "intentionDescription": "Every detail is deliberate.",
+        "simplicity": "Simplicity",
+        "simplicityDescription": "We believe less can say more.",
+        "refinement": "Refinement",
+        "refinementDescription": "Quiet luxury through thoughtful design.",
+        "authenticity": "Authenticity",
+        "authenticityDescription": "Design that feels genuine, personal, and lasting.",
+        "slogan": "We design not just for the moment, but for what remains."
+    },
+    "monogram": {
+        "title": "monograms",
+        "description": "Personal detail, made simple. <br /> Our semi-custom monograms combine modern design with subtle individuality, creating something that feels truly your own.",
+        "slogan": "A symbol chosen to tell your story.",
+        "howWork": "How does it work?",
+        "subTitle": "From Start to Finish",
+        "text": "Our Semi-Custom Monograms allow you to choose from a curated range of pre-designed monogram styles — refined, balanced, and ready to be made yours through your initials.",
+        "result": "A timeless emblem that reflects your identity through considered design.",
+        "steps": {
+            "title1": "Select your design",
+            "slogan1": "Browse our monogram collection and choose the style that best suits your aesthetic.",
+            "title2": "Provide your initials",
+            "slogan2": "Share the letters to be featured in your chosen design. The composition, colours, and layout remain consistent to ensure visual harmony.",
+            "title3": "Review your proof",
+            "slogan3": "We’ll send a digital proof with your monogram applied for final approval.",
+            "title4": "Delivery",
+            "slogan4": "Once confirmed, you’ll receive your monogram files, ready for use across your stationery, website, or printed materials."
+        }
+    },
+    "website": {
+        "title": "Websites",
+        "description": "An elegant foundation for your online presence, where design, purpose, and storytelling align effortlessly.",
+        "slogan": "Elegant, functional, and ready to launch",
+        "howWork": "How does it work?",
+        "subTitle": "From Start to Finish",
+        "text": "Our Semi-Custom Websites offer an elegant and efficient way to launch your online presence. Each template is pre-designed with a defined structure and aesthetic — you simply provide the content.",
+        "result": "A beautifully cohesive website, designed, customised, and ready to share.",
+        "steps": {
+            "title1": "Select your template",
+            "slogan1": "Select the website design that best fits your event or brand.",
+            "title2": "Submit your content",
+            "slogan2": "Provide your wording, photos, and any essential information. The layout and design remain as shown to maintain consistency.",
+            "title3": "Review your preview",
+            "slogan3": "We’ll customise the site with your content and share a live preview for approval.",
+            "title4": "Launch",
+            "slogan4": "Once approved, your site will be prepared for launch and made live under your chosen domain."
+        }
+    },
+    "reviews": {
+        "title": "Kind words",
+        "slogan": "Voices of our clients"
+    },
+    "contactUs": {
+        "text": "If you have any questions or custom requests, we’re here to help.",
+        "button": "talk to us"
+    },
+    "contact": {
+        "title": "Looking for something more personal?",
+        "text": "We’re glad to share suggestions that align with what you have in mind."
+    },
+    "packages": {
+        "everything": "Everything",
+        "monogram": "Monogram",
+        "website": "Website Template + Hosting"
+    },
+    "cookies": {
+        "text": "This website uses cookies in its operation. By browsing you are consenting to their use. To learn more, please consult our privacy policy page.",
+        "button": "Understood"
+    }
+}
