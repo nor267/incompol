@@ -1,14 +1,35 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+//config
+import { API_URL } from "../../config";
 
 //icons
 import triangleWhite from "../../../images/icons/triangle-white.svg";
 
-//fake images
-import sector1 from "../../../images/fake/home/sector1.jpg";
-import sector2 from "../../../images/fake/home/sector2.jpg";
-import sector3 from "../../../images/fake/home/sector3.jpg";
+export default function Sectors({ title, slogan, appUrl }) {
+    const [data, setData] = new useState([]);
 
-export default function Sectors({ title, slogan }) {
+    useEffect(() => {
+        const fetchPage = async () => {
+            try {
+                const response = await axios({
+                    method: "post",
+                    url: API_URL + "/get-icons",
+                    data: {
+                        id: 1,
+                    },
+                });
+
+                setData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPage();
+    }, []);
+
     return (
         <div>
             <div className="text-azul text-center pt-20 xl:pt-[204px]">
@@ -34,7 +55,7 @@ export default function Sectors({ title, slogan }) {
                 >
                     <div className="lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
                         <img
-                            src={sector1}
+                            src={appUrl + data[0]?.icon}
                             className="lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
                         ></img>
                         <img
@@ -50,21 +71,28 @@ export default function Sectors({ title, slogan }) {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
                     <div className="flex items-center gap-5 pt-5 xl:pt-0 xl:gap-26">
-                        <h1 className="uppercase text-azul font-eurostile text-[20px] leading-[22px] xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center">
-                            automotive
-                        </h1>
+                        <h1
+                            className="uppercase text-azul font-eurostile text-[20px] leading-[22px] xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center"
+                            dangerouslySetInnerHTML={{
+                                __html: data[0]?.first_title?.en,
+                            }}
+                        ></h1>
                         <div className="flex flex-col">
-                            <h4 className="text-[16px] leading-[18px] xl:text-[20px] font-semibold xl:leading-[24px] tracking-[0.03em] uppercase text-azul">
-                                Single parts and <br></br>sub-assemblies for:
-                            </h4>
-                            <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-[37px]">
-                                Body & trim<br></br>
-                                Exhaust systems<br></br>
-                                Seats<br></br> Steering wheels<br></br>
-                                Engine & damper mount systems <br></br>
-                                Glasses – support and decorative parts<br></br>
-                                Airbag systems<br></br> Infotainment
-                            </p>
+                            {data[0]?.second_title && (
+                                <h4
+                                    className="text-[16px] leading-[18px] xl:text-[20px] font-semibold xl:leading-[24px] tracking-[0.03em] uppercase text-azul"
+                                    dangerouslySetInnerHTML={{
+                                        __html: data[0]?.second_title?.en,
+                                    }}
+                                ></h4>
+                            )}
+
+                            <p
+                                className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-[37px]"
+                                dangerouslySetInnerHTML={{
+                                    __html: data[0]?.text?.en,
+                                }}
+                            ></p>
                         </div>
                     </div>
                 </motion.div>
@@ -78,18 +106,27 @@ export default function Sectors({ title, slogan }) {
                 >
                     <div className="flex flex-row-reverse lg:flex-row items-center gap-5 xl:gap-26">
                         <div className="flex flex-col ">
-                            <h4 className="text-[20px] font-semibold leading-[24px] tracking-[0.03em] uppercase text-azul"></h4>
-                            <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-0 xl:text-right">
-                                Heating Plates<br></br> Clamps<br></br> Rings
-                                <br></br> Gas manifolds<br></br>
-                                Exhaust Ducts<br></br> Boxes<br></br> Brackets
-                                <br></br> Assemblies<br></br> Aluminium Frames
-                                <br></br> Structural parts
-                            </p>
+                            {data[1]?.second_title && (
+                                <h4
+                                    className="text-[16px] leading-[18px] xl:text-[20px] font-semibold xl:leading-[24px] tracking-[0.03em] uppercase text-azul"
+                                    dangerouslySetInnerHTML={{
+                                        __html: data[1]?.second_title?.en,
+                                    }}
+                                ></h4>
+                            )}
+                            <p
+                                className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-0 xl:text-right"
+                                dangerouslySetInnerHTML={{
+                                    __html: data[1]?.text?.en,
+                                }}
+                            ></p>
                         </div>
-                        <h1 className=" pr-10 xl:pr-0 uppercase text-azul font-eurostile text-[20px] leading-[22px]  xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center">
-                            HOME<br></br> APPLIANCE
-                        </h1>
+                        <h1
+                            className=" pr-10 xl:pr-0 uppercase text-azul font-eurostile text-[20px] leading-[22px]  xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center"
+                            dangerouslySetInnerHTML={{
+                                __html: data[1]?.first_title?.en,
+                            }}
+                        ></h1>
                     </div>
                 </motion.div>
                 <motion.div
@@ -100,7 +137,7 @@ export default function Sectors({ title, slogan }) {
                 >
                     <div className="lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
                         <img
-                            src={sector2}
+                            src={appUrl + data[1]?.icon}
                             className="lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
                         ></img>
                         <img
@@ -119,7 +156,7 @@ export default function Sectors({ title, slogan }) {
                 >
                     <div className="lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
                         <img
-                            src={sector3}
+                            src={appUrl + data[2]?.icon}
                             className="lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
                         ></img>
                         <img
@@ -135,22 +172,27 @@ export default function Sectors({ title, slogan }) {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
                     <div className="flex items-center gap-5 pt-5 pb-5 xl:pb-0 xl:pt-0 xl:gap-26">
-                        <h1 className="uppercase text-azul font-eurostile text-[20px] leading-[22px] xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center">
-                            AEROSPACE
-                        </h1>
+                        <h1
+                            className="uppercase text-azul font-eurostile text-[20px] leading-[22px] xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center"
+                            dangerouslySetInnerHTML={{
+                                __html: data[2]?.first_title?.en,
+                            }}
+                        ></h1>
                         <div className="flex flex-col">
-                            <h4 className="text-[20px] font-semibold leading-[24px] tracking-[0.03em] uppercase text-azul"></h4>
-                            <p className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul xl:mt-0">
-                                Machined parts<br></br> Bearing, bushing and nut
-                                assembly<br></br>
-                                Painting & surface treatment<br></br> Assembly
-                                of aircraft
-                                <br></br>
-                                segments (Airbus C295 & Pilatus PC-12)<br></br>{" "}
-                                Tool design & manufacturing<br></br> Full
-                                assembly lines
-                                <br></br> Assembly jigs<br></br> Test rigs
-                            </p>
+                            {data[2]?.second_title && (
+                                <h4
+                                    className="text-[16px] leading-[18px] xl:text-[20px] font-semibold xl:leading-[24px] tracking-[0.03em] uppercase text-azul"
+                                    dangerouslySetInnerHTML={{
+                                        __html: data[1]?.second_title?.en,
+                                    }}
+                                ></h4>
+                            )}
+                            <p
+                                className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul xl:mt-0"
+                                dangerouslySetInnerHTML={{
+                                    __html: data[2]?.text?.en,
+                                }}
+                            ></p>
                         </div>
                     </div>
                 </motion.div>

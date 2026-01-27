@@ -7,14 +7,18 @@ import background from "../../../images/bg-grid.jpg";
 import component from "../../../images/icons/home/component-parallax.png";
 import component2 from "../../../images/icons/home/component-parallax2.png";
 import component3 from "../../../images/icons/home/component-parallax3.png";
-// import component4 from "../../../images/icons/home/component-parallax4.png";
-
-//fake images
-import shapeFuture from "../../../images/fake/home/work-with-us.jpg";
 
 //components
 import ShapeFuture from "../Layout/ShapeFuture";
-export default function Crafting() {
+
+export default function Crafting({
+    slogan,
+    title,
+    image,
+    titleShape,
+    sloganShape,
+    buttonShape,
+}) {
     const isMobile = useMediaQuery({ maxWidth: 768 });
 
     const { scrollY } = useScroll();
@@ -33,15 +37,19 @@ export default function Crafting() {
                         alt=""
                     />
 
-                    <h4 className="font-eurostile text-[18px] lg:text-[28px] xl:text-[32px] xl:leading-[26px] z-20">
-                        Crafting components.
-                    </h4>
+                    <h4
+                        className="font-eurostile text-[18px] lg:text-[28px] xl:text-[32px] xl:leading-[26px] z-20"
+                        dangerouslySetInnerHTML={{
+                            __html: slogan,
+                        }}
+                    ></h4>
 
-                    <h1 className="font-eurostile text-[20px] lg:text-[40px] xl:text-[74px] xl:leading-[79px] lg:pt-15 xl:pt-25 z-20">
-                        DRIVING
-                        <br />
-                        INDUSTRIES.
-                    </h1>
+                    <h1
+                        className="font-eurostile text-[20px] lg:text-[40px] xl:text-[74px] xl:leading-[79px] lg:pt-15 xl:pt-25 z-20"
+                        dangerouslySetInnerHTML={{
+                            __html: title,
+                        }}
+                    ></h1>
                 </div>
 
                 {/* PARALLAX IMAGE */}
@@ -75,7 +83,12 @@ export default function Crafting() {
                 />
             </div>
 
-            <ShapeFuture shapeFuture={shapeFuture} />
+            <ShapeFuture
+                shapeFuture={image}
+                title={titleShape}
+                slogan={sloganShape}
+                button={buttonShape}
+            />
         </div>
     );
 }

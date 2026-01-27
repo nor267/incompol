@@ -76,8 +76,16 @@ export default function Home() {
             <Sectors
                 title={data?.section_6_title?.en}
                 slogan={data?.section_6_slogan?.en}
+                appUrl={appUrl}
             />
-            <Crafting />
+            <Crafting
+                slogan={data?.section_7_slogan?.en}
+                title={data?.section_7_title?.en}
+                image={appUrl + data?.section_8_media}
+                titleShape={data?.section_8_title?.en}
+                sloganShape={data?.section_8_slogan?.en}
+                buttonShape={data?.section_8_text?.en}
+            />
             <Footer work={true} />
         </>
     );

@@ -12,9 +12,9 @@ class OverviewIcons extends Model
     public $table = "content_web_pages_icons";
 
     protected $casts = [
-        'second_title' => 'array',
         'text' => 'array',
         'first_title' => 'array',
+        'second_title' => 'array',
     ];
 
     protected $fillable = [

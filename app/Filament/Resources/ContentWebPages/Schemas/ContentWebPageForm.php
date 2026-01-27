@@ -4,19 +4,15 @@ namespace App\Filament\Resources\ContentWebPages\Schemas;
 
 use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 use App\Models\ContentWebPage;
-use App\Models\Language;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Repeater\TableColumn;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 
 class ContentWebPageForm
@@ -319,11 +315,10 @@ class ContentWebPageForm
                                                 ['italic', 'underline'],
                                                 ['undo', 'redo'],
                                             ]),
-
-                                        TextInput::make('second_title')
+                                        MarkdownEditor::make('second_title')
                                             ->label('Segundo título')
-                                            ->columnSpanFull(),
-
+                                            ->columnSpanFull()
+                                            ->toolbarButtons([]),
                                         RichEditor::make('text')
                                             ->label('Texto')
                                             ->columnSpanFull()
@@ -392,7 +387,7 @@ class ContentWebPageForm
                             ])
                             ->columnSpanFull()
                             ->previewable(),
-                        TranslatableTabs::make('anyLabel')
+                        TranslatableTabs::make()
                             ->schema([
                                 RichEditor::make('section_8_title')
                                     ->required()
@@ -490,11 +485,10 @@ class ContentWebPageForm
                                                 ['undo', 'redo'],
                                             ]),
 
-                                        TextInput::make('second_title')
+                                        MarkdownEditor::make('second_title')
                                             ->label('Segundo título')
-                                            ->maxValue(50)
                                             ->columnSpanFull()
-                                            ->hint('Máximo 50 caracteres'),
+                                            ->toolbarButtons([]),
 
                                         RichEditor::make('text')
                                             ->required()
@@ -540,18 +534,18 @@ class ContentWebPageForm
                             ->columnSpanFull(),
                         TranslatableTabs::make('anyLabel')
                             ->schema([
-                                TextInput::make('section_2_title')
+                                RichEditor::make('section_2_title')
                                     ->required()
                                     ->label('Título')
-                                    ->maxValue(50)
-                                    ->columnSpanFull()
-                                    ->hint('Máximo 50 caracteres'),
-                                TextInput::make('section_2_slogan')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+                                RichEditor::make('section_2_slogan')
                                     ->required()
-                                    ->label('Slogan')
-                                    ->maxValue(50)
-                                    ->columnSpanFull()
-                                    ->hint('Máximo 50 caracteres'),
+                                    ->label('Título')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
                             ])
                             ->visible(fn($get) => $get('id') !== 1)
                             ->columnSpanFull(),
@@ -588,18 +582,18 @@ class ContentWebPageForm
                     ->schema([
                         TranslatableTabs::make('anyLabel')
                             ->schema([
-                                TextInput::make('section_3_title')
+                                RichEditor::make('section_3_title')
                                     ->required()
                                     ->label('Título')
-                                    ->maxValue(50)
-                                    ->columnSpanFull()
-                                    ->hint('Máximo 50 caracteres'),
-                                TextInput::make('section_3_slogan')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+                                RichEditor::make('section_3_slogan')
                                     ->required()
-                                    ->label('Slogan')
-                                    ->maxValue(50)
-                                    ->columnSpanFull()
-                                    ->hint('Máximo 50 caracteres'),
+                                    ->label('Título')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
                             ])
                             ->visible(fn($get) => $get('id') !== 1)
                             ->columnSpanFull(),

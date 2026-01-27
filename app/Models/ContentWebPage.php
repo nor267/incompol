@@ -10,6 +10,34 @@ class ContentWebPage extends Model
     use HasTranslations;
 
     public $table = "content_web_pages";
+    protected $translatable = [
+        'slogan',
+        'description',
+        'name',
+        'section_1_title',
+        'section_1_slogan',
+        'section_2_title',
+        'section_2_slogan',
+        'section_2_text',
+        'section_3_title',
+        'section_3_slogan',
+        'section_3_text',
+        'section_4_title',
+        'section_4_slogan',
+        'section_4_text',
+        'section_5_title',
+        'section_5_slogan',
+        'section_5_text',
+        'section_6_title',
+        'section_6_slogan',
+        'section_6_text',
+        'section_7_title',
+        'section_7_slogan',
+        'section_7_text',
+        'section_8_title',
+        'section_8_slogan',
+        'section_8_text',
+    ];
 
     protected $casts = [
         'slogan' => 'array',

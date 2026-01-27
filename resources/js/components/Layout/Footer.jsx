@@ -7,7 +7,7 @@ import certification3 from "../../../images/icons/footer/certification3.png";
 
 export default function Footer({ work }) {
     let classes =
-        "pt-[50px] xl:pb-6 flex flex-col lg:flex-row items-start justify-center lg:justify-between";
+        "pt-[50px] xl:pb-6 flex flex-col lg:flex-row items-end justify-center lg:justify-between";
     if (work) {
         classes += " lg:pt-[100px] xl:pt-[200px]";
     } else classes += " lg:pt-[80px] xl:pt-[120px]";
@@ -23,7 +23,7 @@ export default function Footer({ work }) {
                             <br className="hidden lg:block"></br> solutions
                         </h1>
 
-                        <div className="lg:items-start xl:items-center lg:max-w-[320px] xl:max-w-[313px] lg:justify-start xl:justify-between pt-10 xl:pt-18 hidden lg:flex flex-col xl:flex-row">
+                        {/* <div className="lg:items-start xl:items-center lg:max-w-[320px] xl:max-w-[313px] lg:justify-start xl:justify-between pt-10 xl:pt-18 hidden lg:flex flex-col xl:flex-row">
                             <p className="xl:text-[13px] xl:leading-[22px] font-light">
                                 2025 © INCOMPOL
                             </p>
@@ -34,7 +34,7 @@ export default function Footer({ work }) {
                             >
                                 Made by Nor267
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="flex gap-5 lg:gap-20 xl:gap-56 pt-5 xl:pt-0">
                         <div className="text-[14px] leading-[24px] xl:text-[15px] xl:leading-[25px] tracking-[0.03em] font-light flex-col flex">
@@ -124,6 +124,18 @@ export default function Footer({ work }) {
                             <img src={certification2}></img>
                         </div>
                     </div>
+                </div>
+                <div className="lg:items-start xl:items-center lg:max-w-[320px] xl:max-w-[313px] lg:justify-start xl:justify-between pt-10 xl:pt-18 xl:pb-5.5 hidden lg:flex flex-col xl:flex-row">
+                    <p className="xl:text-[13px] xl:leading-[22px] font-light">
+                        2025 © INCOMPOL
+                    </p>
+                    <a
+                        href="https://www.nor267.com/"
+                        target="__blank"
+                        className="font-courier xl:text-[13px] xl:leading-[22px] cursor-pointer hover:text-laranja duration-300 transition-all"
+                    >
+                        Made by Nor267
+                    </a>
                 </div>
                 <div className="flex justify-center items-center flex-col gap-4 pt-15 lg:hidden">
                     <button className="text-laranja border-3 border-laranja uppercase xl:px-4 rounded-[40px] xl:py-1 px-4 cursor-pointer font-bold">
