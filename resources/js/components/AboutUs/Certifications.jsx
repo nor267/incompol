@@ -1,39 +1,59 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+//icons
 import arrowWhite from "../../../images/icons/triangle-white.svg";
 import arrowGrey from "../../../images/icons/triangle-grey.svg";
 
-//fake images
-import certification1 from "../../../images/fake/aboutus/certification1.png";
-import certification2 from "../../../images/fake/aboutus/certification2.png";
-import certification3 from "../../../images/fake/aboutus/certification3.png";
-
 //components
 import SecondTitle from "../Layout/SecondTitle";
+import { API_URL } from "../../config";
 
-export default function Certifications() {
+export default function Certifications({ slogan, title }) {
+    const [data, setData] = new useState([]);
+
+    const appUrl = window.location.origin + "/storage/";
+
+    useEffect(() => {
+        const fetchPage = async () => {
+            try {
+                const response = await axios({
+                    method: "post",
+                    url: API_URL + "/get-certification",
+                    data: {},
+                });
+
+                setData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPage();
+    }, []);
+
     return (
         <div className="bg-light-grey pt-10 pb-20 xl:pt-38 xl:pb-52">
             <div className="text-center text-azul flex justify-center items-center flex-col">
                 <SecondTitle
-                    slogan="Quality. Responsibility. Trust."
-                    title="Certifications<br> and Recognitions"
+                    slogan={slogan}
+                    title={title}
                     className="text-azul"
                 />
             </div>
             <div className="pt-10 lg:pt-20 xl:pt-38 flex flex-col xl:flex-row margin-website justify-center items-center">
-                <div className="bg-white text-azul lg:h-[250px] xl:h-[720px] certification-box ">
-                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-24">
-                        ENVIRONMENT
+                <div className="bg-white text-azul lg:h-[250px] xl:h-[660px] certification-box ">
+                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-18">
+                        {data[0]?.title?.en}
                     </h1>
-                    <p className="text-base w-full lg:max-w-[750px] xl:max-w-[424px] pt-5 lg:pt-8 xl:pt-10">
-                        ISO 14001 certified.<br></br>
-                        <br></br>
-                        We operate responsibly, protecting the environment
-                        through continuous improvement and sustainable
-                        practices.
-                    </p>
+                    <div
+                        className="text-base w-full lg:max-w-[750px] xl:max-w-[424px] pt-5 lg:pt-8 xl:pt-10"
+                        dangerouslySetInnerHTML={{
+                            __html: data[0]?.description?.en,
+                        }}
+                    ></div>
                     <img
-                        src={certification1}
-                        className="w-40 xl:hidden pt-2 pb-3"
+                        src={appUrl + data[0]?.icon}
+                        className="w-40 xl:hidden pt-2 "
                     ></img>
 
                     <div className="xl:w-[340px] bg-azul xl:h-[314px] xl:absolute xl:-bottom-10 xl:left-1/2 xl:-translate-x-1/2 hidden xl:block">
@@ -47,28 +67,24 @@ export default function Certifications() {
                                 className="xl:absolute bottom-0 left-1/2 -translate-x-1/2 rotate-180"
                             ></img>
                             <img
-                                src={certification1}
-                                className="xl:absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+                                src={appUrl + data[0]?.icon}
+                                className="xl:absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 3xl:w-50"
                             ></img>
                         </div>
                     </div>
                 </div>
-                <div className="bg-azul text-white lg:h-[300px] xl:h-[810px] certification-box ">
-                    <h1 className="font-eurostile text-white text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-20 ">
-                        Quality
+                <div className="bg-azul text-white lg:h-[300px] xl:h-[740px] certification-box ">
+                    <h1 className="font-eurostile text-white text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-14 ">
+                        {data[1]?.title?.en}
                     </h1>
-                    <p className="text-base w-full lg:max-w-[750px]   xl:max-w-[424px] pt-5 xl:pt-10">
-                        Certified under IATF 16949, we ensure consistent
-                        precision and reliability for demanding industries.
-                        <br></br>
-                        <br></br>
-                        Backed by strict process control, continuous
-                        improvement, and full traceability, our production meets
-                        the highest international quality and safety standards,
-                        even in the most complex applications.
-                    </p>
+                    <div
+                        className="text-base w-full lg:max-w-[750px]   xl:max-w-[424px] pt-5 xl:pt-10"
+                        dangerouslySetInnerHTML={{
+                            __html: data[1]?.description?.en,
+                        }}
+                    ></div>
                     <img
-                        src={certification2}
+                        src={appUrl + data[1]?.icon}
                         className="w-40 xl:hidden pt-2 pb-3"
                     ></img>
                     <div className="xl:w-[340px] bg-[#94999E] xl:h-[314px] xl:absolute -bottom-10 left-1/2 -translate-x-1/2 xl:block hidden">
@@ -78,30 +94,27 @@ export default function Certifications() {
                                 className="absolute bottom-0 left-1/2 -translate-x-1/2 rotate-180"
                             ></img>
                             <img
-                                src={certification2}
-                                className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+                                src={appUrl + data[1]?.icon}
+                                className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 2xl:w-60"
                             ></img>
                         </div>
                     </div>
                 </div>
-                <div className="bg-white text-azul lg:h-[400px] xl:h-[720px] certification-box">
-                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-24 xl:leading-[32px]">
-                        ESG
+                <div className="bg-white text-azul lg:h-[400px] xl:h-[660px] certification-box">
+                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-18 xl:leading-[32px]">
+                        {data[2]?.title?.en}
                     </h1>
                     <p className="text-[14px] xl:leading-[19px] tracking-[0.03em] text-center">
                         (Environmental, Social and Governance)
                     </p>
-                    <p className="text-base w-full lg:max-w-[750px]  xl:max-w-[424px] pt-5 xl:pt-10">
-                        Commitment to ethics, people, and the planet has been
-                        recognised with the
-                        <strong>EcoVadis Bronze Medal</strong> for
-                        Environmental, Social and Governance performance.
-                        <br></br>
-                        <br></br>A step forward in building a more sustainable
-                        industry.
-                    </p>
+                    <p
+                        className="text-base w-full lg:max-w-[750px]  xl:max-w-[424px] pt-5 xl:pt-10"
+                        dangerouslySetInnerHTML={{
+                            __html: data[2]?.description?.en,
+                        }}
+                    ></p>
                     <img
-                        src={certification3}
+                        src={appUrl + data[2]?.icon}
                         className="w-40 xl:hidden pt-2 pb-3"
                     ></img>
                     <div className="xl:w-[340px] bg-azul xl:h-[314px] xl:block hidden xl:absolute -bottom-10 left-1/2 -translate-x-1/2 ">
@@ -115,8 +128,8 @@ export default function Certifications() {
                                 className="absolute bottom-0 left-1/2 -translate-x-1/2 rotate-180"
                             ></img>
                             <img
-                                src={certification3}
-                                className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+                                src={appUrl + data[2]?.icon}
+                                className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 3xl:w-40"
                             ></img>
                         </div>
                     </div>

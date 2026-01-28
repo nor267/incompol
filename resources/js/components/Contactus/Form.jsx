@@ -1,36 +1,45 @@
 import SecondTitle from "../Layout/SecondTitle";
 
-export default function Form() {
+export default function Form({
+    title,
+    slogan,
+    contacts,
+    contactTitle,
+    linkedin,
+}) {
     return (
         <div className="bg-azul">
             <SecondTitle
-                slogan="Let us know what you need."
-                title="Contact us"
+                slogan={slogan}
+                title={title}
                 className="pt-15 xl:pt-20 text-white"
             />
             <div className="lg:px-[100px] xl:px-[377px] flex flex-col-reverse w-full lg:flex-row justify-between xl:pt-36 px-8 4xl:px-[600px] ">
                 <div className="flex items-start justify-between lg:justify-start lg:flex-col pt-15 xl:pt-0 pb-15">
                     <div className="">
-                        <h1 className="text-[18px] xl:text-[28px] xl:leading-[32px uppercase text-white font-medium">
-                            Contacts
-                        </h1>
-                        <p className="text-base text-white pt-3 xl:pt-8">
-                            incompol@incompol.pt<br></br>comercial@incompol.pt
-                        </p>
-                        <p className="text-base text-white pt-3 xl:pt-8">
-                            Tel.:+ 351 263 650 160<br></br>Fax: + 351 263 655
-                            425
-                        </p>
+                        <h1
+                            className="text-[18px] xl:text-[28px] xl:leading-[32px uppercase text-white font-medium"
+                            dangerouslySetInnerHTML={{
+                                __html: contactTitle,
+                            }}
+                        ></h1>
+                        <p
+                            className="text-base text-white pt-3 xl:pt-8"
+                            dangerouslySetInnerHTML={{
+                                __html: contacts,
+                            }}
+                        ></p>
                     </div>
                     <div className=" lg:pt-11">
                         <h1 className="xl:text-[28px] xl:leading-[32px uppercase text-white font-medium">
                             SOCIALS
                         </h1>
-                        <p className="text-laranja underline underline-offset-3 xl:text-[19px] cursor-pointer hover:text-white duration-300 transition-all">
-                            <a href="https://www.linkedin.com/" target="_blank">
-                                Linkedin
-                            </a>
-                        </p>
+                        <p
+                            className="text-laranja underline underline-offset-3 xl:text-[19px] cursor-pointer hover:text-white duration-300 transition-all"
+                            dangerouslySetInnerHTML={{
+                                __html: linkedin,
+                            }}
+                        ></p>
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2">

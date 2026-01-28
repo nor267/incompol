@@ -16,17 +16,23 @@ import new2 from "../../../../images/fake/news/news2.png";
 import new3 from "../../../../images/fake/news/news3.png";
 import Job from "./job";
 
-export default function Jobs() {
+export default function Jobs({ title, slogan, jobs }) {
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <div className="bg-light-grey xl:pl-[137px] pb-15 xl:pb-26 relative">
             <section className="text-azul  px-8 lg:px-[100px] xl:px-0 pt-10 xl:pt-18 ">
-                <p className="uppercase xl:text-[17px] xl:leading-[22px] tracking-[0.03em]">
-                    Career Opportunities
-                </p>
-                <h1 className="uppercase font-eurostile font-bold xl:text-[32px] xl:leading-[32px] tracking-[0.14em] lg:pt-2 xl:pt-5">
-                    We’re Hiring
-                </h1>
+                <p
+                    className="uppercase xl:text-[17px] xl:leading-[22px] tracking-[0.03em]"
+                    dangerouslySetInnerHTML={{
+                        __html: slogan,
+                    }}
+                ></p>
+                <h1
+                    className="uppercase font-eurostile font-bold xl:text-[32px] xl:leading-[32px] tracking-[0.14em] lg:pt-2 xl:pt-5"
+                    dangerouslySetInnerHTML={{
+                        __html: title,
+                    }}
+                ></h1>
             </section>
             <div className="flex justify-end gap-2 xl:gap-4 pr-8 xl:pr-[137px]">
                 <button className="swiper-button-prev-custom cursor-pointer">

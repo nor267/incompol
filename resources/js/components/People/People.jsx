@@ -1,8 +1,8 @@
-//fake images
-import market1 from "../../../images/fake/aboutus/market1.jpg";
-import market2 from "../../../images/fake/aboutus/market2.jpg";
-import market3 from "../../../images/fake/aboutus/market3.jpg";
-import Footer from "../Layout/Footer";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+//config
+import { API_URL } from "../../config";
 
 //components
 import NavbarPages from "../Layout/NavbarPages";
@@ -11,71 +11,122 @@ import Form from "./Form";
 import Hiring from "./Hiring";
 import Jobs from "./Jobs/Jobs";
 import Transparency from "./Transparency";
+import Footer from "../Layout/Footer";
 
 export default function People() {
+    const [data, setData] = new useState([]);
+
+    const appUrl = window.location.origin + "/storage/";
+
+    useEffect(() => {
+        const fetchPage = async () => {
+            try {
+                const response = await axios({
+                    method: "post",
+                    url: API_URL + "/get-page",
+                    data: {
+                        slug: "people",
+                    },
+                });
+
+                setData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPage();
+    }, []);
+    console.log(data);
+
     return (
         <>
             <NavbarPages />
 
             <Title
-                title="People"
-                slogan="Talent a tour core"
-                text="We believe that excellence starts with talent, commitment, and teamwork. By investing in our people, we build strong teams capable of delivering quality, precision, and long-term value for our partners worldwide."
+                title={data.name?.en}
+                slogan={data.slogan?.en}
+                text={data.description?.en}
             />
             <div className="bg-azul xl:h-[579px] flex flex-col lg:flex-row text-white mt-15 xl:mt-40">
                 <div className="flex w-full lg:w-auto">
                     <img
-                        src={market1}
-                        className="w-full max-w-[135px] lg:max-w-[200px] 4xl:max-w-[600px] xl:max-w-[340px] object-cover"
-                    ></img>
-                    <img
-                        src={market2}
-                        className="w-full max-w-[135px] lg:max-w-[200px] 4xl:max-w-[600px] xl:max-w-[340px] object-cover"
-                    ></img>
-                    <img
-                        src={market3}
-                        className="w-full max-w-[135px] lg:max-w-[200px] 4xl:max-w-[600px] xl:max-w-[340px] object-cover"
+                        src={appUrl + data?.second_image}
+                        className="w-full max-w-[135px] lg:max-w-[200px] 4xl:max-w-[600px] xl:max-w-[900px] object-cover"
                     ></img>
                 </div>
                 <div className="pb-5 xl:pb-0 pt-5 pl-8 lg:pl-20 xl:pl-[130px] lg:pt-20 xl:pt-[150px]">
-                    <p className="text-[15px] xl:text-[17px] xl:leading-[22px] tracking-[0.03em]">
-                        Our Human Resources
-                    </p>
-                    <h1 className="font-eurostile text-[16px] pt-2 xl:text-[32px] xl:leading-[32px] tracking-[0.14em] font-bold uppercase xl:max-w-[600px] xl:pt-7">
-                        People at the core of excellence
-                    </h1>
+                    <p
+                        className="text-[15px] xl:text-[17px] xl:leading-[22px] tracking-[0.03em]"
+                        dangerouslySetInnerHTML={{
+                            __html: data?.section_1_slogan?.en,
+                        }}
+                    ></p>
+                    <h1
+                        className="font-eurostile text-[16px] pt-2 xl:text-[32px] xl:leading-[32px] tracking-[0.14em] font-bold uppercase xl:max-w-[600px] xl:pt-7"
+                        dangerouslySetInnerHTML={{
+                            __html: data?.section_1_title?.en,
+                        }}
+                    ></h1>
                     <div className="flex flex-col lg:flex-row items-start pt-6 lg:pt-15 xl:pt-28 lg:gap-15 xl:gap-28">
                         <div className="flex lg:flex-col justify-center items-center gap-8 lg:gap-0">
-                            <h1 className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.05em]">
-                                120
-                            </h1>
-                            <p className="xl:text-[18px] xl:leading-[24px] font-medium uppercase">
-                                Employees
-                            </p>
+                            <h1
+                                className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.05em]"
+                                dangerouslySetInnerHTML={{
+                                    __html: data?.section_2_title?.en,
+                                }}
+                            ></h1>
+                            <p
+                                className="xl:text-[18px] xl:leading-[24px] font-medium uppercase"
+                                dangerouslySetInnerHTML={{
+                                    __html: data?.section_2_slogan?.en,
+                                }}
+                            ></p>
                         </div>
                         <div className="flex lg:flex-col justify-center items-center gap-8 lg:gap-0">
-                            <h1 className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.14em]">
-                                12
-                            </h1>
-                            <p className="xl:text-[18px] xl:leading-[24px] font-medium uppercase">
-                                Engineers
-                            </p>
+                            <h1
+                                className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.14em]"
+                                dangerouslySetInnerHTML={{
+                                    __html: data?.section_3_title?.en,
+                                }}
+                            ></h1>
+                            <p
+                                className="xl:text-[18px] xl:leading-[24px] font-medium uppercase"
+                                dangerouslySetInnerHTML={{
+                                    __html: data?.section_3_slogan?.en,
+                                }}
+                            ></p>
                         </div>
                         <div className="flex lg:flex-col justify-center items-center gap-8 lg:gap-0">
-                            <h1 className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.14em]">
-                                15
-                            </h1>
-                            <p className="xl:text-[18px] xl:leading-[24px] font-medium uppercase">
-                                Specialized <br></br>technicians
-                            </p>
+                            <h1
+                                className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.14em]"
+                                dangerouslySetInnerHTML={{
+                                    __html: data?.section_4_title?.en,
+                                }}
+                            ></h1>
+                            <p
+                                className="xl:text-[18px] xl:leading-[24px] font-medium uppercase"
+                                dangerouslySetInnerHTML={{
+                                    __html: data?.section_4_slogan?.en,
+                                }}
+                            ></p>
                         </div>
                     </div>
                 </div>
             </div>
-            <Hiring />
-            <Jobs />
-            <Form />
-            <Transparency />
+            <Hiring text={data?.section_5_title?.en} />
+            <Jobs
+                title={data?.section_6_title?.en}
+                slogan={data?.section_6_slogan?.en}
+            />
+            <Form
+                text={data?.section_6_text?.en}
+                image={appUrl + data?.section_6_media}
+            />
+            <Transparency
+                title={data?.section_7_title?.en}
+                slogan={data?.section_7_slogan?.en}
+                text={data?.section_7_text?.en}
+            />
             <Footer />
         </>
     );

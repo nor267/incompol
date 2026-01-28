@@ -1,6 +1,8 @@
-//fake image
-import banner from "../../../images/fake/contacts/banner.jpg";
-import sede1 from "../../../images/fake/contacts/sede1.jpg";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+//config
+import { API_URL } from "../../config";
 
 //icons
 import triangleWhite from "../../../images/icons/triangle-white.svg";
@@ -12,18 +14,42 @@ import Title from "../Layout/Title";
 import Form from "./Form";
 
 export default function Contactus() {
+    const [data, setData] = new useState([]);
+
+    const appUrl = window.location.origin + "/storage/";
+
+    useEffect(() => {
+        const fetchPage = async () => {
+            try {
+                const response = await axios({
+                    method: "post",
+                    url: API_URL + "/get-page",
+                    data: {
+                        slug: "contacts",
+                    },
+                });
+
+                setData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPage();
+    }, []);
+
+    console.log(data);
+
     return (
         <>
             <NavbarPages />
             <Title
-                title="contacts-us"
-                text="We’re always ready to connect. <br><br>
-                    Whether you have a question about our products, need technical support, or want to explore a partnership opportunity, our team is here to help. Get in touch with us and we’ll respond as soon as possible."
-                slogan=""
+                title={data.name?.en}
+                slogan={data.slogan?.en}
+                text={data.description?.en}
             />
             <div className="mt-15 xl:mt-40 relative">
                 <img
-                    src={banner}
+                    src={appUrl + data?.second_image}
                     className="h-[200px] lg:h-[450px] xl:h-[760px] w-full object-cover"
                 ></img>
                 <img
@@ -34,63 +60,82 @@ export default function Contactus() {
             <div className="py-15 lg:py-20 xl:py-38 4xl:px-[200px]">
                 <div className=" margin-website flex justify-between flex-col lg:flex-row">
                     <div className="">
-                        <h1 className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold">
-                            Instalações Porto Alto{" "}
-                            <span className="text-laranja">(Sede)</span>
-                        </h1>
-                        <p className="text-base text-azul pt-3 xl:pt-8">
-                            Av. Nossa Senhora da Guadalupe,<br></br> 106,
-                            Apartado 41 - Porto Alto<br></br>2135-015 Samora
-                            Correia<br></br>
-                            Portugal
-                        </p>
-                        <h1 className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold pt-8 xl:pt-22">
-                            Contactos
-                        </h1>
-                        <p className="text-base text-azul pt-3 xl:pt-8">
-                            incompol@incompol.pt<br></br>comercial@incompol.pt
-                        </p>
-                        <p className="text-base text-azul pt-3 xl:pt-8">
-                            Tel.:+ 351 263 650 160<br></br>Fax: + 351 263 655
-                            425
-                        </p>
+                        <div className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold flex">
+                            <span
+                                dangerouslySetInnerHTML={{
+                                    __html: data.section_1_title?.en,
+                                }}
+                            ></span>
+                            <span className="text-laranja pl-2">(Sede)</span>
+                        </div>
+                        <p
+                            className="text-base text-azul pt-3 xl:pt-8"
+                            dangerouslySetInnerHTML={{
+                                __html: data.section_1_slogan?.en,
+                            }}
+                        ></p>
+                        <h1
+                            className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold pt-8 xl:pt-22"
+                            dangerouslySetInnerHTML={{
+                                __html: data.section_2_title?.en,
+                            }}
+                        ></h1>
+                        <p
+                            className="text-base text-azul pt-3 xl:pt-8"
+                            dangerouslySetInnerHTML={{
+                                __html: data.section_2_text?.en,
+                            }}
+                        ></p>
                     </div>
                     <div className="pt-3 xl:pt-0">
                         <img
-                            src={sede1}
+                            src={appUrl + data?.section_2_media}
                             className="lg:w-[700px] xl:w-auto"
                         ></img>
                     </div>
                 </div>
-                <div className="pt-10 xl:pt-20 margin-website flex flex-col lg:flex-row-reverse  justify-between">
+                <div className="pt-10 xl:pt-20 margin-website flex flex-col lg:flex-row-reverse  justify-end xl:gap-28">
                     <div className="">
-                        <h1 className="uppercase text-[18px]  xl:text-[28px] xl:leading-[32px] text-azul font-bold">
-                            Instalações Benavente
-                        </h1>
-                        <p className="text-base text-azul pt-3 xl:pt-8">
-                            Estrada Nacional 118 - Km 45,6<br></br>Apartado 121
-                            - Benavente<br></br>2130-999 Benavente<br></br>
-                            Portugal
-                        </p>
-                        <h1 className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold pt-8 xl:pt-22">
-                            Contactos
-                        </h1>
-                        <p className="text-base text-azul pt-3 xl:pt-8">
-                            incompol@incompol.pt
-                        </p>
-                        <p className="text-base text-azul pt-3 xl:pt-8">
-                            Tel.:+351 263 507 396<br></br>Fax: + 351 263 507 321
-                        </p>
+                        <h1
+                            className="uppercase text-[18px]  xl:text-[28px] xl:leading-[32px] text-azul font-bold"
+                            dangerouslySetInnerHTML={{
+                                __html: data.section_3_title?.en,
+                            }}
+                        ></h1>
+                        <p
+                            className="text-base text-azul pt-3 xl:pt-8"
+                            dangerouslySetInnerHTML={{
+                                __html: data.section_3_text?.en,
+                            }}
+                        ></p>
+                        <h1
+                            className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold pt-8 xl:pt-22"
+                            dangerouslySetInnerHTML={{
+                                __html: data.section_4_title?.en,
+                            }}
+                        ></h1>
+                        <p
+                            className="text-base text-azul pt-3 xl:pt-8"
+                            dangerouslySetInnerHTML={{
+                                __html: data.section_4_text?.en,
+                            }}
+                        ></p>
                     </div>
                     <div className="pt-3 xl:pt-0">
                         <img
-                            src={sede1}
+                            src={appUrl + data?.section_4_media}
                             className="lg:w-[700px] xl:w-auto"
                         ></img>
                     </div>
                 </div>
             </div>
-            <Form />
+            <Form
+                title={data?.section_5_title?.en}
+                slogan={data?.section_5_slogan?.en}
+                contactTitle={data?.section_5_title?.en}
+                contacts={data?.section_5_text?.en}
+                linkedin={data?.section_6_title?.en}
+            />
             <Footer work={true} />
         </>
     );

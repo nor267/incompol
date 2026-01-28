@@ -1,3 +1,9 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+//config
+import { API_URL } from "../../config";
+
 //components
 import Icon from "./Icon";
 import SecondTitle from "../Layout/SecondTitle";
@@ -14,91 +20,131 @@ import world from "../../../images/icons/aboutus/world.svg";
 import goals from "../../../images/icons/aboutus/goals.svg";
 import wired from "../../../images/icons/aboutus/wire.svg";
 
-export default function Overview({ title, slogan, webPageId }) {
+export default function Overview({ title, slogan, appUrl }) {
+    const [data, setData] = new useState([]);
+
+    useEffect(() => {
+        const fetchPage = async () => {
+            try {
+                const response = await axios({
+                    method: "post",
+                    url: API_URL + "/get-icons",
+                    data: {
+                        id: 2,
+                    },
+                });
+
+                setData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPage();
+    }, []);
+
     return (
         <div className="mt-15 mb-10 xl:mt-44 xl:mb-38 text-azul text-center">
             <SecondTitle slogan={slogan} title={title} className="text-azul" />
             <div className="lg:mt-10 xl:mt-28 bg-light-grey mt-5 company-overview ">
-                <Icon icon={house} title="1987" text="Foundation" />
-
+                <Icon
+                    icon={house}
+                    title={data[0]?.first_title?.en}
+                    text={data[0]?.text?.en}
+                    subtitle={data[0]?.second_title?.en}
+                />
                 <Icon
                     icon={map}
-                    title="Porto alto,"
-                    text="Location"
-                    subtitle="Portugal"
+                    title={data[1]?.first_title?.en}
+                    text={data[1]?.text?.en}
+                    subtitle={data[1]?.second_title?.en}
                 />
                 <Icon
                     icon={industrial}
-                    title="2 sites <br> 17000 M2"
-                    text="Facilities"
+                    title={data[2]?.first_title?.en}
+                    text={data[2]?.text?.en}
+                    subtitle={data[2]?.second_title?.en}
                     className="hidden lg:block"
                 />
                 <Icon
                     icon={heart}
-                    title="120"
-                    text="Employees"
+                    title={data[3]?.first_title?.en}
+                    text={data[3]?.text?.en}
+                    subtitle={data[3]?.second_title?.en}
                     className="hidden lg:block"
                 />
             </div>
             <div className="bg-white company-overview lg:hidden lg:py-0!">
                 <Icon
                     icon={industrial}
-                    title="2 sites <br> 17000 M2"
-                    text="Facilities"
+                    title={data[2]?.first_title?.en}
+                    text={data[2]?.text?.en}
+                    subtitle={data[2]?.second_title?.en}
                     className="block lg:hidden"
                 />
                 <Icon
                     icon={heart}
-                    title="120"
-                    text="Employees"
+                    title={data[3]?.first_title?.en}
+                    text={data[3]?.text?.en}
+                    subtitle={data[3]?.second_title?.en}
                     className="block lg:hidden"
                 />
             </div>
             <div className="bg-light-grey lg:bg-white lg:grid-cols-2! lg:px-70! xl:px-80! company-overview">
                 <Icon
                     icon={graph}
-                    title="€ 15.4 M"
-                    text="Sales 2024"
-                    subtitle="(outlook 2025: €23M)"
+                    title={data[4]?.first_title?.en}
+                    text={data[4]?.text?.en}
+                    subtitle={data[4]?.second_title?.en}
                 />
                 <Icon
                     icon={world}
-                    title="4 markets"
-                    text="Automotive, Home & Appliance,<br> Aerospace & Defence"
+                    title={data[5]?.first_title?.en}
+                    text={data[5]?.text?.en}
+                    subtitle={data[5]?.second_title?.en}
                 />
             </div>
             <div className="bg-white lg:bg-light-grey company-overview">
                 <Icon
                     icon={goals}
-                    title="Core business"
-                    text="High-precision metallic<br> parts for high volume<br> industries"
+                    title={data[6]?.first_title?.en}
+                    text={data[6]?.text?.en}
+                    subtitle={data[6]?.second_title?.en}
                 />
-                <Icon icon={settings} title="17 M" text="Parts supplied 2024" />
+                <Icon
+                    icon={settings}
+                    title={data[7]?.first_title?.en}
+                    text={data[7]?.text?.en}
+                    subtitle={data[7]?.second_title?.en}
+                />
                 <Icon
                     icon={roller}
-                    title="6000 TON"
-                    text="Transformed raw<br> material 2024"
+                    title={data[8]?.first_title?.en}
+                    text={data[8]?.text?.en}
+                    subtitle={data[8]?.second_title?.en}
                     className="hidden lg:block"
                 />
 
                 <Icon
                     icon={wired}
-                    title="Technologies"
-                    text="Stamping, Machining,<br> Turning, Welding<br> & Assembling"
+                    title={data[9]?.first_title?.en}
+                    text={data[9]?.text?.en}
+                    subtitle={data[9]?.second_title?.en}
                     className="hidden lg:block"
                 />
             </div>
             <div className="bg-light-grey company-overview lg:hidden! lg:py-0!">
                 <Icon
                     icon={roller}
-                    title="6000 TON"
-                    text="Transformed raw<br> material 2024"
+                    title={data[8]?.first_title?.en}
+                    text={data[8]?.text?.en}
+                    subtitle={data[8]?.second_title?.en}
                 />
 
                 <Icon
                     icon={wired}
-                    title="Technologies"
-                    text="Stamping, Machining,<br> Turning, Welding<br> & Assembling"
+                    title={data[8]?.first_title?.en}
+                    text={data[8]?.text?.en}
+                    subtitle={data[8]?.second_title?.en}
                 />
             </div>
         </div>

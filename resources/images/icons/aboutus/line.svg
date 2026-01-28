@@ -1,7 +1,7 @@
-<svg width="1472" height="390" viewBox="0 0 1472 390" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M32 10H1470V380L42.5 380" stroke="#1E22AA" stroke-width="3"/>
-<path d="M32 380.516L48 390L48 371L32 380.516Z" fill="#1E22AA"/>
-<path d="M16 380.516L32 390L32 371L16 380.516Z" fill="#FF671D"/>
-<path d="M-2.32331e-06 380.516L16 390L16 371L-2.32331e-06 380.516Z" fill="#FF671D"/>
-<path d="M48 9.48393L32 1.90735e-06L32 19L48 9.48393Z" fill="#1E22AA"/>
+<svg width="1338" height="396" viewBox="0 0 1338 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M29.083 10.1372H1336.01V385.211L38.6259 385.211" stroke="#1E22AA" stroke-width="2.72654"/>
+<path d="M29.083 385.734L43.6245 395.348L43.6245 376.088L29.083 385.734Z" fill="#1E22AA"/>
+<path d="M14.5414 385.734L29.083 395.348L29.083 376.088L14.5414 385.734Z" fill="#FF671D"/>
+<path d="M-5.44429e-05 385.734L14.5415 395.348L14.5415 376.088L-5.44429e-05 385.734Z" fill="#FF671D"/>
+<path d="M43.6246 9.61416L29.083 0.000174429L29.083 19.2607L43.6246 9.61416Z" fill="#1E22AA"/>
 </svg>

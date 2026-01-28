@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certifications;
 use App\Models\ContentWebPage;
+use App\Models\Equipments;
 use App\Models\News;
+use App\Models\OverviewHistory;
 use App\Models\OverviewIcons;
 use Illuminate\Http\Request;
 
@@ -40,5 +43,35 @@ class PagesController extends Controller
         $news = News::where('visible', true)->orderBy('date', 'DESC')->get();
 
         return response()->json($news);
+    }
+
+    /**
+     * Obter o história
+     */
+    public function get_history()
+    {
+        $history = OverviewHistory::orderBy('order', 'ASC')->get();
+
+        return response()->json($history);
+    }
+
+    /**
+     * Obter certifications
+     */
+    public function get_certification()
+    {
+        $history = Certifications::orderBy('order', 'ASC')->get();
+
+        return response()->json($history);
+    }
+
+    /**
+     * Obter equipamentos
+     */
+    public function get_equipment()
+    {
+        $equipments = Equipments::orderBy('order', 'ASC')->get();
+
+        return response()->json($equipments);
     }
 }

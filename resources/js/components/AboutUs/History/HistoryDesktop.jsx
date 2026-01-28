@@ -2,16 +2,17 @@ import HistoryIcon from "./../HistoryIcon";
 
 //icons
 import arrow from "../../../../images/icons/aboutus/arrow.svg";
+import arrowSmall from "../../../../images/icons/aboutus/arrow-small.svg";
 import line from "../../../../images/icons/aboutus/line.svg";
 import lineTablet from "../../../../images/icons/aboutus/line-tablet.svg";
 
-export default function HistoryDesktop() {
+export default function HistoryDesktop({ dates }) {
     return (
         <>
-            <div className="lg:px-45 xl:px-[385px] 4xl:px-[620px] relative flex justify-between">
+            <div className=" xl:pl-[360px] xl:pr-[180px] 4xl:px-[620px] relative flex justify-between grid grid-cols-4">
                 <img
                     src={line}
-                    className="hidden xl:block absolute lg:-top-8 xl:top-39 left-1/2 -translate-x-1/2 z-0 lg:w-[1000px] lg:h-[600px] 3xl:w-[2000px] 3xl:h-[390px] "
+                    className="hidden xl:block absolute lg:-top-8 xl:top-31.5 left-1/2 -translate-x-1/2 z-0 lg:w-[1000px] lg:h-[600px] 3xl:w-auto 3xl:h-auto object-cover"
                 ></img>
                 <img
                     src={lineTablet}
@@ -20,102 +21,123 @@ export default function HistoryDesktop() {
                 <div className="history-line">
                     <img src={arrow} className="z-20"></img>
                     <HistoryIcon
-                        title="1987"
-                        slogan="Foundation<br> 3 employees"
+                        title={dates[0]?.year}
+                        slogan={dates[0]?.text?.en}
                     />
                 </div>
                 <div className="history-line">
                     <img src={arrow} className="z-20"></img>
                     <HistoryIcon
-                        title="1995"
-                        slogan="Ford/VW<br> Autoeuropa project <br> Sales: € 5m"
+                        title={dates[2]?.year}
+                        slogan={dates[2]?.text?.en}
                     />
                 </div>
                 <div className="history-line">
                     <img src={arrow} className="z-20"></img>
                     <HistoryIcon
-                        title="2002"
-                        slogan="Investment in new technologies<br>Tool Design & Manufacturing"
+                        title={dates[4]?.year}
+                        slogan={dates[4]?.text?.en}
                     />
                 </div>
                 <div className="history-line">
                     <img src={arrow} className="z-20"></img>
                     <HistoryIcon
-                        title="2004"
-                        slogan="Environmental certification<br> ISO 14001<br>Aeronautic certification<br> IQF 710.01 (OGMA)"
+                        title={dates[6]?.year}
+                        slogan={dates[6]?.text?.en}
                     />
                 </div>
             </div>
-            <div className="lg:px-70 xl:px-[550px] 4xl:px-[800px]  relative flex justify-between absolute lg:-top-4.5 xl:-top-5">
+            <div className="absolute 3xl:right-24.5">
+                <div className="flex flex-col items-end 3xl:gap-13">
+                    <div className="history-line items-start! flex-col!">
+                        <img src={arrowSmall} className="z-20 w-20 h-5!"></img>
+                        <HistoryIcon
+                            title={dates[7]?.year}
+                            slogan={dates[7]?.text?.en}
+                        />
+                    </div>
+                    <div className="history-line items-start flex-col! ">
+                        <img src={arrowSmall} className="z-20 w-20 h-5!"></img>
+                        <HistoryIcon
+                            title={dates[8]?.year}
+                            slogan={dates[8]?.text?.en}
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className="xl:pl-[510px] xl:pr-[350px] 4xl:px-[800px]  relative flex justify-between absolute lg:-top-4.5 xl:-top-5 grid grid-cols-3">
                 <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
-                        title="1990"
-                        slogan="Supplier of the year<br>Inlan – General Motors"
+                        title={dates[1]?.year}
+                        slogan={dates[1]?.text?.en}
                     />
                 </div>
                 <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
-                        title="1996"
-                        slogan="Ford Q1 award<br>100 employees<br>Sales: € 10m"
+                        title={dates[3]?.year}
+                        slogan={dates[3]?.text?.en}
                     />
                 </div>
                 <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
-                        title="2003"
-                        slogan="Supplier of the year<br>Certification ISO/TS 16949"
+                        title={dates[5]?.year}
+                        slogan={dates[5]?.text?.en}
                     />
                 </div>
             </div>
-            <div className="lg:px-45 xl:px-[385px] 4xl:px-[620px] relative flex justify-between absolute lg:-bottom-18 xl:-bottom-4.5">
-                <div className="flex items-center xl:max-h-[176px] z-20">
-                    <img src={arrow} className="z-20"></img>
-                    <HistoryIcon title="2025" slogan="New branding" />
-                </div>
-                <div className="flex items-center xl:max-h-[176px] z-20">
+            <div className="xl:pl-[360px] xl:pr-[180px] 4xl:px-[620px] relative flex justify-between absolute lg:-bottom-18 xl:-bottom-20.5 grid grid-cols-4">
+                <div className="history-line items-center!">
                     <img src={arrow} className="z-20"></img>
                     <HistoryIcon
-                        title="2020"
-                        slogan="Covid pandemic:<br>sales retract to € 9.2m"
+                        title={dates[15]?.year}
+                        slogan={dates[15]?.text?.en}
                     />
                 </div>
-                <div className="flex items-center xl:max-h-[176px] z-20">
+                <div className="history-line items-center!">
                     <img src={arrow} className="z-20"></img>
                     <HistoryIcon
-                        title="2009"
-                        slogan="Aeronautic certification<br>EN9100"
+                        title={dates[13]?.year}
+                        slogan={dates[13]?.text?.en}
                     />
                 </div>
-                <div className="flex items-center xl:max-h-[176px] z-20">
+                <div className="history-line items-center!">
                     <img src={arrow} className="z-20"></img>
                     <HistoryIcon
-                        title="2005"
-                        slogan="New site: Benavente<br>First aeronautic<br> jig (Pilatus)"
+                        title={dates[11]?.year}
+                        slogan={dates[11]?.text?.en}
+                    />
+                </div>
+                <div className="history-line items-center!">
+                    <img src={arrow} className="z-20"></img>
+                    <HistoryIcon
+                        title={dates[9]?.year}
+                        slogan={dates[9]?.text?.en}
                     />
                 </div>
             </div>
-            <div className="lg:px-70 xl:px-[550px] 4xl:px-[800px] relative flex justify-between absolute lg:top-13 xl:-top-1">
-                <div className="flex items-center xl:max-h-[176px] z-20">
+            <div className="xl:pl-[510px] xl:pr-[350px] 4xl:px-[800px] relative flex justify-between absolute lg:top-13 xl:top-16 grid grid-cols-3">
+                <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
-                        title="2023"
-                        slogan="Footprint increased to 17000 m2<br>Sales: € 17m<br>(85% increase over 3 years)"
+                        title={dates[14]?.year}
+                        slogan={dates[14]?.text?.en}
                     />
                 </div>
-                <div className="flex items-center xl:max-h-[176px] z-20">
+                <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
-                        title="2012-15"
-                        slogan="€ 3,2m Investment in<br> new technologies"
+                        title={dates[12]?.year}
+                        slogan={dates[12]?.text?.en}
                     />
                 </div>
-                <div className="flex items-center xl:max-h-[176px] z-20">
+                <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
-                        title="2008"
-                        slogan="Internal training centre<br>Sales: € 21m"
+                        title={dates[10]?.year}
+                        slogan={dates[10]?.text?.en}
                     />
                 </div>
             </div>

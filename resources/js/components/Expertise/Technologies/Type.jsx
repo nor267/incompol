@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Type({ text }) {
+export default function Type({ text, dimensions }) {
     const [info, setInfo] = useState(false);
 
     function handleInfo() {
@@ -25,12 +25,12 @@ export default function Type({ text }) {
                                 : "max-h-0 opacity-0 px-0 py-0"
                         }`}
                 >
-                    <p className="text-white text-[12px] ">
-                        <strong>Max. Capacity: </strong>350/150 Ton.
-                    </p>
-                    <p className="text-white text-[12px]">
-                        <strong>Max. Dimension: </strong>2500x1370 mm
-                    </p>
+                    <div
+                        className="text-white text-[12px] "
+                        dangerouslySetInnerHTML={{
+                            __html: dimensions,
+                        }}
+                    ></div>
                 </div>
             </div>
         </>

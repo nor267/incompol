@@ -560,7 +560,9 @@ class ContentWebPageForm
                             ->schema([
                                 TextInput::make('year')
                                     ->required(),
-                                TextInput::make('text')
+                                MarkdownEditor::make('text')
+                                    ->required()
+                                    ->toolbarButtons(['bold', 'italic'])
                                     ->translatableTabs(),
                             ])
 
@@ -659,6 +661,54 @@ class ContentWebPageForm
                     ->collapsed()
                     ->visible(fn($get) => $get('id') === 2)
                     ->columnSpan(['lg' => fn(?ContentWebPage $record) => $record === null ? 3 : 2]),
+                Section::make('Shape the Future')
+                    ->schema([
+                        FileUpload::make('section_5_media')
+                            ->label('Imagem')
+                            ->disk('public')
+                            ->directory('uploads/images')
+                            ->required()
+                            ->downloadable()
+                            ->image()
+                            ->openable()
+                            ->maxSize(1024) // 1 MB
+                            ->acceptedFileTypes(['image/jpeg', 'image/webp'])
+                            ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
+                            ->validationMessages([
+                                'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
+                                'max' => 'A imagem não pode exceder 1MB.',
+                            ])
+                            ->columnSpanFull()
+                            ->previewable(),
+                        TranslatableTabs::make()
+                            ->schema([
+                                RichEditor::make('section_5_title')
+                                    ->required()
+                                    ->label('Título')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+                                RichEditor::make('section_5_slogan')
+                                    ->required()
+                                    ->label('Slogan')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+                                RichEditor::make('section_5_text')
+                                    ->required()
+                                    ->label('Botão')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+
+                            ])
+                            ->columnSpanFull(),
+                    ])
+                    ->columns(2)
+                    ->collapsible()
+                    ->collapsed()
+                    ->columnSpan(['lg' => fn(?ContentWebPage $record) => $record === null ? 3 : 2])
+                    ->visible(fn($get) => $get('id') == 2),
 
 
                 /*** SECTIONS EXPERTISE */
@@ -666,19 +716,22 @@ class ContentWebPageForm
                     ->schema([
                         TranslatableTabs::make('anyLabel')
                             ->schema([
-
-                                TextInput::make('section_1_title')
+                                RichEditor::make('section_1_title')
                                     ->required()
                                     ->label('Título')
-                                    ->maxValue(50)
-                                    ->columnSpanFull()
-                                    ->hint('Máximo 50 caracteres'),
-                                TextInput::make('section_1_slogan')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+                                RichEditor::make('section_1_slogan')
                                     ->required()
                                     ->label('Slogan')
-                                    ->maxValue(50)
-                                    ->columnSpanFull()
-                                    ->hint('Máximo 50 caracteres'),
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+                                RichEditor::make('section_1_text')
+                                    ->required()
+                                    ->label('Texto')
+                                    ->toolbarButtons([]),
                             ])
                             ->columnSpanFull(),
                         Repeater::make('overviewIcons')
@@ -778,17 +831,16 @@ class ContentWebPageForm
                             ->columnSpanFull(),
                         TranslatableTabs::make('anyLabel')
                             ->schema([
-                                TextInput::make('section_2_title')
+                                RichEditor::make('section_2_title')
                                     ->required()
                                     ->label('Título')
-                                    ->maxValue(50)
-                                    ->columnSpanFull()
-                                    ->hint('Máximo 50 caracteres'),
-                                TextInput::make('section_2_slogan')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+                                RichEditor::make('section_2_slogan')
                                     ->required()
                                     ->label('Slogan')
-                                    ->maxValue(50)
-                                    ->columnSpanFull()
+                                    ->maxLength(50)
                                     ->hint('Máximo 50 caracteres'),
                                 RichEditor::make('section_2_text')
                                     ->required()
@@ -854,17 +906,16 @@ class ContentWebPageForm
                             ->columnSpanFull(),
                         TranslatableTabs::make('anyLabel')
                             ->schema([
-                                TextInput::make('section_3_title')
+                                RichEditor::make('section_3_title')
                                     ->required()
                                     ->label('Título')
-                                    ->maxValue(50)
-                                    ->columnSpanFull()
-                                    ->hint('Máximo 50 caracteres'),
-                                TextInput::make('section_3_slogan')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+                                RichEditor::make('section_3_slogan')
                                     ->required()
                                     ->label('Slogan')
-                                    ->maxValue(50)
-                                    ->columnSpanFull()
+                                    ->maxLength(50)
                                     ->hint('Máximo 50 caracteres'),
                                 RichEditor::make('section_3_text')
                                     ->required()

@@ -1,46 +1,51 @@
-//fake images
-import icon1 from "../../../images/fake/sustainability/icon1.svg";
-import icon2 from "../../../images/fake/sustainability/icon2.svg";
-import icon3 from "../../../images/fake/sustainability/icon3.svg";
-
 //components
 import SecondTitle from "../Layout/SecondTitle";
 import GoalIcon from "./GoalIcon";
 import Recognition from "./Recognition";
 
-export default function Goals() {
+export default function Goals({
+    title,
+    slogan,
+    goals,
+    titleRecognition,
+    sloganRecognition,
+    textRecognition,
+    videoRecognition,
+    imageRecognition,
+}) {
+    const appUrl = window.location.origin + "/storage/";
     return (
         <div className="pt-10 xl:pt-0">
-            <SecondTitle
-                title="what we have<br> achieved"
-                slogan="Goals achieved"
-                className=" text-azul"
-            />
+            <SecondTitle title={title} slogan={slogan} className=" text-azul" />
             <div className="flex flex-col xl:flex-row justify-center items-center mt-10 xl:mt-20 xl:gap-14">
                 <GoalIcon
-                    icon={icon1}
-                    title="New photovoltaic solar plant installed"
+                    icon={appUrl + goals[0]?.icon}
+                    title={goals[0]?.first_title?.en}
+                    text={goals[0]?.text?.en}
                     className="bg-azul w-full h-full text-white"
-                    text="<strong>462 solar</strong> photovoltaic modules<br>
-<strong>400 MWh</strong> annual production<br><strong>37% autonomy</strong>"
                 />
                 <GoalIcon
-                    icon={icon2}
                     grey={true}
-                    title="100% green electricity since November 2025"
+                    icon={appUrl + goals[1]?.icon}
+                    title={goals[1]?.first_title?.en}
+                    text={goals[1]?.text?.en}
                     className="bg-light-grey w-full h-full text-azul"
-                    text="<strong>462 solar</strong> photovoltaic modules<br>
-<strong>400 MWh</strong> annual production<br><strong>37% autonomy</strong>"
                 />
                 <GoalIcon
-                    icon={icon3}
+                    icon={appUrl + goals[2]?.icon}
+                    title={goals[2]?.first_title?.en}
+                    text={goals[2]?.text?.en}
                     grey={true}
-                    title="Shop floor: <br>new LED light bulbs installed"
                     className="bg-azul w-full h-full text-white"
-                    text="63% reduction on electricity<br>consumption for shop floor lighting"
                 />
             </div>
-            <Recognition />
+            <Recognition
+                title={titleRecognition}
+                slogan={sloganRecognition}
+                text={textRecognition}
+                video={videoRecognition}
+                image={imageRecognition}
+            />
         </div>
     );
 }

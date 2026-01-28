@@ -1,6 +1,8 @@
 import axios from "axios";
-import { use, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+
+//config
+import { API_URL } from "../../config";
 
 //components
 import NavbarPages from "../Layout/NavbarPages";
@@ -22,7 +24,7 @@ export default function AboutUs() {
             try {
                 const response = await axios({
                     method: "post",
-                    url: "https://incompolv2.nor267.com/api" + "/get-page",
+                    url: API_URL + "/get-page",
                     data: {
                         slug: "about-us",
                     },
@@ -60,7 +62,7 @@ export default function AboutUs() {
                     </video>
                 )}
                 {data?.second_image && (
-                    <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full hidden xl:block xl:absolute right-69 -bottom-20">
+                    <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full hidden xl:block xl:absolute right-50 -bottom-20">
                         <div className="flex justify-center items-center w-full h-full">
                             <div className="xl:w-[294px] xl:h-[294px] rounded-full overflow-hidden ">
                                 <img
@@ -76,11 +78,25 @@ export default function AboutUs() {
             <Overview
                 title={data?.section_1_title?.en}
                 slogan={data?.section_1_slogan?.en}
+                appUrl={appUrl}
             />
-            <ShapeFuture />
-            <History />
-            <Certifications />
-            <Portefolio />
+            <ShapeFuture banner={appUrl + data?.second_image} />
+            <History
+                slogan={data?.section_2_slogan?.en}
+                title={data?.section_2_title?.en}
+            />
+            <Certifications
+                slogan={data?.section_3_slogan?.en}
+                title={data?.section_3_title?.en}
+            />
+            <Portefolio
+                slogan={data?.section_4_slogan?.en}
+                title={data?.section_4_title?.en}
+                banner={appUrl + data?.section_5_media}
+                titleShape={data?.section_5_title?.en}
+                sloganShape={data?.section_5_slogan?.en}
+                buttonShape={data?.section_5_text?.en}
+            />
             <Footer work={true} />
         </>
     );

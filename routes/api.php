@@ -23,3 +23,19 @@ Route::post("/get-icons", [PagesController::class, 'get_icons']);
  * get news
  */
 Route::post("/get-news", [PagesController::class, "get_news"]);
+
+/**
+ * get history
+ */
+Route::post("/get-history", [PagesController::class, "get_history"]);
+
+/**
+ * get certifications
+ */
+Route::post("/get-certification", [PagesController::class, "get_certification"]);
+
+
+/**
+ * get equipments
+ */
+Route::post("/get-equipment", [PagesController::class, "get_equipment"]);

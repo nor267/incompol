@@ -60,7 +60,7 @@ body {
 }
 
 .text-base {
-    @apply text-[14px] leading-[18px] lg:text-[15px] lg:leading-[19px] xl:text-[17px] xl:leading-[26px] tracking-[0.03em];
+    @apply text-[14px] leading-[18px] lg:text-[15px] lg:leading-[19px] xl:text-[17px] xl:leading-[24px] tracking-[0.03em];
 }
 
 .area-componets {
@@ -100,7 +100,7 @@ body {
 }
 
 .history-line img {
-    @apply lg:h-[150px] xl:h-[176px];
+    @apply lg:h-[150px] xl:h-[146px];
 }
 
 .arrow-mobile {
@@ -132,13 +132,25 @@ body {
 }
 
 .expertise-container {
-    @apply xl:max-h-[561px] flex flex-col xl:flex-row justify-between xl:gap-24 items-center mt-15 xl:mt-[190px];
+    @apply xl:max-h-[561px] flex flex-col xl:flex-row justify-between xl:gap-24 items-center mt-15 xl:mt-[95];
 }
 
-.info p {
+.info p,
+.text-base p {
     @apply pb-2 xl:pb-4;
 }
 
+.text-ambient h2 {
+    @apply xl:text-[24px] xl:leading-[30px] tracking-[0.03em] xl:mt-5;
+}
+
+.text-ambient img {
+    @apply xl:pr-3;
+}
+
+.text-ambient table p {
+    @apply xl:text-[19px] xl:leading-[26px];
+}
 .gradiente-menu {
     background: rgba(0, 0, 0, 0.2);
     background: -webkit-linear-gradient(
@@ -367,8 +379,9 @@ body {
 
 .custom-file {
     display: inline-block;
+    width: 120px !important;
     background: #ff671d;
-    padding: 6px 20px;
+    padding: 6px 30px;
     border-radius: 40px;
     color: #fff;
     cursor: pointer;

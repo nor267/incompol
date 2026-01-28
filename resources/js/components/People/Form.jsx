@@ -1,8 +1,6 @@
 import { useState } from "react";
-//fake images
-import image from "../../../images/fake/people/form.jpg";
 
-export default function Form() {
+export default function Form({ image, text }) {
     const [fileName, setFileName] = useState("No file selected");
     const handleFileChange = (e) => {
         if (e.target.files && e.target.files.length > 0) {
@@ -20,11 +18,12 @@ export default function Form() {
                     className="h-[240px] w-full xl:w-[972px] lg:h-[650px] xl:h-[982px] object-cover"
                 ></img>
                 <div className="lg:absolute lg:left-30 xl:left-[100px] lg:bottom-[40px] xl:bottom-[120px] z-20 pb-2">
-                    <h1 className="uppercase  text-azul lg:text-white font-eurostile lg:text-[20px] xl:text-[29px] xl:leading-[35px] font-medium text-center">
-                        Excellence<br className="hidden lg:block"></br> starts
-                        with
-                        <br></br> people.
-                    </h1>
+                    <h1
+                        className="uppercase  text-azul lg:text-white font-eurostile lg:text-[20px] xl:text-[29px] xl:leading-[35px] font-medium text-left"
+                        dangerouslySetInnerHTML={{
+                            __html: text,
+                        }}
+                    ></h1>
                 </div>
             </div>
             <div className="w-full xl:w-1/2 xl:pr-[165px] pt-5 pr-8 pl-8">
@@ -52,8 +51,8 @@ export default function Form() {
                             Curriculum Vitae
                         </label>
                         <div className="w-full flex mt-1 xl:mt-3 bg-light-grey items-center h-9">
-                            <label className="custom-file bg-light-grey">
-                                UPLOAD
+                            <label className="custom-file bg-light-grey flex justify-cente text-center">
+                                <p>UPLOAD</p>
                                 <input
                                     type="file"
                                     hidden

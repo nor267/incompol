@@ -37,7 +37,6 @@ export default function Home() {
         fetchPage();
     }, []);
 
-    console.log(data);
     return (
         <>
             <div className="relative xl:h-screen 3xl:h-[900px] ">
