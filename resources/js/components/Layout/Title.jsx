@@ -17,7 +17,7 @@ export default function Title({ title, slogan, text }) {
                 <h1
                     className="hidden xl:block text-center xl:text-right font-eurostile text-azul font-medium uppercase xl:max-w-[700px] w-full"
                     style={{
-                        fontSize: "clamp(4.4rem, 43w, 4rem)",
+                        fontSize: "clamp(4.4rem, 4vw, 4.4rem)",
                         lineHeight: "clamp(28px, 6vw, 92px)",
                     }}
                     dangerouslySetInnerHTML={{

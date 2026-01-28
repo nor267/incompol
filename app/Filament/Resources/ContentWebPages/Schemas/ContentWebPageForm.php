@@ -1318,14 +1318,14 @@ class ContentWebPageForm
                             ->directory('uploads/videos')
                             ->downloadable()
                             ->openable()
-                            ->rules(['mimetypes:video/mp4'])
-                            ->hint('Máximo de 15mb')
-                            ->acceptedFileTypes(['video/mp4'])
-                            ->helperText('Apenas vídeos MP4 são permitidos.')
-                            ->maxSize(133120)
+                            ->rules(['mimetypes:video/webm'])
+                            ->hint('Máximo de 1mb')
+                            ->acceptedFileTypes(['video/webm'])
+                            ->helperText('Apenas vídeos Webm são permitidos.')
+                            ->maxSize(1024)
                             ->validationMessages([
-                                'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
-                                'max' => 'O vídeo não pode exceder 15MB.',
+                                'mimetypes' => 'O arquivo deve ser um vídeo Webm.',
+                                'max' => 'O vídeo não pode exceder 1mb.',
                             ])
                             ->previewable()
                             ->columnSpanFull(), //home 

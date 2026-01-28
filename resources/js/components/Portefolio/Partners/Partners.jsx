@@ -27,7 +27,7 @@ import client24 from "../../../../images/fake/portefolio/client24.png";
 import SecondTitle from "../../Layout/SecondTitle";
 import Partner from "./Partner";
 
-export default function Partners() {
+export default function Partners({ title, slogan }) {
     const partnersDestkop = (
         <>
             <div className="margin-website flex mt-8 xl:mt-26 justify-center xl:gap-14">
@@ -153,8 +153,8 @@ export default function Partners() {
     return (
         <div className="bg-light-grey pb-15 xl:pb-52">
             <SecondTitle
-                slogan="Chosen by Industry Leaders Worldwide"
-                title="Partners Who<br> Trust Our Work"
+                slogan={slogan}
+                title={title}
                 className="text-azul pt-10 xl:pt-36"
             />
             <div className="hidden xl:block"> {partnersDestkop}</div>

@@ -1,4 +1,8 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+//config
+import { API_URL } from "../../config";
 
 //fake images
 import area1 from "../../../images/fake/portefolio/area1.jpg";
@@ -17,7 +21,31 @@ import Partners from "./Partners/Partners";
 import Component from "./Component";
 
 export default function Portefolio() {
+    const [data, setData] = new useState([]);
     const [click, setClick] = new useState(false);
+
+    const appUrl = window.location.origin + "/storage/";
+
+    useEffect(() => {
+        const fetchPage = async () => {
+            try {
+                const response = await axios({
+                    method: "post",
+                    url: API_URL + "/get-page",
+                    data: {
+                        slug: "portfolio",
+                    },
+                });
+
+                setData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPage();
+    }, []);
+
+    console.log(data);
 
     const components = (
         <div className="mt-0 xl:mt-[50px]">
@@ -46,15 +74,14 @@ export default function Portefolio() {
         <>
             <NavbarPages />
             <Title
-                title="Portfolio Incompol"
-                slogan="A showcase<br> of what we<br> build."
-                text="INCOMPOL designs and manufactures precision components that meet the highest standards of quality and functionality.<br><br>
-With decades of experience and certified expertise, we supply tailored solutions for demanding sectors such as automotive, aerospace, and electrical industries."
+                title={data.name?.en}
+                slogan={data.slogan?.en}
+                text={data.description?.en}
             />
             <div>
                 <SecondTitle
-                    title="our Products"
-                    slogan="Delivering quality on every scale."
+                    title={data.section_2_title?.en}
+                    slogan={data.section_2_slogan?.en}
                     className="pt-15 xl:pt-20 4xl:pt-30 text-azul"
                 />
                 <div className="flex flex-col xl:flex-row justify-between mt-5 xl:mt-32 margin-website gap-5 xl:gap-9">
@@ -82,14 +109,20 @@ With decades of experience and certified expertise, we supply tailored solutions
             </div>
             <div className="mb-10 xl:mb-52">
                 <Title
-                    title="Clients"
-                    slogan="trusted by<br> experience"
-                    text="For over three decades, <strong>INCOMPOL</strong> has been a reliable partner for some of the most demanding brands across the automotive, aeronautical, and electrical industries.<br><br>
-<strong>Our clients trust us to deliver precision, consistency, and innovation — every single time.</strong>"
+                    title={data.section_3_title?.en}
+                    slogan={data.section_3_slogan?.en}
+                    text={data.section_3_text?.en}
                 />
             </div>
-            <Partners />
-            <Map />
+            <Partners
+                title={data.section_4_title?.en}
+                slogan={data.section_4_slogan?.en}
+            />
+            <Map
+                title={data.section_5_title?.en}
+                slogan={data.section_5_slogan?.en}
+                video={appUrl + data.section_5_media}
+            />
             <Footer />
         </>
     );
