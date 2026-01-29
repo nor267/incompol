@@ -4,7 +4,7 @@ import IconMobile from "./IconMobile";
 export default function HistoryMobile() {
     return (
         <div className="px-8 relative flex flex-col gap-3 justify-between mt-5">
-            <img src={lineMobile} className="absolute -top-8"></img>
+            <img src={lineMobile} className="absolute -top-8 left-8.5"></img>
             <IconMobile title="1987" slogan="Foundation 3 employees" />
             <IconMobile
                 title="1990"

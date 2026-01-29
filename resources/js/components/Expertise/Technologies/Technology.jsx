@@ -24,20 +24,15 @@ export default function Technology({ image, title, slogan, text, className }) {
                             playsInline
                         />
                     )}
-                    {/* <img
-                        src={image}
-                        className="h-[200px] lg:h-[400px] xl:h-[560px] w-full object-cover"
-                    ></img> */}
-
                     <img
                         src={triangleWhite}
-                        className="absolute right-1/2 translate-x-1/2 xl:translate-x-0 xl:-right-2 translate-y-0 top-0  xl:top-1/2 xl:-translate-y-1/2 xl:rotate-90 h-7 xl:w-[58px] xl:h-[50px]"
+                        className="absolute right-82 translate-x-0 xl:translate-x-0 xl:-right-2 translate-y-0 top-0  xl:top-1/2 xl:-translate-y-1/2 xl:rotate-90 h-7 xl:w-[58px] xl:h-[50px]"
                     ></img>
                 </div>
             </motion.div>
-            <div className="flex flex-col xl:flex-row items-center pt-8 xl:pt-0 gap-5 xl:gap-26 xl:pr-[137px] w-full xl:w-auto px-8 xl:px-0">
+            <div className="flex flex-col xl:flex-row  xl:items-center pb-8 xl:pb-0 xl:pt-0 gap-5 xl:gap-26 xl:pr-[137px] w-full xl:w-auto px-8 xl:px-0">
                 <h1
-                    className="uppercase text-azul font-eurostile xl:text-[42px] tracking-[0.05em] xl:leading-[54px] xl:[writing-mode:vertical-rl] xl:rotate-180 font-semibold text-center"
+                    className="uppercase text-azul font-eurostile xl:text-[42px] tracking-[0.05em] xl:leading-[54px] xl:[writing-mode:vertical-rl] xl:rotate-180 font-semibold text-left xl:text-center"
                     dangerouslySetInnerHTML={{
                         __html: title,
                     }}

@@ -12,7 +12,7 @@ export default function TechnologyRight({
 }) {
     return (
         <div className={className}>
-            <div className="flex flex-col-reverse pt-8 xl:pt-0 xl:flex-row items-center xl:gap-26 xl:pl-[137px] w-full xl:w-auto px-8">
+            <div className="flex flex-col-reverse pb-8 xl:pb-0 xl:pt-0 xl:flex-row xl:items-center xl:gap-26 xl:pl-[137px] w-full xl:w-auto px-8">
                 <div className="flex flex-col items-start lg:items-center w-full xl:w-auto">
                     <h4
                         className="text-[14px] leading-[18px] xl:text-[20px] font-semibold xl:leading-[24px] tracking-[0.03em] uppercase text-azul pt-5 xl:pt-0"
@@ -32,7 +32,7 @@ export default function TechnologyRight({
                     ></p>
                 </div>
                 <h1
-                    className="uppercase text-azul font-eurostile xl:text-[42px] tracking-[0.05em] xl:leading-[54px] xl:[writing-mode:vertical-rl] xl:rotate-180 font-semibold text-center"
+                    className="uppercase text-azul font-eurostile xl:text-[42px] tracking-[0.05em] xl:leading-[54px] xl:[writing-mode:vertical-rl] xl:rotate-180 font-semibold text-left xl:text-center"
                     dangerouslySetInnerHTML={{
                         __html: title,
                     }}
@@ -56,13 +56,9 @@ export default function TechnologyRight({
                             playsInline
                         />
                     )}
-                    {/* <img
-                        src={image}
-                        className="h-[200px] lg:h-[400px] xl:h-[560px] w-full object-cover"
-                    ></img> */}
                     <img
                         src={triangleWhite}
-                        className="absolute left-1/2 xl:-left-2 top-0 translate-y-0 -translate-x-1/2 xl:translate-x-0 xl:top-1/2 xl:-translate-y-1/2 xl:-rotate-90 h-7 xl:w-[58px] xl:h-[50px]"
+                        className="absolute left-6 xl:-left-2 top-0 translate-y-0 xl:-translate-x-1/2 xl:translate-x-0 xl:top-1/2 xl:-translate-y-1/2 xl:-rotate-90 h-7 xl:w-[58px] xl:h-[50px]"
                     ></img>
                 </div>
             </motion.div>

@@ -1,5 +1,6 @@
 import { CookiesProvider } from "react-cookie";
 import { BrowserRouter as Router, Route, Routes } from "react-router";
+
 import Home from "./Home/Home";
 import Cookies from "./Cookies/Cookies";
 import AboutUs from "./AboutUs/AboutUs";
@@ -21,7 +22,7 @@ function App() {
                     <Route path="/expertise" element={<Expertise />} />
                     <Route path="/portfolio" element={<Portefolio />} />
                     <Route path="/people" element={<People />} />
-                    <Route path="/contact-us" element={<Contactus />} />
+                    <Route path="/contacts" element={<Contactus />} />
                     <Route
                         path="/sustainability"
                         element={<Sustainability />}

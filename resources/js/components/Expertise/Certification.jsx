@@ -1,7 +1,8 @@
 //fake images
-import certification1 from "../../../images/fake/aboutus/certification1.png";
-import certification2 from "../../../images/fake/aboutus/certification2.png";
-import certification3 from "../../../images/fake/aboutus/certification3.png";
+
+import certification1 from "../../../images/icons/footer/certification1.png";
+import certification2 from "../../../images/icons/footer/certification2.png";
+import certification3 from "../../../images/icons/footer/certification3.png";
 
 //components
 import SecondTitle from "../Layout/SecondTitle";
@@ -45,24 +46,24 @@ export default function Certification({ title, slogan, text, video, video2 }) {
                         </div>
                     </div>
                 </div>
-                <div className="text-base text-white xl:max-w-[465px] px-8 lg:lg:px-[100px] xl:px-0">
+                <div className="text-base text-white xl:max-w-[465px] px-8 lg:lg:px-[100px] xl:px-0 text-ambient">
                     <div
                         dangerouslySetInnerHTML={{
                             __html: text,
                         }}
                     ></div>
-                    <div className="flex flex-col justify-start lg:flex-row xl:gap-4 items-center pt-5 xl:pt-8 pb-5 xl:pb-0">
+                    <div className="flex justify-start flex-row xl:gap-2 items-center pt-5 xl:pt-8 pb-5 xl:pb-0">
                         <img
                             src={certification1}
-                            className="max-w-40 xl:max-w-[134px] object-cover xl:max-h-[55px]"
-                        ></img>
-                        <img
-                            src={certification2}
-                            className="max-w-40 xl:max-w-[134px] object-cover xl:max-h-[55px]"
+                            className="w-20 xl:w-auto object-cover xl:h-[70px]"
                         ></img>
                         <img
                             src={certification3}
-                            className="max-w-40 xl:max-w-[134px] object-cover xl:max-h-[55px]"
+                            className="w-20 xl:w-auto  object-cover xl:h-[70px]"
+                        ></img>
+                        <img
+                            src={certification2}
+                            className="w-20 xl:w-auto  object-cover xl:h-[70px]"
                         ></img>
                     </div>
                 </div>

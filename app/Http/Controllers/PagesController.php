@@ -74,4 +74,26 @@ class PagesController extends Controller
 
         return response()->json($equipments);
     }
+
+    /**
+     * Obter todas páginas e verifica quais estão ativas
+     */
+    public function get_all_pages(Request $request)
+    {
+        $en = $request->en;
+        if ($en) {
+            $pages = ContentWebPage::where('visible_en', true)->select([
+                'name_menu',
+                'slug'
+            ])->get();
+        } else {
+            $pages = ContentWebPage::where('visible', true)->select([
+                'name_menu',
+                'slug'
+            ])->get();
+        }
+
+
+        return response()->json($pages);
+    }
 }

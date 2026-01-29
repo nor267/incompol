@@ -50,6 +50,12 @@ class ContentWebPageForm
                             ]),
                         TranslatableTabs::make('anyLabel')
                             ->schema([
+                                RichEditor::make('name_menu')
+                                    ->required()
+                                    ->label('Nome da página no menu')
+                                    ->maxLength(100)
+                                    ->hint('Máximo 100 caracteres')
+                                    ->toolbarButtons([]),
                                 RichEditor::make('name')
                                     ->required()
                                     ->label('Nome')
@@ -80,13 +86,32 @@ class ContentWebPageForm
                             ->downloadable()
                             ->openable()
                             ->rules(['mimetypes:video/mp4'])
-                            ->hint('Máximo de 130Mb')
+                            ->hint('Máximo de 25MB')
                             ->acceptedFileTypes(['video/mp4'])
                             ->helperText('Apenas vídeos MP4 são permitidos.')
-                            ->maxSize(133120)
+                            ->maxSize(25600)
                             ->validationMessages([
                                 'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
-                                'max' => 'O vídeo não pode exceder 130MB.',
+                                'max' => 'O vídeo não pode exceder 25MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull()
+                            ->visible(fn($get) => $get('id') === 1), //home
+
+                        FileUpload::make('banner_video_mobile')
+                            ->label('Banner Video Mobile')
+                            ->disk('public')
+                            ->directory('uploads/videos')
+                            ->downloadable()
+                            ->openable()
+                            ->rules(['mimetypes:video/mp4'])
+                            ->hint('Máximo de 25mb')
+                            ->acceptedFileTypes(['video/mp4'])
+                            ->helperText('Apenas vídeos MP4 são permitidos.')
+                            ->maxSize(25600)
+                            ->validationMessages([
+                                'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
+                                'max' => 'O vídeo não pode exceder 25MB.',
                             ])
                             ->previewable()
                             ->columnSpanFull()

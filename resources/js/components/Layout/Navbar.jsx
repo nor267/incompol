@@ -1,6 +1,10 @@
+import { useEffect, useState } from "react";
+
+//icons
 import logo from "../../../images/logo/logo.svg";
 import hamburguer from "../../../images/icons/hamburg.svg";
-import { useEffect, useState } from "react";
+
+//components
 import Menu from "./Menu";
 import NavbarPages from "./NavbarPages";
 
@@ -24,6 +28,7 @@ export default function Navbar() {
     return (
         <>
             <Menu isOpen={menu} handleMenu={handleMenu} />
+
             <div className="flex justify-between w-full absolute top-0 margin-website pt-4 lg:pt-[35px] xl:pt-[40px] z-20">
                 <img src={logo} className="h-4 lg:h-7 xl:h-auto"></img>
                 <div className="flex items-center justify-center lg:gap-3 xl:gap-4 gap-2">

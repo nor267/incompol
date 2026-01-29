@@ -51,10 +51,10 @@ export default function People() {
                 <div className="flex w-full lg:w-auto">
                     <img
                         src={appUrl + data?.second_image}
-                        className="w-full max-w-[135px] lg:max-w-[200px] 4xl:max-w-[600px] xl:max-w-[900px] object-cover"
+                        className="w-full max-w-screen lg:max-w-[200px] 4xl:max-w-[600px] xl:max-w-[900px] object-cover"
                     ></img>
                 </div>
-                <div className="pb-5 xl:pb-0 pt-5 pl-8 lg:pl-20 xl:pl-[130px] lg:pt-20 xl:pt-[150px]">
+                <div className="pb-5 xl:pb-0 pt-5 px-8 xl:px-0 lg:pl-20 xl:pl-[130px] lg:pt-20 xl:pt-[150px]">
                     <p
                         className="text-[15px] xl:text-[17px] xl:leading-[22px] tracking-[0.03em]"
                         dangerouslySetInnerHTML={{
@@ -67,8 +67,8 @@ export default function People() {
                             __html: data?.section_1_title?.en,
                         }}
                     ></h1>
-                    <div className="flex flex-col lg:flex-row items-start pt-6 lg:pt-15 xl:pt-28 lg:gap-15 xl:gap-28">
-                        <div className="flex lg:flex-col justify-center items-center gap-8 lg:gap-0">
+                    <div className="flex flex-row items-start pt-6 lg:pt-15 xl:pt-28 justify-between lg:gap-15 xl:gap-28">
+                        <div className="flex flex-col justify-center items-center gap-2 lg:gap-0">
                             <h1
                                 className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.05em]"
                                 dangerouslySetInnerHTML={{
@@ -76,13 +76,13 @@ export default function People() {
                                 }}
                             ></h1>
                             <p
-                                className="xl:text-[18px] xl:leading-[24px] font-medium uppercase"
+                                className="text-[14px] xl:text-[18px] xl:leading-[24px] font-medium uppercase"
                                 dangerouslySetInnerHTML={{
                                     __html: data?.section_2_slogan?.en,
                                 }}
                             ></p>
                         </div>
-                        <div className="flex lg:flex-col justify-center items-center gap-8 lg:gap-0">
+                        <div className="flex flex-col justify-center items-center gap-2 lg:gap-0">
                             <h1
                                 className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.14em]"
                                 dangerouslySetInnerHTML={{
@@ -90,13 +90,13 @@ export default function People() {
                                 }}
                             ></h1>
                             <p
-                                className="xl:text-[18px] xl:leading-[24px] font-medium uppercase"
+                                className="text-[14px] xl:text-[18px] xl:leading-[24px] font-medium uppercase"
                                 dangerouslySetInnerHTML={{
                                     __html: data?.section_3_slogan?.en,
                                 }}
                             ></p>
                         </div>
-                        <div className="flex lg:flex-col justify-center items-center gap-8 lg:gap-0">
+                        <div className="flex flex-col justify-center items-center gap-2 lg:gap-0">
                             <h1
                                 className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.14em]"
                                 dangerouslySetInnerHTML={{
@@ -104,7 +104,7 @@ export default function People() {
                                 }}
                             ></h1>
                             <p
-                                className="xl:text-[18px] xl:leading-[24px] font-medium uppercase"
+                                className="text-[14px] xl:text-[18px] xl:leading-[24px] font-medium uppercase"
                                 dangerouslySetInnerHTML={{
                                     __html: data?.section_4_slogan?.en,
                                 }}

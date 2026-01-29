@@ -57,7 +57,7 @@ export default function Crafting({
                     src={component}
                     alt=""
                     style={{ y }}
-                    className="absolute -bottom-[450px] right-0 xl:right-0 lg:-bottom-[800px] xl:-bottom-[1600px] z-30 h-[100px] lg:h-[250px] xl:h-[560px] w-fit object-contain will-change-transform"
+                    className="absolute -bottom-[480px] right-0 xl:right-0 lg:-bottom-[800px] xl:-bottom-[1600px] z-30 h-[130px] lg:h-[250px] xl:h-[560px] w-fit object-contain will-change-transform"
                 />
                 <motion.img
                     src={component2}

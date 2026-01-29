@@ -3,7 +3,7 @@ import SecondTitle from "../Layout/SecondTitle";
 
 export default function Transparency({ title, slogan, text }) {
     return (
-        <div className="px-8">
+        <div className="">
             <SecondTitle
                 slogan={slogan}
                 title={title}
@@ -11,7 +11,7 @@ export default function Transparency({ title, slogan, text }) {
             />
             <div className="pt-6 xl:pt-26 flex justify-center items-center flex-col pb-20 xl:pb-52">
                 <p
-                    className="text-base text-azul lg:max-w-[400px] xl:max-w-[480px]"
+                    className="text-base text-azul lg:max-w-[400px] xl:max-w-[480px] px-8 xl:px-0"
                     dangerouslySetInnerHTML={{
                         __html: text,
                     }}

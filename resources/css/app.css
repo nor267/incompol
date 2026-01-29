@@ -60,7 +60,7 @@ body {
 }
 
 .text-base {
-    @apply text-[14px] leading-[18px] lg:text-[15px] lg:leading-[19px] xl:text-[17px] xl:leading-[24px] tracking-[0.03em];
+    @apply text-[14px] leading-[20px] lg:text-[15px] lg:leading-[19px] xl:text-[17px] xl:leading-[24px] tracking-[0.03em];
 }
 
 .area-componets {
@@ -84,11 +84,11 @@ body {
 }
 
 .hamburguer-menu {
-    @apply cursor-pointer h-3 lg:h-4 xl:h-[18px];
+    @apply cursor-pointer h-3.5 lg:h-4 xl:h-[18px];
 }
 
 .change-language {
-    @apply text-white font-eurostile font-medium text-[12px] lg:text-[14px] xl:text-[14px] xl:text-[22px] xl:leading-[22px] pt-1 xl:pt-2 cursor-pointer hover:text-laranja duration-300;
+    @apply text-white font-eurostile font-medium text-[14px] lg:text-[14px] xl:text-[14px] xl:text-[22px] xl:leading-[22px] pt-1 xl:pt-2 cursor-pointer hover:text-laranja duration-300;
 }
 
 .company-overview {
@@ -145,7 +145,7 @@ body {
 }
 
 .text-ambient img {
-    @apply xl:pr-3;
+    @apply pr-2 xl:pr-3;
 }
 
 .text-ambient table p {
@@ -214,6 +214,34 @@ body {
   endColorstr="#FFFFFF",
   GradientType=0
 );
+}
+
+@media only screen and (max-width: 600px) {
+    .gradient-black-white {
+        background: #0a0a0a;
+        background: -webkit-linear-gradient(
+            180deg,
+            rgba(10, 10, 10, 0.55) 55%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        background: -moz-linear-gradient(
+            180deg,
+            rgba(10, 10, 10, 0.55) 55%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        background: linear-gradient(
+            180deg,
+            rgba(10, 10, 10, 0.55) 55%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        z-index: 10;
+        height: 100%;
+        filter: progid:DXImageTransform.Microsoft.gradient(
+  startColorstr="#0A0A0A",
+  endColorstr="#FFFFFF",
+  GradientType=0
+);
+    }
 }
 
 .gradient-black-white-news {
@@ -387,4 +415,16 @@ body {
     cursor: pointer;
     font-family: sans-serif;
     width: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .custom-file {
+        width: 120px !important;
+        padding: 6px 30px;
+        border-radius: 40px;
+        color: #fff;
+        cursor: pointer;
+        font-family: sans-serif;
+        width: 100px;
+    }
 }

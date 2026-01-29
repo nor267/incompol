@@ -94,7 +94,7 @@ export default function Contactus() {
                         ></img>
                     </div>
                 </div>
-                <div className="pt-10 xl:pt-20 margin-website flex flex-col lg:flex-row-reverse  justify-end xl:gap-28">
+                <div className="pt-20 xl:pt-20 margin-website flex flex-col lg:flex-row-reverse  justify-end xl:gap-28">
                     <div className="">
                         <h1
                             className="uppercase text-[18px]  xl:text-[28px] xl:leading-[32px] text-azul font-bold"

@@ -42,7 +42,7 @@ export default function Certifications({ slogan, title }) {
             </div>
             <div className="pt-10 lg:pt-20 xl:pt-38 flex flex-col xl:flex-row margin-website justify-center items-center">
                 <div className="bg-white text-azul lg:h-[250px] xl:h-[660px] certification-box ">
-                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-18">
+                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-10 lg:pt-10 xl:pt-18">
                         {data[0]?.title?.en}
                     </h1>
                     <div
@@ -53,7 +53,7 @@ export default function Certifications({ slogan, title }) {
                     ></div>
                     <img
                         src={appUrl + data[0]?.icon}
-                        className="w-40 xl:hidden pt-2 "
+                        className="w-40 xl:hidden pt-2 pb-10 lg:pb-0"
                     ></img>
 
                     <div className="xl:w-[340px] bg-azul xl:h-[314px] xl:absolute xl:-bottom-10 xl:left-1/2 xl:-translate-x-1/2 hidden xl:block">
@@ -74,7 +74,7 @@ export default function Certifications({ slogan, title }) {
                     </div>
                 </div>
                 <div className="bg-azul text-white lg:h-[300px] xl:h-[740px] certification-box ">
-                    <h1 className="font-eurostile text-white text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-14 ">
+                    <h1 className="font-eurostile text-white text-[18px] xl:text-[32px] text-center uppercase pt-10 lg:pt-10 xl:pt-14 ">
                         {data[1]?.title?.en}
                     </h1>
                     <div
@@ -85,7 +85,7 @@ export default function Certifications({ slogan, title }) {
                     ></div>
                     <img
                         src={appUrl + data[1]?.icon}
-                        className="w-40 xl:hidden pt-2 pb-3"
+                        className="w-40 xl:hidden pt-2 xl:pb-3 pb-10"
                     ></img>
                     <div className="xl:w-[340px] bg-[#94999E] xl:h-[314px] xl:absolute -bottom-10 left-1/2 -translate-x-1/2 xl:block hidden">
                         <div className="relative w-full h-full">
@@ -101,7 +101,7 @@ export default function Certifications({ slogan, title }) {
                     </div>
                 </div>
                 <div className="bg-white text-azul lg:h-[400px] xl:h-[660px] certification-box">
-                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-5 lg:pt-10 xl:pt-18 xl:leading-[32px]">
+                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-10 lg:pt-10 xl:pt-18 xl:leading-[32px]">
                         {data[2]?.title?.en}
                     </h1>
                     <p className="text-[14px] xl:leading-[19px] tracking-[0.03em] text-center">
@@ -115,7 +115,7 @@ export default function Certifications({ slogan, title }) {
                     ></p>
                     <img
                         src={appUrl + data[2]?.icon}
-                        className="w-40 xl:hidden pt-2 pb-3"
+                        className="w-40 xl:hidden pt-2 xl:pb-3 pb-10"
                     ></img>
                     <div className="xl:w-[340px] bg-azul xl:h-[314px] xl:block hidden xl:absolute -bottom-10 left-1/2 -translate-x-1/2 ">
                         <div className="relative w-full h-full">

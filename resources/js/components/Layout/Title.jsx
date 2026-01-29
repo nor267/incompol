@@ -2,10 +2,10 @@ export default function Title({ title, slogan, text }) {
     const sanitizedSlogan = slogan?.replace(/<br\s*\/?>/gi, " ");
 
     return (
-        <section className="margin-website text-azul flex flex-col xl:flex-row justify-center items-center xl:items-start xl:gap-[175px] mt-25 lg:mt-30 xl:mt-56">
+        <section className="margin-website text-azul flex flex-col xl:flex-row xl:justify-center xl:items-center xl:items-start xl:gap-[175px] mt-25 lg:mt-30 xl:mt-56">
             <main className="relative">
                 <h1
-                    className="text-center xl:hidden xl:text-left font-eurostile text-azul text-[25px] leading-[28px] xl:text-[86px] xl:leading-[92px] font-medium uppercase xl:max-w-[700px] "
+                    className="xl:hidden text-left font-eurostile text-azul text-[25px] leading-[28px] xl:text-[86px] xl:leading-[92px] font-medium uppercase xl:max-w-[700px] "
                     style={{
                         fontSize: "clamp(24px, 6vw, 86px)",
                         lineHeight: "clamp(28px, 6.5vw, 92px)",
@@ -31,7 +31,7 @@ export default function Title({ title, slogan, text }) {
                     }}
                 ></p>
                 <p
-                    className="uppercase text-[13px] pt-2 xl:pt-0 xl:text-[15px] text-azul leading-[10px] xl:leading-[19px] text-center xl:text-right w-full font-medium xl:hidden"
+                    className="uppercase text-[13px] pt-2 xl:pt-0 xl:text-[15px] text-azul leading-[10px] xl:leading-[19px] text-left xl:text-right w-full font-medium xl:hidden"
                     dangerouslySetInnerHTML={{
                         __html: sanitizedSlogan,
                     }}

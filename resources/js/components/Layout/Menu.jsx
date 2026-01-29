@@ -1,7 +1,35 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+//icons
 import closeMenu from "../../../images/icons/close-menu.svg";
 import icon from "../../../images/logo/logo-mini.svg";
 
-export default function Menu({ isOpen, handleMenu, ...props }) {
+//config
+import { API_URL } from "../../config";
+
+export default function Menu({ isOpen, handleMenu }) {
+    const [data, setData] = new useState([]);
+
+    useEffect(() => {
+        const fetchPage = async () => {
+            try {
+                const response = await axios({
+                    method: "post",
+                    url: API_URL + "/get-pages",
+                    data: {
+                        en: true,
+                    },
+                });
+
+                setData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPage();
+    }, []);
+
     return (
         <menu
             className={`
@@ -15,36 +43,17 @@ export default function Menu({ isOpen, handleMenu, ...props }) {
   `}
         >
             <div className="w-full flex flex-col justify-center items-center h-full pl-5 xl:pl-10">
-                <div className="pb-6 xl:pb-16 flex">
-                    <a href="/about-us" className="link-menu">
-                        about us
-                    </a>
-                </div>
-                <div className="pb-6 xl:pb-16 flex">
-                    <a href="/expertise" className="link-menu">
-                        expertise
-                    </a>
-                </div>
-                <div className="pb-6 xl:pb-16 flex">
-                    <a href="/portfolio" className="link-menu">
-                        portfolio
-                    </a>
-                </div>
-                <div className="pb-6 xl:pb-16 flex">
-                    <a href="/sustainability" className="link-menu">
-                        sustainability
-                    </a>
-                </div>
-                <div className="pb-6 xl:pb-16 flex">
-                    <a href="/people" className="link-menu">
-                        people
-                    </a>
-                </div>
-                <div className="flex">
-                    <a href="/contact-us" className="link-menu">
-                        contacts
-                    </a>
-                </div>
+                {data.map((item, index) => (
+                    <div className="pb-6 xl:pb-16 flex" key={index}>
+                        <a
+                            href={"/" + item?.slug}
+                            className="link-menu"
+                            dangerouslySetInnerHTML={{
+                                __html: item?.name_menu?.en,
+                            }}
+                        ></a>
+                    </div>
+                ))}
 
                 <img
                     src={closeMenu}

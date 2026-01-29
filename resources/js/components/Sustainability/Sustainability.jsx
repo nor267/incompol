@@ -4,9 +4,6 @@ import axios from "axios";
 //config
 import { API_URL } from "../../config";
 
-//fake images
-import banner from "../../../images/fake/sustainability/banner.jpg";
-
 //icons
 import triangleWhite from "../../../images/icons/triangle-white.svg";
 import Footer from "../Layout/Footer";
@@ -72,12 +69,12 @@ export default function Sustainability() {
             <div className="mt-15 xl:mt-32 relative">
                 <img
                     src={appUrl + data?.second_image}
-                    className="w-full object-cover xl:h-[794px]"
+                    className="w-full object-cover h-[200px] xl:h-[794px]"
                 ></img>
                 <div className="absolute top-0 left-1/2 -translate-x-1/2">
                     <img src={triangleWhite} className="h-5 xl:h-fit"></img>
                 </div>
-                <div className="absolute bottom-1 left-8 xl:left-[120px] xl:bottom-[113px]">
+                <div className="absolute bottom-5 left-8 xl:left-[120px] xl:bottom-[113px]">
                     <h1
                         className="text-white uppercase font-eurostile font-medium xl:text-[72px] xl:leading-[77px] w-full max-w-[250px] xl:max-w-[800px]"
                         dangerouslySetInnerHTML={{

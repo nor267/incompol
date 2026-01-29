@@ -37,9 +37,11 @@ export default function Home() {
         fetchPage();
     }, []);
 
+    console.log(data);
+
     return (
         <>
-            <div className="relative xl:h-screen 3xl:h-[900px] ">
+            <div className="relative xl:h-screen 3xl:h-[900px] hidden xl:block">
                 {data?.banner_video && (
                     <>
                         <video
@@ -58,11 +60,38 @@ export default function Home() {
                     </>
                 )}
             </div>
+            <div className="relative h-[550px]  xl:hidden">
+                {data?.banner_video_mobile && (
+                    <>
+                        <video
+                            className="object-cover w-full h-[550px] xl:h-screen 3xl:h-[900px] overflow-hidden"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                        >
+                            <source
+                                src={appUrl + data.banner_video_mobile}
+                                type="video/mp4"
+                            />
+                        </video>
+                        <div className="absolute top-0 z-10 gradiente-menu h-full w-screen"></div>
+                    </>
+                )}
+            </div>
             <Navbar />
             <Expertise
                 video1={data?.section_2_media}
                 video2={data?.section_3_media}
                 video3={data?.section_4_media}
+                title={data?.section_1_title?.en}
+                slogan={data?.section_1_slogan?.en}
+                title1={data?.section_2_title?.en}
+                slogan1={data?.section_2_text?.en}
+                title2={data?.section_3_title?.en}
+                slogan2={data?.section_3_text?.en}
+                title3={data?.section_4_title?.en}
+                slogan3={data?.section_4_slogan?.en}
                 appUrl={appUrl}
             />
             <News appUrl={appUrl} />

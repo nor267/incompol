@@ -4,28 +4,13 @@ import { motion } from "framer-motion";
 
 export default function Manucfacture({ banner, appUrl, title, button }) {
     return (
-        <div className="w-full xl:h-[875px] z-0 relative mt-20 lg:mt-0 ">
-            <div className=" lg:hidden text-azul margin-website pb-10">
-                <h1
-                    className="font-eurostile text-[14px] leading-[18px] tracking-[0.14em] uppercase"
-                    dangerouslySetInnerHTML={{
-                        __html: title,
-                    }}
-                ></h1>
-                <button
-                    className="button-laranja mt-3"
-                    dangerouslySetInnerHTML={{
-                        __html: button,
-                    }}
-                ></button>
-            </div>
-
+        <div className="w-full xl:h-[875px] z-0 relative">
             <img
                 src={appUrl + banner}
                 className="h-[220px] lg:h-[500px] xl:h-[875px] object-cover z-0 w-full"
             ></img>
 
-            <div className="hidden lg:block lg:absolute text-white lg:top-10 xl:top-0 margin-website pt-5 xl:pt-[165px] gradient-black-white inset-0">
+            <div className=" absolute text-white top-1 lg:top-10 xl:top-0 margin-website pt-5 xl:pt-[165px] gradient-black-white inset-0">
                 <motion.div
                     initial={{ x: -250, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}

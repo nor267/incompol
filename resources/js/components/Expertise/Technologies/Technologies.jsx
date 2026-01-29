@@ -37,35 +37,35 @@ export default function Technologies({
                     title={tecnologies[0]?.first_title?.en}
                     slogan={tecnologies[0]?.second_title?.en}
                     text={tecnologies[0]?.text?.en}
-                    className="expertise-container"
+                    className="expertise-container flex-col-reverse! xl:flex-row!"
                 />
                 <TechnologyRight
                     image={appUrl + tecnologies[1]?.icon}
                     title={tecnologies[1]?.first_title?.en}
                     slogan={tecnologies[1]?.second_title?.en}
                     text={tecnologies[1]?.text?.en}
-                    className="expertise-container justify-end! flex-col-reverse! xl:flex-row!"
+                    className="expertise-container justify-end! xl:flex-row!"
                 />
                 <Technology
                     image={appUrl + tecnologies[2]?.icon}
                     title={tecnologies[2]?.first_title?.en}
                     slogan={tecnologies[2]?.second_title?.en}
                     text={tecnologies[2]?.text?.en}
-                    className="expertise-container"
+                    className="expertise-container flex-col-reverse! xl:flex-row!"
                 />
                 <TechnologyRight
                     image={appUrl + tecnologies[3]?.icon}
                     title={tecnologies[3]?.first_title?.en}
                     slogan={tecnologies[3]?.second_title?.en}
                     text={tecnologies[3]?.text?.en}
-                    className="expertise-container justify-end! flex-col-reverse! xl:flex-row!"
+                    className="expertise-container justify-end! xl:flex-row!"
                 />
                 <Technology
                     image={appUrl + tecnologies[4]?.icon}
                     title={tecnologies[4]?.first_title?.en}
                     slogan={tecnologies[4]?.second_title?.en}
                     text={tecnologies[4]?.text?.en}
-                    className="expertise-container"
+                    className="expertise-container flex-col-reverse! xl:flex-row!"
                 />
             </div>
             <Capacity

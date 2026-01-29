@@ -7,7 +7,7 @@ import certification3 from "../../../images/icons/footer/certification3.png";
 
 export default function Footer({ work }) {
     let classes =
-        "pt-[50px] xl:pb-6 flex flex-col lg:flex-row items-end justify-center lg:justify-between";
+        "pt-[50px] xl:pb-6 flex flex-col lg:flex-row xl:items-end justify-center lg:justify-between";
     if (work) {
         classes += " lg:pt-[100px] xl:pt-[200px]";
     } else classes += " lg:pt-[80px] xl:pt-[120px]";
@@ -17,10 +17,10 @@ export default function Footer({ work }) {
             <div className="bg-azul w-full h-full margin-website text-white pb-5 xl:pb-0">
                 <div className={classes}>
                     <div>
-                        <img src={logo} className="h-5 xl:h-auto"></img>
-                        <h1 className="uppercase font-eurostile lg:text-[20px] xl:text-[28px] xl:leading-[28px] pt-5 xl:pt-25">
-                            we<br className="hidden lg:block"></br> create
-                            <br className="hidden lg:block"></br> solutions
+                        <img src={logo} className="h-7 xl:h-auto"></img>
+                        <h1 className="uppercase font-eurostile text-[22px] leading-[22px] lg:text-[20px] xl:text-[28px] xl:leading-[28px] pt-10 xl:pt-25">
+                            we <br></br> create
+                            <br></br> solutions
                         </h1>
 
                         {/* <div className="lg:items-start xl:items-center lg:max-w-[320px] xl:max-w-[313px] lg:justify-start xl:justify-between pt-10 xl:pt-18 hidden lg:flex flex-col xl:flex-row">
@@ -36,7 +36,7 @@ export default function Footer({ work }) {
                             </a>
                         </div> */}
                     </div>
-                    <div className="flex gap-5 lg:gap-20 xl:gap-56 pt-5 xl:pt-0">
+                    <div className="flex justify-between xl:justify-center lg:gap-20 xl:gap-56 pt-10 xl:pt-0">
                         <div className="text-[14px] leading-[24px] xl:text-[15px] xl:leading-[25px] tracking-[0.03em] font-light flex-col flex">
                             <a
                                 href="/about-us"
@@ -118,10 +118,19 @@ export default function Footer({ work }) {
                         >
                             Linkedin
                         </a>
-                        <div className="flex xl:gap-1">
-                            <img src={certification3}></img>
-                            <img src={certification1}></img>
-                            <img src={certification2}></img>
+                        <div className="flex xl:gap-3">
+                            <img
+                                src={certification3}
+                                className="w-auto h-10"
+                            ></img>
+                            <img
+                                src={certification1}
+                                className="w-auto h-10"
+                            ></img>
+                            <img
+                                src={certification2}
+                                className="w-auto h-10"
+                            ></img>
                         </div>
                     </div>
                 </div>
@@ -144,10 +153,13 @@ export default function Footer({ work }) {
                     <button className="text-laranja border-3 border-laranja uppercase xl:px-4 rounded-[40px] xl:py-1 cursor-pointer font-bold px-4">
                         Linkedin
                     </button>
-                    <div className="flex xl:gap-1">
-                        <img src={certification3}></img>
-                        <img src={certification1}></img>
-                        <img src={certification2}></img>
+                    <div className="flex gap-4 xl:gap-1">
+                        <img
+                            src={certification3}
+                            className="w-auto h-10 "
+                        ></img>
+                        <img src={certification1} className="w-auto h-10"></img>
+                        <img src={certification2} className="w-auto h-10"></img>
                     </div>
                 </div>
             </div>

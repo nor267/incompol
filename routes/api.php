@@ -39,3 +39,8 @@ Route::post("/get-certification", [PagesController::class, "get_certification"])
  * get equipments
  */
 Route::post("/get-equipment", [PagesController::class, "get_equipment"]);
+
+/**
+ * obtém todas as páginas ativas de acordo com língua
+ */
+Route::post("/get-pages", [PagesController::class, "get_all_pages"]);
