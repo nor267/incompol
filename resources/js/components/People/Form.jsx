@@ -18,6 +18,41 @@ export default function Form({ image, text }) {
         }
     };
 
+    /**
+     * HANDLING THE FORM
+     */
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const [success, setSuccess] = useState("");
+
+    const handleChange = (e) => {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const response = await fetch("http://localhost:8000/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(form),
+        });
+
+        if (response.ok) {
+            setSuccess("Form submitted!");
+            setForm({ name: "", email: "", message: "" });
+        }
+    };
+
     return (
         <div className="flex flex-col lg:flex-row items-center xl:gap-20 2xl:gap-40 4xl:gap-53">
             <div className="xl:mt-38  relative flex-col-reverse flex justify-center items-center xl:items-start w-full xl:w-auto">

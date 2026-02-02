@@ -17,8 +17,6 @@ class PagesController extends Controller
     public function get_page(Request $request)
     {
 
-        $slug = $request->slug;
-
         $page = ContentWebPage::where('slug', $request->slug)->first();
 
         return response()->json($page);

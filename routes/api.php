@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -52,3 +53,16 @@ Route::post("/get-settings", [PagesController::class, "get_settings"]);
 
 
 Route::post("/get-jobs", [PagesController::class, "get_jobs"]);
+
+
+
+/***
+ * 
+ * GUARDAR INFO NA DB
+ */
+
+/***
+ * Guardar a mensagem enviado pelo formulário de contacto
+ * 
+ */
+Route::post('/contact', [FormController::class, 'contact_form']);

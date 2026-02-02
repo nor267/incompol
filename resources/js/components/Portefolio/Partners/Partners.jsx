@@ -27,42 +27,44 @@ import client24 from "../../../../images/fake/portefolio/client24.png";
 import SecondTitle from "../../Layout/SecondTitle";
 import Partner from "./Partner";
 
-export default function Partners({ title, slogan }) {
+export default function Partners({ title, slogan, partners, appUrl }) {
+    console.log(partners);
+
     const partnersDestkop = (
         <>
             <div className="margin-website flex mt-8 xl:mt-26 justify-center xl:gap-14">
-                <Partner image={client1} />
-                <Partner image={client2} />
-                <Partner image={client3} />
-                <Partner image={client4} />
+                <Partner image={appUrl + partners[0]?.icon} />
+                <Partner image={appUrl + partners[1]?.icon} />
+                <Partner image={appUrl + partners[2]?.icon} />
+                <Partner image={appUrl + partners[3]?.icon} />
             </div>
             <div className="margin-website flex xl:mt-14 xl:gap-14 justify-center">
-                <Partner image={client5} />
-                <Partner image={client6} />
-                <Partner image={client7} />
-                <Partner image={client8} />
-                <Partner image={client9} />
-                <Partner image={client10} />
+                <Partner image={appUrl + partners[4]?.icon} />
+                <Partner image={appUrl + partners[5]?.icon} />
+                <Partner image={appUrl + partners[6]?.icon} />
+                <Partner image={appUrl + partners[7]?.icon} />
+                <Partner image={appUrl + partners[8]?.icon} />
+                <Partner image={appUrl + partners[9]?.icon} />
             </div>
             <div className="margin-website flex xl:mt-14 xl:gap-14 justify-center">
-                <Partner image={client11} />
-                <Partner image={client12} />
-                <Partner image={client13} />
-                <Partner image={client14} />
-                <Partner image={client15} />
+                <Partner image={appUrl + partners[10]?.icon} />
+                <Partner image={appUrl + partners[11]?.icon} />
+                <Partner image={appUrl + partners[12]?.icon} />
+                <Partner image={appUrl + partners[13]?.icon} />
+                <Partner image={appUrl + partners[14]?.icon} />
             </div>
             <div className="margin-website flex xl:mt-14 xl:gap-14 justify-center">
-                <Partner image={client16} />
-                <Partner image={client17} />
-                <Partner image={client18} />
-                <Partner image={client19} />
-                <Partner image={client20} />
-                <Partner image={client21} />
+                <Partner image={appUrl + partners[15]?.icon} />
+                <Partner image={appUrl + partners[16]?.icon} />
+                <Partner image={appUrl + partners[17]?.icon} />
+                <Partner image={appUrl + partners[18]?.icon} />
+                <Partner image={appUrl + partners[19]?.icon} />
+                <Partner image={appUrl + partners[20]?.icon} />
             </div>
             <div className="margin-website flex xl:mt-14 xl:gap-14 justify-center">
-                <Partner image={client22} />
-                <Partner image={client23} />
-                <Partner image={client24} />
+                <Partner image={appUrl + partners[21]?.icon} />
+                <Partner image={appUrl + partners[22]?.icon} />
+                <Partner image={appUrl + partners[23]?.icon} />
             </div>
         </>
     );
@@ -70,38 +72,38 @@ export default function Partners({ title, slogan }) {
     const partnersTablet = (
         <>
             <div className="margin-website flex mt-8 xl:mt-26 justify-center lg:gap-8">
-                <Partner image={client1} />
-                <Partner image={client2} />
-                <Partner image={client3} />
-                <Partner image={client4} />
+                <Partner image={appUrl + partners[0]?.icon} />
+                <Partner image={appUrl + partners[1]?.icon} />
+                <Partner image={appUrl + partners[2]?.icon} />
+                <Partner image={appUrl + partners[3]?.icon} />
             </div>
             <div className="margin-website flex lg:mt-5 lg:gap-8 justify-center">
-                <Partner image={client5} />
-                <Partner image={client6} />
-                <Partner image={client7} />
-                <Partner image={client8} />
-                <Partner image={client9} />
-                <Partner image={client10} />
+                <Partner image={appUrl + partners[4]?.icon} />
+                <Partner image={appUrl + partners[5]?.icon} />
+                <Partner image={appUrl + partners[6]?.icon} />
+                <Partner image={appUrl + partners[7]?.icon} />
+                <Partner image={appUrl + partners[8]?.icon} />
+                <Partner image={appUrl + partners[9]?.icon} />
+            </div>
+            <div className="margin-website flex lg:mt-5 lg:gap-8 justify-center">
+                <Partner image={appUrl + partners[10]?.icon} />
+                <Partner image={appUrl + partners[11]?.icon} />
+                <Partner image={appUrl + partners[12]?.icon} />
+                <Partner image={appUrl + partners[13]?.icon} />
+                <Partner image={appUrl + partners[14]?.icon} />
             </div>
             <div className="margin-website flex lg:mt-5 lg:gap-8  justify-center">
-                <Partner image={client11} />
-                <Partner image={client12} />
-                <Partner image={client13} />
-                <Partner image={client14} />
-                <Partner image={client15} />
+                <Partner image={appUrl + partners[15]?.icon} />
+                <Partner image={appUrl + partners[16]?.icon} />
+                <Partner image={appUrl + partners[17]?.icon} />
+                <Partner image={appUrl + partners[18]?.icon} />
+                <Partner image={appUrl + partners[19]?.icon} />
+                <Partner image={appUrl + partners[20]?.icon} />
             </div>
             <div className="margin-website flex lg:mt-5 lg:gap-8  justify-center">
-                <Partner image={client16} />
-                <Partner image={client17} />
-                <Partner image={client18} />
-                <Partner image={client19} />
-                <Partner image={client20} />
-                <Partner image={client21} />
-            </div>
-            <div className="margin-website flex lg:mt-5 lg:gap-8  justify-center">
-                <Partner image={client22} />
-                <Partner image={client23} />
-                <Partner image={client24} />
+                <Partner image={appUrl + partners[21]?.icon} />
+                <Partner image={appUrl + partners[22]?.icon} />
+                <Partner image={appUrl + partners[23]?.icon} />
             </div>
         </>
     );
@@ -109,43 +111,43 @@ export default function Partners({ title, slogan }) {
     const partnersMobile = (
         <>
             <div className="margin-website mt-8 xl:mt-26 partner-mobile">
-                <Partner image={client1} />
-                <Partner image={client2} />
-                <Partner image={client3} />
+                <Partner image={appUrl + partners[1]?.icon} />
+                <Partner image={appUrl + partners[2]?.icon} />
+                <Partner image={appUrl + partners[3]?.icon} />
             </div>
             <div className="margin-website partner-mobile">
-                <Partner image={client4} />
-                <Partner image={client6} />
-                <Partner image={client7} />
+                <Partner image={appUrl + partners[4]?.icon} />
+                <Partner image={appUrl + partners[5]?.icon} />
+                <Partner image={appUrl + partners[6]?.icon} />
             </div>
             <div className="margin-website partner-mobile">
-                <Partner image={client8} />
-                <Partner image={client9} />
-                <Partner image={client10} />
+                <Partner image={appUrl + partners[7]?.icon} />
+                <Partner image={appUrl + partners[8]?.icon} />
+                <Partner image={appUrl + partners[9]?.icon} />
             </div>
             <div className="margin-website partner-mobile">
-                <Partner image={client11} />
-                <Partner image={client12} />
-                <Partner image={client13} />
+                <Partner image={appUrl + partners[10]?.icon} />
+                <Partner image={appUrl + partners[11]?.icon} />
+                <Partner image={appUrl + partners[12]?.icon} />
             </div>
             <div className="margin-website partner-mobile">
-                <Partner image={client14} />
-                <Partner image={client15} />
+                <Partner image={appUrl + partners[13]?.icon} />
+                <Partner image={appUrl + partners[14]?.icon} />
             </div>
             <div className="margin-website partner-mobile">
-                <Partner image={client16} />
-                <Partner image={client17} />
-                <Partner image={client18} />
+                <Partner image={appUrl + partners[15]?.icon} />
+                <Partner image={appUrl + partners[16]?.icon} />
+                <Partner image={appUrl + partners[17]?.icon} />
             </div>
             <div className="margin-website partner-mobile">
-                <Partner image={client19} />
-                <Partner image={client20} />
-                <Partner image={client21} />
+                <Partner image={appUrl + partners[18]?.icon} />
+                <Partner image={appUrl + partners[19]?.icon} />
+                <Partner image={appUrl + partners[20]?.icon} />
             </div>
             <div className="margin-website partner-mobile">
-                <Partner image={client22} />
-                <Partner image={client23} />
-                <Partner image={client24} />
+                <Partner image={appUrl + partners[21]?.icon} />
+                <Partner image={appUrl + partners[22]?.icon} />
+                <Partner image={appUrl + partners[23]?.icon} />
             </div>
         </>
     );

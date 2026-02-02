@@ -24,8 +24,10 @@ import Component from "./Component";
 export default function Portefolio({ showWorkWithUs }) {
     const [data, setData] = new useState([]);
     const [click, setClick] = new useState(false);
+    const [partners, setPartners] = new useState([]);
 
     const appUrl = window.location.origin + "/storage/";
+
     const toggleLanguage = () => {
         const nextLang = i18n.language === "pt" ? "en" : "pt";
         i18n.changeLanguage(nextLang);
@@ -43,6 +45,25 @@ export default function Portefolio({ showWorkWithUs }) {
                 });
 
                 setData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPage();
+    }, []);
+
+    useEffect(() => {
+        const fetchPage = async () => {
+            try {
+                const response = await axios({
+                    method: "post",
+                    url: API_URL + "/get-icons",
+                    data: {
+                        id: 4,
+                    },
+                });
+
+                setPartners(response.data);
             } catch (error) {
                 console.error(error);
             }
@@ -158,6 +179,8 @@ export default function Portefolio({ showWorkWithUs }) {
                         ? data.section_4_slogan?.pt
                         : data.section_4_slogan?.en
                 }
+                partners={partners}
+                appUrl={appUrl}
             />
             <Map
                 title={

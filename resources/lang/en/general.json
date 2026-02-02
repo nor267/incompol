@@ -24,5 +24,7 @@
         "accept": "I accept the",
         "policy": "Privacy Policy",
         "consent": " and consent to the processing of my personal data."
-    }
+    },
+
+    "socials": "Socials"
 }

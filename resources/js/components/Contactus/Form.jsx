@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { API_URL } from "../../config";
+import i18n from "../../../i18n/i18n";
 
 //components
 import SecondTitle from "../Layout/SecondTitle";
@@ -15,6 +18,51 @@ export default function Form({
     linkedin,
 }) {
     const [termsChecked, setTermsChecked] = useState(false);
+    const { t } = useTranslation();
+
+    //handle the form
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        message: "",
+        phone: "",
+        terms_conditions: 0,
+    });
+
+    const [success, setSuccess] = useState("");
+
+    const handleChange = (e) => {
+        const { name, type, checked, value } = e.target;
+
+        setForm({
+            ...form,
+            [name]: type === "checkbox" ? checked : value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const response = await fetch(API_URL + "/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(form),
+        });
+
+        if (response.ok) {
+            const message =
+                i18n.language === "pt"
+                    ? "Messagem enviada"
+                    : "Message submited";
+            setSuccess(message);
+            setForm({ name: "", email: "", message: "", phone: "" });
+        } else {
+            console.log(response);
+        }
+    };
+    // -----
 
     return (
         <div className="bg-azul">
@@ -39,9 +87,9 @@ export default function Form({
                             }}
                         ></p>
                     </div>
-                    <div className=" lg:pt-11">
+                    <div className="lg:pt-11">
                         <h1 className="xl:text-[28px] xl:leading-[32px uppercase text-white font-medium">
-                            SOCIALS
+                            {t("socials")}
                         </h1>
                         <p
                             className="text-laranja underline underline-offset-3 xl:text-[19px] cursor-pointer hover:text-white duration-300 transition-all"
@@ -52,36 +100,60 @@ export default function Form({
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2">
-                    <form className="w-full form-container">
+                    <form
+                        className="w-full form-container"
+                        method="POST"
+                        onSubmit={(event) => handleSubmit(event)}
+                    >
                         <div className="xl:pt-0!">
                             <label id="name" className="form-title text-white">
-                                Full name
+                                {t("form.name")}
                             </label>
-                            <input type="text" name="name" required></input>
+                            <input
+                                type="text"
+                                name="name"
+                                required
+                                value={form.name}
+                                onChange={handleChange}
+                            ></input>
                         </div>
                         <div>
                             <label id="email" className="form-title text-white">
-                                Email
+                                {t("form.email")}
                             </label>
-                            <input type="email" name="email" required></input>
+                            <input
+                                type="email"
+                                name="email"
+                                required
+                                value={form.email}
+                                onChange={handleChange}
+                            ></input>
                         </div>
                         <div>
                             <label id="phone" className="form-title text-white">
-                                Phone
+                                {t("form.phone")}
                             </label>
-                            <input type="text" name="number" required></input>
+                            <input
+                                type="text"
+                                name="phone"
+                                required
+                                onChange={handleChange}
+                                value={form.phone}
+                            ></input>
                         </div>
                         <div>
                             <label
                                 id="message"
                                 className="form-title text-white"
                             >
-                                Message
+                                {t("form.message")}
                             </label>
                             <textarea
                                 rows="6"
                                 className="w-full bg-light-grey rounded-[20px] mt-2 xl:mt-3 py-3 px-4 text-azul outline-none text-[15px]"
                                 name="message"
+                                value={form.message}
+                                onChange={handleChange}
                             ></textarea>
                         </div>
                         <div className="flex items-center justify-start pt-1">
@@ -90,7 +162,10 @@ export default function Form({
                                 type="checkbox"
                                 name="terms_conditions"
                                 checked={termsChecked}
-                                onChange={() => setTermsChecked(!termsChecked)}
+                                onChange={(e) => {
+                                    setTermsChecked(!termsChecked);
+                                    handleChange(e);
+                                }}
                                 className="hidden"
                             />
 
@@ -110,23 +185,28 @@ export default function Form({
                                 />
 
                                 <span className="text-[13px] leading-[16px]  xl:text-[15px] tracking-[0.03em] xl:leading-[19px] text-white mt-3 xl:mt-5">
-                                    I accept the
+                                    {t("form.accept")}
                                     <a
-                                        className="ml-1 underline text-secondary"
+                                        className="ml-1 underline text-secondary hover:text-laranja duration-300 transition-all font-bold"
                                         href="/terms"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        Privacy Policy
+                                        {t("form.policy")}
                                     </a>{" "}
-                                    and consent to the processing of my personal
-                                    data.
+                                    {t("form.consent")}
                                 </span>
                             </label>
                         </div>
-                        <button className="hover:border-white hover:text-white">
-                            send
+                        <button
+                            className="hover:border-white! hover:text-white!"
+                            type="submit"
+                        >
+                            {t("form.send")}
                         </button>
+                        {success && (
+                            <p className="text-white mt-2">{success}</p>
+                        )}
                     </form>
                 </div>
             </div>
