@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 //config
 import { API_URL } from "../../config";
+import i18n from "../../../i18n/i18n";
 
 //components
 import NavbarPages from "../Layout/NavbarPages";
@@ -13,11 +14,15 @@ import Jobs from "./Jobs/Jobs";
 import Transparency from "./Transparency";
 import Footer from "../Layout/Footer";
 
-export default function People() {
+export default function People({ showWorkWithUs }) {
     const [data, setData] = new useState([]);
 
     const appUrl = window.location.origin + "/storage/";
-
+    const toggleLanguage = () => {
+        const nextLang = i18n.language === "pt" ? "en" : "pt";
+        i18n.changeLanguage(nextLang);
+        window.location.reload();
+    };
     useEffect(() => {
         const fetchPage = async () => {
             try {
@@ -36,98 +41,161 @@ export default function People() {
         };
         fetchPage();
     }, []);
-    console.log(data);
 
     return (
         <>
-            <NavbarPages />
+            <NavbarPages
+                i18n={i18n}
+                toggleLanguage={toggleLanguage}
+                showWorkWithUs={showWorkWithUs}
+            />
 
             <Title
-                title={data.name?.en}
-                slogan={data.slogan?.en}
-                text={data.description?.en}
+                title={i18n.language === "pt" ? data.name?.pt : data.name?.en}
+                slogan={
+                    i18n.language === "pt" ? data.slogan?.pt : data.slogan?.en
+                }
+                text={
+                    i18n.language === "pt"
+                        ? data.description?.pt
+                        : data.description?.en
+                }
             />
-            <div className="bg-azul xl:h-[579px] flex flex-col lg:flex-row text-white mt-15 xl:mt-40">
+            <div className="bg-azul  xl:h-[579px] flex flex-col lg:flex-row text-white mt-15 xl:mt-40">
                 <div className="flex w-full lg:w-auto">
                     <img
                         src={appUrl + data?.second_image}
-                        className="w-full max-w-screen lg:max-w-[200px] 4xl:max-w-[600px] xl:max-w-[900px] object-cover"
+                        className="w-full md:h-[400px] lg:h-full lg:w-auto max-w-screen xl:max-w-[700px] 4xl:max-w-[600px] 2xl:max-w-[900px] object-cover"
                     ></img>
                 </div>
-                <div className="pb-5 xl:pb-0 pt-5 px-8 xl:px-0 lg:pl-20 xl:pl-[130px] lg:pt-20 xl:pt-[150px]">
+                <div className="pb-5 xl:pb-0 pt-5 px-8 xl:px-0 md:pl-[80px] lg:pl-20 xl:pl-10 2xl:pl-[130px] md:pt-10 lg:pt-20 xl:pt-[150px]">
                     <p
-                        className="text-[15px] xl:text-[17px] xl:leading-[22px] tracking-[0.03em]"
+                        className="text-[15px] md:text-[17px] xl:leading-[22px] tracking-[0.03em]"
                         dangerouslySetInnerHTML={{
-                            __html: data?.section_1_slogan?.en,
+                            __html:
+                                i18n.language === "pt"
+                                    ? data?.section_1_slogan?.pt
+                                    : data?.section_1_slogan?.en,
                         }}
                     ></p>
                     <h1
-                        className="font-eurostile text-[16px] pt-2 xl:text-[32px] xl:leading-[32px] tracking-[0.14em] font-bold uppercase xl:max-w-[600px] xl:pt-7"
+                        className="font-eurostile text-[16px] pt-2 md:text-[22px] xl:text-[32px] xl:leading-[32px] tracking-[0.14em] font-bold uppercase xl:max-w-[600px] xl:pt-7"
                         dangerouslySetInnerHTML={{
-                            __html: data?.section_1_title?.en,
+                            __html:
+                                i18n.language === "pt"
+                                    ? data?.section_1_title?.pt
+                                    : data?.section_1_title?.en,
                         }}
                     ></h1>
-                    <div className="flex flex-row items-start pt-6 lg:pt-15 xl:pt-28 justify-between lg:gap-15 xl:gap-28">
+                    <div className="flex flex-row items-start pt-6 md:pt-10 lg:pt-15 xl:pt-28 justify-between md:justify-start md:gap-20 lg:gap-15 xl:gap-28">
                         <div className="flex flex-col justify-center items-center gap-2 lg:gap-0">
                             <h1
-                                className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.05em]"
+                                className="w-10 md:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] md:text-[28px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.05em]"
                                 dangerouslySetInnerHTML={{
-                                    __html: data?.section_2_title?.en,
+                                    __html:
+                                        i18n.language === "pt"
+                                            ? data?.section_2_title?.pt
+                                            : data?.section_2_title?.en,
                                 }}
                             ></h1>
                             <p
-                                className="text-[14px] xl:text-[18px] xl:leading-[24px] font-medium uppercase"
+                                className="text-[14px] md:text-[18px] xl:leading-[24px] font-medium uppercase"
                                 dangerouslySetInnerHTML={{
-                                    __html: data?.section_2_slogan?.en,
+                                    __html:
+                                        i18n.language === "pt"
+                                            ? data?.section_2_slogan?.pt
+                                            : data?.section_2_slogan?.en,
                                 }}
                             ></p>
                         </div>
                         <div className="flex flex-col justify-center items-center gap-2 lg:gap-0">
                             <h1
-                                className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.14em]"
+                                className="w-10 md:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] md:text-[28px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.14em]"
                                 dangerouslySetInnerHTML={{
-                                    __html: data?.section_3_title?.en,
+                                    __html:
+                                        i18n.language === "pt"
+                                            ? data?.section_3_title?.pt
+                                            : data?.section_3_title?.en,
                                 }}
                             ></h1>
                             <p
                                 className="text-[14px] xl:text-[18px] xl:leading-[24px] font-medium uppercase"
                                 dangerouslySetInnerHTML={{
-                                    __html: data?.section_3_slogan?.en,
+                                    __html:
+                                        i18n.language === "pt"
+                                            ? data?.section_3_slogan?.pt
+                                            : data?.section_3_slogan?.en,
                                 }}
                             ></p>
                         </div>
                         <div className="flex flex-col justify-center items-center gap-2 lg:gap-0">
                             <h1
-                                className="w-10 xl:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.14em]"
+                                className="w-10 md:w-auto text-laranja font-bold font-eurostile text-[18px] leading-[18px] md:text-[28px] xl:text-[38px] xl:leading-[38px] xl:-tracking-[0.14em]"
                                 dangerouslySetInnerHTML={{
-                                    __html: data?.section_4_title?.en,
+                                    __html:
+                                        i18n.language === "pt"
+                                            ? data?.section_4_title?.pt
+                                            : data?.section_4_title?.en,
                                 }}
                             ></h1>
                             <p
                                 className="text-[14px] xl:text-[18px] xl:leading-[24px] font-medium uppercase"
                                 dangerouslySetInnerHTML={{
-                                    __html: data?.section_4_slogan?.en,
+                                    __html:
+                                        i18n.language === "pt"
+                                            ? data?.section_4_slogan?.pt
+                                            : data?.section_4_slogan?.en,
                                 }}
                             ></p>
                         </div>
                     </div>
                 </div>
             </div>
-            <Hiring text={data?.section_5_title?.en} />
+            <Hiring
+                text={
+                    i18n.language === "pt"
+                        ? data?.section_5_title?.pt
+                        : data?.section_5_title?.en
+                }
+            />
             <Jobs
-                title={data?.section_6_title?.en}
-                slogan={data?.section_6_slogan?.en}
+                title={
+                    i18n.language === "pt"
+                        ? data?.section_6_title?.pt
+                        : data?.section_6_title?.en
+                }
+                slogan={
+                    i18n.language === "pt"
+                        ? data?.section_6_slogan?.pt
+                        : data?.section_6_slogan?.en
+                }
             />
             <Form
-                text={data?.section_6_text?.en}
+                text={
+                    i18n.language === "pt"
+                        ? data?.section_6_text?.pt
+                        : data?.section_6_text?.en
+                }
                 image={appUrl + data?.section_6_media}
             />
             <Transparency
-                title={data?.section_7_title?.en}
-                slogan={data?.section_7_slogan?.en}
-                text={data?.section_7_text?.en}
+                title={
+                    i18n.language === "pt"
+                        ? data?.section_7_title?.pt
+                        : data?.section_7_title?.en
+                }
+                slogan={
+                    i18n.language === "pt"
+                        ? data?.section_7_slogan?.pt
+                        : data?.section_7_slogan?.en
+                }
+                text={
+                    i18n.language === "pt"
+                        ? data?.section_7_text?.pt
+                        : data?.section_7_text?.en
+                }
             />
-            <Footer />
+            <Footer showWorkWithUs={showWorkWithUs} />
         </>
     );
 }

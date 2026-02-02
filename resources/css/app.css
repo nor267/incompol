@@ -40,6 +40,8 @@
 
     --breakpoint-3xl: 106.25rem;
     --breakpoint-4xl: 137.5rem; /* 2200px */
+    --breakpoint-5xl: 120rem; /* 1920px */
+    --breakpoint-6xl: 89.063; /* 1425px */
 }
 
 :root {
@@ -56,11 +58,11 @@ body {
 }
 
 .margin-website {
-    @apply px-8 lg:px-[100px] xl:px-[137px]  4xl:px-[250px];
+    @apply px-8 md:px-[80px] lg:px-[100px] xl:px-[137px]  4xl:px-[250px];
 }
 
 .text-base {
-    @apply text-[14px] leading-[20px] lg:text-[15px] lg:leading-[19px] xl:text-[17px] xl:leading-[24px] tracking-[0.03em];
+    @apply text-[14px] leading-[20px]  md:text-[17px] md:leading-[22px] xl:text-[17px] xl:leading-[24px] tracking-[0.03em];
 }
 
 .area-componets {
@@ -68,7 +70,7 @@ body {
 }
 
 .link-menu {
-    @apply font-eurostile lg:text-[40px] lg:leading-[59px] xl:text-[58px] xl:leading-[59px] font-medium text-[18px] leading-[20px] text-white uppercase hover:text-laranja duration-300 transition-all;
+    @apply font-eurostile md:text-[30px] md:leading-[46px] lg:text-[40px] lg:leading-[59px] xl:text-[58px] xl:leading-[59px] font-medium text-[18px] leading-[20px] text-white uppercase hover:text-laranja duration-300 transition-all;
 }
 
 .link-number {
@@ -76,11 +78,11 @@ body {
 }
 
 .button-laranja {
-    @apply text-[12px] xl:text-[17px]  duration-300 transition-all hover:text-white hover:border-white text-laranja border-2 xl:border-3 border-laranja uppercase rounded-[40px] py-1 xl:py-1 cursor-pointer font-bold px-2 xl:px-4;
+    @apply text-[12px] md:text-[14px] lg:text-[15px] xl:text-[17px]  duration-300 transition-all hover:text-white hover:border-white text-laranja border-2 xl:border-3 border-laranja uppercase rounded-[40px] py-1 xl:py-1 cursor-pointer font-bold px-2 xl:px-4;
 }
 
 .button-laranja-blue {
-    @apply duration-300 transition-all hover:text-azul hover:border-azul text-laranja border-2 xl:border-3 border-laranja uppercase rounded-[40px] xl:py-1 cursor-pointer font-medium xl:font-bold px-1 xl:px-4;
+    @apply duration-300 transition-all lg:text-[15px] xl:text-[17px]  hover:text-azul hover:border-azul text-laranja border-2 xl:border-3 border-laranja uppercase rounded-[40px] xl:py-1 cursor-pointer font-medium xl:font-bold px-2 xl:px-4;
 }
 
 .hamburguer-menu {
@@ -92,7 +94,7 @@ body {
 }
 
 .company-overview {
-    @apply xl:max-h-[295px] w-full grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 px-8 xl:px-40 py-5 lg:py-10 xl:py-16;
+    @apply xl:max-h-[295px] w-full grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 px-8  2xl:px-40 py-5 lg:py-10 xl:py-16;
 }
 
 .history-line {
@@ -108,7 +110,7 @@ body {
 }
 
 .certification-box {
-    @apply px-6 lg:px-15 xl:px-26 xl:pt-4 relative flex flex-col justify-center items-center xl:items-center xl:justify-start;
+    @apply px-6 lg:px-15 xl:px-16 2xl:px-26 xl:pt-4 relative flex flex-col justify-center items-center xl:items-center xl:justify-start;
 }
 
 .partner-mobile {
@@ -116,11 +118,11 @@ body {
 }
 
 .form-title {
-    @apply text-[15px] xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold;
+    @apply text-[15px] md:text-[17px] xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold;
 }
 
 .form-container > div {
-    @apply pt-4 xl:pt-8;
+    @apply pt-4 md:pt-6 xl:pt-8;
 }
 
 .form-container input {
@@ -132,7 +134,7 @@ body {
 }
 
 .expertise-container {
-    @apply xl:max-h-[561px] flex flex-col xl:flex-row justify-between xl:gap-24 items-center mt-15 xl:mt-[95];
+    @apply xl:max-h-[400px] 2xl:max-h-[561px] flex flex-col xl:flex-row justify-between xl:gap-24 items-center mt-15 xl:mt-[95];
 }
 
 .info p,
@@ -141,15 +143,19 @@ body {
 }
 
 .text-ambient h2 {
-    @apply xl:text-[24px] xl:leading-[30px] tracking-[0.03em] xl:mt-5;
+    @apply md:text-[20px] md:leading-[28px] xl:text-[24px] xl:leading-[30px] tracking-[0.03em] md:mt-3 xl:mt-5;
 }
 
 .text-ambient img {
-    @apply pr-2 xl:pr-3;
+    @apply pr-2 xl:pr-3 md:h-12 lg:h-auto;
 }
 
 .text-ambient table p {
     @apply xl:text-[19px] xl:leading-[26px];
+}
+
+.people-text strong {
+    @apply text-laranja font-normal;
 }
 .gradiente-menu {
     background: rgba(0, 0, 0, 0.2);
@@ -375,6 +381,15 @@ body {
     width: 729px;
 }
 
+@media only screen and (max-width: 1450px) {
+    .my-swiper {
+        height: 350px;
+    }
+    .my-swiper-slide {
+        height: 350px;
+    }
+}
+
 @media only screen and (max-width: 1300px) {
     .my-swiper {
         width: 100%;
@@ -386,6 +401,9 @@ body {
         height: 320px;
         width: 100px;
     }
+}
+
+@media only screen and (max-width: 10240px) {
 }
 
 @media only screen and (max-width: 600px) {

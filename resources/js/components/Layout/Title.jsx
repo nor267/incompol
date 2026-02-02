@@ -7,7 +7,7 @@ export default function Title({ title, slogan, text }) {
                 <h1
                     className="xl:hidden text-left font-eurostile text-azul text-[25px] leading-[28px] xl:text-[86px] xl:leading-[92px] font-medium uppercase xl:max-w-[700px] "
                     style={{
-                        fontSize: "clamp(24px, 6vw, 86px)",
+                        fontSize: "clamp(24px, 6vw, 60px)",
                         lineHeight: "clamp(28px, 6.5vw, 92px)",
                     }}
                     dangerouslySetInnerHTML={{
@@ -15,17 +15,27 @@ export default function Title({ title, slogan, text }) {
                     }}
                 ></h1>
                 <h1
-                    className="hidden xl:block text-center xl:text-right font-eurostile text-azul font-medium uppercase xl:max-w-[700px] w-full"
+                    className="hidden xl:block 2xl:hidden text-center xl:text-right font-eurostile text-azul font-medium uppercase xl:max-w-[600px] 2xl:max-w-[700px] w-full"
                     style={{
-                        fontSize: "clamp(4.4rem, 4vw, 4.4rem)",
-                        lineHeight: "clamp(28px, 6vw, 92px)",
+                        fontSize: "clamp(1rem, 4vw, 6rem)",
+                        lineHeight: "clamp(28px, 6vw, 70px)",
+                    }}
+                    dangerouslySetInnerHTML={{
+                        __html: title,
+                    }}
+                ></h1>
+                <h1
+                    className="hidden 2xl:block text-center xl:text-right font-eurostile text-azul font-medium uppercase xl:max-w-[550px] 2xl:max-w-[700px] w-full"
+                    style={{
+                        fontSize: "clamp(4.4rem, 3vw, 5rem)",
+                        lineHeight: "clamp(28px, 6vw, 70px)",
                     }}
                     dangerouslySetInnerHTML={{
                         __html: title,
                     }}
                 ></h1>
                 <p
-                    className="uppercase xl:text-[15px] text-azul xl:leading-[19px] text-right w-full font-medium hidden xl:block xl:absolute -top-20 -right-20"
+                    className="uppercase xl:text-[15px] text-azul xl:leading-[19px] text-right w-full font-medium hidden xl:block xl:absolute -top-20 xl:right-0 2xl:-right-20"
                     dangerouslySetInnerHTML={{
                         __html: slogan,
                     }}

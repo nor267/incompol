@@ -1,3 +1,4 @@
+import i18n from "../../../../i18n/i18n";
 //components
 import Capacity from "./Capacity";
 import SecondTitle from "../../Layout/SecondTitle";
@@ -22,7 +23,7 @@ export default function Technologies({
                 <SecondTitle
                     slogan={slogan}
                     title={title}
-                    className="text-azul"
+                    className="text-azul text-center"
                 />
                 <p
                     className="text-base mt-10 xl:mt-18 xl:max-w-[450px]"
@@ -34,37 +35,97 @@ export default function Technologies({
             <div>
                 <Technology
                     image={appUrl + tecnologies[0]?.icon}
-                    title={tecnologies[0]?.first_title?.en}
-                    slogan={tecnologies[0]?.second_title?.en}
-                    text={tecnologies[0]?.text?.en}
+                    title={
+                        i18n.language === "pt"
+                            ? tecnologies[0]?.first_title?.pt
+                            : tecnologies[0]?.first_title?.en
+                    }
+                    slogan={
+                        i18n.language === "pt"
+                            ? tecnologies[0]?.second_title?.pt
+                            : tecnologies[0]?.second_title?.en
+                    }
+                    text={
+                        i18n.language === "pt"
+                            ? tecnologies[0]?.text?.pt
+                            : tecnologies[0]?.text?.en
+                    }
                     className="expertise-container flex-col-reverse! xl:flex-row!"
                 />
                 <TechnologyRight
                     image={appUrl + tecnologies[1]?.icon}
-                    title={tecnologies[1]?.first_title?.en}
-                    slogan={tecnologies[1]?.second_title?.en}
-                    text={tecnologies[1]?.text?.en}
+                    title={
+                        i18n.language === "pt"
+                            ? tecnologies[1]?.first_title?.pt
+                            : tecnologies[1]?.first_title?.en
+                    }
+                    slogan={
+                        i18n.language === "pt"
+                            ? tecnologies[1]?.second_title?.pt
+                            : tecnologies[1]?.second_title?.en
+                    }
+                    text={
+                        i18n.language === "pt"
+                            ? tecnologies[1]?.text?.pt
+                            : tecnologies[1]?.text?.en
+                    }
                     className="expertise-container justify-end! xl:flex-row!"
                 />
                 <Technology
                     image={appUrl + tecnologies[2]?.icon}
-                    title={tecnologies[2]?.first_title?.en}
-                    slogan={tecnologies[2]?.second_title?.en}
-                    text={tecnologies[2]?.text?.en}
+                    title={
+                        i18n.language === "pt"
+                            ? tecnologies[2]?.first_title?.pt
+                            : tecnologies[2]?.first_title?.en
+                    }
+                    slogan={
+                        i18n.language === "pt"
+                            ? tecnologies[2]?.second_title?.pt
+                            : tecnologies[2]?.second_title?.en
+                    }
+                    text={
+                        i18n.language === "pt"
+                            ? tecnologies[2]?.text?.pt
+                            : tecnologies[2]?.text?.en
+                    }
                     className="expertise-container flex-col-reverse! xl:flex-row!"
                 />
                 <TechnologyRight
                     image={appUrl + tecnologies[3]?.icon}
-                    title={tecnologies[3]?.first_title?.en}
-                    slogan={tecnologies[3]?.second_title?.en}
-                    text={tecnologies[3]?.text?.en}
+                    title={
+                        i18n.language === "pt"
+                            ? tecnologies[3]?.first_title?.pt
+                            : tecnologies[3]?.first_title?.en
+                    }
+                    slogan={
+                        i18n.language === "pt"
+                            ? tecnologies[3]?.second_title?.pt
+                            : tecnologies[3]?.second_title?.en
+                    }
+                    text={
+                        i18n.language === "pt"
+                            ? tecnologies[3]?.text?.pt
+                            : tecnologies[3]?.text?.en
+                    }
                     className="expertise-container justify-end! xl:flex-row!"
                 />
                 <Technology
                     image={appUrl + tecnologies[4]?.icon}
-                    title={tecnologies[4]?.first_title?.en}
-                    slogan={tecnologies[4]?.second_title?.en}
-                    text={tecnologies[4]?.text?.en}
+                    title={
+                        i18n.language === "pt"
+                            ? tecnologies[4]?.first_title?.pt
+                            : tecnologies[4]?.first_title?.en
+                    }
+                    slogan={
+                        i18n.language === "pt"
+                            ? tecnologies[4]?.second_title?.pt
+                            : tecnologies[4]?.second_title?.en
+                    }
+                    text={
+                        i18n.language === "pt"
+                            ? tecnologies[4]?.text?.pt
+                            : tecnologies[4]?.text?.en
+                    }
                     className="expertise-container flex-col-reverse! xl:flex-row!"
                 />
             </div>

@@ -10,10 +10,11 @@ export default function Type({ text, dimensions }) {
     return (
         <>
             <div
-                className="bg-laranja rounded-3xl w-fit duration-300 cursor-pointer"
+                className={`bg-laranja/85 rounded-3xl duration-300 cursor-pointer
+                        ${info ? "w-fit max-w-[400px] " : "w-fit max-w-fit opacity-100"}`}
                 onClick={handleInfo}
             >
-                <div className="bg-azul text-white font-bold text-[14px] leading-[24px] xl:text-[17px] xl:leading-[38px] tracking-[0.03em] rounded-[40px] px-4 py-1 w-full">
+                <div className="bg-azul hover:bg-laranja duration-300 text-white font-bold text-[14px] leading-[24px] xl:text-[17px] xl:leading-[38px] tracking-[0.03em] rounded-[40px] px-4 py-1 w-full">
                     {text}
                 </div>
 
@@ -25,12 +26,14 @@ export default function Type({ text, dimensions }) {
                                 : "max-h-0 opacity-0 px-0 py-0"
                         }`}
                 >
-                    <div
-                        className="text-white text-[12px] "
-                        dangerouslySetInnerHTML={{
-                            __html: dimensions,
-                        }}
-                    ></div>
+                    {info && (
+                        <div
+                            className="text-white text-[12px] "
+                            dangerouslySetInnerHTML={{
+                                __html: dimensions,
+                            }}
+                        ></div>
+                    )}
                 </div>
             </div>
         </>

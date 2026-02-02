@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useState } from "react";
+import i18n from "../../../../i18n/i18n";
 
 //icons
 import closeMenu from "../../../../images/icons/close-component.svg";
@@ -42,13 +43,19 @@ export default function NewInfo({ news, initialIndex, onClose, appUrl }) {
                                 <div className="flex flex-col items-center xl:pt-40 ">
                                     <img
                                         src={appUrl + item.banner_image}
-                                        alt={item.title?.en}
-                                        className="xl:w-[1200px] xl:h-[550px] object-cover"
+                                        alt={
+                                            i18n.language === "pt"
+                                                ? item.title?.pt
+                                                : item.title?.en
+                                        }
+                                        className="lg:h-[550px] w-screen xl:w-[1200px] xl:h-[550px] object-cover"
                                     />
 
-                                    <div className="bg-white xl:w-[1200px] py-20 px-8 xl:py-[150px] xl:pl-[124px] text-azul relative">
+                                    <div className="bg-white w-screen xl:w-[1200px] py-20 px-8 lg:px-[100px] xl:py-[150px] xl:pl-[124px] text-azul relative">
                                         <h2 className="font-eurostile text-[18px] xl:text-[24px] tracking-[0.14em] uppercase font-bold">
-                                            {item.title?.en}
+                                            {i18n.language === "pt"
+                                                ? item.title?.pt
+                                                : item.title?.en}
                                         </h2>
 
                                         <p className="text-base font-bold text-azul absolute top-4 xl:top-13 right-8 xl:right-20">
@@ -58,7 +65,10 @@ export default function NewInfo({ news, initialIndex, onClose, appUrl }) {
                                         <div
                                             className="pt-5 xl:pt-10 text-base xl:max-w-[670px] info"
                                             dangerouslySetInnerHTML={{
-                                                __html: item.description?.en,
+                                                __html:
+                                                    i18n.language === "pt"
+                                                        ? item.description?.pt
+                                                        : item.description?.en,
                                             }}
                                         />
                                         <div className="absolute bottom-8 right-8 xl:bottom-20 xl:right-20 flex gap-3">

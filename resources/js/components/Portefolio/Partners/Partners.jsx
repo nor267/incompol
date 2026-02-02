@@ -155,7 +155,7 @@ export default function Partners({ title, slogan }) {
             <SecondTitle
                 slogan={slogan}
                 title={title}
-                className="text-azul pt-10 xl:pt-36"
+                className="text-azul pt-10 xl:pt-36 text-center"
             />
             <div className="hidden xl:block"> {partnersDestkop}</div>
             <div className="hidden lg:block xl:hidden"> {partnersTablet}</div>

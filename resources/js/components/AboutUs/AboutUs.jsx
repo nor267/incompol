@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import i18n from "../../../i18n/i18n";
 
 //config
 import { API_URL } from "../../config";
@@ -14,10 +15,15 @@ import Certifications from "./Certifications";
 import Footer from "../Layout/Footer";
 import Portefolio from "./Portefolio";
 
-export default function AboutUs() {
+export default function AboutUs({ showWorkWithUs }) {
     const [data, setData] = new useState([]);
 
     const appUrl = window.location.origin + "/storage/";
+    const toggleLanguage = () => {
+        const nextLang = i18n.language === "pt" ? "en" : "pt";
+        i18n.changeLanguage(nextLang);
+        window.location.reload();
+    };
 
     useEffect(() => {
         const fetchPage = async () => {
@@ -36,15 +42,25 @@ export default function AboutUs() {
             }
         };
         fetchPage();
-    }, []);
+    }, [i18n.language]);
 
     return (
         <>
-            <NavbarPages />
+            <NavbarPages
+                i18n={i18n}
+                toggleLanguage={toggleLanguage}
+                showWorkWithUs={showWorkWithUs}
+            />
             <Title
-                title={data.name?.en}
-                slogan={data.slogan?.en}
-                text={data.description?.en}
+                title={i18n.language === "pt" ? data.name?.pt : data.name?.en}
+                slogan={
+                    i18n.language === "pt" ? data.slogan?.pt : data.slogan?.en
+                }
+                text={
+                    i18n.language === "pt"
+                        ? data.description?.pt
+                        : data.description?.en
+                }
             />
             <div className="flex justify-center  items-center w-full mt-15 xl:mt-36 relative">
                 {data?.banner_video && (
@@ -62,7 +78,7 @@ export default function AboutUs() {
                     </video>
                 )}
                 {data?.second_image && (
-                    <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full hidden xl:block xl:absolute right-50 -bottom-20">
+                    <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full hidden xl:block xl:absolute xl:right-3 2xl:right-50 -bottom-20">
                         <div className="flex justify-center items-center w-full h-full">
                             <div className="xl:w-[294px] xl:h-[294px] rounded-full overflow-hidden ">
                                 <img
@@ -76,28 +92,78 @@ export default function AboutUs() {
                 )}
             </div>
             <Overview
-                title={data?.section_1_title?.en}
-                slogan={data?.section_1_slogan?.en}
+                title={
+                    i18n.language === "pt"
+                        ? data.section_1_title?.pt
+                        : data.section_1_title?.en
+                }
+                slogan={
+                    i18n.language === "pt"
+                        ? data.section_1_slogan?.pt
+                        : data.section_1_slogan?.en
+                }
                 appUrl={appUrl}
             />
-            <ShapeFuture banner={appUrl + data?.second_image} />
+            <ShapeFuture banner={appUrl + data?.section_2_media} />
             <History
-                slogan={data?.section_2_slogan?.en}
-                title={data?.section_2_title?.en}
+                slogan={
+                    i18n.language === "pt"
+                        ? data.section_2_slogan?.pt
+                        : data.section_2_slogan?.en
+                }
+                title={
+                    i18n.language === "pt"
+                        ? data.section_2_title?.pt
+                        : data.section_2_title?.en
+                }
             />
             <Certifications
-                slogan={data?.section_3_slogan?.en}
-                title={data?.section_3_title?.en}
+                slogan={
+                    i18n.language === "pt"
+                        ? data.section_3_slogan?.pt
+                        : data.section_3_slogan?.en
+                }
+                title={
+                    i18n.language === "pt"
+                        ? data.section_3_title?.pt
+                        : data.section_3_title?.en
+                }
             />
             <Portefolio
-                slogan={data?.section_4_slogan?.en}
-                title={data?.section_4_title?.en}
+                slogan={
+                    i18n.language === "pt"
+                        ? data.section_4_slogan?.pt
+                        : data.section_4_slogan?.en
+                }
+                title={
+                    i18n.language === "pt"
+                        ? data.section_4_title?.pt
+                        : data.section_4_title?.en
+                }
+                button={
+                    i18n.language === "pt"
+                        ? data.section_4_text?.pt
+                        : data.section_4_text?.en
+                }
                 banner={appUrl + data?.section_5_media}
-                titleShape={data?.section_5_title?.en}
-                sloganShape={data?.section_5_slogan?.en}
-                buttonShape={data?.section_5_text?.en}
+                titleShape={
+                    i18n.language === "pt"
+                        ? data.section_5_title?.pt
+                        : data.section_5_title?.en
+                }
+                sloganShape={
+                    i18n.language === "pt"
+                        ? data.section_5_slogan?.pt
+                        : data.section_5_slogan?.en
+                }
+                buttonShape={
+                    i18n.language === "pt"
+                        ? data.section_5_text?.pt
+                        : data.section_5_text?.en
+                }
+                showWorkWithUs={showWorkWithUs}
             />
-            <Footer work={true} />
+            <Footer work={showWorkWithUs} showWorkWithUs={showWorkWithUs} />
         </>
     );
 }

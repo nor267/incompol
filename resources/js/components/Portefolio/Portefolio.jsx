@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import i18n from "../../../i18n/i18n";
 
 //config
 import { API_URL } from "../../config";
@@ -20,12 +21,16 @@ import Map from "./Map";
 import Partners from "./Partners/Partners";
 import Component from "./Component";
 
-export default function Portefolio() {
+export default function Portefolio({ showWorkWithUs }) {
     const [data, setData] = new useState([]);
     const [click, setClick] = new useState(false);
 
     const appUrl = window.location.origin + "/storage/";
-
+    const toggleLanguage = () => {
+        const nextLang = i18n.language === "pt" ? "en" : "pt";
+        i18n.changeLanguage(nextLang);
+        window.location.reload();
+    };
     useEffect(() => {
         const fetchPage = async () => {
             try {
@@ -44,8 +49,6 @@ export default function Portefolio() {
         };
         fetchPage();
     }, []);
-
-    console.log(data);
 
     const components = (
         <div className="mt-0 xl:mt-[50px]">
@@ -72,17 +75,35 @@ export default function Portefolio() {
 
     return (
         <>
-            <NavbarPages />
+            <NavbarPages
+                i18n={i18n}
+                toggleLanguage={toggleLanguage}
+                showWorkWithUs={showWorkWithUs}
+            />
             <Title
-                title={data.name?.en}
-                slogan={data.slogan?.en}
-                text={data.description?.en}
+                title={i18n.language === "pt" ? data.name?.pt : data.name?.en}
+                slogan={
+                    i18n.language === "pt" ? data.slogan?.pt : data.slogan?.en
+                }
+                text={
+                    i18n.language === "pt"
+                        ? data.description?.pt
+                        : data.description?.en
+                }
             />
             <div>
                 <SecondTitle
-                    title={data.section_2_title?.en}
-                    slogan={data.section_2_slogan?.en}
-                    className="pt-15 xl:pt-20 4xl:pt-30 text-azul"
+                    title={
+                        i18n.language === "pt"
+                            ? data.section_2_title?.pt
+                            : data.section_2_title?.en
+                    }
+                    slogan={
+                        i18n.language === "pt"
+                            ? data.section_2_slogan?.pt
+                            : data.section_2_slogan?.en
+                    }
+                    className="pt-15 xl:pt-20 4xl:pt-30 text-azul text-center"
                 />
                 <div className="flex flex-col xl:flex-row justify-between mt-5 xl:mt-32 margin-website gap-5 xl:gap-9">
                     <Area
@@ -109,21 +130,49 @@ export default function Portefolio() {
             </div>
             <div className="mb-10 xl:mb-52">
                 <Title
-                    title={data.section_3_title?.en}
-                    slogan={data.section_3_slogan?.en}
-                    text={data.section_3_text?.en}
+                    title={
+                        i18n.language === "pt"
+                            ? data.section_3_title?.pt
+                            : data.section_3_title?.en
+                    }
+                    slogan={
+                        i18n.language === "pt"
+                            ? data.section_3_slogan?.pt
+                            : data.section_3_slogan?.en
+                    }
+                    text={
+                        i18n.language === "pt"
+                            ? data.section_3_text?.pt
+                            : data.section_3_text?.en
+                    }
                 />
             </div>
             <Partners
-                title={data.section_4_title?.en}
-                slogan={data.section_4_slogan?.en}
+                title={
+                    i18n.language === "pt"
+                        ? data.section_4_title?.pt
+                        : data.section_4_title?.en
+                }
+                slogan={
+                    i18n.language === "pt"
+                        ? data.section_4_slogan?.pt
+                        : data.section_4_slogan?.en
+                }
             />
             <Map
-                title={data.section_5_title?.en}
-                slogan={data.section_5_slogan?.en}
+                title={
+                    i18n.language === "pt"
+                        ? data.section_5_title?.pt
+                        : data.section_5_title?.en
+                }
+                slogan={
+                    i18n.language === "pt"
+                        ? data.section_5_slogan?.pt
+                        : data.section_5_slogan?.en
+                }
                 video={appUrl + data.section_5_media}
             />
-            <Footer />
+            <Footer showWorkWithUs={showWorkWithUs} />
         </>
     );
 }

@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Certifications;
 use App\Models\ContentWebPage;
 use App\Models\Equipments;
+use App\Models\Job;
 use App\Models\News;
 use App\Models\OverviewHistory;
 use App\Models\OverviewIcons;
+use App\Models\Settings;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -95,5 +97,37 @@ class PagesController extends Controller
 
 
         return response()->json($pages);
+    }
+
+    /**
+     * Definições do website que podem ser alteradas no backoffice
+     * @param key string 
+     */
+    public function get_settings(Request $request)
+    {
+
+        $key = $request->key;
+        $settings = Settings::where('key', $key)->select([
+            'value',
+        ])->first();
+
+        return response()->json($settings);
+    }
+
+
+    /**
+     * Obtém todos os empregos visiveis por ordem de data
+     */
+    public function get_jobs()
+    {
+
+        $jobs = Job::where('visible', true)->select([
+            'banner_image',
+            'date',
+            'title',
+            'description'
+        ])->orderBy("date", 'DESC')->get();
+
+        return response()->json($jobs);
     }
 }

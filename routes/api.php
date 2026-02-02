@@ -44,3 +44,11 @@ Route::post("/get-equipment", [PagesController::class, "get_equipment"]);
  * obtém todas as páginas ativas de acordo com língua
  */
 Route::post("/get-pages", [PagesController::class, "get_all_pages"]);
+
+/**
+ * Obtém as definições de contratação do backoffice
+ */
+Route::post("/get-settings", [PagesController::class, "get_settings"]);
+
+
+Route::post("/get-jobs", [PagesController::class, "get_jobs"]);

@@ -7,6 +7,8 @@ import arrowGrey from "../../../images/icons/triangle-grey.svg";
 
 //components
 import SecondTitle from "../Layout/SecondTitle";
+
+//config
 import { API_URL } from "../../config";
 
 export default function Certifications({ slogan, title }) {
@@ -32,21 +34,21 @@ export default function Certifications({ slogan, title }) {
     }, []);
 
     return (
-        <div className="bg-light-grey pt-10 pb-20 xl:pt-38 xl:pb-52">
+        <div className="bg-light-grey pt-10 pb-20 xl:pt-38 xl:pb-80 2xl:pb-52">
             <div className="text-center text-azul flex justify-center items-center flex-col">
                 <SecondTitle
                     slogan={slogan}
                     title={title}
-                    className="text-azul"
+                    className="text-azul text-center"
                 />
             </div>
             <div className="pt-10 lg:pt-20 xl:pt-38 flex flex-col xl:flex-row margin-website justify-center items-center">
-                <div className="bg-white text-azul lg:h-[250px] xl:h-[660px] certification-box ">
-                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-10 lg:pt-10 xl:pt-18">
+                <div className="bg-white text-azul xl:w-[400px] 2xl:w-[500px] lg:h-[250px] xl:h-[500px] 2xl:h-[660px] certification-box ">
+                    <h1 className="font-eurostile text-[18px] md:text-[25px] xl:text-[32px] text-center uppercase pt-10 lg:pt-10 xl:pt-18">
                         {data[0]?.title?.en}
                     </h1>
                     <div
-                        className="text-base w-full lg:max-w-[750px] xl:max-w-[424px] pt-5 lg:pt-8 xl:pt-10"
+                        className="text-base w-full md:px-10 lg:px-0 lg:max-w-[750px] 2xl:max-w-[424px] pt-5 lg:pt-8 xl:pt-8 2xl:pt-10"
                         dangerouslySetInnerHTML={{
                             __html: data[0]?.description?.en,
                         }}
@@ -56,7 +58,7 @@ export default function Certifications({ slogan, title }) {
                         className="w-40 xl:hidden pt-2 pb-10 lg:pb-0"
                     ></img>
 
-                    <div className="xl:w-[340px] bg-azul xl:h-[314px] xl:absolute xl:-bottom-10 xl:left-1/2 xl:-translate-x-1/2 hidden xl:block">
+                    <div className="xl:w-[340px] bg-azul  xl:h-[250px] 2xl:h-[314px] xl:absolute xl:-bottom-30 2xl:-bottom-10 xl:left-1/2 xl:-translate-x-1/2 hidden xl:block">
                         <div className="relative w-full h-full">
                             <img
                                 src={arrowWhite}
@@ -68,17 +70,18 @@ export default function Certifications({ slogan, title }) {
                             ></img>
                             <img
                                 src={appUrl + data[0]?.icon}
-                                className="xl:absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 3xl:w-50"
+                                className="xl:absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:w-40 2xl:w-50"
                             ></img>
                         </div>
                     </div>
                 </div>
-                <div className="bg-azul text-white lg:h-[300px] xl:h-[740px] certification-box ">
-                    <h1 className="font-eurostile text-white text-[18px] xl:text-[32px] text-center uppercase pt-10 lg:pt-10 xl:pt-14 ">
+
+                <div className="bg-azul text-white xl:w-[400px] 2xl:w-[500px] lg:h-[300px] xl:h-[600px] 2xl:h-[740px] certification-box ">
+                    <h1 className="font-eurostile text-white text-[18px] md:text-[25px] xl:text-[32px] text-center uppercase pt-10 lg:pt-10 xl:pt-14 xl:max-w-[300px]">
                         {data[1]?.title?.en}
                     </h1>
                     <div
-                        className="text-base w-full lg:max-w-[750px]   xl:max-w-[424px] pt-5 xl:pt-10"
+                        className="text-base w-full  md:px-10 lg:px-0 lg:max-w-[750px] 2xl:max-w-[424px] pt-5 xl:pt-10 "
                         dangerouslySetInnerHTML={{
                             __html: data[1]?.description?.en,
                         }}
@@ -87,7 +90,7 @@ export default function Certifications({ slogan, title }) {
                         src={appUrl + data[1]?.icon}
                         className="w-40 xl:hidden pt-2 xl:pb-3 pb-10"
                     ></img>
-                    <div className="xl:w-[340px] bg-[#94999E] xl:h-[314px] xl:absolute -bottom-10 left-1/2 -translate-x-1/2 xl:block hidden">
+                    <div className="xl:w-[340px] bg-[#94999E] xl:h-[314px] xl:absolute xl:-bottom-60 2xl:-bottom-10 left-1/2 -translate-x-1/2 xl:block hidden">
                         <div className="relative w-full h-full">
                             <img
                                 src={arrowGrey}
@@ -95,20 +98,21 @@ export default function Certifications({ slogan, title }) {
                             ></img>
                             <img
                                 src={appUrl + data[1]?.icon}
-                                className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 2xl:w-60"
+                                className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:w-40 2xl:w-50"
                             ></img>
                         </div>
                     </div>
                 </div>
-                <div className="bg-white text-azul lg:h-[400px] xl:h-[660px] certification-box">
-                    <h1 className="font-eurostile text-[18px] xl:text-[32px] text-center uppercase pt-10 lg:pt-10 xl:pt-18 xl:leading-[32px]">
+
+                <div className="bg-white text-azul xl:w-[400px] 2xl:w-[500px] lg:h-[400px] xl:h-[500px] 2xl:h-[690px] certification-box">
+                    <h1 className="font-eurostile text-[18px]  md:text-[25px]  xl:text-[32px] text-center uppercase pt-10 lg:pt-10 xl:pt-18 xl:leading-[32px]">
                         {data[2]?.title?.en}
                     </h1>
                     <p className="text-[14px] xl:leading-[19px] tracking-[0.03em] text-center">
                         (Environmental, Social and Governance)
                     </p>
                     <p
-                        className="text-base w-full lg:max-w-[750px]  xl:max-w-[424px] pt-5 xl:pt-10"
+                        className="text-base w-full  md:px-10 lg:px-0 lg:max-w-[750px]  xl:max-w-[424px] pt-5 xl:pt-10"
                         dangerouslySetInnerHTML={{
                             __html: data[2]?.description?.en,
                         }}
@@ -117,7 +121,7 @@ export default function Certifications({ slogan, title }) {
                         src={appUrl + data[2]?.icon}
                         className="w-40 xl:hidden pt-2 xl:pb-3 pb-10"
                     ></img>
-                    <div className="xl:w-[340px] bg-azul xl:h-[314px] xl:block hidden xl:absolute -bottom-10 left-1/2 -translate-x-1/2 ">
+                    <div className="xl:w-[340px] bg-azul xl:h-[250px] 2xl:h-[314px] xl:block hidden xl:absolute xl:-bottom-25 2xl:-bottom-8 left-1/2 -translate-x-1/2 ">
                         <div className="relative w-full h-full">
                             <img
                                 src={arrowWhite}
@@ -129,7 +133,7 @@ export default function Certifications({ slogan, title }) {
                             ></img>
                             <img
                                 src={appUrl + data[2]?.icon}
-                                className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 3xl:w-40"
+                                className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 xl:w-30 2xl:w-50"
                             ></img>
                         </div>
                     </div>

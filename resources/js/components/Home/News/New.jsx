@@ -1,16 +1,11 @@
-import { useState } from "react";
-import NewInfo from "./NewInfo";
-
 export default function New({ image, title, date }) {
-    const [isOpen, setOpen] = new useState(false);
-
     function handleOpen() {
         setOpen((prev) => !prev);
     }
 
     return (
         <>
-            <div className="relative w-full h-[220px] lg:h-[320px] xl:h-[450px] overflow-hidden cursor-pointer hover:scale-105 duration-300">
+            <div className="relative w-full h-[220px] md:h-[320px] xl:h-[450px] overflow-hidden cursor-pointer hover:scale-105 duration-300">
                 <img
                     className="w-full object-cover h-full z-0"
                     src={image}

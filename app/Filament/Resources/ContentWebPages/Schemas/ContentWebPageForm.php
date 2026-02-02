@@ -540,7 +540,7 @@ class ContentWebPageForm
 
                 Section::make('History')
                     ->schema([
-                        FileUpload::make('second_image')
+                        FileUpload::make('section_2_media')
                             ->label('Banner Imagem')
                             ->disk('public')
                             ->directory('uploads/images')
@@ -548,12 +548,12 @@ class ContentWebPageForm
                             ->downloadable()
                             ->image()
                             ->openable()
-                            ->maxSize(1024) // 1 MB
+                            ->maxSize(2048) // 1 MB
                             ->acceptedFileTypes(['image/jpeg', 'image/webp'])
-                            ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
+                            ->helperText('Máximo de 2MB por imagem. Apenas JPG ou WEBP são permitidos.')
                             ->validationMessages([
                                 'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
-                                'max' => 'A imagem não pode exceder 1MB.',
+                                'max' => 'A imagem não pode exceder 2MB.',
                             ])
                             ->previewable()
                             ->columnSpanFull(),
@@ -673,10 +673,17 @@ class ContentWebPageForm
                                 RichEditor::make('section_4_title')
                                     ->required()
                                     ->label('Título')
+                                    ->toolbarButtons(['italic'])
                                     ->columnSpanFull(),
                                 RichEditor::make('section_4_slogan')
+                                    ->toolbarButtons(['bold', 'italic'])
                                     ->required()
                                     ->label('Slogan')
+                                    ->columnSpanFull(),
+                                RichEditor::make('section_4_text')
+                                    ->toolbarButtons([])
+                                    ->required()
+                                    ->label('Botão')
                                     ->columnSpanFull()
                             ])
                             ->columnSpanFull(),

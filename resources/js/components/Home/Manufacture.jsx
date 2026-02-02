@@ -7,7 +7,7 @@ export default function Manucfacture({ banner, appUrl, title, button }) {
         <div className="w-full xl:h-[875px] z-0 relative">
             <img
                 src={appUrl + banner}
-                className="h-[220px] lg:h-[500px] xl:h-[875px] object-cover z-0 w-full"
+                className="h-[220px] md:h-[400px] lg:h-[500px] xl:h-[875px] object-cover z-0 w-full"
             ></img>
 
             <div className=" absolute text-white top-1 lg:top-10 xl:top-0 margin-website pt-5 xl:pt-[165px] gradient-black-white inset-0">
@@ -18,7 +18,7 @@ export default function Manucfacture({ banner, appUrl, title, button }) {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
                     <h1
-                        className="font-eurostile text-[14px] leading-[18px] xl:text-[32px] xl:leading-[42px] tracking-[0.14em] uppercase xl:max-w-[700px]"
+                        className="md:mt-10 lg:mt-0 font-eurostile text-[14px] leading-[18px] md:text-[24px] md:leading-[32px] lg:text-[26px] lg:leading-[34px] xl:text-[32px] xl:leading-[42px] tracking-[0.14em] uppercase xl:max-w-[700px]"
                         dangerouslySetInnerHTML={{
                             __html: title,
                         }}

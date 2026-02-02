@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import i18n from "../../../i18n/i18n";
 
 //config
 import { API_URL } from "../../config";
@@ -46,17 +47,17 @@ export default function Sectors({ title, slogan, appUrl }) {
                     }}
                 ></h1>
             </div>
-            <div className="xl:max-h-[561px] flex flex-col lg:flex-row lg:gap-30 xl:gap-24 4xl:gap-80 items-center mt-8 xl:mt-[190px]">
+            <div className="xl:max-h-[561px] flex flex-col md:flex-row md:gap-10 lg:gap-30 xl:gap-24 4xl:gap-80 items-center mt-8 lg:mt-20 xl:mt-[190px]">
                 <motion.div
                     initial={{ x: -250, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
-                    <div className="lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
+                    <div className="md:w-[450px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
                         <img
                             src={appUrl + data[0]?.icon}
-                            className="lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
+                            className="md:h-[250px] lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
                         ></img>
                         <img
                             src={triangleWhite}
@@ -74,7 +75,10 @@ export default function Sectors({ title, slogan, appUrl }) {
                         <h1
                             className="uppercase text-azul font-eurostile text-[20px] leading-[22px] xl:text-[42px] tracking-[0.05em] xl:leading-[54px] [writing-mode:vertical-rl] rotate-180 font-semibold text-center"
                             dangerouslySetInnerHTML={{
-                                __html: data[0]?.first_title?.en,
+                                __html:
+                                    i18n.language === "pt"
+                                        ? data[0]?.first_title?.pt
+                                        : data[0]?.first_title?.en,
                             }}
                         ></h1>
                         <div className="flex flex-col">
@@ -82,7 +86,10 @@ export default function Sectors({ title, slogan, appUrl }) {
                                 <h4
                                     className="text-[16px] leading-[18px] xl:text-[20px] font-semibold xl:leading-[24px] tracking-[0.03em] uppercase text-azul"
                                     dangerouslySetInnerHTML={{
-                                        __html: data[0]?.second_title?.en,
+                                        __html:
+                                            i18n.language === "pt"
+                                                ? data[0]?.second_title?.pt
+                                                : data[0]?.second_title?.en,
                                     }}
                                 ></h4>
                             )}
@@ -90,14 +97,17 @@ export default function Sectors({ title, slogan, appUrl }) {
                             <p
                                 className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-[37px]"
                                 dangerouslySetInnerHTML={{
-                                    __html: data[0]?.text?.en,
+                                    __html:
+                                        i18n.language === "pt"
+                                            ? data[0]?.text?.pt
+                                            : data[0]?.text?.en,
                                 }}
                             ></p>
                         </div>
                     </div>
                 </motion.div>
             </div>
-            <div className="xl:max-h-[561px] flex flex-col-reverse lg:flex-row lg:gap-30 xl:gap-24 4xl:gap-80 items-start xl:items-center mt-10 xl:mt-[80px] justify-end">
+            <div className="xl:max-h-[561px] flex flex-col-reverse md:flex-row md:gap-10 lg:gap-30 xl:gap-24 4xl:gap-80 items-start xl:items-center mt-10 xl:mt-[80px] justify-end">
                 <motion.div
                     initial={{ x: 0, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -110,14 +120,20 @@ export default function Sectors({ title, slogan, appUrl }) {
                                 <h4
                                     className="text-[16px] leading-[18px] xl:text-[20px] font-semibold xl:leading-[24px] tracking-[0.03em] uppercase text-azul"
                                     dangerouslySetInnerHTML={{
-                                        __html: data[1]?.second_title?.en,
+                                        __html:
+                                            i18n.language === "pt"
+                                                ? data[1]?.second_title?.pt
+                                                : data[1]?.second_title?.en,
                                     }}
                                 ></h4>
                             )}
                             <p
                                 className="text-[14px] leading-[24px] xl:text-[17px] xl:leading-[28px] tracking-[0.03em] text-azul mt-5 xl:mt-0 xl:text-right"
                                 dangerouslySetInnerHTML={{
-                                    __html: data[1]?.text?.en,
+                                    __html:
+                                        i18n.language === "pt"
+                                            ? data[1]?.text?.pt
+                                            : data[1]?.text?.en,
                                 }}
                             ></p>
                         </div>
@@ -135,10 +151,10 @@ export default function Sectors({ title, slogan, appUrl }) {
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
-                    <div className="lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
+                    <div className="md:w-[450px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
                         <img
                             src={appUrl + data[1]?.icon}
-                            className="lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
+                            className="md:h-[250px] lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
                         ></img>
                         <img
                             src={triangleWhite}
@@ -147,17 +163,17 @@ export default function Sectors({ title, slogan, appUrl }) {
                     </div>
                 </motion.div>
             </div>
-            <div className="xl:max-h-[561px] flex flex-col lg:flex-row lg:gap-30 xl:gap-24 4xl:gap-80 items-center mt-5 xl:mt-[80px] xl:mb-[190px]">
+            <div className="xl:max-h-[561px] flex flex-col md:flex-row md:gap-10 lg:gap-30 xl:gap-24 4xl:gap-80 items-center mt-5 lg:mt-10 xl:mt-[80px] xl:mb-[190px]">
                 <motion.div
                     initial={{ x: -250, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
                 >
-                    <div className="lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
+                    <div className="md:w-[450px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px]  relative h-full">
                         <img
                             src={appUrl + data[2]?.icon}
-                            className="lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
+                            className="md:h-[250px] lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] object-cover w-full 3xl:h-[570px]"
                         ></img>
                         <img
                             src={triangleWhite}

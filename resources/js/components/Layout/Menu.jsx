@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import i18n from "../../../i18n/i18n";
+
 //icons
 import closeMenu from "../../../images/icons/close-menu.svg";
 import icon from "../../../images/logo/logo-mini.svg";
@@ -8,7 +10,7 @@ import icon from "../../../images/logo/logo-mini.svg";
 //config
 import { API_URL } from "../../config";
 
-export default function Menu({ isOpen, handleMenu }) {
+export default function Menu({ isOpen, handleMenu, showWorkWithUs }) {
     const [data, setData] = new useState([]);
 
     useEffect(() => {
@@ -18,7 +20,7 @@ export default function Menu({ isOpen, handleMenu }) {
                     method: "post",
                     url: API_URL + "/get-pages",
                     data: {
-                        en: true,
+                        en: i18n.language === "en" ? true : false,
                     },
                 });
 
@@ -28,7 +30,7 @@ export default function Menu({ isOpen, handleMenu }) {
             }
         };
         fetchPage();
-    }, []);
+    }, [i18n.language]);
 
     return (
         <menu
@@ -43,26 +45,35 @@ export default function Menu({ isOpen, handleMenu }) {
   `}
         >
             <div className="w-full flex flex-col justify-center items-center h-full pl-5 xl:pl-10">
-                {data.map((item, index) => (
-                    <div className="pb-6 xl:pb-16 flex" key={index}>
-                        <a
-                            href={"/" + item?.slug}
-                            className="link-menu"
-                            dangerouslySetInnerHTML={{
-                                __html: item?.name_menu?.en,
-                            }}
-                        ></a>
-                    </div>
-                ))}
+                {data.map((item, index) => {
+                    if (item?.slug === "people" && !showWorkWithUs) {
+                        return null;
+                    }
+
+                    return (
+                        <div className="pb-6 xl:pb-16 flex" key={index}>
+                            <a
+                                href={`/${item.slug}`}
+                                className="link-menu"
+                                dangerouslySetInnerHTML={{
+                                    __html:
+                                        i18n.language === "pt"
+                                            ? item?.name_menu?.pt
+                                            : item?.name_menu?.en,
+                                }}
+                            />
+                        </div>
+                    );
+                })}
 
                 <img
                     src={closeMenu}
-                    className="absolute 4xl:right-61 lg:right-24 xl:top-12 xl:right-34 top-10 right-10 h-5 lg:h-8 xl:h-auto cursor-pointer opacity-80 hover:opacity-100 duration-300"
+                    className="absolute 4xl:right-61 lg:right-24 xl:top-12 xl:right-34 top-10 right-10 h-5 md:h-8 xl:h-auto cursor-pointer opacity-80 hover:opacity-100 duration-300"
                     onClick={handleMenu}
                 ></img>
                 <img
                     src={icon}
-                    className="absolute xl:bottom-18 lg:left-24 4xl:left-61 xl:left-32 bottom-10 left-10 h-8 lg:h-14 xl:h-[67px] cursor-pointer"
+                    className="absolute xl:bottom-18 lg:left-24 4xl:left-61 xl:left-32 bottom-10 left-10 h-8 md:h-13 lg:h-14 xl:h-[67px] cursor-pointer"
                 ></img>
             </div>
         </menu>

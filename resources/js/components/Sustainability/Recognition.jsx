@@ -7,12 +7,12 @@ export default function Recognition({ title, slogan, text, video, image }) {
             <SecondTitle
                 title={title}
                 slogan={slogan}
-                className="text-azul pt-10 xl:pt-48"
+                className="text-azul pt-20 md:pt-20 xl:pt-48 text-center"
             />
-            <div className="mt-8 xl:mt-20  xl:mb-64 flex flex-col-reverse xl:flex-row justify-center items-center xl:gap-58 px-8">
+            <div className="mt-8 xl:mt-20 xl:mb-64 flex flex-col-reverse xl:flex-row justify-between 2xl:justify-center items-center 2xl:gap-58 px-8 md:px-[80px] xl:px-[137px]">
                 <div>
                     <p
-                        className="text-base text-azul xl:max-w-[430px] pt-5 pb-10 xl:pb-0 xl:pt-0"
+                        className="text-base text-azul xl:max-w-[430px] pt-10 pb-10 xl:pb-0 xl:pt-0"
                         dangerouslySetInnerHTML={{
                             __html: text,
                         }}
@@ -32,7 +32,7 @@ export default function Recognition({ title, slogan, text, video, image }) {
                     )}
                     <img
                         src={image}
-                        className="w-25 xl:w-[200px] xl:h-auto object-cover absolute bottom-30 left-1/2 -translate-x-1/2 xl:-bottom-20 xl:-left-0"
+                        className="w-20 md:w-25 xl:w-[200px] xl:h-auto object-cover absolute -bottom-7 -right-4 md:bottom-110 md:left-200 md:right-1/2 md:translate-x-1/2 xl:-bottom-20 xl:-left-0"
                     ></img>
                 </div>
             </div>

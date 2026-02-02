@@ -89,7 +89,7 @@ export default function Overview({ title, slogan, appUrl }) {
                     className="block lg:hidden"
                 />
             </div>
-            <div className="bg-light-grey lg:bg-white lg:grid-cols-2! lg:px-70! xl:px-80! company-overview">
+            <div className="bg-light-grey lg:bg-white lg:grid-cols-2! lg:px-70! xl:px-60! 2xl:px-80! company-overview">
                 <Icon
                     icon={graph}
                     title={data[4]?.first_title?.en}

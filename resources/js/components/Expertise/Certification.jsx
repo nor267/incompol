@@ -11,26 +11,26 @@ export default function Certification({ title, slogan, text, video, video2 }) {
     return (
         <div className="bg-azul">
             <SecondTitle
-                className="pt-15 xl:pt-20 text-white"
+                className="pt-15 xl:pt-20 text-white text-center"
                 slogan={slogan}
                 title={title}
             />
-            <div className=" flex flex-col-reverse xl:flex-row  pt-8 xl:pt-36 lg:pb-30 xl:pb-30 xl:gap-68 justify-center items-center">
+            <div className=" flex flex-col-reverse xl:flex-row  pt-8 xl:pt-36 lg:pb-30 pb-25 xl:pb-30 xl:gap-50 2xl:gap-68 justify-center items-start margin-website">
                 <div className="relative">
                     {video && (
                         <video
                             key={video}
                             src={video}
-                            className="xl:w-[570px] xl:h-[375px] object-cover"
+                            className="xl:w-[500px] xl:h-[370px]  2xl:w-[570px] 2xl:h-[375px] object-cover"
                             autoPlay
                             muted
                             loop
                             playsInline
                         />
                     )}
-                    <div className="bg-laranja w-[150px] h-[150px] xl:w-[260px] xl:h-[260px] rounded-full absolute -right-10 xl:-right-36 -bottom-15 xl:-bottom-20 ">
+                    <div className="bg-laranja w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] xl:w-[260px] xl:h-[260px] rounded-full absolute -right-10 xl:-right-36 -bottom-15 xl:-bottom-20 ">
                         <div className="flex justify-center items-center w-full h-full">
-                            <div className=" w-[148px] h-[148px] xl:w-[255px] xl:h-[255px] rounded-full overflow-hidden ">
+                            <div className=" w-[148px] h-[148px] lg:w-[195px] lg:h-[195px] xl:w-[255px] xl:h-[255px] rounded-full overflow-hidden ">
                                 {video2 && (
                                     <video
                                         key={video2}
@@ -46,24 +46,24 @@ export default function Certification({ title, slogan, text, video, video2 }) {
                         </div>
                     </div>
                 </div>
-                <div className="text-base text-white xl:max-w-[465px] px-8 lg:lg:px-[100px] xl:px-0 text-ambient">
+                <div className="text-base text-white xl:max-w-[465px]  2xl:px-0 text-ambient">
                     <div
                         dangerouslySetInnerHTML={{
                             __html: text,
                         }}
                     ></div>
-                    <div className="flex justify-start flex-row xl:gap-2 items-center pt-5 xl:pt-8 pb-5 xl:pb-0">
+                    <div className="flex justify-start flex-row lg:gap-3 xl:gap-2 items-center pt-5 xl:pt-8 pb-5 xl:pb-0">
                         <img
                             src={certification1}
-                            className="w-20 xl:w-auto object-cover xl:h-[70px]"
+                            className="max-h-[100px] w-23 lg:w-40 xl:w-50 object-cover xl:max-h-[64px]"
                         ></img>
                         <img
                             src={certification3}
-                            className="w-20 xl:w-auto  object-cover xl:h-[70px]"
+                            className="max-h-[100px] w-23 lg:w-40 xl:w-50  object-cover xl:max-h-[64px]"
                         ></img>
                         <img
                             src={certification2}
-                            className="w-20 xl:w-auto  object-cover xl:h-[70px]"
+                            className="max-h-[100px] w-18 lg:w-40 xl:w-50  object-cover xl:max-h-[83px]"
                         ></img>
                     </div>
                 </div>

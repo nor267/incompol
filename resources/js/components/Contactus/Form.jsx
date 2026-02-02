@@ -1,4 +1,11 @@
+import { useState } from "react";
+
+//components
 import SecondTitle from "../Layout/SecondTitle";
+
+//icons
+import checkedIcon from "../../../images/icons/radio-button-checked.svg";
+import uncheckedIcon from "../../../images/icons/radio-button-unchecked.svg";
 
 export default function Form({
     title,
@@ -7,14 +14,16 @@ export default function Form({
     contactTitle,
     linkedin,
 }) {
+    const [termsChecked, setTermsChecked] = useState(false);
+
     return (
         <div className="bg-azul">
             <SecondTitle
                 slogan={slogan}
                 title={title}
-                className="pt-15 xl:pt-20 text-white"
+                className="pt-15 xl:pt-20 text-white text-center"
             />
-            <div className="lg:px-[100px] xl:px-[377px] flex flex-col-reverse w-full lg:flex-row justify-between xl:pt-36 px-8 4xl:px-[600px] ">
+            <div className="lg:px-[100px] xl:px-[377px] flex flex-col-reverse w-full lg:flex-row justify-between xl:pt-36 px-8 md:px-[80px] lg:px-0 4xl:px-[600px] ">
                 <div className="flex items-start justify-between lg:justify-start lg:flex-col pt-15 xl:pt-0 pb-15">
                     <div className="">
                         <h1
@@ -75,15 +84,46 @@ export default function Form({
                                 name="message"
                             ></textarea>
                         </div>
-                        <p className="text-[13px] leading-[16px]  xl:text-[15px] tracking-[0.03em] xl:leading-[19px] text-white mt-3 xl:mt-5">
-                            I accept the{" "}
-                            <strong>
-                                <a className="underline hover:text-laranja cursor-pointer">
-                                    Privacy Policy
-                                </a>
-                            </strong>{" "}
-                            and consent to the processing of my personal data.
-                        </p>
+                        <div className="flex items-center justify-start pt-1">
+                            <input
+                                id="terms_conditions"
+                                type="checkbox"
+                                name="terms_conditions"
+                                checked={termsChecked}
+                                onChange={() => setTermsChecked(!termsChecked)}
+                                className="hidden"
+                            />
+
+                            {/* Checkbox toggle */}
+                            <label
+                                htmlFor="terms_conditions"
+                                className="flex items-center cursor-pointer"
+                            >
+                                <img
+                                    src={
+                                        termsChecked
+                                            ? checkedIcon
+                                            : uncheckedIcon
+                                    }
+                                    alt="Toggle visibility"
+                                    className="pr-3 h-4"
+                                />
+
+                                <span className="text-[13px] leading-[16px]  xl:text-[15px] tracking-[0.03em] xl:leading-[19px] text-white mt-3 xl:mt-5">
+                                    I accept the
+                                    <a
+                                        className="ml-1 underline text-secondary"
+                                        href="/terms"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Privacy Policy
+                                    </a>{" "}
+                                    and consent to the processing of my personal
+                                    data.
+                                </span>
+                            </label>
+                        </div>
                         <button className="hover:border-white hover:text-white">
                             send
                         </button>

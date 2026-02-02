@@ -60,4 +60,14 @@ class JobResource extends Resource
                 SoftDeletingScope::class,
             ]);
     }
+
+    public static function getModelLabel(): string
+    {
+        return "Anúncio";
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return "Anúncio";
+    }
 }

@@ -18,6 +18,7 @@ export default function Crafting({
     titleShape,
     sloganShape,
     buttonShape,
+    showWorkWithUs,
 }) {
     const isMobile = useMediaQuery({ maxWidth: 768 });
 
@@ -28,7 +29,7 @@ export default function Crafting({
 
     return (
         <div className="relative mt-15 xl:mt-0">
-            <div className="relative h-[200px] lg:h-[450px] xl:h-[800px] 3xl:h-[780px] ">
+            <div className="relative h-[200px] md:h-[300px] lg:h-[450px] xl:h-[800px] 3xl:h-[780px] ">
                 {/* CONTENT */}
                 <div className="relative flex h-full flex-col items-center justify-center gradient-blue uppercase text-white text-center">
                     <img
@@ -38,14 +39,14 @@ export default function Crafting({
                     />
 
                     <h4
-                        className="font-eurostile text-[18px] lg:text-[28px] xl:text-[32px] xl:leading-[26px] z-20"
+                        className="font-eurostile text-[18px] md:text-[24px] lg:text-[28px] xl:text-[32px] xl:leading-[26px] z-20"
                         dangerouslySetInnerHTML={{
                             __html: slogan,
                         }}
                     ></h4>
 
                     <h1
-                        className="font-eurostile text-[20px] lg:text-[40px] xl:text-[74px] xl:leading-[79px] lg:pt-15 xl:pt-25 z-20"
+                        className="font-eurostile text-[20px] md:text-[30px] lg:text-[40px] xl:text-[74px] xl:leading-[79px] md:pt-8 lg:pt-15 xl:pt-25 z-20"
                         dangerouslySetInnerHTML={{
                             __html: title,
                         }}
@@ -57,7 +58,7 @@ export default function Crafting({
                     src={component}
                     alt=""
                     style={{ y }}
-                    className="absolute -bottom-[480px] right-0 xl:right-0 lg:-bottom-[800px] xl:-bottom-[1600px] z-30 h-[130px] lg:h-[250px] xl:h-[560px] w-fit object-contain will-change-transform"
+                    className="absolute -bottom-[480px] right-0 xl:right-0 md:-bottom-[800px] lg:-bottom-[800px] xl:-bottom-[1600px] z-30 h-[130px] lg:h-[250px] xl:h-[560px] w-fit object-contain will-change-transform"
                 />
                 <motion.img
                     src={component2}
@@ -70,25 +71,29 @@ export default function Crafting({
                     src={component3}
                     alt=""
                     style={{ y }}
-                    className="absolute  -bottom-[300px] right-80 lg:right-200 lg:-bottom-[500px] xl:right-280 xl:-bottom-[900px] z-10 h-[50px] lg:h-[200px] xl:h-[240px] w-fit object-contain will-change-transform"
+                    className="absolute  -bottom-[300px] right-80 lg:right-200 md:-bottom-[500px] lg:-bottom-[500px] xl:right-280 xl:-bottom-[900px] z-10 h-[50px] lg:h-[200px] xl:h-[240px] w-fit object-contain will-change-transform"
                 />
             </div>
 
             {/* NEXT SECTION */}
-            <div className="h-[430px] lg:h-[500px] xl:h-[1000px]">
-                <img
-                    className="h-full w-full object-cover"
-                    src={background}
-                    alt=""
-                />
-            </div>
 
-            <ShapeFuture
-                shapeFuture={image}
-                title={titleShape}
-                slogan={sloganShape}
-                button={buttonShape}
-            />
+            {showWorkWithUs && (
+                <>
+                    <div className="h-[430px] md:h-[550px] lg:h-[500px] xl:h-[1000px]">
+                        <img
+                            className="h-full w-full object-cover"
+                            src={background}
+                            alt=""
+                        />
+                    </div>
+                    <ShapeFuture
+                        shapeFuture={image}
+                        title={titleShape}
+                        slogan={sloganShape}
+                        button={buttonShape}
+                    />
+                </>
+            )}
         </div>
     );
 }

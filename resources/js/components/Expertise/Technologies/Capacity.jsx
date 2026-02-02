@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import i18n from "../../../../i18n/i18n";
 //config
 import { API_URL } from "../../../config";
 
@@ -30,20 +30,18 @@ export default function Capacity({ slogan, title, text, video, video2 }) {
         fetchPage();
     }, []);
 
-    console.log(data);
-
     return (
         <>
             <SecondTitle
                 slogan={slogan}
                 title={title}
-                className="mt-20 xl:mt-32 text-azul"
+                className="mt-20 xl:mt-32 text-azul text-left lg:text-center"
             />
 
-            <div className="text-azul flex flex-col lg:flex-row justify-between pt-8 lg:px-[100px] xl:px-[230px] xl:pt-[140px] pb-15 xl:pb-18">
+            <div className="text-azul flex flex-col lg:flex-row justify-between pt-8 lg:px-[100px] xl:px-[137px] 2xl:px-[230px] xl:pt-[140px] pb-15 xl:pb-18">
                 <div>
                     <p
-                        className="text-base lg:max-w-[550px] xl:max-w-[465px] font-light px-8 xl:px-0"
+                        className="text-base lg:max-w-[550px] xl:max-w-[465px] font-light px-8 lg:px-0"
                         dangerouslySetInnerHTML={{
                             __html: text,
                         }}
@@ -54,7 +52,7 @@ export default function Capacity({ slogan, title, text, video, video2 }) {
                                 <video
                                     key={video}
                                     src={video}
-                                    className="h-[200px] w-full object-cover lg:w-[550px] lg:h-[500px] xl:w-[740px] xl:h-[370px]"
+                                    className="h-[200px] w-full object-cover lg:w-[600px] lg:h-[380px] 2xl:w-[740px] 2xl:h-[370px]"
                                     autoPlay
                                     muted
                                     loop
@@ -62,9 +60,9 @@ export default function Capacity({ slogan, title, text, video, video2 }) {
                                 />
                             )}
                         </div>
-                        <div className="hidden xl:block bg-laranja w-[150px] h-[150px] xl:w-[260px] xl:h-[260px] rounded-full xl:absolute -right-15 bottom-30 xl:-right-40 xl:bottom-70 ">
+                        <div className="hidden xl:block bg-laranja w-[150px] h-[150px] xl:w-[220px] xl:h-[220px] 2xl:w-[260px] 2xl:h-[260px] rounded-full xl:absolute -right-15 bottom-30 xl:-right-30 xl:bottom-50 2xl:-right-40 2xl:bottom-70 ">
                             <div className="flex justify-center items-center w-full h-full">
-                                <div className="w-[148px] h-[148px] xl:w-[255px] xl:h-[255px] rounded-full overflow-hidden ">
+                                <div className="w-[148px] h-[148px] xl:w-[215px] xl:h-[215px]  2xl:w-[255px] 2xl:h-[255px] rounded-full overflow-hidden ">
                                     {video && (
                                         <video
                                             key={video2}
@@ -87,9 +85,17 @@ export default function Capacity({ slogan, title, text, video, video2 }) {
                     </h1>
                     {data.map((item, index) => (
                         <Type
-                            text={item?.title?.en}
+                            text={
+                                i18n.language === "pt"
+                                    ? item?.title?.pt
+                                    : item?.title?.en
+                            }
                             key={index}
-                            dimensions={item?.description?.en}
+                            dimensions={
+                                i18n.language === "pt"
+                                    ? item?.description?.pt
+                                    : item?.description?.en
+                            }
                         />
                     ))}
                 </div>

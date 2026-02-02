@@ -5,7 +5,7 @@ export default function HistoryIcon({ title, slogan, sloganMobile }) {
                 {title}
             </h1>
             <p
-                className="text-azul text-[14px] leading-[20px] lg:text-[14px] xl:leading-[21px] tracking-[0.01em] xl:pt-2 lg:max-w-[200px] xl:max-w-[180px] w-full"
+                className="text-azul text-[14px] leading-[20px] lg:text-[14px] xl:leading-[21px] tracking-[0.01em] xl:pt-2 lg:max-w-[140px] xl:max-w-[160px] 2xl:max-w-[180px] w-full"
                 dangerouslySetInnerHTML={{
                     __html: slogan,
                 }}

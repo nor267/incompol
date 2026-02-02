@@ -9,14 +9,14 @@ import lineTablet from "../../../../images/icons/aboutus/line-tablet.svg";
 export default function HistoryDesktop({ dates }) {
     return (
         <>
-            <div className=" xl:pl-[360px] xl:pr-[180px] 4xl:px-[620px] relative flex justify-between grid grid-cols-4">
+            <div className="lg:pr-[200px] lg:pl-[180px] 6xl:pl-[230px] 6xl:pr-[200px] xl:pl-[220px] xl:pr-[130px] 2xl:pl-[280px] 3xl:pl-[360px] 2xl:pr-[220px] 3xl:pr-[280px] 5xl:pr-[180px] 4xl:px-[620px] relative flex justify-between grid grid-cols-4">
                 <img
                     src={line}
-                    className="hidden xl:block absolute lg:-top-8 xl:top-31.5 left-1/2 -translate-x-1/2 z-0 lg:w-[1000px] lg:h-[600px] 3xl:w-auto 3xl:h-auto object-cover"
+                    className="hidden lg:block absolute lg:top-33 xl:top-32 2xl:top-31.5 left-1/2 -translate-x-1/2 z-0 lg:h-[300px] xl:h-[350px] 6xl:h-[360px]  6xl:w-auto 2xl:h-auto 2xl:w-auto  object-cover"
                 ></img>
                 <img
                     src={lineTablet}
-                    className="absolute xl:hidden lg:top-32 xl:top-39 left-1/2 -translate-x-1/2 z-0 lg:w-[1000px]  3xl:w-[2000px] 3xl:h-[390px] "
+                    className="absolute lg:hidden  left-1/2 -translate-x-1/2 z-0  "
                 ></img>
                 <div className="history-line">
                     <img src={arrow} className="z-20"></img>
@@ -47,8 +47,8 @@ export default function HistoryDesktop({ dates }) {
                     />
                 </div>
             </div>
-            <div className="absolute 3xl:right-24.5">
-                <div className="flex flex-col items-end 3xl:gap-13">
+            <div className="5xl:absolute 5xl:block hidden  3xl:right-[5.1%]">
+                <div className="flex flex-col items-end xl:gap-2 3xl:gap-13">
                     <div className="history-line items-start! flex-col!">
                         <img src={arrowSmall} className="z-20 w-20 h-5!"></img>
                         <HistoryIcon
@@ -65,7 +65,7 @@ export default function HistoryDesktop({ dates }) {
                     </div>
                 </div>
             </div>
-            <div className="xl:pl-[510px] xl:pr-[350px] 4xl:px-[800px]  relative flex justify-between absolute lg:-top-4.5 xl:-top-5 grid grid-cols-3">
+            <div className="lg:pr-[80px] lg:pl-[240px] 6xl:pr-[100px] xl:pl-[280px] xl:pr-[100px] 3xl:pl-[450px] 2xl:px-[400px] 2xl:pr-[110px] 3xl:pr-[190px] 5xl:pl-[510px] 5xl:pr-[350px] 4xl:px-[800px]  relative flex justify-between absolute lg:-top-4.5 xl:-top-4.5 2xl:-top-5 grid grid-cols-4 5xl:grid-cols-3">
                 <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
@@ -87,8 +87,15 @@ export default function HistoryDesktop({ dates }) {
                         slogan={dates[5]?.text?.en}
                     />
                 </div>
+                <div className="history-line items-center! 5xl:hidden!">
+                    <img src={arrow} className="z-20 rotate-180"></img>
+                    <HistoryIcon
+                        title={dates[7]?.year}
+                        slogan={dates[7]?.text?.en}
+                    />
+                </div>
             </div>
-            <div className="xl:pl-[360px] xl:pr-[180px] 4xl:px-[620px] relative flex justify-between absolute lg:-bottom-18 xl:-bottom-20.5 grid grid-cols-4">
+            <div className="lg:pr-[200px] lg:pl-[180px]  6xl:pl-[230px] 6xl:pr-[200px] xl:pl-[220px] xl:pr-[130px] 2xl:pl-[280px] 3xl:pl-[360px] 2xl:pr-[220px] 3xl:pr-[280px] 5xl:pr-[180px] 4xl:px-[620px]  relative flex justify-between absolute 6xl:-bottom-10 lg:bottom-4 xl:-bottom-10 2xl:-bottom-20.5 grid grid-cols-4">
                 <div className="history-line items-center!">
                     <img src={arrow} className="z-20"></img>
                     <HistoryIcon
@@ -118,7 +125,7 @@ export default function HistoryDesktop({ dates }) {
                     />
                 </div>
             </div>
-            <div className="xl:pl-[510px] xl:pr-[350px] 4xl:px-[800px] relative flex justify-between absolute lg:top-13 xl:top-16 grid grid-cols-3">
+            <div className="lg:pr-[80px] lg:pl-[240px] 6xl:pr-[100px] xl:pl-[280px] xl:pr-[100px] 3xl:pl-[450px] 2xl:px-[400px] 2xl:pr-[110px] 3xl:pr-[190px] 5xl:pl-[510px] 5xl:pr-[350px] 4xl:px-[800px]   relative flex justify-between absolute 6xl:top-5 lg:-top-9 xl:top-5 2xl:top-16 grid grid-cols-4 5xl:grid-cols-3">
                 <div className="history-line items-center!">
                     <img src={arrow} className="z-20 rotate-180"></img>
                     <HistoryIcon
@@ -138,6 +145,13 @@ export default function HistoryDesktop({ dates }) {
                     <HistoryIcon
                         title={dates[10]?.year}
                         slogan={dates[10]?.text?.en}
+                    />
+                </div>
+                <div className="history-line items-center! 5xl:hidden!">
+                    <img src={arrow} className="z-20 rotate-180"></img>
+                    <HistoryIcon
+                        title={dates[8]?.year}
+                        slogan={dates[8]?.text?.en}
                     />
                 </div>
             </div>
