@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Filament\Resources\Jobs;
+namespace App\Filament\Resources\ContactForms;
 
-use App\Filament\Resources\Jobs\Pages\CreateJob;
-use App\Filament\Resources\Jobs\Pages\EditJob;
-use App\Filament\Resources\Jobs\Pages\ListJobs;
-use App\Filament\Resources\Jobs\Schemas\JobForm;
-use App\Filament\Resources\Jobs\Tables\JobsTable;
-use App\Models\Job;
+use App\Filament\Resources\ContactForms\Pages\CreateContactForm;
+use App\Filament\Resources\ContactForms\Pages\EditContactForm;
+use App\Filament\Resources\ContactForms\Pages\ListContactForms;
+use App\Filament\Resources\ContactForms\Schemas\ContactFormForm;
+use App\Filament\Resources\ContactForms\Tables\ContactFormsTable;
+use App\Models\ContactForm;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -17,24 +17,23 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use UnitEnum;
 
-class JobResource extends Resource
+class ContactFormResource extends Resource
 {
-    protected static ?string $model = Job::class;
+    protected static ?string $model = ContactForm::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::Briefcase;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Phone;
 
-    protected static ?string $recordTitleAttribute = 'job';
-
-    protected static UnitEnum|string|null $navigationGroup = 'Notícias e Emprego';
+    protected static UnitEnum|string|null $navigationGroup = 'Contactos';
 
     public static function form(Schema $schema): Schema
+
     {
-        return JobForm::configure($schema);
+        return ContactFormForm::configure($schema);
     }
 
     public static function table(Table $table): Table
     {
-        return JobsTable::configure($table);
+        return ContactFormsTable::configure($table);
     }
 
     public static function getRelations(): array
@@ -47,9 +46,7 @@ class JobResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListJobs::route('/'),
-            'create' => CreateJob::route('/create'),
-            'edit' => EditJob::route('/{record}/edit'),
+            'index' => ListContactForms::route('/'),
         ];
     }
 
@@ -61,13 +58,14 @@ class JobResource extends Resource
             ]);
     }
 
+
     public static function getModelLabel(): string
     {
-        return "Anúncio";
+        return "Contacto";
     }
 
     public static function getPluralModelLabel(): string
     {
-        return "Anúncios";
+        return "Contactos";
     }
 }

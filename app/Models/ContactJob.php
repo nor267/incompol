@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ContactForm extends Model
+class ContactJob extends Model
 {
     use SoftDeletes;
 
-    public $table = "contact_form";
+    public $table = "recruitment";
 
     protected $fillable = [
         'name',
@@ -17,7 +17,8 @@ class ContactForm extends Model
         'phone',
         'message',
         'terms',
-        'status'
+        'status',
+        'cv_file'
     ];
 
     protected $casts = [

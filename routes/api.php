@@ -66,3 +66,5 @@ Route::post("/get-jobs", [PagesController::class, "get_jobs"]);
  * 
  */
 Route::post('/contact', [FormController::class, 'contact_form']);
+
+Route::post('/job', [FormController::class, 'contact_job']);

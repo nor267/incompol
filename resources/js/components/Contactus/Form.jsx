@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { API_URL } from "../../config";
 import i18n from "../../../i18n/i18n";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 //components
 import SecondTitle from "../Layout/SecondTitle";
@@ -18,6 +21,7 @@ export default function Form({
     linkedin,
 }) {
     const [termsChecked, setTermsChecked] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState(null);
     const { t } = useTranslation();
 
     //handle the form
@@ -28,8 +32,6 @@ export default function Form({
         phone: "",
         terms_conditions: 0,
     });
-
-    const [success, setSuccess] = useState("");
 
     const handleChange = (e) => {
         const { name, type, checked, value } = e.target;
@@ -43,12 +45,24 @@ export default function Form({
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (!captchaToken) {
+            const errorMessage =
+                i18n.language === "pt"
+                    ? "Por favor verifique que não é um robô"
+                    : "Please verify you are not a robot";
+            toast.error(errorMessage, {
+                position: "top-right",
+                autoClose: 3000, // 3 seconds
+            });
+            return;
+        }
+
         const response = await fetch(API_URL + "/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(form),
+            body: JSON.stringify(form, captchaToken),
         });
 
         if (response.ok) {
@@ -56,7 +70,10 @@ export default function Form({
                 i18n.language === "pt"
                     ? "Messagem enviada"
                     : "Message submited";
-            setSuccess(message);
+            toast.success(message, {
+                position: "top-right",
+                autoClose: 3000, // 3 seconds
+            });
             setForm({ name: "", email: "", message: "", phone: "" });
         } else {
             console.log(response);
@@ -71,6 +88,7 @@ export default function Form({
                 title={title}
                 className="pt-15 xl:pt-20 text-white text-center"
             />
+            <ToastContainer />
             <div className="lg:px-[100px] xl:px-[377px] flex flex-col-reverse w-full lg:flex-row justify-between xl:pt-36 px-8 md:px-[80px] lg:px-0 4xl:px-[600px] ">
                 <div className="flex items-start justify-between lg:justify-start lg:flex-col pt-15 xl:pt-0 pb-15">
                     <div className="">
@@ -198,15 +216,20 @@ export default function Form({
                                 </span>
                             </label>
                         </div>
+                        <ReCAPTCHA
+                            sitekey={
+                                import.meta.env
+                                    .VITE_REACT_APP_RECAPTCHA_SITE_KEY
+                            }
+                            onChange={(token) => setCaptchaToken(token)}
+                            onExpired={() => setCaptchaToken(null)}
+                        />
                         <button
                             className="hover:border-white! hover:text-white!"
                             type="submit"
                         >
                             {t("form.send")}
                         </button>
-                        {success && (
-                            <p className="text-white mt-2">{success}</p>
-                        )}
                     </form>
                 </div>
             </div>

@@ -23,7 +23,8 @@
         "send": "Send",
         "accept": "I accept the",
         "policy": "Privacy Policy",
-        "consent": " and consent to the processing of my personal data."
+        "consent": " and consent to the processing of my personal data.",
+        "file": "PDF and DOCX files up to 6 MB are accepted."
     },
 
     "socials": "Socials"

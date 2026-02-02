@@ -25,7 +25,8 @@
         "send": "Enviar",
         "accept": "Eu aceito as",
         "policy": "Políticas de Privacidade",
-        "consent": "e consinto no processamento dos meus dados pessoais."
+        "consent": "e consinto no processamento dos meus dados pessoais.",
+        "file": "São aceites ficheiros do tipo pdf e docx com no máximo 6mb."
     },
 
     "socials": "Redes sociais"
