@@ -62,10 +62,10 @@ export default function People({ showWorkWithUs }) {
                 }
             />
             <div className="bg-azul  xl:h-[579px] flex flex-col lg:flex-row text-white mt-15 xl:mt-40">
-                <div className="flex w-full lg:w-auto">
+                <div className="flex w-screen h-[280px] md:h-[250px] lg:h-full lg:w-1/2">
                     <img
                         src={appUrl + data?.second_image}
-                        className="w-full md:h-[400px] lg:h-full lg:w-auto max-w-screen xl:max-w-[700px] 4xl:max-w-[600px] 2xl:max-w-[900px] object-cover"
+                        className="w-full object-cover"
                     ></img>
                 </div>
                 <div className="pb-5 xl:pb-0 pt-5 px-8 xl:px-0 md:pl-[80px] lg:pl-20 xl:pl-10 2xl:pl-[130px] md:pt-10 lg:pt-20 xl:pt-[150px]">

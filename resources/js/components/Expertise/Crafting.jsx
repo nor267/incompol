@@ -2,7 +2,6 @@
 import SecondTitle from "../Layout/SecondTitle";
 
 export default function Crafting({ title, slogan, text, video, image }) {
-    console.log(video);
     return (
         <>
             <SecondTitle

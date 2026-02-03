@@ -22,7 +22,7 @@ export default function Expertise({
 }) {
     return (
         <div className="pt-10 xl:mt-[80px] bg-white text-white">
-            <div className="lg:h-[650px] xl:h-[1480px] gradient-black-blue relative margin-website pb-15 xl:pb-0">
+            <div className="lg:h-[850px] xl:h-[1480px] gradient-black-blue relative margin-website pb-15 xl:pb-0">
                 <img
                     src={triangleWhite}
                     className="h-8 xl:h-auto -top-1 left-1/2 -translate-x-1/2 absolute"
@@ -83,7 +83,7 @@ export default function Expertise({
                     </div>
 
                     {/* left orange circle */}
-                    <div className="absolute left-4 bottom-160 md:left-[80px] lg:left-20 xl:left-28 xl:bottom-[460px] 4xl:left-[250px]">
+                    <div className="absolute left-4 bottom-160 md:left-[80px] lg:left-20 lg:bottom-100 xl:left-28 xl:bottom-[460px] 4xl:left-[250px]">
                         <div className="bg-laranja w-[130px] h-[130px] md:w-[190px] md:h-[190px] lg:w-[180px] lg:h-[180px] xl:w-[280px] xl:h-[280px] 2xl:w-[309px] 2xl:h-[309px] rounded-full ">
                             <div className="flex justify-center items-center w-full h-full">
                                 <div className=" w-[125px] h-[125px] md:w-[185px] md:h-[185px] lg:w-[175px] lg:h-[175px] xl:w-[275px] xl:h-[275px] 2xl:w-[304px] 2xl:h-[304px] rounded-full overflow-hidden ">
@@ -106,7 +106,7 @@ export default function Expertise({
                         </div>
                     </div>
 
-                    <div className="lg:absolute xl:bottom-40 lg:bottom-20 lg:left-40 xl:bottom-0 xl:left-[280px] 2xl:left-[350px] 4xl:left-[550px] mt-40 md:mt-0">
+                    <div className="lg:absolute xl:bottom-40 lg:bottom-20 lg:left-40 xl:bottom-0 xl:left-[280px] 2xl:left-[350px] 4xl:left-[550px] mt-40 md:mt-20 lg:mt-0">
                         <motion.div
                             initial={{ x: -250, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
@@ -135,7 +135,7 @@ export default function Expertise({
                     </div>
 
                     {/* right */}
-                    <div className="absolute right-4 bottom-75 md:bottom-70 md:right-[80px] lg:bottom-80 lg:right-20 xl:right-28 xl:bottom-[460px] 4xl:right-[250px] mt-6 xl:mt-0">
+                    <div className="absolute right-4 bottom-75 md:bottom-70 md:right-[80px] lg:bottom-100 lg:right-20 xl:right-28 xl:bottom-[460px] 4xl:right-[250px] mt-6 xl:mt-0">
                         <div className="bg-laranja w-[130px] h-[130px] md:w-[190px] md:h-[190px] xl:w-[280px] xl:h-[280px] 2xl:w-[309px] 2xl:h-[309px] rounded-full ">
                             <div className="flex justify-center items-center w-full h-full">
                                 <div className="w-[125px] h-[125px] md:w-[185px] md:h-[185px] xl:w-[275px] xl:h-[275px] 2xl:w-[304px] 2xl:h-[304px] rounded-full overflow-hidden ">

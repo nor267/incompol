@@ -23,12 +23,14 @@ export default function Manucfacture({ banner, appUrl, title, button }) {
                             __html: title,
                         }}
                     ></h1>
-                    <button
-                        className="button-laranja mt-3 xl:mt-[42px]"
-                        dangerouslySetInnerHTML={{
-                            __html: button,
-                        }}
-                    ></button>
+                    <a href="/portfolio">
+                        <button
+                            className="button-laranja mt-3 xl:mt-[42px]"
+                            dangerouslySetInnerHTML={{
+                                __html: button,
+                            }}
+                        ></button>
+                    </a>
                 </motion.div>
             </div>
         </div>

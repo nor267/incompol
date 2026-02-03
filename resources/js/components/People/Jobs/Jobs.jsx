@@ -46,8 +46,6 @@ export default function Jobs({ title, slogan }) {
         fetchPage();
     }, []);
 
-    console.log(jobs);
-
     return (
         <div className="bg-light-grey xl:pl-[137px] pb-15 xl:pb-26 relative">
             <div className="flex justify-between items-end w-full">

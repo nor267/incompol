@@ -1,7 +1,6 @@
 import SecondTitle from "../Layout/SecondTitle";
 
 export default function Recognition({ title, slogan, text, video, image }) {
-    console.log(video);
     return (
         <>
             <SecondTitle
@@ -32,7 +31,7 @@ export default function Recognition({ title, slogan, text, video, image }) {
                     )}
                     <img
                         src={image}
-                        className="w-20 md:w-25 xl:w-[200px] xl:h-auto object-cover absolute -bottom-7 -right-4 md:bottom-110 md:left-200 md:right-1/2 md:translate-x-1/2 xl:-bottom-20 xl:-left-0"
+                        className="w-20 md:w-25 xl:w-[200px] xl:h-auto object-cover absolute -bottom-7 -right-4 lg:bottom-110 md:-left-8 md:-bottom-8 lg:left-100  lg:right-1/2 lg:translate-x-1/2 xl:-bottom-20 xl:-left-0"
                     ></img>
                 </div>
             </div>

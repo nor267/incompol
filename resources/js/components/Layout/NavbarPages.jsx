@@ -37,7 +37,7 @@ export default function NavbarPages({ i18n, toggleLanguage, showWorkWithUs }) {
                 <div className="flex items-center justify-center gap-2 xl:gap-4">
                     {showWorkWithUs && (
                         <a href="/people">
-                            <button className="button-laranja mr-1 xl:mr-0">
+                            <button className="button-laranja mr-1 xl:mr-0 hidden md:block">
                                 {t("footerNor.work_with_us")}
                             </button>
                         </a>

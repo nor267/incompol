@@ -65,6 +65,6 @@ Route::post("/get-jobs", [PagesController::class, "get_jobs"]);
  * Guardar a mensagem enviado pelo formulário de contacto
  * 
  */
-Route::post('/contact', [FormController::class, 'contact_form']);
+Route::post('/contact', [FormController::class, 'contact_form'])->middleware('throttle:3,1');
 
-Route::post('/job', [FormController::class, 'contact_job']);
+Route::post('/job', [FormController::class, 'contact_job'])->middleware('throttle:3,1');

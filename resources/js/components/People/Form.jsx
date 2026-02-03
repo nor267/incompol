@@ -17,6 +17,7 @@ export default function Form({ image, text }) {
             : "No file selected";
     const [fileName, setFileName] = useState(file);
     const [termsChecked, setTermsChecked] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState(null);
     const { t } = useTranslation();
 
     const handleFileChange = (e) => {
@@ -56,22 +57,24 @@ export default function Form({ image, text }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // if (!captchaToken) {
-        //     const errorMessage =
-        //         i18n.language === "pt"
-        //             ? "Por favor verifique que não é um robô"
-        //             : "Please verify you are not a robot";
-        //     toast.error(errorMessage, {
-        //         position: "top-right",
-        //         autoClose: 3000, // 3 seconds
-        //     });
-        //     return;
-        // }
+        if (!captchaToken) {
+            const errorMessage =
+                i18n.language === "pt"
+                    ? "Por favor verifique que não é um robô"
+                    : "Please verify you are not a robot";
+            toast.error(errorMessage, {
+                position: "top-right",
+                autoClose: 3000, // 3 seconds
+            });
+            return;
+        }
 
         const formData = new FormData();
         for (let key in form) {
-            formData.append(key, form[key]); // file objects are appended correctly
+            formData.append(key, form[key]);
         }
+
+        formData.append("captchaToken", captchaToken);
 
         const response = await fetch(API_URL + "/job", {
             method: "POST",
@@ -90,7 +93,14 @@ export default function Form({ image, text }) {
             setForm({ name: "", email: "", message: "", phone: "" });
             setFileName(file);
         } else {
-            console.log(response);
+            const messageError =
+                i18n.language === "pt"
+                    ? "Ocorreu um erro, por favor tente de novo"
+                    : "Ocorred an error, please try again";
+            toast.error(messageError, {
+                position: "top-right",
+                autoClose: 3000, // 3 seconds
+            });
         }
     };
 
@@ -98,10 +108,10 @@ export default function Form({ image, text }) {
         <>
             <ToastContainer />
             <div className="flex flex-col lg:flex-row items-center xl:gap-20 2xl:gap-40 4xl:gap-53">
-                <div className="xl:mt-38  relative flex-col-reverse flex justify-center items-center xl:items-start w-full xl:w-auto">
+                <div className="lg:mt-20 xl:mt-38  relative flex-col-reverse flex justify-center items-center xl:items-start w-full xl:w-auto">
                     <img
                         src={image}
-                        className="h-[240px] w-full xl:w-[972px] md:h-[450px] lg:h-[650px] xl:h-[982px] object-cover"
+                        className="h-[240px] w-full xl:w-[972px] md:h-[450px] lg:h-[850px] xl:h-[982px] object-cover"
                     ></img>
                     <div className="absolute left-8 bottom-5 md:left-[80px] lg:left-30  xl:left-[100px] lg:bottom-[40px] xl:bottom-[120px] z-20 pb-2 people-text">
                         <h1
@@ -117,7 +127,7 @@ export default function Form({ image, text }) {
                         className="w-full form-container"
                         method="POST"
                         onSubmit={(event) => handleSubmit(event)}
-                        enctype="multipart/form-data"
+                        encType="multipart/form-data"
                     >
                         <div>
                             <label id="name" className="form-title text-azul">
@@ -239,9 +249,17 @@ export default function Form({ image, text }) {
                                 </span>
                             </label>
                         </div>
+                        <ReCAPTCHA
+                            sitekey={
+                                import.meta.env
+                                    .VITE_REACT_APP_RECAPTCHA_SITE_KEY
+                            }
+                            onChange={(token) => setCaptchaToken(token)}
+                            onExpired={() => setCaptchaToken(null)}
+                        />
 
                         <button
-                            className="hover:text-azul! hover:border-azul! duration-300"
+                            className="hover:text-azul! hover:border-azul! duration-300 w-full! md:w-40! xl:w-fit"
                             type="submit"
                         >
                             {t("form.send")}

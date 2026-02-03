@@ -81,7 +81,7 @@ export default function Capacity({ slogan, title, text, video, video2 }) {
                 </div>
                 <div className="flex flex-col gap-1 xl:gap-3 px-8 lg:px-0 pt-10 lg:pt-20 xl:pt-0">
                     <h1 className="text-left font-eurostile text-[16px] xl:text-[18px] xl:leading-[26px] tracking-[0.14em] uppercase font-bold mb-5 xl:mb-10">
-                        equipments
+                        {i18n.language === "pt" ? "Equipamento" : "Equipament"}
                     </h1>
                     {data.map((item, index) => (
                         <Type

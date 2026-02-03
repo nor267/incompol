@@ -31,6 +31,7 @@ export default function Form({
         message: "",
         phone: "",
         terms_conditions: 0,
+        captchaToken: "",
     });
 
     const handleChange = (e) => {
@@ -57,12 +58,14 @@ export default function Form({
             return;
         }
 
+        form.captchaToken = captchaToken;
+
         const response = await fetch(API_URL + "/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(form, captchaToken),
+            body: JSON.stringify(form),
         });
 
         if (response.ok) {
@@ -76,7 +79,14 @@ export default function Form({
             });
             setForm({ name: "", email: "", message: "", phone: "" });
         } else {
-            console.log(response);
+            const messageError =
+                i18n.language === "pt"
+                    ? "Ocorreu um erro, por favor tente de novo"
+                    : "Ocorred an error, please try again";
+            toast.error(messageError, {
+                position: "top-right",
+                autoClose: 3000, // 3 seconds
+            });
         }
     };
     // -----
@@ -225,7 +235,7 @@ export default function Form({
                             onExpired={() => setCaptchaToken(null)}
                         />
                         <button
-                            className="hover:border-white! hover:text-white!"
+                            className="hover:border-white! hover:text-white! md:w-fit!"
                             type="submit"
                         >
                             {t("form.send")}

@@ -55,15 +55,15 @@ export default function Certification({ title, slogan, text, video, video2 }) {
                     <div className="flex justify-start flex-row lg:gap-3 xl:gap-2 items-center pt-5 xl:pt-8 pb-5 xl:pb-0">
                         <img
                             src={certification1}
-                            className="max-h-[100px] w-23 lg:w-40 xl:w-50 object-cover xl:max-h-[64px]"
+                            className="max-h-[100px] w-23 md:w-fit lg:w-40 xl:w-50 object-cover xl:max-h-[64px]"
                         ></img>
                         <img
                             src={certification3}
-                            className="max-h-[100px] w-23 lg:w-40 xl:w-50  object-cover xl:max-h-[64px]"
+                            className="max-h-[100px] w-23 md:w-fit lg:w-40 xl:w-50  object-cover xl:max-h-[64px]"
                         ></img>
                         <img
                             src={certification2}
-                            className="max-h-[100px] w-18 lg:w-40 xl:w-50  object-cover xl:max-h-[83px]"
+                            className="max-h-[100px] w-18 md:w-fit lg:w-40 xl:w-50  object-cover xl:max-h-[83px]"
                         ></img>
                     </div>
                 </div>

@@ -14,8 +14,7 @@
                                 <tr>
                                     <td align="center">
                                         <a href="https://incompol.pt">
-                                            <img src="https://incompolv2.nor267.com/images/logo-blue.svg"
-                                                alt="Incompol">
+                                            <img src="https://incompolv2.nor267.com/logo-blue.png" alt="Incompol">
                                         </a>
                                     </td>
                                 </tr>

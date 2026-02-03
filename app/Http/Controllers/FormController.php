@@ -20,12 +20,13 @@ class FormController extends Controller
             'https://www.google.com/recaptcha/api/siteverify',
             [
                 'secret' => env('RECAPTCHA_SECRET_KEY'),
-                'response' => $request->captcha_token,
+                'response' => $request->captchaToken,
                 'remoteip' => $request->ip(),
             ]
         );
 
-        if (! $response->json('success')) {
+
+        if (!$response->json('success')) {
             return response()->json([
                 'message' => 'reCAPTCHA verification failed'
             ], 422);
@@ -50,20 +51,21 @@ class FormController extends Controller
 
     public function contact_job(JobRequest $request)
     {
-        // $response = Http::asForm()->post(
-        //     'https://www.google.com/recaptcha/api/siteverify',
-        //     [
-        //         'secret' => env('RECAPTCHA_SECRET_KEY'),
-        //         'response' => $request->captcha_token,
-        //         'remoteip' => $request->ip(),
-        //     ]
-        // );
 
-        // if (! $response->json('success')) {
-        //     return response()->json([
-        //         'message' => 'reCAPTCHA verification failed'
-        //     ], 422);
-        // }
+        $response = Http::asForm()->post(
+            'https://www.google.com/recaptcha/api/siteverify',
+            [
+                'secret' => env('RECAPTCHA_SECRET_KEY'),
+                'response' => $request->captchaToken,
+                'remoteip' => $request->ip(),
+            ]
+        );
+
+        if (! $response->json('success')) {
+            return response()->json([
+                'message' => 'reCAPTCHA verification failed'
+            ], 422);
+        }
 
         $path = $request->file('file')->store('cvs', 'public');
 

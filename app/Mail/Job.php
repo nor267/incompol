@@ -30,7 +30,7 @@ class Job extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Job',
+            subject: 'Incompol - Nova Candidatura',
         );
     }
 

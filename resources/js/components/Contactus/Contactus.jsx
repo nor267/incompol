@@ -73,7 +73,7 @@ export default function Contactus({ showWorkWithUs }) {
                 ></img>
             </div>
             <div className="py-15 lg:py-20 xl:py-38 4xl:px-[200px]">
-                <div className=" margin-website flex justify-between flex-col md:flex-row">
+                <div className="lg:xgap-8 margin-website flex justify-between flex-col lg:flex-row">
                     <div className="">
                         <div className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold flex">
                             <span
@@ -121,7 +121,7 @@ export default function Contactus({ showWorkWithUs }) {
                         ></img>
                     </div>
                 </div>
-                <div className="pt-20 md:pt-10 xl:pt-20 margin-website flex flex-col md:flex-row-reverse justify-end md:gap-10 lg:gap-10 xl:gap-28">
+                <div className="pt-20 md:pt-10 xl:pt-20 margin-website flex flex-col lg:flex-row-reverse justify-end md:gap-10 lg:gap-10 xl:gap-28">
                     <div className="">
                         <h1
                             className="uppercase text-[18px]  xl:text-[28px] xl:leading-[32px] text-azul font-bold"

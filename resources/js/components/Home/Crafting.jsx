@@ -94,6 +94,17 @@ export default function Crafting({
                     />
                 </>
             )}
+            {!showWorkWithUs && (
+                <>
+                    <div className="h-[100px] md:h-[150px] lg:h-[200px] xl:h-[300px]">
+                        <img
+                            className="h-full w-full object-cover"
+                            src={background}
+                            alt=""
+                        />
+                    </div>
+                </>
+            )}
         </div>
     );
 }
