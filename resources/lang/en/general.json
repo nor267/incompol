@@ -1,13 +1,14 @@
 {
     "footerNor": {
         "madeby": "Made by Nor267",
-        "privacy": "Privacy Policy and Terms of Use",
+        "privacy": "Privacy Policy",
         "cookies": "Cookie Policy",
         "legal_information": "Legal Information",
         "terms": "Terms and Conditions",
-        "conduta": "code of conduct",
+        "conduta": "Code of Conduct",
         "team": "Join our team",
-        "work_with_us": "Work with us"
+        "work_with_us": "Work with us",
+        "canal_denuncia": "Complaint Channel"
     },
     "cookies": {
         "text": "This website uses cookies in its operation. By browsing you are consenting to their use. To learn more, please consult our privacy policy page.",

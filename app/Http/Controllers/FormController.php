@@ -41,7 +41,7 @@ class FormController extends Controller
             "status" => "new"
         ]);
 
-        Mail::to(env("EMAIL_ADMIN"))->send(new Contact(
+        Mail::to(env("EMAIL_ADMIN_CONTACT"))->send(new Contact(
             (string) $request->name,
             (string) $request->email,
             (string) $request->phone,
@@ -79,7 +79,7 @@ class FormController extends Controller
             "cv_file" => $path,
         ]);
 
-        Mail::to("sofiarocha@nor267.com")->send(new Job(
+        Mail::to(env('EMAIL_ADMIN_JOB'))->send(new Job(
             (string) $request->name,
             (string) $request->email,
             (string) $request->phone,

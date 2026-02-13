@@ -13,12 +13,14 @@ class Certifications extends Model
 
     protected $casts = [
         'title' => 'array',
+        'second_title' => 'array',
         'description' => 'array',
     ];
 
     protected $fillable = [
         'title',
         'description',
+        'second_title',
         'icon',
         'content_web_page_id',
         'order'

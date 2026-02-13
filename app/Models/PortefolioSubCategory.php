@@ -33,4 +33,14 @@ class PortefolioSubCategory extends Model
     {
         return $this->hasMany(PortefolioImage::class);
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($portefolio) {
+
+            $portefolio->name_backoffice = strip_tags($portefolio->name["pt"]);
+        });
+    }
 }

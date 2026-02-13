@@ -9,14 +9,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import "./styles.css";
-
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
-
-import new1 from "../../../../images/fake/news/news1.png";
-import new2 from "../../../../images/fake/news/news2.png";
-import new3 from "../../../../images/fake/news/news3.png";
 
 //componets
 import Job from "./job";
@@ -47,9 +41,9 @@ export default function Jobs({ title, slogan }) {
     }, []);
 
     return (
-        <div className="bg-light-grey xl:pl-[137px] pb-15 xl:pb-26 relative">
+        <div className="bg-light-grey  md:pl-[80px] lg:pl-[100px] xl:pl-[137px] pb-15 xl:pb-26 relative">
             <div className="flex justify-between items-end w-full">
-                <section className="text-azul  px-8 md:px-[80px] lg:px-[100px] xl:px-0 pt-10 xl:pt-18 ">
+                <section className="text-azul  px-8 md:px-0 pt-10 xl:pt-18 ">
                     <p
                         className="uppercase md:text-[17px] xl:text-[17px] xl:leading-[22px] tracking-[0.03em]"
                         dangerouslySetInnerHTML={{

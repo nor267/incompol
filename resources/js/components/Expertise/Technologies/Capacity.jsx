@@ -12,6 +12,7 @@ import SecondTitle from "../../Layout/SecondTitle";
 
 export default function Capacity({ slogan, title, text, video, video2 }) {
     const [data, setData] = new useState([]);
+    const [openIndex, setOpenIndex] = useState(null);
 
     useEffect(() => {
         const fetchPage = async () => {
@@ -38,7 +39,7 @@ export default function Capacity({ slogan, title, text, video, video2 }) {
                 className="mt-20 xl:mt-32 text-azul text-left lg:text-center"
             />
 
-            <div className="text-azul flex flex-col lg:flex-row justify-between pt-8 lg:px-[100px] xl:px-[137px] 2xl:px-[230px] xl:pt-[140px] pb-15 xl:pb-18">
+            <div className="text-azul flex flex-col lg:flex-row justify-between 2xl:justify-center lg:gap-30 2xl:gap-60 pt-8 lg:px-[100px] xl:px-[137px] 2xl:px-[230px] xl:pt-[140px] pb-15 xl:pb-18">
                 <div>
                     <p
                         className="text-base lg:max-w-[550px] xl:max-w-[465px] font-light px-8 lg:px-0"
@@ -95,6 +96,10 @@ export default function Capacity({ slogan, title, text, video, video2 }) {
                                 i18n.language === "pt"
                                     ? item?.description?.pt
                                     : item?.description?.en
+                            }
+                            info={openIndex === index}
+                            onClick={() =>
+                                setOpenIndex(openIndex === index ? null : index)
                             }
                         />
                     ))}

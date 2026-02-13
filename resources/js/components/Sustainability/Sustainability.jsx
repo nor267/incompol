@@ -85,14 +85,14 @@ export default function Sustainability({ showWorkWithUs }) {
             <div className="mt-15 xl:mt-32 relative">
                 <img
                     src={appUrl + data?.second_image}
-                    className="w-full object-cover h-[200px] md:h-[350px] xl:h-[794px]"
+                    className="w-full object-cover h-[200px] md:h-[350px] xl:h-[594px]"
                 ></img>
                 <div className="absolute top-0 left-1/2 -translate-x-1/2">
                     <img src={triangleWhite} className="h-5 xl:h-fit"></img>
                 </div>
-                <div className="absolute bottom-5 left-8 md:left-20 xl:left-[120px] xl:bottom-[113px]">
+                <div className="absolute bottom-5 left-8 md:left-20 xl:left-[120px] xl:bottom-[50px]">
                     <h1
-                        className="text-white uppercase font-eurostile font-medium md:text-[30px] xl:text-[60px] xl:leading-[65px] 2xl:text-[72px] 2xl:leading-[77px] w-full max-w-[250px] md:max-w-[400px] xl:max-w-[800px]"
+                        className="text-white uppercase font-eurostile font-medium md:text-[30px] xl:text-[40px] xl:leading-[50px] 2xl:text-[50px] 2xl:leading-[65px] w-full max-w-[250px] md:max-w-[400px] xl:max-w-[800px]"
                         dangerouslySetInnerHTML={{
                             __html:
                                 i18n.language === "pt"
@@ -143,7 +143,11 @@ export default function Sustainability({ showWorkWithUs }) {
                         ? data.section_4_title?.pt
                         : data.section_4_title?.en
                 }
-                sloganRecognition={data?.section_4_slogan?.en}
+                sloganRecognition={
+                    i18n.language === "pt"
+                        ? data.section_4_slogan?.pt
+                        : data.section_4_slogan?.en
+                }
                 textRecognition={
                     i18n.language === "pt"
                         ? data.section_4_text?.pt

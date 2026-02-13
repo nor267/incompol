@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 export default function Manucfacture({ banner, appUrl, title, button }) {
     return (
-        <div className="w-full xl:h-[875px] z-0 relative">
+        <div className="w-full h-[220px] md:h-[400px] lg:h-[500px] xl:h-[600px] 4xl:h-[750px] z-0 relative">
             <img
                 src={appUrl + banner}
-                className="h-[220px] md:h-[400px] lg:h-[500px] xl:h-[875px] object-cover z-0 w-full"
+                className="h-full object-cover z-0 w-full"
             ></img>
 
-            <div className=" absolute text-white top-1 lg:top-10 xl:top-0 margin-website pt-5 xl:pt-[165px] gradient-black-white inset-0">
+            <div className=" absolute text-white top-1 lg:top-10 xl:top-0 margin-website pt-5 xl:pt-30 2xl:pt-[165px] gradient-black-white inset-0">
                 <motion.div
                     initial={{ x: -250, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -23,7 +23,7 @@ export default function Manucfacture({ banner, appUrl, title, button }) {
                             __html: title,
                         }}
                     ></h1>
-                    <a href="/portfolio">
+                    <a href="/expertise">
                         <button
                             className="button-laranja mt-3 xl:mt-[42px]"
                             dangerouslySetInnerHTML={{

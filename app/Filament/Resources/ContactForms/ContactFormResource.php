@@ -25,6 +25,8 @@ class ContactFormResource extends Resource
 
     protected static UnitEnum|string|null $navigationGroup = 'Contactos';
 
+    protected static ?string $navigationLabel = 'Pedidos de contacto';
+
     public static function form(Schema $schema): Schema
 
     {

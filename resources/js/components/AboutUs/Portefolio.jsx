@@ -1,3 +1,6 @@
+import poster from "../../../images/incompol_poster.jpg";
+
+//components
 import ShapeFuture from "../Layout/ShapeFuture";
 
 export default function Portefolio({
@@ -9,22 +12,35 @@ export default function Portefolio({
     sloganShape,
     buttonShape,
     showWorkWithUs,
+    video,
 }) {
     let classes =
-        "pl-20 xl:pl-0 bg-white flex flex-col md:flex-row xl:justify-center xl:items-center pt-15 lg:pt-20 xl:pt-52 md:gap-30 xl:gap-28 relative";
+        "pl-20 xl:pl-0 bg-white flex flex-col md:flex-row xl:justify-center xl:items-center pt-15 lg:pt-20 xl:pt-35 md:gap-30 xl:gap-28 relative";
 
     if (showWorkWithUs) {
-        classes += " pb-100 md:pb-130 lg:pb-120 xl:pb-[800px]";
+        classes += " pb-100 md:pb-130 lg:pb-120 xl:pb-[650px]";
     } else {
-        classes += " pb-20 md:pb-30 lg:pb-60 xl:pb-[300px]";
+        classes += " pb-20 md:pb-30 lg:pb-60 xl:pb-[200px]";
     }
 
     return (
         <>
+            <div className="flex justify-center py-10 xl:py-20 bg-azul">
+                {video && (
+                    <video
+                        poster={poster}
+                        key={video}
+                        src={video}
+                        className="w-screen md:w-[500px] lg:w-[800px]  xl:w-[1000px] 2xl:w-[1200px] 3xl:w-[1300px] h-auto object-cover"
+                        playsInline
+                        controls
+                    />
+                )}
+            </div>
             <div className={classes}>
                 <div className="">
                     <h1
-                        className="text-left font-medium md:text-[30px] lg:text-[40px] xl:text-[66px] xl:leading-[66px] text-azul max-w-[300px] lg:max-w-[400px] xl:max-w-[600px] uppercase font-eurostile"
+                        className="text-left font-medium md:text-[30px] lg:text-[30px] lg:leading-[38px] xl:text-[50px] xl:leading-[55px] text-azul max-w-[300px] lg:max-w-[400px] xl:max-w-[600px] uppercase font-eurostile"
                         dangerouslySetInnerHTML={{
                             __html: title,
                         }}

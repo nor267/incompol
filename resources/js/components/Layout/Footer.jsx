@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 
-import i18n from "../../../i18n/i18n";
 import { API_URL } from "../../config";
 //icons
 import logo from "../../../images/logo/logo.svg";
@@ -14,6 +13,7 @@ import certification3 from "../../../images/icons/footer/certification3.png";
 export default function Footer({ work, showWorkWithUs }) {
     const [data, setData] = new useState([]);
     const { t, i18n } = useTranslation();
+    const appUrl = window.location.origin + "/storage/";
 
     useEffect(() => {
         const fetchPage = async () => {
@@ -38,15 +38,15 @@ export default function Footer({ work, showWorkWithUs }) {
         "pt-[50px] xl:pb-6 flex flex-col lg:flex-row xl:items-end justify-center lg:justify-between";
     if (work) {
         classes += " lg:pt-[100px] xl:pt-[200px]";
-    } else classes += " lg:pt-[80px] xl:pt-[120px]";
-
+    } else classes += " lg:pt-[80px] xl:pt-[100px]";
+    console.log(data);
     return (
         <>
             <div className="bg-azul w-full h-full margin-website text-white pb-5 xl:pb-0">
                 <div className={classes}>
                     <div>
                         <img src={logo} className="h-7 xl:h-auto"></img>
-                        <h1 className="uppercase font-eurostile text-[22px] leading-[22px] lg:text-[20px] xl:text-[28px] xl:leading-[28px] pt-10 xl:pt-25">
+                        <h1 className="uppercase font-eurostile text-[22px] leading-[22px] lg:text-[20px] xl:text-[28px] xl:leading-[28px] pt-10 xl:pt-20">
                             we <br></br> create
                             <br></br> solutions
                         </h1>
@@ -73,19 +73,21 @@ export default function Footer({ work, showWorkWithUs }) {
                                 href="/terms"
                                 className="hover:text-laranja duration-300 transition-all"
                             >
-                                {t("footerNor.terms")}
+                                {t("footerNor.privacy")}
                             </a>
                             <a
-                                href="/legal-information"
+                                href={appUrl + data[4]?.section_7_media}
+                                target="__blank"
                                 className="hover:text-laranja duration-300 transition-all"
                             >
-                                {t("footerNor.legal_information")}
+                                {t("footerNor.conduta")}
                             </a>
                             <a
-                                href="/cookies"
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSe4S_PEmqnpzn6p-7LHn3L9XiRTKoxT4oWcqYN7gXIgSLbdGw/viewform?vc=0&c=0&w=1&flr=0"
+                                target="__blank"
                                 className="hover:text-laranja duration-300 transition-all"
                             >
-                                {t("footerNor.cookies")}
+                                {t("footerNor.canal_denuncia")}
                             </a>
                             <div className="xl:pt-8 pt-3">
                                 <a

@@ -54,6 +54,10 @@ Route::post("/get-settings", [PagesController::class, "get_settings"]);
 
 Route::post("/get-jobs", [PagesController::class, "get_jobs"]);
 
+/**
+ * Obtém toda a informação de categoria de portefolio
+ */
+Route::post("/get-portefolio", [PagesController::class, "get_portfolio"]);
 
 
 /***

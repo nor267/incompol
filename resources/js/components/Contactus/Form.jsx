@@ -99,11 +99,11 @@ export default function Form({
                 className="pt-15 xl:pt-20 text-white text-center"
             />
             <ToastContainer />
-            <div className="lg:px-[100px] xl:px-[377px] flex flex-col-reverse w-full lg:flex-row justify-between xl:pt-36 px-8 md:px-[80px] lg:px-0 4xl:px-[600px] ">
+            <div className="lg:px-[100px] xl:px-[377px] flex flex-col-reverse w-full lg:flex-row justify-between xl:pt-20 px-8 md:px-[80px] lg:px-0 4xl:px-[600px] ">
                 <div className="flex items-start justify-between lg:justify-start lg:flex-col pt-15 xl:pt-0 pb-15">
                     <div className="">
                         <h1
-                            className="text-[18px] xl:text-[28px] xl:leading-[32px uppercase text-white font-medium"
+                            className="text-[18px] xl:text-[25px] xl:leading-[32px] uppercase text-white font-medium"
                             dangerouslySetInnerHTML={{
                                 __html: contactTitle,
                             }}
@@ -116,11 +116,11 @@ export default function Form({
                         ></p>
                     </div>
                     <div className="lg:pt-11">
-                        <h1 className="xl:text-[28px] xl:leading-[32px uppercase text-white font-medium">
+                        <h1 className="xl:text-[25px] xl:leading-[32px] uppercase text-white font-medium">
                             {t("socials")}
                         </h1>
                         <p
-                            className="text-laranja underline underline-offset-3 xl:text-[19px] cursor-pointer hover:text-white duration-300 transition-all"
+                            className="text-laranja underline underline-offset-3 text-base pt-1 cursor-pointer hover:text-white duration-300 transition-all"
                             dangerouslySetInnerHTML={{
                                 __html: linkedin,
                             }}
@@ -177,7 +177,7 @@ export default function Form({
                                 {t("form.message")}
                             </label>
                             <textarea
-                                rows="6"
+                                rows="5"
                                 className="w-full bg-light-grey rounded-[20px] mt-2 xl:mt-3 py-3 px-4 text-azul outline-none text-[15px]"
                                 name="message"
                                 value={form.message}
@@ -212,7 +212,7 @@ export default function Form({
                                     className="pr-3 h-4"
                                 />
 
-                                <span className="text-[13px] leading-[16px]  xl:text-[15px] tracking-[0.03em] xl:leading-[19px] text-white mt-3 xl:mt-5">
+                                <span className="text-base text-white mt-3 xl:mt-5">
                                     {t("form.accept")}
                                     <a
                                         className="ml-1 underline text-secondary hover:text-laranja duration-300 transition-all font-bold"

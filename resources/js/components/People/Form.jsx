@@ -108,10 +108,10 @@ export default function Form({ image, text }) {
         <>
             <ToastContainer />
             <div className="flex flex-col lg:flex-row items-center xl:gap-20 2xl:gap-40 4xl:gap-53">
-                <div className="lg:mt-20 xl:mt-38  relative flex-col-reverse flex justify-center items-center xl:items-start w-full xl:w-auto">
+                <div className="lg:mt-20 xl:mt-38  relative flex-col-reverse flex justify-center items-center w-full xl:w-auto">
                     <img
                         src={image}
-                        className="h-[240px] w-full xl:w-[972px] md:h-[450px] lg:h-[850px] xl:h-[982px] object-cover"
+                        className="h-[240px] w-full xl:w-[672px] md:h-[350px] lg:h-[850px] xl:h-[900px] 2xl:h-[982px] object-cover"
                     ></img>
                     <div className="absolute left-8 bottom-5 md:left-[80px] lg:left-30  xl:left-[100px] lg:bottom-[40px] xl:bottom-[120px] z-20 pb-2 people-text">
                         <h1

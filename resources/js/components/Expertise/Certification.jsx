@@ -15,22 +15,22 @@ export default function Certification({ title, slogan, text, video, video2 }) {
                 slogan={slogan}
                 title={title}
             />
-            <div className=" flex flex-col-reverse xl:flex-row  pt-8 xl:pt-36 lg:pb-30 pb-25 xl:pb-30 xl:gap-50 2xl:gap-68 justify-center items-start margin-website">
+            <div className=" flex flex-col-reverse xl:flex-row  pt-8 xl:pt-20 lg:pb-30 pb-25 xl:pb-20 xl:gap-50 2xl:gap-68 justify-center items-center margin-website">
                 <div className="relative">
                     {video && (
                         <video
                             key={video}
                             src={video}
-                            className="xl:w-[500px] xl:h-[370px]  2xl:w-[570px] 2xl:h-[375px] object-cover"
+                            className="md:h-[280px] lg:w-[800px] lg:h-[400px] xl:w-[500px] xl:h-[370px]  2xl:w-[570px] 2xl:h-[375px] object-cover"
                             autoPlay
                             muted
                             loop
                             playsInline
                         />
                     )}
-                    <div className="bg-laranja w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] xl:w-[260px] xl:h-[260px] rounded-full absolute -right-10 xl:-right-36 -bottom-15 xl:-bottom-20 ">
+                    <div className="bg-laranja w-[100px] h-[100px] lg:w-[200px] lg:h-[200px] 2xl:w-[260px] 2xl:h-[260px] rounded-full absolute -right-5 xl:-right-20 2xl:-right-36 -bottom-15 xl:-bottom-20 ">
                         <div className="flex justify-center items-center w-full h-full">
-                            <div className=" w-[148px] h-[148px] lg:w-[195px] lg:h-[195px] xl:w-[255px] xl:h-[255px] rounded-full overflow-hidden ">
+                            <div className=" w-[98px] h-[98px] lg:w-[195px] lg:h-[195px] 2xl:w-[255px] 2xl:h-[255px] rounded-full overflow-hidden ">
                                 {video2 && (
                                     <video
                                         key={video2}
@@ -63,7 +63,7 @@ export default function Certification({ title, slogan, text, video, video2 }) {
                         ></img>
                         <img
                             src={certification2}
-                            className="max-h-[100px] w-18 md:w-fit lg:w-40 xl:w-50  object-cover xl:max-h-[83px]"
+                            className="max-h-[100px] w-18 md:w-fit xl:w-50  object-cover xl:max-h-[83px]"
                         ></img>
                     </div>
                 </div>

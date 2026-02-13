@@ -79,6 +79,7 @@ class ContentWebPage extends Model
         'slug',
         'language_id',
         'visible',
+        'visible_en',
         'banner_video',
         'banner_video_mobile',
         'slogan',

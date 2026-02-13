@@ -62,10 +62,10 @@ export default function AboutUs({ showWorkWithUs }) {
                         : data.description?.en
                 }
             />
-            <div className="flex justify-center  items-center w-full mt-15 xl:mt-36 relative">
+            <div className="flex justify-center items-center w-full mt-15 xl:mt-36 relative">
                 {data?.banner_video && (
                     <video
-                        className="object-cover w-full xl:max-w-[1259px] h-[200px] lg:h-[450px] xl:h-[637px] 4xl:max-w-[1700px] 4xl:h-[800px]"
+                        className="object-cover w-full xl:max-w-[1259px] h-[200px] md:h-[250px] lg:h-[450px] xl:h-[537px] 4xl:max-w-[1700px] 4xl:h-[700px]"
                         autoPlay
                         muted
                         loop
@@ -78,7 +78,7 @@ export default function AboutUs({ showWorkWithUs }) {
                     </video>
                 )}
                 {data?.second_image && (
-                    <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full hidden xl:block xl:absolute xl:right-3 2xl:right-50 -bottom-20">
+                    <div className="bg-laranja xl:w-[300px] xl:h-[300px] rounded-full hidden xl:block xl:absolute xl:right-3 2xl:right-70 -bottom-20">
                         <div className="flex justify-center items-center w-full h-full">
                             <div className="xl:w-[294px] xl:h-[294px] rounded-full overflow-hidden ">
                                 <img
@@ -130,6 +130,7 @@ export default function AboutUs({ showWorkWithUs }) {
                 }
             />
             <Portefolio
+                video={appUrl + data.section_4_media}
                 slogan={
                     i18n.language === "pt"
                         ? data.section_4_slogan?.pt

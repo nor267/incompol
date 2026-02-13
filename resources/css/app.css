@@ -62,15 +62,15 @@ body {
 }
 
 .text-base {
-    @apply text-[16px] leading-[21px]  md:text-[17px] md:leading-[22px] xl:text-[17px] xl:leading-[24px] tracking-[0.03em];
+    @apply text-[14px] leading-[18px]  md:text-[15px] md:leading-[22px] xl:text-[17px] xl:leading-[24px] tracking-[0.03em];
 }
 
 .area-componets {
-    @apply flex z-20 w-full justify-center items-center gap-8 xl:gap-9 flex-col xl:flex-row;
+    @apply flex z-20 w-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-8 xl:gap-11 xl:flex-row;
 }
 
 .link-menu {
-    @apply font-eurostile md:text-[35px] md:leading-[50px] lg:text-[40px] lg:leading-[59px] xl:text-[58px] xl:leading-[59px] font-medium text-[20px] leading-[22px] text-white uppercase hover:text-laranja duration-300 transition-all;
+    @apply font-eurostile md:text-[35px] md:leading-[50px] lg:text-[40px] lg:leading-[59px] xl:text-[45px] xl:leading-[40px] font-medium text-[20px] leading-[22px] text-white uppercase hover:text-laranja duration-300 transition-all;
 }
 
 .link-number {
@@ -94,7 +94,7 @@ body {
 }
 
 .company-overview {
-    @apply xl:max-h-[295px] w-full grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 px-8  2xl:px-40 py-5 lg:py-10 xl:py-16;
+    @apply xl:max-h-[240px] w-full grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 px-8  2xl:px-40 4xl:px-60 py-5 lg:py-10 xl:py-10;
 }
 
 .history-line {
@@ -110,7 +110,7 @@ body {
 }
 
 .certification-box {
-    @apply px-6 lg:px-15 xl:px-16 2xl:px-26 xl:pt-4 relative flex flex-col justify-center items-center xl:items-center xl:justify-start;
+    @apply px-6 lg:px-4 xl:px-8 2xl:px-10 xl:pt-4 relative flex flex-col justify-center items-center xl:items-center xl:justify-start;
 }
 
 .partner-mobile {
@@ -118,11 +118,11 @@ body {
 }
 
 .form-title {
-    @apply text-[15px] md:text-[17px] xl:text-[19px] xl:leading-[22px] tracking-[0.03em] font-bold;
+    @apply text-[14px] md:text-[17px] xl:text-[17px] xl:leading-[20px] tracking-[0.03em] font-bold;
 }
 
 .form-container > div {
-    @apply pt-4 md:pt-6 xl:pt-8;
+    @apply pt-4 md:pt-6 xl:pt-5;
 }
 
 .form-container input {
@@ -134,7 +134,7 @@ body {
 }
 
 .expertise-container {
-    @apply xl:max-h-[400px] 2xl:max-h-[561px] flex flex-col xl:flex-row justify-between xl:gap-24 items-center mt-15 xl:mt-[95];
+    @apply xl:max-h-[400px] 2xl:max-h-[561px] flex flex-col xl:flex-row xl:gap-24 4xl:gap-40 items-center mt-15 xl:mt-[95];
 }
 
 .info p,
@@ -143,19 +143,39 @@ body {
 }
 
 .text-ambient h2 {
-    @apply md:text-[20px] md:leading-[28px] xl:text-[24px] xl:leading-[30px] tracking-[0.03em] md:mt-3 xl:mt-5;
+    @apply md:text-[20px] md:leading-[28px] xl:text-[20px] xl:leading-[26px] tracking-[0.03em] md:mt-3 xl:mt-5;
 }
 
 .text-ambient img {
     @apply pr-2 xl:pr-3 md:h-12 lg:h-auto;
 }
 
-.text-ambient table p {
-    @apply xl:text-[19px] xl:leading-[26px];
-}
-
 .people-text strong {
     @apply text-laranja font-normal;
+}
+
+.top-line {
+    @apply lg:pr-[200px] lg:pl-[180px] 6xl:pl-[230px] 6xl:pr-[200px] xl:pl-[220px] xl:pr-[130px] 2xl:pl-[200px] 3xl:pl-[290px] 2xl:pr-[220px] 3xl:pr-[280px] 5xl:pr-[350px] 4xl:px-[580px];
+}
+
+.bottom-line {
+    @apply lg:pr-[80px] lg:pl-[240px] 6xl:pr-[100px] xl:pl-[280px] xl:pr-[100px] 3xl:pl-[400px] 2xl:px-[320px] 2xl:pr-[220px] 3xl:pr-[250px] 5xl:pl-[450px] 5xl:pr-[450px] 4xl:px-[700px];
+}
+
+.sector {
+    @apply md:w-[450px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px];
+}
+
+.tecnology {
+    @apply w-screen xl:w-[700px] 2xl:w-[800px] 4xl:w-[1228px] 3xl:w-[1000px];
+}
+.tecnology video {
+    @apply w-screen  md:h-[250px] lg:h-[330px] xl:h-[400px] 2xl:h-[450px] h-[200px] 3xl:h-[470px];
+}
+
+.sector img,
+.sector video {
+    @apply md:h-[250px] lg:h-[300px] xl:h-[400px] 2xl:h-[450px] h-[200px] 3xl:h-[470px];
 }
 .gradiente-menu {
     background: rgba(0, 0, 0, 0.2);
@@ -380,12 +400,12 @@ body {
     width: 729px;
 }
 
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 1520px) {
     .my-swiper {
-        height: 350px;
+        height: 320px;
     }
     .my-swiper-slide {
-        height: 350px;
+        height: 320px;
     }
 }
 

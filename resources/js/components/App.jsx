@@ -13,6 +13,7 @@ import Sustainability from "./Sustainability/Sustainability";
 import People from "./People/People";
 import Portefolio from "./Portefolio/Portefolio";
 import Expertise from "./Expertise/Expertise";
+import Privacy from "./Privacy";
 import NotFound from "./Layout/Errors/NotFound";
 
 function App() {
@@ -101,6 +102,10 @@ function App() {
                         element={
                             <Sustainability showWorkWithUs={showWorkWithUs} />
                         }
+                    />
+                    <Route
+                        path="/terms"
+                        element={<Privacy showWorkWithUs={showWorkWithUs} />}
                     />
                     <Route
                         path="*"

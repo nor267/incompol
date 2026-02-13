@@ -9,6 +9,9 @@ use App\Models\Job;
 use App\Models\News;
 use App\Models\OverviewHistory;
 use App\Models\OverviewIcons;
+use App\Models\Portefolio;
+use App\Models\PortefolioImage;
+use App\Models\PortefolioSubCategory;
 use App\Models\Settings;
 use Illuminate\Http\Request;
 
@@ -82,14 +85,16 @@ class PagesController extends Controller
     {
         $en = $request->en;
         if ($en) {
-            $pages = ContentWebPage::where('visible_en', true)->select([
+            $pages = ContentWebPage::where('visible_en', true)->where('menu', true)->select([
                 'name_menu',
-                'slug'
+                'slug',
+                'section_7_media'
             ])->get();
         } else {
-            $pages = ContentWebPage::where('visible', true)->select([
+            $pages = ContentWebPage::where('visible', true)->where('menu', true)->select([
                 'name_menu',
-                'slug'
+                'slug',
+                'section_7_media'
             ])->get();
         }
 
@@ -127,5 +132,20 @@ class PagesController extends Controller
         ])->orderBy("date", 'DESC')->get();
 
         return response()->json($jobs);
+    }
+
+    public function get_portfolio()
+    {
+        $portefolio = Portefolio::orderBy('order', 'ASC')->get();
+
+        $components = PortefolioSubCategory::with('images')->whereHas('images')->get();
+
+        $gallery = PortefolioImage::orderBy('order', 'ASC')->get();
+
+        return response()->json([
+            "portefolio" => $portefolio,
+            "components" => $components,
+            "gallery" => $gallery,
+        ]);
     }
 }

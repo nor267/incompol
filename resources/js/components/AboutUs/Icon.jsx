@@ -7,7 +7,7 @@ export default function Icon({ icon, title, text, subtitle, ...props }) {
                     className="h-[30px] xl:h-[51px] object-cover"
                 ></img>
                 <h2
-                    className="font-eurostile text-laranja text-[13px] leading-[14px] xl:text-[20px] xl:leading-[22px]  2xl:text-[24px] 2xl:leading-[26px] tracking-[0.14em] font-bold mt-4 xl:mt-11 uppercase"
+                    className="font-eurostile text-laranja text-[13px] leading-[14px] xl:text-[20px] xl:leading-[22px]  2xl:text-[20px] 2xl:leading-[26px] tracking-[0.14em] font-bold mt-4 xl:mt-7 uppercase"
                     dangerouslySetInnerHTML={{
                         __html: title,
                     }}
@@ -18,7 +18,7 @@ export default function Icon({ icon, title, text, subtitle, ...props }) {
                     </p>
                 )}
                 <p
-                    className="text-[14px] xl:text-[20px] xl:leading-[27px] text-azul font-light xl:mt-2"
+                    className="text-base text-azul font-light xl:mt-2"
                     dangerouslySetInnerHTML={{
                         __html: text,
                     }}

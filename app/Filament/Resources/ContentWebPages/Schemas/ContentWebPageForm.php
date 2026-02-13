@@ -538,7 +538,7 @@ class ContentWebPageForm
                     ->columnSpan(['lg' => fn(?ContentWebPage $record) => $record === null ? 3 : 2])
                     ->visible(fn($get) => $get('id') == 2),
 
-                Section::make('History')
+                Section::make('História')
                     ->schema([
                         FileUpload::make('section_2_media')
                             ->label('Banner Imagem')
@@ -585,9 +585,9 @@ class ContentWebPageForm
                             ->schema([
                                 TextInput::make('year')
                                     ->required(),
-                                MarkdownEditor::make('text')
+                                RichEditor::make('text')
                                     ->required()
-                                    ->toolbarButtons(['bold', 'italic'])
+                                    ->toolbarButtons(['bold', 'italic', 'undo', 'redo'])
                                     ->translatableTabs(),
                             ])
 
@@ -646,9 +646,15 @@ class ContentWebPageForm
                                     ->previewable()
                                     ->columnSpanFull(),
                                 TextInput::make('title')
+                                    ->label('Título')
+                                    ->required()
+                                    ->translatableTabs(),
+                                TextInput::make('second_title')
+                                    ->label('Segundo Título')
                                     ->required()
                                     ->translatableTabs(),
                                 RichEditor::make('description')
+                                    ->label('Descrição')
                                     ->translatableTabs(),
                             ])
 
@@ -668,6 +674,23 @@ class ContentWebPageForm
 
                 Section::make('Portefólio')
                     ->schema([
+                        FileUpload::make('section_4_media')
+                            ->label('Video Institucional')
+                            ->disk('public')
+                            ->directory('uploads/videos')
+                            ->downloadable()
+                            ->openable()
+                            ->rules(['mimetypes:video/mp4'])
+                            ->hint('Máximo de 25MB')
+                            ->acceptedFileTypes(['video/mp4'])
+                            ->helperText('Apenas vídeos MP4 são permitidos.')
+                            ->maxSize(25600)
+                            ->validationMessages([
+                                'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
+                                'max' => 'O vídeo não pode exceder 25MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull(),
                         TranslatableTabs::make('anyLabel')
                             ->schema([
                                 RichEditor::make('section_4_title')
@@ -676,7 +699,7 @@ class ContentWebPageForm
                                     ->toolbarButtons(['italic'])
                                     ->columnSpanFull(),
                                 RichEditor::make('section_4_slogan')
-                                    ->toolbarButtons(['bold', 'italic'])
+                                    ->toolbarButtons(['bold', 'italic', 'undo', 'redo'])
                                     ->required()
                                     ->label('Slogan')
                                     ->columnSpanFull(),
@@ -889,10 +912,11 @@ class ContentWebPageForm
                                             ->label('Título')
                                             ->required()
                                             ->maxLength(50),
+
                                         RichEditor::make('description')
                                             ->label('Descrição')
                                             ->columnSpanFull()
-                                            ->required()
+                                            ->nullable()
                                             ->toolbarButtons([
                                                 ['italic', 'underline', 'bold'],
                                                 ['undo', 'redo'],
@@ -1345,22 +1369,56 @@ class ContentWebPageForm
                             ])
                             ->columnSpanFull(),
                         FileUpload::make('section_5_media')
-                            ->label('Mapa Video')
+                            ->label('Imagem 1')
                             ->disk('public')
-                            ->directory('uploads/videos')
+                            ->directory('uploads/images')
+                            ->required()
                             ->downloadable()
+                            ->image()
                             ->openable()
-                            ->rules(['mimetypes:video/webm'])
-                            ->hint('Máximo de 1mb')
-                            ->acceptedFileTypes(['video/webm'])
-                            ->helperText('Apenas vídeos Webm são permitidos.')
-                            ->maxSize(1024)
+                            ->maxSize(1024) // 1 MB
+                            ->acceptedFileTypes(['image/jpeg', 'image/webp'])
+                            ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
                             ->validationMessages([
-                                'mimetypes' => 'O arquivo deve ser um vídeo Webm.',
-                                'max' => 'O vídeo não pode exceder 1mb.',
+                                'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
+                                'max' => 'A imagem não pode exceder 1MB.',
                             ])
                             ->previewable()
-                            ->columnSpanFull(), //home 
+                            ->columnSpanFull(),
+                        FileUpload::make('section_5_media_1')
+                            ->label('Imagem 2')
+                            ->disk('public')
+                            ->directory('uploads/images')
+                            ->required()
+                            ->downloadable()
+                            ->image()
+                            ->openable()
+                            ->maxSize(1024) // 1 MB
+                            ->acceptedFileTypes(['image/jpeg', 'image/webp'])
+                            ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
+                            ->validationMessages([
+                                'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
+                                'max' => 'A imagem não pode exceder 1MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull(),
+                        FileUpload::make('section_6_media')
+                            ->label('Imagem 3')
+                            ->disk('public')
+                            ->directory('uploads/images')
+                            ->required()
+                            ->downloadable()
+                            ->image()
+                            ->openable()
+                            ->maxSize(1024) // 1 MB
+                            ->acceptedFileTypes(['image/jpeg', 'image/webp'])
+                            ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
+                            ->validationMessages([
+                                'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
+                                'max' => 'A imagem não pode exceder 1MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull(),
                     ])
                     ->columns(2)
                     ->collapsible()
@@ -1562,7 +1620,7 @@ class ContentWebPageForm
                             ])
                             ->columnSpanFull(),
                         FileUpload::make('section_7_media')
-                            ->label('Pdf')
+                            ->label('Código de conduta')
                             ->disk('public')
                             ->directory('uploads/pdf')
                             ->required()

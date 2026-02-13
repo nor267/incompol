@@ -62,10 +62,10 @@ export default function Contactus({ showWorkWithUs }) {
                         : data.description?.en
                 }
             />
-            <div className="mt-15 xl:mt-40 relative">
+            <div className="mt-15 xl:mt-20 relative">
                 <img
                     src={appUrl + data?.second_image}
-                    className="h-[200px] md:h-[350px] lg:h-[450px] xl:h-[760px] w-full object-cover"
+                    className="h-[200px] md:h-[350px] lg:h-[450px] xl:h-[550px] w-full object-cover"
                 ></img>
                 <img
                     src={triangleWhite}
@@ -73,18 +73,18 @@ export default function Contactus({ showWorkWithUs }) {
                 ></img>
             </div>
             <div className="py-15 lg:py-20 xl:py-38 4xl:px-[200px]">
-                <div className="lg:xgap-8 margin-website flex justify-between flex-col lg:flex-row">
+                <div className="lg:gap-8 margin-website flex justify-between flex-col lg:flex-row">
                     <div className="">
                         <div className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold flex">
                             <span
                                 dangerouslySetInnerHTML={{
                                     __html:
                                         i18n.language === "pt"
-                                            ? data.section_1_title?.pt
+                                            ? data.section_1_title?.pt +
+                                              "(Sede)"
                                             : data.section_1_title?.en,
                                 }}
                             ></span>
-                            <span className="text-laranja pl-2">(Sede)</span>
                         </div>
                         <p
                             className="text-base text-azul pt-3 xl:pt-8"
@@ -195,7 +195,7 @@ export default function Contactus({ showWorkWithUs }) {
                         : data.section_6_title?.en
                 }
             />
-            <Footer work={true} showWorkWithUs={showWorkWithUs} />
+            <Footer work={false} showWorkWithUs={showWorkWithUs} />
         </>
     );
 }

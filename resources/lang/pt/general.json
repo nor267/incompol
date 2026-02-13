@@ -1,13 +1,14 @@
 {
     "footerNor": {
         "madeby": "Feito por Nor267",
-        "privacy": "Política de Privacidade e Termos de Utilização",
+        "privacy": "Política de Privacidade",
         "cookies": "Política de Cookies",
         "legal_information": "Informações Legais",
         "terms": "Termos e Condições",
         "conduta": "Código de Conduta",
         "team": "Junta-te a nós",
-        "work_with_us": "Trabalhe connosco"
+        "work_with_us": "Trabalhe connosco",
+        "canal_denuncia": "Canal de Denúncia"
     },
 
     "cookies": {

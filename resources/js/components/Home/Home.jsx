@@ -39,11 +39,11 @@ export default function Home({ showWorkWithUs }) {
 
     return (
         <>
-            <div className="relative xl:h-[650px] 2xl:h-[800px] 3xl:h-[900px] hidden lg:block">
+            <div className="relative xl:h-[650px] 2xl:h-[800px] 3xl:h-[900px] 4xl:h-auto hidden lg:block">
                 {data?.banner_video && (
                     <>
                         <video
-                            className="object-cover w-screen h-[550px] xl:h-[650px] 2xl:h-[800px] 3xl:h-[900px] overflow-hidden"
+                            className="object-cover w-screen h-full overflow-hidden"
                             autoPlay
                             muted
                             loop

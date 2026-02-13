@@ -98,6 +98,12 @@ class CategoryRelationManager extends RelationManager
                                     ->previewable()
                                     ->columnSpanFull(),
 
+                                RichEditor::make('text')
+                                    ->required()
+                                    ->label('Texto')
+                                    ->toolbarButtons([])
+                                    ->translatableTabs(),
+
                             ])
                             ->collapsible()
                             ->addable(true)
@@ -127,9 +133,13 @@ class CategoryRelationManager extends RelationManager
             ->filters([
                 //
             ])
-            ->headerActions([])
+            ->headerActions([
+
+                CreateAction::make(),
+            ])
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([]);
     }

@@ -23,7 +23,7 @@ class PortefolioForm
                                 RichEditor::make('name')
                                     ->required()
                                     ->label('Título')
-                                    ->maxLength(50)
+                                    ->maxLength(100)
                                     ->hint('Máximo 100 caracteres')
                                     ->toolbarButtons([]),
                             ]),

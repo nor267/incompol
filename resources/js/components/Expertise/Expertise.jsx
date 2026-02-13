@@ -85,7 +85,7 @@ export default function Expertise({ showWorkWithUs }) {
             <div className="mt-15 xl:mt-40">
                 <img
                     src={appUrl + data?.second_image}
-                    className="w-full object-cover h-[200px] lg:h-[450px] xl:h-[600px]"
+                    className="w-full object-cover h-[200px] lg:h-[450px] xl:h-[450px] 2xl:h-[600px]"
                 ></img>
             </div>
             <Technologies

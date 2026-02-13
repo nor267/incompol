@@ -6,7 +6,7 @@ import triangleBlue from "../../../images/icons/triangle-blue.svg";
 export default function GoalIcon({ icon, title, text, grey, blue, ...props }) {
     return (
         <div>
-            <div className="relative h-[400px] md:h-[450px] w-full  2xl:h-[430px] 2xl:w-[464px]">
+            <div className="relative h-[400px] md:h-[450px] w-full  2xl:h-[430px] lg:w-[290px] xl:w-[380px] 2xl:w-[464px]">
                 <div {...props}>
                     <img
                         src={

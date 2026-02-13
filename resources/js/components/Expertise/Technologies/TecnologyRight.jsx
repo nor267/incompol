@@ -44,12 +44,12 @@ export default function TechnologyRight({
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
             >
-                <div className="w-screen xl:w-[800px] 2xl:w-[1228px]  relative h-full">
+                <div className="tecnology relative h-full">
                     {image && (
                         <video
                             key={image}
                             src={image}
-                            className="h-[200px] lg:h-[400px] 2xl:h-[560px] w-full object-cover"
+                            className=" w-full object-cover"
                             autoPlay
                             muted
                             loop

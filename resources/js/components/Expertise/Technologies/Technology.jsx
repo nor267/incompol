@@ -12,12 +12,12 @@ export default function Technology({ image, title, slogan, text, className }) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
             >
-                <div className="w-screen xl:w-[800px] 2xl:w-[1228px] relative h-full">
+                <div className="w-screen tecnology relative h-full">
                     {image && (
                         <video
                             key={image}
                             src={image}
-                            className="h-[200px] lg:h-[400px]  2xl:h-[560px] w-full object-cover"
+                            className=" w-full object-cover"
                             autoPlay
                             muted
                             loop
@@ -26,11 +26,11 @@ export default function Technology({ image, title, slogan, text, className }) {
                     )}
                     <img
                         src={triangleWhite}
-                        className="xl:block xl:absolute hidden translate-x-0 xl:translate-x-0 xl:-right-2 xl:top-1/2 xl:-translate-y-1/2 xl:rotate-90 h-7 lg:h-9 xl:w-[58px] xl:h-[50px]"
+                        className="xl:block xl:absolute hidden translate-x-0 xl:translate-x-0 xl:-right-2 xl:top-1/2 xl:-translate-y-1/2 xl:rotate-90 h-7! lg:h-9! xl:w-[58px]! xl:h-[50px]!"
                     ></img>
                     <img
                         src={triangleWhite}
-                        className="xl:hidden absolute block left-8 -top-1 lg:left-[100px] md:top-0 translate-x-0 xl:translate-x-0 translate-y-0 xl:top-1/2 xl:-translate-y-1/2 xl:rotate-90 h-7 lg:h-9 xl:w-[58px] xl:h-[50px]"
+                        className="xl:hidden absolute! left-8! -top-1 lg:left-[100px]! md:top-0 h-7! lg:h-9! "
                     ></img>
                 </div>
             </motion.div>

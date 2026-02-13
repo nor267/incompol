@@ -8,10 +8,14 @@ class PortefolioImage extends Model
 {
     public $table = "portefolio_images";
 
+    protected $casts = [
+        'text' => 'array',
+    ];
     protected $fillable = [
         'portefolio_sub_category_id',
         'image',
-        'order'
+        'order',
+        'text'
     ];
 
     public $timestamps = true;

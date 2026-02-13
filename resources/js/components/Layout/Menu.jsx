@@ -46,10 +46,6 @@ export default function Menu({ isOpen, handleMenu, showWorkWithUs }) {
         >
             <div className="w-full flex flex-col justify-center items-center h-full pl-5 xl:pl-10">
                 {data.map((item, index) => {
-                    if (item?.slug === "people" && !showWorkWithUs) {
-                        return null;
-                    }
-
                     return (
                         <div className="pb-6 xl:pb-16 flex" key={index}>
                             <a

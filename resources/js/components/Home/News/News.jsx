@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import i18n from "../../../../i18n/i18n";
 
 // Import Swiper styles
 import "swiper/css";
@@ -44,17 +45,19 @@ export default function News({ appUrl }) {
     }, []);
 
     return (
-        <div className="bg-light-grey lg:pl-[100px]  md:pl-[80px] xl:pl-[137px] pb-20 xl:pb-26 relative w-full">
+        <div className="bg-light-grey lg:pl-[100px]  md:pl-[80px] xl:pl-[137px] 4xl:pl-[250px] pb-20 xl:pb-26 relative w-full">
             <div className="flex justify-between items-end w-full">
-                <section className="text-azul pt-15 xl:pt-18 pl-5  md:pl-0 4xl:pl-[120px]">
+                <section className="text-azul pt-15 xl:pt-18 pl-5  md:pl-0 ">
                     <p className="uppercase text-[14px] xl:text-[17px] xl:leading-[22px] tracking-[0.03em]">
-                        what is happening
+                        {i18n.language === "pt"
+                            ? "o que está a acontecer"
+                            : "what is happening"}
                     </p>
                     <h1 className="uppercase font-eurostile font-bold text-[18px] xl:text-[32px] xl:leading-[32px] tracking-[0.14em] xl:pt-5">
-                        news
+                        {i18n.language === "pt" ? "notícias" : "news"}
                     </h1>
                 </section>
-                <div className="flex justify-end gap-1 md:gap-2 xl:gap-4 pr-5 md:pr-[80px] lg:pr-[100px] xl:pr-[137px]">
+                <div className="flex justify-end gap-1 md:gap-2 xl:gap-4 pr-5 md:pr-[80px] lg:pr-[100px] xl:pr-[137px] 4xl:pr-[250px]">
                     <button className="swiper-button-prev-custom cursor-pointer">
                         <svg
                             width="18"
@@ -142,7 +145,11 @@ export default function News({ appUrl }) {
                         >
                             <New
                                 image={appUrl + item.banner_image}
-                                title={item.title?.en}
+                                title={
+                                    i18n.language === "pt"
+                                        ? item.title?.pt
+                                        : item.title?.en
+                                }
                                 date={new Date(item.date).toLocaleDateString(
                                     "en-GB",
                                 )}

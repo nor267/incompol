@@ -44,7 +44,7 @@ export default function History({ title, slogan }) {
             </div>
             {/* MOBILE */}
             <div className="lg:hidden">
-                <HistoryMobile />
+                <HistoryMobile dates={data} />
             </div>
         </div>
     );
