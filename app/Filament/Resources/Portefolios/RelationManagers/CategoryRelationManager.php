@@ -42,15 +42,6 @@ class CategoryRelationManager extends RelationManager
                                     ->maxLength(100)
                                     ->hint('Máximo 100 caracteres')
                                     ->toolbarButtons([]),
-
-                                RichEditor::make('second_text')
-                                    ->required()
-                                    ->label('Segundo Título')
-                                    ->toolbarButtons([]),
-
-                                RichEditor::make('text')
-                                    ->required()
-                                    ->label('Texto'),
                             ]),
                         FileUpload::make('image')
                             ->label('Imagem')
@@ -127,7 +118,8 @@ class CategoryRelationManager extends RelationManager
                 ImageColumn::make('image')
                     ->disk('public')
                     ->label('Imagem'),
-                TextColumn::make('name_backoffice')
+                TextColumn::make('name')
+                    ->html()
                     ->searchable(),
             ])
             ->filters([
@@ -137,6 +129,9 @@ class CategoryRelationManager extends RelationManager
 
                 CreateAction::make(),
             ])
+            ->reorderable('order')
+            ->defaultSort('order', 'asc')
+
             ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),

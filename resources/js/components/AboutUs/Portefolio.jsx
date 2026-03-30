@@ -1,5 +1,3 @@
-import poster from "../../../images/incompol_poster.jpg";
-
 //components
 import ShapeFuture from "../Layout/ShapeFuture";
 
@@ -13,6 +11,8 @@ export default function Portefolio({
     buttonShape,
     showWorkWithUs,
     video,
+    videoTitle,
+    coverVideo,
 }) {
     let classes =
         "pl-20 xl:pl-0 bg-white flex flex-col md:flex-row xl:justify-center xl:items-center pt-15 lg:pt-20 xl:pt-35 md:gap-30 xl:gap-28 relative";
@@ -25,10 +25,16 @@ export default function Portefolio({
 
     return (
         <>
-            <div className="flex justify-center py-10 xl:py-20 bg-azul">
+            <div className="flex flex-col items-center justify-center py-10 xl:py-20 bg-azul">
+                <h1
+                    className="text-white uppercase font-eurostile text-[16px] md:text-[20px] lg:text-[25px] xl:text-[32px] xl:leading-[36px] tracking-[0.14em] pt-0 xl:pt-5 pb-10 font-bold"
+                    dangerouslySetInnerHTML={{
+                        __html: videoTitle,
+                    }}
+                ></h1>
                 {video && (
                     <video
-                        poster={poster}
+                        poster={coverVideo}
                         key={video}
                         src={video}
                         className="w-screen md:w-[500px] lg:w-[800px]  xl:w-[1000px] 2xl:w-[1200px] 3xl:w-[1300px] h-auto object-cover"

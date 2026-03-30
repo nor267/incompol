@@ -4,6 +4,8 @@ import i18n from "../../../i18n/i18n";
 //icons
 import logo from "../../../images/logo/logo.svg";
 import hamburguer from "../../../images/icons/hamburg.svg";
+import login from "../../../images/icons/login.svg";
+import loginOrange from "../../../images/icons/login-orange.svg";
 
 //components
 import Menu from "./Menu";
@@ -12,9 +14,9 @@ import NavbarPages from "./NavbarPages";
 export default function Navbar({ showWorkWithUs }) {
     const [menu, setMenu] = useState(false);
     const [showNavbar, setShowNavbar] = useState(false);
+    const [iconLogin, setIconLogin] = useState(login);
 
     const toggleLanguage = () => {
-        console.log("teste");
         const nextLang = i18n.language === "pt" ? "en" : "pt";
         i18n.changeLanguage(nextLang);
         window.location.reload();
@@ -53,6 +55,7 @@ export default function Navbar({ showWorkWithUs }) {
                     <div className="change-language" onClick={toggleLanguage}>
                         {i18n.language === "pt" ? "EN" : "PT"}
                     </div>
+
                     <img
                         src={hamburguer}
                         className="hamburguer-menu"

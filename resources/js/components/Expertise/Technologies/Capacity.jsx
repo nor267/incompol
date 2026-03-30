@@ -20,7 +20,9 @@ export default function Capacity({ slogan, title, text, video, video2 }) {
                 const response = await axios({
                     method: "post",
                     url: API_URL + "/get-equipment",
-                    data: {},
+                    data: {
+                        id: 3,
+                    },
                 });
 
                 setData(response.data);
@@ -39,7 +41,7 @@ export default function Capacity({ slogan, title, text, video, video2 }) {
                 className="mt-20 xl:mt-32 text-azul text-left lg:text-center"
             />
 
-            <div className="text-azul flex flex-col lg:flex-row justify-between 2xl:justify-center lg:gap-30 2xl:gap-60 pt-8 lg:px-[100px] xl:px-[137px] 2xl:px-[230px] xl:pt-[140px] pb-15 xl:pb-18">
+            <div className="text-azul flex flex-col lg:flex-row justify-between xl:justify-center lg:gap-0 xl:gap-40 2xl:gap-60 pt-8 lg:pl-[100px] lg:pr-16 xl:pt-[140px] pb-15 xl:pb-18">
                 <div>
                     <p
                         className="text-base lg:max-w-[550px] xl:max-w-[465px] font-light px-8 lg:px-0"

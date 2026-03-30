@@ -50,7 +50,11 @@ export default function Home({ showWorkWithUs }) {
                             playsInline
                         >
                             <source
-                                src={appUrl + data.banner_video}
+                                src={
+                                    i18n.language === "pt"
+                                        ? appUrl + data.banner_video_pt
+                                        : appUrl + data.banner_video
+                                }
                                 type="video/mp4"
                             />
                         </video>
@@ -69,7 +73,11 @@ export default function Home({ showWorkWithUs }) {
                             playsInline
                         >
                             <source
-                                src={appUrl + data.banner_video_mobile}
+                                src={
+                                    i18n.language === "pt"
+                                        ? appUrl + data.banner_video_mobile_pt
+                                        : appUrl + data.banner_video_mobile
+                                }
                                 type="video/mp4"
                             />
                         </video>

@@ -114,11 +114,19 @@ export default function Contactus({ showWorkWithUs }) {
                             }}
                         ></p>
                     </div>
-                    <div className="pt-3 lg:pt-0 xl:pt-0">
+                    <div className="pt-3 lg:pt-0 xl:pt-0 flex md:w-[500px] lg:w-[550px] xl:w-[800px]  h-[275px] xl:h-[300px] 2xl:h-[400px]">
                         <img
                             src={appUrl + data?.section_2_media}
-                            className="md:w-[500px] lg:w-[550px] xl:w-auto"
+                            className="w-1/2 object-cover h-full"
                         ></img>
+                        <iframe
+                            className="w-full h-[275px] xl:h-[300px] 2xl:h-[400px]"
+                            src="https://maps.google.com/maps?width=650&height=400&hl=en&q=Av.%20Nossa%20Sra%20da%20Guadalupe%20106%2C%20Porto%20Alto%2C%202135-015%20Samora%20Correia%2C%20Portugal&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+                            style={{ border: 0 }}
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
                     </div>
                 </div>
                 <div className="pt-20 md:pt-10 xl:pt-20 margin-website flex flex-col lg:flex-row-reverse justify-end md:gap-10 lg:gap-10 xl:gap-28">
@@ -160,11 +168,19 @@ export default function Contactus({ showWorkWithUs }) {
                             }}
                         ></p>
                     </div>
-                    <div className="pt-3 lg:pt-0 xl:pt-0">
+                    <div className="pt-3 lg:pt-0 xl:pt-0 flex flex-row-reverse md:w-[500px] lg:w-[550px] xl:w-[800px]  h-[275px] xl:h-[300px] 2xl:h-[400px]">
                         <img
                             src={appUrl + data?.section_4_media}
-                            className="md:w-[500px] lg:w-[550px] xl:w-auto"
+                            className="w-1/2 object-cover h-full"
                         ></img>
+                        <iframe
+                            className="w-full h-[275px] xl:h-[300px] 2xl:h-[400px]"
+                            src="https://maps.google.com/maps?width=650&height=400&hl=en&q=Incompol%20Estrada%20Nacional%20118%2C%206%2C%20Km%2045%2C%206%2C%20Benavente%2C%20Santar%C3%A9m%2C%202130%20Benavente%2C%20Portugal&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+                            style={{ border: 0 }}
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
                     </div>
                 </div>
             </div>

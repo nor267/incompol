@@ -39,6 +39,12 @@ class ContentWebPage extends Model
         'section_8_title',
         'section_8_slogan',
         'section_8_text',
+        'section_9_title',
+        'section_9_slogan',
+        'section_9_text',
+        'section_10_title',
+        'section_10_slogan',
+        'section_10_text',
     ];
 
     protected $casts = [
@@ -70,6 +76,12 @@ class ContentWebPage extends Model
         'section_8_title' => 'array',
         'section_8_slogan' => 'array',
         'section_8_text' => 'array',
+        'section_9_title' => 'array',
+        'section_9_slogan' => 'array',
+        'section_9_text' => 'array',
+        'section_10_title' => 'array',
+        'section_10_slogan' => 'array',
+        'section_10_text' => 'array',
     ];
 
     protected $fillable = [
@@ -82,6 +94,8 @@ class ContentWebPage extends Model
         'visible_en',
         'banner_video',
         'banner_video_mobile',
+        'banner_video_pt',
+        'banner_video_mobile_pt',
         'slogan',
         'description',
         'second_image',
@@ -122,6 +136,17 @@ class ContentWebPage extends Model
         'section_8_text',
         'section_8_media',
         'section_8_media_1',
+        'section_9_title',
+        'section_9_slogan',
+        'section_9_text',
+        'section_9_media',
+        'section_9_media_1',
+        'section_10_title',
+        'section_10_slogan',
+        'section_10_text',
+        'section_10_media',
+        'section_10_media_1',
+
     ];
 
     public function overviewIcons()

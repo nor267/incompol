@@ -14,9 +14,11 @@ import History from "./History";
 import Certifications from "./Certifications";
 import Footer from "../Layout/Footer";
 import Portefolio from "./Portefolio";
+import Mission from "./Mission";
 
 export default function AboutUs({ showWorkWithUs }) {
     const [data, setData] = new useState([]);
+    const [equipments, setEquipments] = new useState([]);
 
     const appUrl = window.location.origin + "/storage/";
     const toggleLanguage = () => {
@@ -43,6 +45,25 @@ export default function AboutUs({ showWorkWithUs }) {
         };
         fetchPage();
     }, [i18n.language]);
+
+    useEffect(() => {
+        const fetchPage = async () => {
+            try {
+                const response = await axios({
+                    method: "post",
+                    url: API_URL + "/get-equipment",
+                    data: {
+                        id: 2,
+                    },
+                });
+
+                setEquipments(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPage();
+    }, []);
 
     return (
         <>
@@ -104,6 +125,54 @@ export default function AboutUs({ showWorkWithUs }) {
                 }
                 appUrl={appUrl}
             />
+            <Mission
+                valores={equipments}
+                slogan={
+                    i18n.language === "pt"
+                        ? data.section_7_slogan?.pt
+                        : data.section_7_slogan?.en
+                }
+                title={
+                    i18n.language === "pt"
+                        ? data.section_7_title?.pt
+                        : data.section_7_title?.en
+                }
+                title1={
+                    i18n.language === "pt"
+                        ? data.section_8_title?.pt
+                        : data.section_8_title?.en
+                }
+                text1={
+                    i18n.language === "pt"
+                        ? data.section_8_slogan?.pt
+                        : data.section_8_slogan?.en
+                }
+                title2={
+                    i18n.language === "pt"
+                        ? data.section_8_text?.pt
+                        : data.section_8_text?.en
+                }
+                text2={
+                    i18n.language === "pt"
+                        ? data.section_9_title?.pt
+                        : data.section_9_title?.en
+                }
+                title3={
+                    i18n.language === "pt"
+                        ? data.section_9_slogan?.pt
+                        : data.section_9_slogan?.en
+                }
+                text3={
+                    i18n.language === "pt"
+                        ? data.section_9_text?.pt
+                        : data.section_9_text?.en
+                }
+                finalText={
+                    i18n.language === "pt"
+                        ? data.section_10_title?.pt
+                        : data.section_10_title?.en
+                }
+            />
             <ShapeFuture banner={appUrl + data?.section_2_media} />
             <History
                 slogan={
@@ -130,7 +199,21 @@ export default function AboutUs({ showWorkWithUs }) {
                 }
             />
             <Portefolio
-                video={appUrl + data.section_4_media}
+                coverVideo={
+                    i18n.language === "pt"
+                        ? appUrl + data.section_6_media_1
+                        : appUrl + data.section_4_media_1
+                }
+                videoTitle={
+                    i18n.language === "pt"
+                        ? data.section_6_title?.pt
+                        : data.section_6_title?.en
+                }
+                video={
+                    i18n.language === "pt"
+                        ? appUrl + data.section_6_media
+                        : appUrl + data.section_4_media
+                }
                 slogan={
                     i18n.language === "pt"
                         ? data.section_4_slogan?.pt

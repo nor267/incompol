@@ -12,6 +12,7 @@ import SecondTitle from "../Layout/SecondTitle";
 //icons
 import checkedIcon from "../../../images/icons/radio-button-checked.svg";
 import uncheckedIcon from "../../../images/icons/radio-button-unchecked.svg";
+import axios from "axios";
 
 export default function Form({
     title,
@@ -59,30 +60,30 @@ export default function Form({
         }
 
         form.captchaToken = captchaToken;
-
-        const response = await fetch(API_URL + "/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(form),
-        });
-
-        if (response.ok) {
-            const message =
-                i18n.language === "pt"
-                    ? "Messagem enviada"
-                    : "Message submited";
-            toast.success(message, {
-                position: "top-right",
-                autoClose: 3000, // 3 seconds
+        try {
+            const response = await axios(API_URL + "/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                data: form,
             });
-            setForm({ name: "", email: "", message: "", phone: "" });
-        } else {
+            if (response.status == 200) {
+                const message =
+                    i18n.language === "pt"
+                        ? "Messagem enviada"
+                        : "Message submited";
+                toast.success(message, {
+                    position: "top-right",
+                    autoClose: 3000, // 3 seconds
+                });
+                setForm({ name: "", email: "", message: "", phone: "" });
+            }
+        } catch (error) {
             const messageError =
                 i18n.language === "pt"
-                    ? "Ocorreu um erro, por favor tente de novo"
-                    : "Ocorred an error, please try again";
+                    ? "Preencha todos os campos e tente novamente"
+                    : "Fill all the camps and try again";
             toast.error(messageError, {
                 position: "top-right",
                 autoClose: 3000, // 3 seconds
@@ -135,7 +136,7 @@ export default function Form({
                     >
                         <div className="xl:pt-0!">
                             <label id="name" className="form-title text-white">
-                                {t("form.name")}
+                                {t("form.name") + "*"}
                             </label>
                             <input
                                 type="text"
@@ -147,7 +148,7 @@ export default function Form({
                         </div>
                         <div>
                             <label id="email" className="form-title text-white">
-                                {t("form.email")}
+                                {t("form.email") + "*"}
                             </label>
                             <input
                                 type="email"
@@ -159,7 +160,7 @@ export default function Form({
                         </div>
                         <div>
                             <label id="phone" className="form-title text-white">
-                                {t("form.phone")}
+                                {t("form.phone") + "*"}
                             </label>
                             <input
                                 type="text"
@@ -174,7 +175,7 @@ export default function Form({
                                 id="message"
                                 className="form-title text-white"
                             >
-                                {t("form.message")}
+                                {t("form.message") + "*"}
                             </label>
                             <textarea
                                 rows="5"
@@ -182,6 +183,7 @@ export default function Form({
                                 name="message"
                                 value={form.message}
                                 onChange={handleChange}
+                                required
                             ></textarea>
                         </div>
                         <div className="flex items-center justify-start pt-1">

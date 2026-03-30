@@ -25,20 +25,22 @@ export default function Map({ title, slogan, video, image1, image2, image3 }) {
                 <Swiper
                     spaceBetween={30}
                     effect={"fade"}
+                    loop={true}
                     autoplay={{
-                        delay: 600,
+                        delay: 1000,
                         disableOnInteraction: false,
+                        pauseOnMouseEnter: false,
                     }}
                     modules={[EffectFade, Autoplay]}
                     className="max-w-[300px] md:max-w-[400px] lg:max-w-[600px] xl:max-w-[800px]"
                 >
-                    <SwiperSlide>
+                    <SwiperSlide key={1}>
                         <img src={image1} className="" />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide key={2}>
                         <img src={image2} className="" />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide key={3}>
                         <img src={image3} className="" />
                     </SwiperSlide>
                 </Swiper>

@@ -79,43 +79,6 @@ class ContentWebPageForm
                                     ->columnSpanFull(),
                             ])->visible(fn($get) => $get('id') !== 1),
 
-                        FileUpload::make('banner_video')
-                            ->label('Banner Video')
-                            ->disk('public')
-                            ->directory('uploads/videos')
-                            ->downloadable()
-                            ->openable()
-                            ->rules(['mimetypes:video/mp4'])
-                            ->hint('Máximo de 25MB')
-                            ->acceptedFileTypes(['video/mp4'])
-                            ->helperText('Apenas vídeos MP4 são permitidos.')
-                            ->maxSize(25600)
-                            ->validationMessages([
-                                'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
-                                'max' => 'O vídeo não pode exceder 25MB.',
-                            ])
-                            ->previewable()
-                            ->columnSpanFull()
-                            ->visible(fn($get) => $get('id') === 1), //home
-
-                        FileUpload::make('banner_video_mobile')
-                            ->label('Banner Video Mobile')
-                            ->disk('public')
-                            ->directory('uploads/videos')
-                            ->downloadable()
-                            ->openable()
-                            ->rules(['mimetypes:video/mp4'])
-                            ->hint('Máximo de 25mb')
-                            ->acceptedFileTypes(['video/mp4'])
-                            ->helperText('Apenas vídeos MP4 são permitidos.')
-                            ->maxSize(25600)
-                            ->validationMessages([
-                                'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
-                                'max' => 'O vídeo não pode exceder 25MB.',
-                            ])
-                            ->previewable()
-                            ->columnSpanFull()
-                            ->visible(fn($get) => $get('id') === 1), //home
 
                         FileUpload::make('second_image')
                             ->label('Banner Imagem')
@@ -142,6 +105,90 @@ class ContentWebPageForm
                     ->columnSpan(['lg' => fn(?ContentWebPage $record) => $record === null ? 3 : 2]),
 
                 /** HOME */
+                Section::make('Vídeos')
+                    ->schema([
+                        FileUpload::make('banner_video')
+                            ->label('Banner Video')
+                            ->disk('public')
+                            ->directory('uploads/videos')
+                            ->downloadable()
+                            ->openable()
+                            ->rules(['mimetypes:video/mp4'])
+                            ->hint('Máximo de 25MB')
+                            ->acceptedFileTypes(['video/mp4'])
+                            ->helperText('Apenas vídeos MP4 são permitidos.')
+                            ->maxSize(25600)
+                            ->validationMessages([
+                                'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
+                                'max' => 'O vídeo não pode exceder 25MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull()
+                            ->visible(fn($get) => $get('id') === 1), //home
+
+                        FileUpload::make('banner_video_pt')
+                            ->label('Banner Video PT')
+                            ->disk('public')
+                            ->directory('uploads/videos')
+                            ->downloadable()
+                            ->openable()
+                            ->rules(['mimetypes:video/mp4'])
+                            ->hint('Máximo de 25MB')
+                            ->acceptedFileTypes(['video/mp4'])
+                            ->helperText('Apenas vídeos MP4 são permitidos.')
+                            ->maxSize(25600)
+                            ->validationMessages([
+                                'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
+                                'max' => 'O vídeo não pode exceder 25MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull()
+                            ->visible(fn($get) => $get('id') === 1), //home
+
+                        FileUpload::make('banner_video_mobile')
+                            ->label('Banner Video Mobile')
+                            ->disk('public')
+                            ->directory('uploads/videos')
+                            ->downloadable()
+                            ->openable()
+                            ->rules(['mimetypes:video/mp4'])
+                            ->hint('Máximo de 25MB')
+                            ->acceptedFileTypes(['video/mp4'])
+                            ->helperText('Apenas vídeos MP4 são permitidos.')
+                            ->maxSize(25600)
+                            ->validationMessages([
+                                'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
+                                'max' => 'O vídeo não pode exceder 25MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull()
+                            ->visible(fn($get) => $get('id') === 1), //home
+
+                        FileUpload::make('banner_video_mobile_pt')
+                            ->label('Banner Video Mobile PT')
+                            ->disk('public')
+                            ->directory('uploads/videos')
+                            ->downloadable()
+                            ->openable()
+                            ->rules(['mimetypes:video/mp4'])
+                            ->hint('Máximo de 25MB')
+                            ->acceptedFileTypes(['video/mp4'])
+                            ->helperText('Apenas vídeos MP4 são permitidos.')
+                            ->maxSize(25600)
+                            ->validationMessages([
+                                'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
+                                'max' => 'O vídeo não pode exceder 25MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull()
+                            ->visible(fn($get) => $get('id') === 1), //home
+
+                    ])
+                    ->columns(2)
+                    ->collapsible()
+                    ->collapsed()
+                    ->columnSpan(['lg' => fn(?ContentWebPage $record) => $record === null ? 3 : 2])
+                    ->visible(fn($get) => $get('id') == 1),
                 Section::make('Expertise')
                     ->schema([
                         TranslatableTabs::make('anyLabel')
@@ -537,6 +584,112 @@ class ContentWebPageForm
                     ->collapsed()
                     ->columnSpan(['lg' => fn(?ContentWebPage $record) => $record === null ? 3 : 2])
                     ->visible(fn($get) => $get('id') == 2),
+                Section::make('Missão, Visão e Valores')
+                    ->schema([
+                        TranslatableTabs::make()->schema([
+                            RichEditor::make('section_7_title')
+                                ->required()
+                                ->label('Título')
+                                ->maxLength(50)
+                                ->hint('Máximo 50 caracteres')
+                                ->toolbarButtons([]),
+
+                            RichEditor::make('section_7_slogan')
+                                ->required()
+                                ->label('Slogan')
+                                ->toolbarButtons([
+                                    ['bold', 'italic', 'underline', 'link'],
+                                ]),
+                        ])->columnSpanFull(),
+
+
+                        TranslatableTabs::make()
+                            ->schema([
+                                RichEditor::make('section_8_title')
+                                    ->required()
+                                    ->label('Título Missão')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+
+                                RichEditor::make('section_8_slogan')
+                                    ->required()
+                                    ->label('Texto Missão')
+                                    ->toolbarButtons([
+                                        ['bold', 'italic', 'underline', 'link'],
+                                    ]),
+
+                                RichEditor::make('section_8_text')
+                                    ->required()
+                                    ->label('Título Visão')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+
+                                RichEditor::make('section_9_title')
+                                    ->required()
+                                    ->label('Texto Visão')
+                                    ->toolbarButtons([
+                                        ['bold', 'italic', 'underline', 'link'],
+                                    ]),
+
+                                RichEditor::make('section_9_slogan')
+                                    ->required()
+                                    ->label('Título Valores')
+                                    ->maxLength(50)
+                                    ->hint('Máximo 50 caracteres')
+                                    ->toolbarButtons([]),
+
+                                RichEditor::make('section_9_text')
+                                    ->required()
+                                    ->label('Texto Valores')
+
+                                    ->toolbarButtons([
+                                        ['bold', 'italic', 'underline', 'link'],
+                                    ]),
+                            ])
+                            ->columnSpanFull(),
+
+                        Repeater::make('Valores')
+                            ->relationship('equipments')
+                            ->schema([
+                                Grid::make()->schema([
+                                    TextInput::make('title')
+                                        ->label('Valor')
+                                        ->required()
+                                        ->translatableTabs(),
+                                    RichEditor::make('description')
+                                        ->label('Descrição')
+                                        ->toolbarButtons([
+                                            ['bold', 'italic', 'underline', 'link'],
+                                        ])
+                                        ->translatableTabs(),
+                                ])
+
+                            ])
+
+                            ->columnSpanFull()
+                            ->addable(false)
+                            ->label('Valores')
+                            ->deletable(false)
+                            ->orderColumn('order')
+                            ->collapsible(),
+
+                        RichEditor::make('section_10_title')
+                            ->required()
+                            ->label('Frase Final')
+                            ->toolbarButtons([
+                                ['bold', 'italic', 'underline', 'link'],
+                            ])
+                            ->translatableTabs()
+                            ->columnSpanFull(),
+
+                    ])
+                    ->columns(2)
+                    ->collapsible()
+                    ->collapsed()
+                    ->columnSpan(['lg' => fn(?ContentWebPage $record) => $record === null ? 3 : 2])
+                    ->visible(fn($get) => $get('id') == 2),
 
                 Section::make('História')
                     ->schema([
@@ -674,6 +827,57 @@ class ContentWebPageForm
 
                 Section::make('Portefólio')
                     ->schema([
+                        RichEditor::make('section_6_title')
+                            ->required()
+                            ->label('Título')
+                            ->maxLength(50)
+                            ->hint('Máximo 50 caracteres')
+                            ->toolbarButtons([])
+                            ->translatableTabs()
+                            ->columnSpanFull(),
+
+                        FileUpload::make('section_4_media_1')
+                            ->label('Cover Vídeo')
+                            ->disk('public')
+                            ->directory('uploads/images')
+                            ->required()
+                            ->downloadable()
+                            ->image()
+                            ->openable()
+                            ->maxSize(1024) // 1 MB
+                            ->acceptedFileTypes(['image/jpeg', 'image/webp'])
+                            ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
+                            ->validationMessages([
+                                'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
+                                'max' => 'A imagem não pode exceder 1MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull()
+                            ->visible(function ($get) {
+                                //expertise
+                                return $get('id') === 2;
+                            }),
+                        FileUpload::make('section_6_media_1')
+                            ->label('Cover Vídeo PT')
+                            ->disk('public')
+                            ->directory('uploads/images')
+                            ->required()
+                            ->downloadable()
+                            ->image()
+                            ->openable()
+                            ->maxSize(1024) // 1 MB
+                            ->acceptedFileTypes(['image/jpeg', 'image/webp'])
+                            ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
+                            ->validationMessages([
+                                'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
+                                'max' => 'A imagem não pode exceder 1MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull()
+                            ->visible(function ($get) {
+                                //expertise
+                                return $get('id') === 2;
+                            }),
                         FileUpload::make('section_4_media')
                             ->label('Video Institucional')
                             ->disk('public')
@@ -691,6 +895,27 @@ class ContentWebPageForm
                             ])
                             ->previewable()
                             ->columnSpanFull(),
+                        FileUpload::make('section_6_media')
+                            ->label('Video Institucional PT')
+                            ->disk('public')
+                            ->directory('uploads/videos')
+                            ->downloadable()
+                            ->openable()
+                            ->rules(['mimetypes:video/mp4'])
+                            ->hint('Máximo de 25MB')
+                            ->acceptedFileTypes(['video/mp4'])
+                            ->helperText('Apenas vídeos MP4 são permitidos.')
+                            ->maxSize(25600)
+                            ->validationMessages([
+                                'mimetypes' => 'O arquivo deve ser um vídeo MP4.',
+                                'max' => 'O vídeo não pode exceder 25MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull(),
+
+
+
+
                         TranslatableTabs::make('anyLabel')
                             ->schema([
                                 RichEditor::make('section_4_title')
@@ -764,6 +989,8 @@ class ContentWebPageForm
                     ->collapsed()
                     ->columnSpan(['lg' => fn(?ContentWebPage $record) => $record === null ? 3 : 2])
                     ->visible(fn($get) => $get('id') == 2),
+
+
 
 
                 /*** SECTIONS EXPERTISE */
@@ -911,7 +1138,8 @@ class ContentWebPageForm
                                         TextInput::make('title')
                                             ->label('Título')
                                             ->required()
-                                            ->maxLength(50),
+                                            ->hint('Máximo 35 caracteres')
+                                            ->maxLength(35),
 
                                         RichEditor::make('description')
                                             ->label('Descrição')
@@ -1614,9 +1842,6 @@ class ContentWebPageForm
                                         ['italic', 'underline', 'bold'],
                                         ['undo', 'redo'],
                                     ]),
-
-
-
                             ])
                             ->columnSpanFull(),
                         FileUpload::make('section_7_media')
@@ -2097,7 +2322,7 @@ class ContentWebPageForm
                                     ->required()
                                     ->label('Link linkedin')
                                     ->columnSpanFull()
-                                    ->toolbarButtons([]),
+                                    ->toolbarButtons(['link']),
                             ])
                             ->columnSpanFull(),
                     ])

@@ -9,6 +9,7 @@ import i18n from "../../../i18n/i18n";
 import checkedIcon from "../../../images/icons/radio-button-checked.svg";
 import uncheckedIcon from "../../../images/icons/radio-button-unchecked.svg";
 import { API_URL } from "../../config";
+import axios from "axios";
 
 export default function Form({ image, text }) {
     const file =
@@ -75,28 +76,29 @@ export default function Form({ image, text }) {
         }
 
         formData.append("captchaToken", captchaToken);
-
-        const response = await fetch(API_URL + "/job", {
-            method: "POST",
-            body: formData,
-        });
-
-        if (response.ok) {
-            const message =
-                i18n.language === "pt"
-                    ? "Messagem enviada"
-                    : "Message submited";
-            toast.success(message, {
-                position: "top-right",
-                autoClose: 3000, // 3 seconds
+        try {
+            const response = await axios(API_URL + "/job", {
+                method: "POST",
+                data: formData,
             });
-            setForm({ name: "", email: "", message: "", phone: "" });
-            setFileName(file);
-        } else {
+
+            if (response.status == 200) {
+                const message =
+                    i18n.language === "pt"
+                        ? "Messagem enviada"
+                        : "Message submited";
+                toast.success(message, {
+                    position: "top-right",
+                    autoClose: 3000, // 3 seconds
+                });
+                setForm({ name: "", email: "", message: "", phone: "" });
+                setFileName(file);
+            }
+        } catch (error) {
             const messageError =
                 i18n.language === "pt"
-                    ? "Ocorreu um erro, por favor tente de novo"
-                    : "Ocorred an error, please try again";
+                    ? "Preencha todos os campos e tente novamente"
+                    : "Fill all the camps and try again";
             toast.error(messageError, {
                 position: "top-right",
                 autoClose: 3000, // 3 seconds
@@ -131,7 +133,7 @@ export default function Form({ image, text }) {
                     >
                         <div>
                             <label id="name" className="form-title text-azul">
-                                {t("form.name")}
+                                {t("form.name") + "*"}
                             </label>
                             <input
                                 name="name"
@@ -143,7 +145,7 @@ export default function Form({ image, text }) {
                         </div>
                         <div>
                             <label id="email" className="form-title text-azul">
-                                {t("form.email")}
+                                {t("form.email") + "*"}
                             </label>
                             <input
                                 name="email"
@@ -155,7 +157,7 @@ export default function Form({ image, text }) {
                         </div>
                         <div>
                             <label id="phone" className="form-title text-azul">
-                                {t("form.phone")}
+                                {t("form.phone") + "*"}
                             </label>
                             <input
                                 name="phone"
@@ -167,7 +169,7 @@ export default function Form({ image, text }) {
                         </div>
                         <div className=" flex flex-col">
                             <label id="cv" className="form-title text-azul">
-                                {t("form.cv")}
+                                {t("form.cv") + "*"}
                             </label>
                             <div className="w-80 md:w-full xl:w-full flex mt-1 xl:mt-3 bg-light-grey items-center h-9 rounded-r-[40px] rounded-l-[40px]">
                                 <label className="custom-file bg-azul flex justify-center text-center">
@@ -197,11 +199,12 @@ export default function Form({ image, text }) {
                                 id="message"
                                 className="form-title text-azul"
                             >
-                                {t("form.message")}
+                                {t("form.message") + "*"}
                             </label>
                             <textarea
                                 rows="6"
                                 name="message"
+                                required
                                 onChange={handleChange}
                                 value={form.message}
                                 className="w-full bg-light-grey rounded-[20px] mt-1 xl:mt-3 xl:py-3 px-4 py-2 xl:px-4 text-azul outline-azul text-[15px]"

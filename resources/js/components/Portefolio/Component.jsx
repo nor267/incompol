@@ -22,7 +22,7 @@ export default function Component({
         <>
             <div {...props}>
                 <div onClick={handleInfo} className="cursor-pointer">
-                    <div className="bg-light-grey h-[150px] xl:w-auto xl:h-[300px]  4xl:h-[350px] flex justify-center items-center mt-2 md:mt-0">
+                    <div className="bg-light-grey h-[200px] xl:w-auto xl:h-[340px]  4xl:h-[350px] flex justify-center items-center mt-2 md:mt-0">
                         <img
                             src={image}
                             className="object-cover w-full h-full"

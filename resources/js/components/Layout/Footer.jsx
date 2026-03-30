@@ -39,7 +39,7 @@ export default function Footer({ work, showWorkWithUs }) {
     if (work) {
         classes += " lg:pt-[100px] xl:pt-[200px]";
     } else classes += " lg:pt-[80px] xl:pt-[100px]";
-    console.log(data);
+
     return (
         <>
             <div className="bg-azul w-full h-full margin-website text-white pb-5 xl:pb-0">
@@ -82,13 +82,6 @@ export default function Footer({ work, showWorkWithUs }) {
                             >
                                 {t("footerNor.conduta")}
                             </a>
-                            <a
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSe4S_PEmqnpzn6p-7LHn3L9XiRTKoxT4oWcqYN7gXIgSLbdGw/viewform?vc=0&c=0&w=1&flr=0"
-                                target="__blank"
-                                className="hover:text-laranja duration-300 transition-all"
-                            >
-                                {t("footerNor.canal_denuncia")}
-                            </a>
                             <div className="xl:pt-8 pt-3">
                                 <a
                                     className="cursor-pointer"
@@ -108,7 +101,7 @@ export default function Footer({ work, showWorkWithUs }) {
                             </a>
                         )}
                         <a
-                            href="https://www.linkedin.com/"
+                            href="https://www.linkedin.com/company/incompol"
                             target="__blank"
                             alt="linkedin"
                             className="button-laranja"
@@ -151,10 +144,15 @@ export default function Footer({ work, showWorkWithUs }) {
                             </button>
                         </a>
                     )}
-
-                    <button className="text-laranja border-3 border-laranja uppercase xl:px-4 rounded-[40px] xl:py-1 cursor-pointer font-bold px-4">
-                        Linkedin
-                    </button>
+                    <a
+                        href="https://www.linkedin.com/company/incompol"
+                        target="__blank"
+                        alt="linkedin"
+                    >
+                        <button className="text-laranja border-3 border-laranja uppercase xl:px-4 rounded-[40px] xl:py-1 cursor-pointer font-bold px-4">
+                            Linkedin
+                        </button>
+                    </a>
                     <div className="flex gap-4 xl:gap-1">
                         <img
                             src={certification3}

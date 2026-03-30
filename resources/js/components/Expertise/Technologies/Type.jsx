@@ -9,7 +9,7 @@ export default function Type({ text, dimensions, info, onClick }) {
                 }}
             >
                 <div
-                    className={`bg-azul duration-300 text-white font-bold text-[14px] leading-[24px] xl:text-[17px] xl:leading-[38px] tracking-[0.03em] rounded-[40px] px-4 py-1 w-full ${dimensions === "<p></p>" ? "" : "hover:bg-laranja"}`}
+                    className={`bg-azul duration-300 text-white font-bold text-[14px] leading-[24px] xl:text-[15px] 2xl:text-[17px] xl:leading-[38px] tracking-[0.03em] rounded-[40px] px-4 py-1 w-full ${dimensions === "<p></p>" ? "" : "hover:bg-laranja"}`}
                 >
                     {text}
                 </div>

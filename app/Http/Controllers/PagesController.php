@@ -71,9 +71,11 @@ class PagesController extends Controller
     /**
      * Obter equipamentos
      */
-    public function get_equipment()
+    public function get_equipment(Request $request)
     {
-        $equipments = Equipments::orderBy('order', 'ASC')->get();
+        $equipments = Equipments::where('content_web_page_id', $request->id)
+            ->orderBy('order', 'ASC')
+            ->get();
 
         return response()->json($equipments);
     }
@@ -138,7 +140,7 @@ class PagesController extends Controller
     {
         $portefolio = Portefolio::orderBy('order', 'ASC')->get();
 
-        $components = PortefolioSubCategory::with('images')->whereHas('images')->get();
+        $components = PortefolioSubCategory::orderBy('order', 'ASC')->with('images')->whereHas('images')->get();
 
         $gallery = PortefolioImage::orderBy('order', 'ASC')->get();
 

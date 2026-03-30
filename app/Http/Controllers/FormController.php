@@ -32,6 +32,14 @@ class FormController extends Controller
             ], 422);
         }
 
+        $validated = $request->validated();
+
+        if (array_key_exists('errors', $validated)) {
+            return response()->json([
+                'message' => 'validation failed'
+            ], 422);
+        }
+
         ContactForm::create([
             "name" => $request->name,
             "email" => $request->email,
@@ -64,6 +72,14 @@ class FormController extends Controller
         if (! $response->json('success')) {
             return response()->json([
                 'message' => 'reCAPTCHA verification failed'
+            ], 422);
+        }
+
+        $validated = $request->validated();
+
+        if (array_key_exists('errors', $validated)) {
+            return response()->json([
+                'message' => 'validation failed'
             ], 422);
         }
 

@@ -23,6 +23,12 @@ export default function ComponentInfo({
                 className="absolute top-10 right-10 w-5 xl:w-auto xl:top-15 xl:right-40 cursor-pointer"
                 onClick={onClick}
             ></img>
+            <h1
+                className="uppercase font-black text-white text-[18px] leading-[22px] xl:text-[32px] xl:leading-[38px] tracking-[0.14em] mb-10"
+                dangerouslySetInnerHTML={{
+                    __html: title,
+                }}
+            ></h1>
             <div className="flex items-center w-full justify-between px-8 xl:px-0 gap-2">
                 <button className="swiper-button-prev-custom cursor-pointer">
                     <svg
@@ -53,25 +59,13 @@ export default function ComponentInfo({
                             key={index}
                             className="!flex !justify-center !items-center flex-col! gap-20"
                         >
-                            <div className="bg-white w-[250px] h-[300px] xl:w-[980px] xl:h-[522px] flex justify-center items-center overflow-hidden mx-auto">
+                            <div className="bg-white w-[250px] h-[300px] md:w-[600px] lg:w-[800px] lg:h-[530px] xl:w-[980px] xl:h-[522px] flex justify-center items-center overflow-hidden">
                                 <img
                                     src={appUrl + item.image}
-                                    className="h-full max-h-[400px] w-auto object-contain"
+                                    className="h-full w-full object-contain xl:py-10"
                                 />
                             </div>
-                            <div className="flex justify-start items-center gap-5 xl:gap-46 w-full">
-                                <h1
-                                    className="uppercase font-black text-white text-[18px] leading-[22px] xl:text-[32px] xl:leading-[38px] tracking-[0.14em]"
-                                    dangerouslySetInnerHTML={{
-                                        __html: title,
-                                    }}
-                                ></h1>
-                                <section
-                                    className="text-[14px] leading-[22px] xl:text-[18px] xl:leading-[24px] tracking-[0.03em] font-light text-white"
-                                    dangerouslySetInnerHTML={{
-                                        __html: text,
-                                    }}
-                                ></section>
+                            <div className="flex justify-center items-center gap-5 xl:gap-46 w-full">
                                 <section
                                     className="text-base text-white"
                                     dangerouslySetInnerHTML={{

@@ -43,11 +43,6 @@ export default function People({ showWorkWithUs }) {
         fetchPage();
     }, []);
 
-    console.log(
-        parseInt(
-            data?.section_2_title?.pt.replace("<p>", "").replace("</p>", ""),
-        ),
-    );
     return (
         <>
             <NavbarPages
