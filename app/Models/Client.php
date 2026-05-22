@@ -31,7 +31,8 @@ class Client extends Authenticatable implements MustVerifyEmail, CanResetPasswor
         'morada',
         'phone',
         'fax',
-        'password'
+        'password',
+        'username'
     ];
 
     protected $hidden = [

@@ -68,17 +68,17 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'password' => 'required|min:8',
-            'email' => 'required'
+            'username' => 'required'
         ]);
 
         if ($validator->fails()) {
             return response()->json(['erros' => true, 'message_pt' => 'Tem de preencher os dois campos.', 'message_en' => 'You need to fill everything.']);
         }
 
-        $email = $request->input('email');
+        $username = $request->input('username');
         $password = $request->input('password');
 
-        $user = Client::where('email', $email)->where('active', true)->first();
+        $user = Client::where('username', $username)->where('active', true)->first();
 
         if (!$user->hasVerifiedEmail()) {
             return response()->json(['erros' => true, 'message_pt' => 'Precisa de verificar o email. Por favor contacte o administrador', 'message_en' => 'You need to verify your email. Contact your administrator.']);

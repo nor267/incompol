@@ -48,14 +48,15 @@ export default function VerifiedEmail({ showWorkWithUs }) {
                         : "Email verified"
                 }
             />
-            <div className="margin-website text-base text-azul  pt-10">
-                <p>Your email address has been successfully verified.</p>
-                <p>
-                    You can now access all features of your account. If you did
-                    not perform this action, please contact our support team
-                    immediately.
-                </p>
-            </div>
+            <div
+                className="margin-website text-base text-azul  pt-10"
+                dangerouslySetInnerHTML={{
+                    __html:
+                        i18n.language === "pt"
+                            ? "O seu endereço de e-mail foi verificado com sucesso. <br><br>Agora pode aceder a todos os recursos da sua conta. Caso não tenha realizado esta ação, contacte imediatamente a nossa equipa de suporte."
+                            : "Your email address has been successfully verified.<br><br>You can now access all features of your account. If you did not perform this action, please contact our support team immediately.",
+                }}
+            ></div>
             <div className="flex justify-center pb-20 pt-10">
                 <a href="/" className="button-laranja-blue">
                     {i18n.language === "pt"

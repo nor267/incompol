@@ -16,7 +16,7 @@ export default function Login({ showWorkWithUs }) {
     };
 
     const [form, setForm] = useState({
-        email: "",
+        username: "",
         password: "",
     });
 
@@ -93,12 +93,15 @@ export default function Login({ showWorkWithUs }) {
                                 id="password"
                                 className="form-title text-azul"
                             >
-                                Email*
+                                {i18n.language === "pt"
+                                    ? "Nome de utilizador"
+                                    : "Username"}
+                                *
                             </label>
                             <input
-                                name="email"
-                                type="email"
-                                value={form.email}
+                                name="username"
+                                type="text"
+                                value={form.username}
                                 onChange={handleChange}
                             ></input>
                         </div>

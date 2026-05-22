@@ -4,6 +4,7 @@ import { API_URL } from "../../config";
 import i18n from "../../../i18n/i18n";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
 //components
@@ -12,7 +13,6 @@ import SecondTitle from "../Layout/SecondTitle";
 //icons
 import checkedIcon from "../../../images/icons/radio-button-checked.svg";
 import uncheckedIcon from "../../../images/icons/radio-button-unchecked.svg";
-import axios from "axios";
 
 export default function Form({
     title,
@@ -100,7 +100,7 @@ export default function Form({
                 className="pt-15 xl:pt-20 text-white text-center"
             />
             <ToastContainer />
-            <div className="lg:px-[100px] xl:px-[377px] flex flex-col-reverse w-full lg:flex-row justify-between xl:pt-20 px-8 md:px-[80px] lg:px-0 4xl:px-[600px] ">
+            <div className="lg:px-[100px] 2xl:px-[377px] flex flex-col-reverse w-full lg:flex-row justify-between xl:pt-20 px-8 md:px-[80px] lg:px-0 4xl:px-[600px] ">
                 <div className="flex items-start justify-between lg:justify-start lg:flex-col pt-15 xl:pt-0 pb-15">
                     <div className="">
                         <h1

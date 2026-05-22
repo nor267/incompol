@@ -172,6 +172,12 @@ export default function AboutUs({ showWorkWithUs }) {
                         ? data.section_10_title?.pt
                         : data.section_10_title?.en
                 }
+                destaqueText={
+                    i18n.language === "pt"
+                        ? data.section_10_text?.pt
+                        : data.section_10_text?.en
+                }
+                image={appUrl + data.section_8_media}
             />
             <ShapeFuture banner={appUrl + data?.section_2_media} />
             <History

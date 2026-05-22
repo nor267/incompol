@@ -51,7 +51,7 @@ export default function Footer({ work, showWorkWithUs }) {
                             <br></br> solutions
                         </h1>
                     </div>
-                    <div className="flex justify-between xl:justify-center lg:gap-20 xl:gap-56 pt-10 xl:pt-0">
+                    <div className="flex justify-between xl:justify-center lg:gap-20 2xl:gap-56 pt-10 xl:pt-0">
                         <div className="text-[14px] leading-[24px] xl:text-[15px] xl:leading-[25px] tracking-[0.03em] font-light flex-col flex">
                             {data.map((item, index) => (
                                 <div className="" key={index}>
@@ -95,19 +95,24 @@ export default function Footer({ work, showWorkWithUs }) {
                         </div>
                     </div>
                     <div className="lg:flex justify-end items-end flex-col lg:gap-3 xl:gap-4 hidden">
-                        {showWorkWithUs && (
-                            <a href="/people" className="button-laranja">
-                                {t("footerNor.team")}
-                            </a>
-                        )}
-                        <a
-                            href="https://www.linkedin.com/company/incompol"
-                            target="__blank"
-                            alt="linkedin"
-                            className="button-laranja"
-                        >
-                            Linkedin
+                        <a href="/profile" className="button-laranja">
+                            {t("footerNor.parceiros")}
                         </a>
+                        <div className="flex lg:gap-2">
+                            {showWorkWithUs && (
+                                <a href="/people" className="button-laranja">
+                                    {t("footerNor.team")}
+                                </a>
+                            )}
+                            <a
+                                href="https://www.linkedin.com/company/incompol"
+                                target="__blank"
+                                alt="linkedin"
+                                className="button-laranja"
+                            >
+                                Linkedin
+                            </a>
+                        </div>
                         <div className="flex lg:gap-2 xl:gap-3">
                             <img
                                 src={certification3}
@@ -153,6 +158,7 @@ export default function Footer({ work, showWorkWithUs }) {
                             Linkedin
                         </button>
                     </a>
+
                     <div className="flex gap-4 xl:gap-1">
                         <img
                             src={certification3}

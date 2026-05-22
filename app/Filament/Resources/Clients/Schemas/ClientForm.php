@@ -18,13 +18,13 @@ class ClientForm
                 Section::make()->schema([
                     TextInput::make('name')
                         ->label('Nome'),
+                    TextInput::make('username')
+                        ->label('Nome de utilizador')
+                        ->unique(),
                     TextInput::make('email')
                         ->unique()
-                        ->label('Email'),
-                    TextInput::make('morada')
-                        ->label('Morada Completa'),
-                    TextInput::make('phone')
-                        ->label('Telefone/Telemóvel'),
+                        ->label('Email')
+                        ->visibleOn('create'),
                     TextInput::make('password')
                         ->label('Palavra-passe')
                         ->visibleOn('create'),

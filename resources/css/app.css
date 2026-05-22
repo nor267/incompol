@@ -58,11 +58,11 @@ body {
 }
 
 .margin-website {
-    @apply px-8 md:px-[80px] lg:px-[100px] xl:px-[137px]  4xl:px-[250px];
+    @apply px-8 md:px-20 lg:px-25 xl:px-34.25 4xl:px-62.5;
 }
 
 .text-base {
-    @apply text-[14px] leading-[18px]  md:text-[15px] md:leading-[22px] xl:text-[18px] xl:leading-[22px] tracking-[0.03em];
+    @apply text-[14px] leading-[18px]  md:text-[15px] md:leading-[22px] xl:text-[18px] xl:leading-[24px] tracking-[0.03em];
 }
 
 .area-componets {

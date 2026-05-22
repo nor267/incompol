@@ -7,10 +7,10 @@ import IconMobile from "./IconMobile";
 
 export default function HistoryMobile({ dates }) {
     return (
-        <div className="px-8 md:px-[78px] relative flex flex-col gap-3 justify-between mt-5 pb-10">
+        <div className="px-8 md:px-[78px] relative flex flex-col gap-3 justify-between mt-5 pb-10 h-[1590px]">
             <img
                 src={lineMobile}
-                className="absolute -top-8 left-8 md:left-[80px] h-[1550px]"
+                className="absolute -top-8 left-8 md:left-[80px] h-[1690px]"
             ></img>
             {dates.map((item, index) => (
                 <IconMobile

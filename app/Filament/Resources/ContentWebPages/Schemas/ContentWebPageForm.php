@@ -602,6 +602,23 @@ class ContentWebPageForm
                                 ]),
                         ])->columnSpanFull(),
 
+                        FileUpload::make('section_8_media')
+                            ->label('Banner Imagem')
+                            ->disk('public')
+                            ->directory('uploads/images')
+                            ->required()
+                            ->downloadable()
+                            ->image()
+                            ->openable()
+                            ->maxSize(1024) // 1 MB
+                            ->acceptedFileTypes(['image/jpeg', 'image/webp'])
+                            ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
+                            ->validationMessages([
+                                'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
+                                'max' => 'A imagem não pode exceder 1MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull(),
 
                         TranslatableTabs::make()
                             ->schema([
@@ -657,6 +674,8 @@ class ContentWebPageForm
                                     TextInput::make('title')
                                         ->label('Valor')
                                         ->required()
+                                        ->maxLength(50)
+                                        ->hint('Máximo 35 caracteres')
                                         ->translatableTabs(),
                                     RichEditor::make('description')
                                         ->label('Descrição')
@@ -677,13 +696,22 @@ class ContentWebPageForm
 
                         RichEditor::make('section_10_title')
                             ->required()
-                            ->label('Frase Final')
+                            ->label('Valor Frase Final')
                             ->toolbarButtons([
                                 ['bold', 'italic', 'underline', 'link'],
                             ])
                             ->translatableTabs()
                             ->columnSpanFull(),
 
+
+                        RichEditor::make('section_10_text')
+                            ->required()
+                            ->label('Destaque')
+                            ->toolbarButtons([
+                                ['bold', 'italic', 'underline', 'link'],
+                            ])
+                            ->translatableTabs()
+                            ->columnSpanFull(),
                     ])
                     ->columns(2)
                     ->collapsible()

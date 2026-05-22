@@ -53,7 +53,8 @@ class FilesRelationManager extends RelationManager
             ->recordTitleAttribute('file_path')
             ->columns([
                 TextColumn::make('file_path')
-                    ->searchable(),
+                    ->searchable()
+                    ->formatStateUsing(fn($state) => basename($state)),
             ])
             ->filters([
                 //
