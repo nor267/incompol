@@ -9,6 +9,7 @@ import reclamacoes from "../../../images/icons/footer/reclamacoes.svg";
 import certification1 from "../../../images/icons/footer/certification1.png";
 import certification2 from "../../../images/icons/footer/certification2.png";
 import certification3 from "../../../images/icons/footer/certification3.png";
+import certification4 from "../../../images/icons/footer/certification4.png";
 
 export default function Footer({ work, showWorkWithUs }) {
     const [data, setData] = new useState([]);
@@ -126,6 +127,10 @@ export default function Footer({ work, showWorkWithUs }) {
                                 src={certification2}
                                 className="w-auto h-10"
                             ></img>
+                            <img
+                                src={certification4}
+                                className="w-auto h-10"
+                            ></img>
                         </div>
                     </div>
                 </div>
@@ -159,13 +164,44 @@ export default function Footer({ work, showWorkWithUs }) {
                         </button>
                     </a>
 
-                    <div className="flex gap-4 xl:gap-1">
+                    <div className="flex flex-col sm:flex-row gap-1 sm:gap-3 xl:gap-1 justify-start items-start w-full">
                         <img
                             src={certification3}
-                            className="w-auto h-10 "
+                            className="w-auto h-10 hidden sm:block"
                         ></img>
-                        <img src={certification1} className="w-auto h-10"></img>
-                        <img src={certification2} className="w-auto h-10"></img>
+                        <img
+                            src={certification1}
+                            className="w-auto h-10 hidden sm:block"
+                        ></img>
+                        <img
+                            src={certification2}
+                            className="w-auto h-10 hidden sm:block"
+                        ></img>
+                        <img
+                            src={certification4}
+                            className="w-auto h-10 hidden sm:block"
+                        ></img>
+
+                        <div className="flex gap-3 justify-start items-center pb-3 sm:hidden">
+                            <img
+                                src={certification3}
+                                className="w-auto h-10 "
+                            ></img>
+                            <img
+                                src={certification1}
+                                className="w-auto h-10"
+                            ></img>
+                        </div>
+                        <div className="flex gap-3 justify-start items-center sm:hidden">
+                            <img
+                                src={certification2}
+                                className="w-auto h-10"
+                            ></img>
+                            <img
+                                src={certification4}
+                                className="w-auto h-10"
+                            ></img>
+                        </div>
                     </div>
                 </div>
             </div>

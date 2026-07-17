@@ -2196,6 +2196,24 @@ class ContentWebPageForm
                             ->previewable()
                             ->columnSpanFull(),
 
+                        FileUpload::make('section_5_media')
+                            ->label('Imagem')
+                            ->disk('public')
+                            ->directory('uploads/images')
+                            ->required()
+                            ->downloadable()
+                            ->image()
+                            ->openable()
+                            ->maxSize(1024) // 1 MB
+                            ->acceptedFileTypes(['image/jpeg', 'image/webp'])
+                            ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
+                            ->validationMessages([
+                                'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
+                                'max' => 'A imagem não pode exceder 1MB.',
+                            ])
+                            ->previewable()
+                            ->columnSpanFull(),
+
 
 
                     ])

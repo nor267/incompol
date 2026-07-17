@@ -155,6 +155,7 @@ export default function Sustainability({ showWorkWithUs }) {
                 }
                 videoRecognition={appUrl + data?.section_4_media}
                 imageRecognition={appUrl + data?.section_4_media_1}
+                imageRecognition2={appUrl + data?.section_5_media}
             />
             <Footer showWorkWithUs={showWorkWithUs} />
         </>

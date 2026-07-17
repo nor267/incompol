@@ -14,6 +14,7 @@ export default function Goals({
     textRecognition,
     videoRecognition,
     imageRecognition,
+    imageRecognition2,
 }) {
     const appUrl = window.location.origin + "/storage/";
     const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -78,6 +79,7 @@ export default function Goals({
                 text={textRecognition}
                 video={videoRecognition}
                 image={imageRecognition}
+                image2={imageRecognition2}
             />
         </div>
     );

@@ -73,7 +73,7 @@ export default function Contactus({ showWorkWithUs }) {
                 ></img>
             </div>
             <div className="py-15 lg:py-20 xl:py-38 4xl:px-[200px]">
-                <div className="lg:gap-8 margin-website flex justify-between flex-col lg:flex-row">
+                <div className="lg:gap-8 margin-website flex justify-between flex-col lg:flex-row lg:justify-center xl:justify-between">
                     <div className="">
                         <div className="uppercase text-[18px] xl:text-[28px] xl:leading-[32px] text-azul font-bold flex">
                             <span
@@ -114,10 +114,10 @@ export default function Contactus({ showWorkWithUs }) {
                             }}
                         ></p>
                     </div>
-                    <div className="pt-3 lg:pt-0 xl:pt-0 flex md:w-[500px] lg:w-[550px] xl:w-[800px]  h-[275px] xl:h-[300px] 2xl:h-[400px]">
+                    <div className="pt-3 lg:pt-0 xl:pt-0 flex flex-col sm:flex-row md:w-[500px] lg:w-[550px] xl:w-[800px]  h-[275px] xl:h-[300px] 2xl:h-[400px]">
                         <img
                             src={appUrl + data?.section_2_media}
-                            className="w-1/2 object-cover h-full"
+                            className="w-full sm:w-1/2 object-cover h-40 sm:h-full"
                         ></img>
                         <iframe
                             className="w-full h-[275px] xl:h-[300px] 2xl:h-[400px]"
@@ -129,7 +129,7 @@ export default function Contactus({ showWorkWithUs }) {
                         ></iframe>
                     </div>
                 </div>
-                <div className="pt-20 md:pt-10 xl:pt-20 margin-website flex flex-col lg:flex-row-reverse justify-end md:gap-10 lg:gap-10 xl:gap-28">
+                <div className="pt-20 md:pt-10 xl:pt-20 margin-website flex flex-col lg:flex-row-reverse justify-end lg:justify-center xl:justify-between md:gap-10 lg:gap-10 xl:gap-28 overflow-hidden">
                     <div className="">
                         <h1
                             className="uppercase text-[18px]  xl:text-[28px] xl:leading-[32px] text-azul font-bold"
@@ -168,13 +168,13 @@ export default function Contactus({ showWorkWithUs }) {
                             }}
                         ></p>
                     </div>
-                    <div className="pt-3 lg:pt-0 xl:pt-0 flex flex-row-reverse md:w-[500px] lg:w-[550px] xl:w-[800px]  h-[275px] xl:h-[300px] 2xl:h-[400px]">
+                    <div className="pt-3 md:mx-11 lg:mx-0 lg:pt-0 xl:pt-0 flex flex-col sm:flex-row-reverse md:w-[500px] lg:w-[550px] xl:w-[800px]  h-[275px] xl:h-[300px] 2xl:h-[400px]">
                         <img
                             src={appUrl + data?.section_4_media}
-                            className="w-1/2 object-cover h-full"
+                            className="w-full sm:w-1/2 object-cover h-40 sm:h-full"
                         ></img>
                         <iframe
-                            className="w-full h-[275px] xl:h-[300px] 2xl:h-[400px]"
+                            className=" w-full h-[275px] xl:h-[300px] 2xl:h-[400px]"
                             src="https://maps.google.com/maps?width=650&height=400&hl=en&q=Incompol%20Estrada%20Nacional%20118%2C%206%2C%20Km%2045%2C%206%2C%20Benavente%2C%20Santar%C3%A9m%2C%202130%20Benavente%2C%20Portugal&t=&z=16&ie=UTF8&iwloc=B&output=embed"
                             style={{ border: 0 }}
                             allowfullscreen
