@@ -58,6 +58,7 @@ export default function Login({ showWorkWithUs }) {
                 }
             }
         } catch (error) {
+            console.log(error);
             const messageError =
                 i18n.language === "pt"
                     ? "Ocorreu um erro, por favor tente mais tarde."

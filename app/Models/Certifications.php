@@ -19,6 +19,7 @@ class Certifications extends Model
 
     protected $fillable = [
         'title',
+        'icon_2',
         'description',
         'second_title',
         'icon',

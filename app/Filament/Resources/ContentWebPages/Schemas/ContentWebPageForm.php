@@ -4,6 +4,7 @@ namespace App\Filament\Resources\ContentWebPages\Schemas;
 
 use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 use App\Models\ContentWebPage;
+use App\Models\Certifications;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
@@ -14,6 +15,8 @@ use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Get;
+
 
 class ContentWebPageForm
 {
@@ -675,7 +678,7 @@ class ContentWebPageForm
                                         ->label('Valor')
                                         ->required()
                                         ->maxLength(50)
-                                        ->hint('Máximo 35 caracteres')
+                                        ->hint('Máximo 50 caracteres')
                                         ->translatableTabs(),
                                     RichEditor::make('description')
                                         ->label('Descrição')
@@ -826,6 +829,24 @@ class ContentWebPageForm
                                     ])
                                     ->previewable()
                                     ->columnSpanFull(),
+
+                                FileUpload::make('icon_2')
+                                    ->label('Icon 2')
+                                    ->disk('public')
+                                    ->directory('uploads/images')
+                                    ->downloadable()
+                                    ->image()
+                                    ->openable()
+                                    ->maxSize(1024)
+                                    ->acceptedFileTypes(['image/jpeg', 'image/webp'])
+                                    ->helperText('Máximo de 1MB por imagem. Apenas JPG ou WEBP são permitidos.')
+                                    ->validationMessages([
+                                        'mimes' => 'A imagem deve ser do tipo JPG ou WEBP.',
+                                        'max' => 'A imagem não pode exceder 1MB.',
+                                    ])
+                                    ->previewable()
+                                    ->columnSpanFull()
+                                    ->visible(fn(?Certifications $record) => $record?->id == 3),
                                 TextInput::make('title')
                                     ->label('Título')
                                     ->required()
